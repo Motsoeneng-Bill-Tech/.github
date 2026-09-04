@@ -1,29 +1,39 @@
-name: Update Dynamic Profile README & Leaderboard
+name: Update Engineering Telemetry & Deploy Dashboard
 
 on:
   schedule:
-    # Run every 6 hours at 00:00, 06:00, 12:00, 18:00 UTC
+    # Every 6 hours at 00:00, 06:00, 12:00, 18:00 UTC
     - cron: '0 */6 * * *'
-  workflow_dispatch: # Allows manual trigger from Actions tab
+  workflow_dispatch: # Manual trigger from the Actions tab
   push:
     branches:
       - main
     paths:
       - '.github/scripts/**'
       - '.github/workflows/update-readme.yml'
+      - 'docs/**'
+      - '!docs/data/**' # generated output — excluded so the bot's own data commits can't re-trigger this
 
 concurrency:
   group: update-profile-readme
   cancel-in-progress: true
 
 jobs:
-  update-leaderboard:
+  # Fetches live data from the GitHub API and regenerates docs/data/metrics.json,
+  # assets/graphs/*.svg, assets/leaderboard_card.svg, and profile/README.md.
+  #
+  # update_leaderboard.py exits non-zero on ANY incomplete/failed fetch — no
+  # `continue-on-error` here, ever. That's what makes this job's success a real
+  # guarantee: if it fails, nothing below gets a broken/partial dataset to deploy,
+  # and the previously published (real) data simply stays live.
+  refresh-data:
     runs-on: ubuntu-latest
     permissions:
       contents: write
-
+    outputs:
+      changed: ${{ steps.commit.outputs.changed }}
     steps:
-      - name: Checkout Repository
+      - name: Checkout repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
@@ -33,21 +43,58 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Execute Leaderboard & Telemetry Updater
+      - name: Run telemetry engine
         env:
+          # Needs read:org (list members) + repo (read commit history across every
+          # org repo, most of which are private) — the default GITHUB_TOKEN is scoped
+          # only to this repo and structurally cannot do either, so it's a last-resort
+          # fallback here only to produce a clear scope error rather than silently no-op.
           ORG_LEADERBOARD_TOKEN: ${{ secrets.ORG_LEADERBOARD_TOKEN || secrets.GITHUB_TOKEN }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          python .github/scripts/update_leaderboard.py
+        run: python .github/scripts/update_leaderboard.py
 
-      - name: Commit & Push Dynamic Changes
+      - name: Commit & push if changed
+        id: commit
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git add assets/ profile/README.md
+          git add docs/data/metrics.json assets/ profile/README.md
           if git diff --staged --quiet; then
-            echo "No telemetry or leaderboard changes detected."
+            echo "No telemetry changes detected."
+            echo "changed=false" >> "$GITHUB_OUTPUT"
           else
             git commit -m "chore(telemetry): update engineering leaderboard & profile metrics [skip ci]"
             git push
+            echo "changed=true" >> "$GITHUB_OUTPUT"
           fi
+
+  # Publishes docs/ (the interactive dashboard) to GitHub Pages. Gated on refresh-data
+  # succeeding — a failed/partial data refresh never reaches the live site.
+  #
+  # Requires a one-time manual step from an org admin: repo Settings -> Pages ->
+  # Build and deployment -> Source: "GitHub Actions".
+  deploy-pages:
+    needs: refresh-data
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: main # picks up the commit refresh-data just pushed, if any
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload dashboard artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

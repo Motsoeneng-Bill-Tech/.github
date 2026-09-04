@@ -1,98 +1,53 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="860" height="210" viewBox="0 0 860 210" fill="none">
-  <defs>
-    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0b1120" />
-      <stop offset="50%" stop-color="#0f172a" />
-      <stop offset="100%" stop-color="#1e293b" />
-    </linearGradient>
-    <linearGradient id="goldBorder" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#38bdf8" />
-      <stop offset="50%" stop-color="#818cf8" />
-      <stop offset="100%" stop-color="#f59e0b" />
-    </linearGradient>
-  </defs>
-
-  <!-- Background Card -->
-  <rect width="860" height="210" rx="14" fill="url(#bgGrad)" stroke="#334155" stroke-width="1.5" />
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="358" viewBox="0 0 860 358">
+  <rect width="860" height="358" rx="14" fill="#0a0e17" stroke="#232b38" stroke-width="1" />
+  <text x="32" y="32" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" font-weight="700" letter-spacing="1.5" fill="#c9a961">MOTSOENENG BILL TECH · ENGINEERING TELEMETRY</text>
+  <g transform="translate(32, 56)">
+    <text x="0" y="0" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" letter-spacing="0.6" fill="#64748b">TOTAL CONTRIBUTIONS</text>
+    <text x="0" y="24" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="20" font-weight="800" fill="#f1f5f9">2,391</text>
+  </g><g transform="translate(224, 56)">
+    <text x="0" y="0" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" letter-spacing="0.6" fill="#64748b">FIRM COMMITS</text>
+    <text x="0" y="24" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="20" font-weight="800" fill="#f1f5f9">1,523</text>
+  </g><g transform="translate(416, 56)">
+    <text x="0" y="0" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" letter-spacing="0.6" fill="#64748b">ENGINEERS</text>
+    <text x="0" y="24" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="20" font-weight="800" fill="#f1f5f9">7</text>
+  </g><g transform="translate(608, 56)">
+    <text x="0" y="0" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" letter-spacing="0.6" fill="#64748b">REPOSITORIES</text>
+    <text x="0" y="24" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="20" font-weight="800" fill="#f1f5f9">8</text>
+  </g>
   
-  <!-- Header Title -->
-  <text x="32" y="38" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700" fill="#38bdf8" letter-spacing="1.2">MOTSOENENG BILL TECH · ENGINEERING TELEMETRY</text>
-  <text x="32" y="66" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="22" font-weight="800" fill="#f8fafc">Engineering Contribution Leaderboard</text>
-
-  <!-- Key Metrics Left -->
-  <g transform="translate(32, 92)">
-    <rect width="110" height="54" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1" />
-    <text x="12" y="22" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="10" font-weight="600" fill="#94a3b8">TOTAL COMMITS</text>
-    <text x="12" y="44" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="18" font-weight="800" fill="#38bdf8">1,521</text>
-  </g>
-
-  <g transform="translate(152, 92)">
-    <rect width="110" height="54" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1" />
-    <text x="12" y="22" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="10" font-weight="600" fill="#94a3b8">REPOSITORIES</text>
-    <text x="12" y="44" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="18" font-weight="800" fill="#818cf8">1</text>
-  </g>
-
-  <g transform="translate(272, 92)">
-    <rect width="110" height="54" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1" />
-    <text x="12" y="22" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="10" font-weight="600" fill="#94a3b8">TEAM MEMBERS</text>
-    <text x="12" y="44" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="18" font-weight="800" fill="#34d399">7</text>
-  </g>
-
-  <!-- Top 3 Podium Cards Right -->
-
-  <g transform="translate(410, 32)">
-    <rect width="136" height="114" rx="10" fill="#0f172a" stroke="#f59e0b" stroke-width="1.5" />
-    <!-- Medal tag -->
-    <rect x="8" y="8" width="40" height="18" rx="4" fill="#f59e0b" fill-opacity="0.2" stroke="#f59e0b" stroke-width="1" />
-    <text x="28" y="21" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="10" font-weight="700" fill="#f59e0b" text-anchor="middle">1st</text>
-    
-    <!-- Member name -->
-    <text x="12" y="52" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="12" font-weight="700" fill="#f8fafc">konethegre..</text>
-    <text x="12" y="70" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="10" font-weight="500" fill="#94a3b8">Principal Arch</text>
-    
-    <!-- Commits -->
-    <text x="12" y="98" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="16" font-weight="800" fill="#f59e0b">774 <tspan font-size="10" font-weight="500" fill="#64748b">commits</tspan></text>
-  </g>
-
-  <g transform="translate(558, 32)">
-    <rect width="136" height="114" rx="10" fill="#0f172a" stroke="#94a3b8" stroke-width="1.5" />
-    <!-- Medal tag -->
-    <rect x="8" y="8" width="40" height="18" rx="4" fill="#94a3b8" fill-opacity="0.2" stroke="#94a3b8" stroke-width="1" />
-    <text x="28" y="21" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="10" font-weight="700" fill="#94a3b8" text-anchor="middle">2nd</text>
-    
-    <!-- Member name -->
-    <text x="12" y="52" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="12" font-weight="700" fill="#f8fafc">Akonisaho-MB</text>
-    <text x="12" y="70" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="10" font-weight="500" fill="#94a3b8">Senior Lead En</text>
-    
-    <!-- Commits -->
-    <text x="12" y="98" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="16" font-weight="800" fill="#94a3b8">345 <tspan font-size="10" font-weight="500" fill="#64748b">commits</tspan></text>
-  </g>
-
-  <g transform="translate(706, 32)">
-    <rect width="136" height="114" rx="10" fill="#0f172a" stroke="#d97706" stroke-width="1.5" />
-    <!-- Medal tag -->
-    <rect x="8" y="8" width="40" height="18" rx="4" fill="#d97706" fill-opacity="0.2" stroke="#d97706" stroke-width="1" />
-    <text x="28" y="21" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="10" font-weight="700" fill="#d97706" text-anchor="middle">3rd</text>
-    
-    <!-- Member name -->
-    <text x="12" y="52" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="12" font-weight="700" fill="#f8fafc">Amukelani-MB</text>
-    <text x="12" y="70" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="10" font-weight="500" fill="#94a3b8">Senior Lead En</text>
-    
-    <!-- Commits -->
-    <text x="12" y="98" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="16" font-weight="800" fill="#d97706">249 <tspan font-size="10" font-weight="500" fill="#64748b">commits</tspan></text>
-  </g>
-
-  <!-- Contribution Distribution Bar -->
-  <text x="32" y="158" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="10" font-weight="600" fill="#94a3b8">TEAM COMMIT DISTRIBUTION</text>
-  <clipPath id="barClip">
-    <rect x="32" y="166" width="796" height="10" rx="5" />
-  </clipPath>
-  <g clip-path="url(#barClip)">
-    <rect x="32.0" y="166" width="405.1" height="10" fill="#38bdf8" />
-    <rect x="437.1" y="166" width="180.6" height="10" fill="#818cf8" />
-    <rect x="617.6" y="166" width="130.3" height="10" fill="#34d399" />
-    <rect x="747.9" y="166" width="47.6" height="10" fill="#f59e0b" />
-    <rect x="795.6" y="166" width="29.3" height="10" fill="#ec4899" />
-    <rect x="824.9" y="166" width="3.1" height="10" fill="#334155" />
-  </g>
+  <text x="32" y="117" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#64748b">01</text>
+  <text x="62" y="117" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="600" fill="#f1f5f9">@konethegreatest</text>
+  <rect x="190" y="104" width="560" height="8" rx="4" fill="#232b38" />
+  <rect x="190" y="104" width="560.0" height="8" rx="4" fill="#c9a961" />
+  <text x="836" y="117" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#94a3b8" text-anchor="end">774</text>
+  <text x="32" y="151" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#64748b">02</text>
+  <text x="62" y="151" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="600" fill="#f1f5f9">@Akonisaho-MB</text>
+  <rect x="190" y="138" width="560" height="8" rx="4" fill="#232b38" />
+  <rect x="190" y="138" width="250.3" height="8" rx="4" fill="#c9a961" />
+  <text x="836" y="151" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#94a3b8" text-anchor="end">346</text>
+  <text x="32" y="185" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#64748b">03</text>
+  <text x="62" y="185" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="600" fill="#f1f5f9">@Amukelani-MB</text>
+  <rect x="190" y="172" width="560" height="8" rx="4" fill="#232b38" />
+  <rect x="190" y="172" width="180.2" height="8" rx="4" fill="#c9a961" />
+  <text x="836" y="185" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#94a3b8" text-anchor="end">249</text>
+  <text x="32" y="219" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#64748b">04</text>
+  <text x="62" y="219" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="600" fill="#f1f5f9">@pakisomb</text>
+  <rect x="190" y="206" width="560" height="8" rx="4" fill="#232b38" />
+  <rect x="190" y="206" width="65.8" height="8" rx="4" fill="#c9a961" />
+  <text x="836" y="219" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#94a3b8" text-anchor="end">91</text>
+  <text x="32" y="253" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#64748b">05</text>
+  <text x="62" y="253" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="600" fill="#f1f5f9">@VhutshiloMB</text>
+  <rect x="190" y="240" width="560" height="8" rx="4" fill="#232b38" />
+  <rect x="190" y="240" width="40.5" height="8" rx="4" fill="#c9a961" />
+  <text x="836" y="253" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#94a3b8" text-anchor="end">56</text>
+  <text x="32" y="287" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#64748b">06</text>
+  <text x="62" y="287" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="600" fill="#f1f5f9">@Kea1m</text>
+  <rect x="190" y="274" width="560" height="8" rx="4" fill="#232b38" />
+  <rect x="190" y="274" width="4.3" height="8" rx="4" fill="#c9a961" />
+  <text x="836" y="287" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#94a3b8" text-anchor="end">6</text>
+  <text x="32" y="321" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#64748b">07</text>
+  <text x="62" y="321" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="600" fill="#f1f5f9">@TheoSingo</text>
+  <rect x="190" y="308" width="560" height="8" rx="4" fill="#232b38" />
+  <rect x="190" y="308" width="3.0" height="8" rx="4" fill="#c9a961" />
+  <text x="836" y="321" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#94a3b8" text-anchor="end">1</text>
 </svg>

@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Motsoeneng Bill Tech — Engineering Dashboard</title>
+  <meta name="description" content="Live engineering contribution dashboard for Motsoeneng Bill Tech — real, interactive GitHub activity for every member." />
+  <meta name="robots" content="noindex" />
+  <link rel="icon" href="data:," />
+  <link rel="stylesheet" href="./assets/css/tokens.css" />
+  <link rel="stylesheet" href="./assets/css/styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap site-header__inner">
+      <a class="brand" href="./#/">
+        <img class="brand__mark" src="https://github.com/Motsoeneng-Bill-Tech.png" alt="" width="28" height="28" />
+        <span class="brand__name">Motsoeneng Bill Tech</span>
+        <span class="brand__tag">Engineering</span>
+      </a>
+
+      <div class="site-header__actions">
+        <div class="search">
+          <svg class="search__icon" width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <circle cx="7" cy="7" r="5.25" stroke="currentColor" stroke-width="1.4" />
+            <path d="M11 11L14.5 14.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" />
+          </svg>
+          <input id="global-search" type="search" placeholder="Search engineers…" aria-label="Search engineers" autocomplete="off" />
+        </div>
+        <a class="btn btn--ghost" href="https://github.com/Motsoeneng-Bill-Tech" target="_blank" rel="noopener">
+          View on GitHub
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <div id="view-root" class="wrap" aria-live="polite">
+      <div class="loading-state">
+        <div class="spinner" aria-hidden="true"></div>
+        <p>Loading live engineering telemetry…</p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap site-footer__inner">
+      <p>
+        <strong>Motsoeneng Bill Tech</strong> · Houghton, Johannesburg · South Africa
+      </p>
+      <p class="site-footer__meta">
+        Data updates automatically every 6 hours from the GitHub API ·
+        <a href="https://github.com/Motsoeneng-Bill-Tech/.github" target="_blank" rel="noopener">Source</a>
+      </p>
+    </div>
+  </footer>
+
+  <div id="tooltip" class="cal-tooltip" role="tooltip" hidden></div>
+
+  <script src="./assets/js/format.js"></script>
+  <script src="./assets/js/data.js"></script>
+  <script src="./assets/js/calendar.js"></script>
+  <script src="./assets/js/leaderboard.js"></script>
+  <script src="./assets/js/member-detail.js"></script>
+  <script src="./assets/js/router.js"></script>
+  <script src="./assets/js/main.js"></script>
+</body>
+</html>
