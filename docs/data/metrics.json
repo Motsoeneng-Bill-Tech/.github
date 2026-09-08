@@ -1,20 +1,20 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-08T16:23:36Z",
-  "source_commit": "a0c3b11dbc31fe83a11f3ed46cd59a624111c687",
+  "generated_at": "2026-09-08T20:58:04Z",
+  "source_commit": "087cfb9fd4d1cd6e0cef2060da5dea14ae5cded7",
   "org": {
     "login": "Motsoeneng-Bill-Tech",
     "name": "Motsoeneng Bill Tech",
     "avatar_url": "https://github.com/Motsoeneng-Bill-Tech.png",
     "html_url": "https://github.com/Motsoeneng-Bill-Tech",
     "member_count": 7,
-    "repo_count": 9,
+    "repo_count": 10,
     "totals": {
-      "total_contributions": 2728,
-      "total_commit_contributions": 1921,
-      "total_pr_contributions": 668,
+      "total_contributions": 2823,
+      "total_commit_contributions": 2013,
+      "total_pr_contributions": 671,
       "total_review_contributions": 122,
-      "total_firm_commits": 1703
+      "total_firm_commits": 1793
     },
     "calendar": {
       "from": "2026-06-19",
@@ -509,43 +509,43 @@
             {
               "date": "2026-08-17",
               "weekday": 1,
-              "count": 58,
+              "count": 59,
               "level": 4,
               "in_range": true
             },
             {
               "date": "2026-08-18",
               "weekday": 2,
-              "count": 44,
+              "count": 51,
               "level": 4,
               "in_range": true
             },
             {
               "date": "2026-08-19",
               "weekday": 3,
-              "count": 35,
+              "count": 42,
               "level": 4,
               "in_range": true
             },
             {
               "date": "2026-08-20",
               "weekday": 4,
-              "count": 14,
+              "count": 17,
               "level": 4,
               "in_range": true
             },
             {
               "date": "2026-08-21",
               "weekday": 5,
-              "count": 10,
+              "count": 14,
               "level": 4,
               "in_range": true
             },
             {
               "date": "2026-08-22",
               "weekday": 6,
-              "count": 9,
-              "level": 3,
+              "count": 17,
+              "level": 4,
               "in_range": true
             }
           ]
@@ -555,50 +555,50 @@
             {
               "date": "2026-08-23",
               "weekday": 0,
-              "count": 7,
-              "level": 3,
+              "count": 15,
+              "level": 4,
               "in_range": true
             },
             {
               "date": "2026-08-24",
               "weekday": 1,
-              "count": 50,
+              "count": 52,
               "level": 4,
               "in_range": true
             },
             {
               "date": "2026-08-25",
               "weekday": 2,
-              "count": 4,
-              "level": 2,
+              "count": 7,
+              "level": 3,
               "in_range": true
             },
             {
               "date": "2026-08-26",
               "weekday": 3,
-              "count": 14,
+              "count": 19,
               "level": 4,
               "in_range": true
             },
             {
               "date": "2026-08-27",
               "weekday": 4,
-              "count": 31,
+              "count": 38,
               "level": 4,
               "in_range": true
             },
             {
               "date": "2026-08-28",
               "weekday": 5,
-              "count": 11,
+              "count": 14,
               "level": 4,
               "in_range": true
             },
             {
               "date": "2026-08-29",
               "weekday": 6,
-              "count": 3,
-              "level": 2,
+              "count": 6,
+              "level": 3,
               "in_range": true
             }
           ]
@@ -608,42 +608,42 @@
             {
               "date": "2026-08-30",
               "weekday": 0,
-              "count": 11,
+              "count": 16,
               "level": 4,
               "in_range": true
             },
             {
               "date": "2026-08-31",
               "weekday": 1,
-              "count": 13,
+              "count": 17,
               "level": 4,
               "in_range": true
             },
             {
               "date": "2026-09-01",
               "weekday": 2,
-              "count": 19,
+              "count": 26,
               "level": 4,
               "in_range": true
             },
             {
               "date": "2026-09-02",
               "weekday": 3,
-              "count": 26,
+              "count": 32,
               "level": 4,
               "in_range": true
             },
             {
               "date": "2026-09-03",
               "weekday": 4,
-              "count": 12,
+              "count": 15,
               "level": 4,
               "in_range": true
             },
             {
               "date": "2026-09-04",
               "weekday": 5,
-              "count": 57,
+              "count": 58,
               "level": 4,
               "in_range": true
             },
@@ -661,7 +661,7 @@
             {
               "date": "2026-09-06",
               "weekday": 0,
-              "count": 43,
+              "count": 44,
               "level": 4,
               "in_range": true
             },
@@ -675,7 +675,7 @@
             {
               "date": "2026-09-08",
               "weekday": 2,
-              "count": 25,
+              "count": 32,
               "level": 4,
               "in_range": true
             },
@@ -735,9 +735,9 @@
       "default_branch": "main",
       "is_empty": false,
       "is_archived": false,
-      "total_commits_default_branch": 237,
-      "attributed_member_commits": 228,
-      "unattributed_commits": 9
+      "total_commits_default_branch": 341,
+      "attributed_member_commits": 318,
+      "unattributed_commits": 23
     },
     {
       "name": "mb-knowledge-vault-enterprise",
@@ -829,6 +829,19 @@
       "total_commits_default_branch": 11,
       "attributed_member_commits": 4,
       "unattributed_commits": 7
+    },
+    {
+      "name": "mb-invoicing-tool",
+      "description": "Decodes glyph-obfuscated legal invoice PDFs, reconciles every fee line to the cent, auto-categorises by learned rules, and exports the team's Excel analysis. Multi-matter.",
+      "html_url": "https://github.com/Motsoeneng-Bill-Tech/mb-invoicing-tool",
+      "visibility": "PRIVATE",
+      "primary_language": null,
+      "default_branch": null,
+      "is_empty": true,
+      "is_archived": false,
+      "total_commits_default_branch": 0,
+      "attributed_member_commits": 0,
+      "unattributed_commits": 0
     }
   ],
   "members": [
@@ -846,18 +859,18 @@
         "website_url": null
       },
       "contributions": {
-        "total": 1223,
-        "commits": 838,
-        "pull_requests": 348,
+        "total": 1280,
+        "commits": 893,
+        "pull_requests": 350,
         "reviews": 34,
         "issues": 0,
         "restricted": 0
       },
       "firm_commits": {
-        "total": 839,
+        "total": 894,
         "by_repo": {
           "tender-intelligence-platform": 575,
-          "forensics-due-diligence-system": 180,
+          "forensics-due-diligence-system": 235,
           "MB-IQ-Revamped": 54,
           "job-portal": 28,
           ".github": 2
@@ -870,17 +883,17 @@
           ".github"
         ]
       },
-      "share_pct": 49.3,
+      "share_pct": 49.9,
       "tier": "Top Contributor",
       "calendar": {
         "from": "2026-06-19",
         "to": "2026-09-08",
-        "total": 1223,
-        "active_days": 70,
+        "total": 1280,
+        "active_days": 71,
         "total_days": 82,
-        "active_pct": 85.4,
-        "longest_streak": 55,
-        "current_streak": 13,
+        "active_pct": 86.6,
+        "longest_streak": 69,
+        "current_streak": 69,
         "weeks": [
           {
             "days": [
@@ -1378,36 +1391,36 @@
               {
                 "date": "2026-08-18",
                 "weekday": 2,
-                "count": 5,
-                "level": 2,
+                "count": 6,
+                "level": 3,
                 "in_range": true
               },
               {
                 "date": "2026-08-19",
                 "weekday": 3,
-                "count": 7,
-                "level": 3,
+                "count": 12,
+                "level": 4,
                 "in_range": true
               },
               {
                 "date": "2026-08-20",
                 "weekday": 4,
-                "count": 4,
-                "level": 2,
+                "count": 6,
+                "level": 3,
                 "in_range": true
               },
               {
                 "date": "2026-08-21",
                 "weekday": 5,
-                "count": 3,
+                "count": 5,
                 "level": 2,
                 "in_range": true
               },
               {
                 "date": "2026-08-22",
                 "weekday": 6,
-                "count": 7,
-                "level": 3,
+                "count": 13,
+                "level": 4,
                 "in_range": true
               }
             ]
@@ -1417,50 +1430,50 @@
               {
                 "date": "2026-08-23",
                 "weekday": 0,
-                "count": 1,
-                "level": 1,
+                "count": 3,
+                "level": 2,
                 "in_range": true
               },
               {
                 "date": "2026-08-24",
                 "weekday": 1,
-                "count": 2,
-                "level": 1,
+                "count": 3,
+                "level": 2,
                 "in_range": true
               },
               {
                 "date": "2026-08-25",
                 "weekday": 2,
-                "count": 4,
-                "level": 2,
+                "count": 7,
+                "level": 3,
                 "in_range": true
               },
               {
                 "date": "2026-08-26",
                 "weekday": 3,
-                "count": 0,
-                "level": 0,
+                "count": 2,
+                "level": 1,
                 "in_range": true
               },
               {
                 "date": "2026-08-27",
                 "weekday": 4,
-                "count": 8,
-                "level": 3,
+                "count": 11,
+                "level": 4,
                 "in_range": true
               },
               {
                 "date": "2026-08-28",
                 "weekday": 5,
-                "count": 1,
-                "level": 1,
+                "count": 3,
+                "level": 2,
                 "in_range": true
               },
               {
                 "date": "2026-08-29",
                 "weekday": 6,
-                "count": 3,
-                "level": 2,
+                "count": 6,
+                "level": 3,
                 "in_range": true
               }
             ]
@@ -1470,36 +1483,36 @@
               {
                 "date": "2026-08-30",
                 "weekday": 0,
-                "count": 8,
-                "level": 3,
+                "count": 12,
+                "level": 4,
                 "in_range": true
               },
               {
                 "date": "2026-08-31",
                 "weekday": 1,
-                "count": 3,
-                "level": 2,
+                "count": 7,
+                "level": 3,
                 "in_range": true
               },
               {
                 "date": "2026-09-01",
                 "weekday": 2,
-                "count": 5,
-                "level": 2,
+                "count": 10,
+                "level": 4,
                 "in_range": true
               },
               {
                 "date": "2026-09-02",
                 "weekday": 3,
-                "count": 6,
-                "level": 3,
+                "count": 10,
+                "level": 4,
                 "in_range": true
               },
               {
                 "date": "2026-09-03",
                 "weekday": 4,
-                "count": 5,
-                "level": 2,
+                "count": 7,
+                "level": 3,
                 "in_range": true
               },
               {
@@ -1537,8 +1550,8 @@
               {
                 "date": "2026-09-08",
                 "weekday": 2,
-                "count": 8,
-                "level": 3,
+                "count": 14,
+                "level": 4,
                 "in_range": true
               },
               {
@@ -1613,7 +1626,7 @@
           "forensics-due-diligence-system"
         ]
       },
-      "share_pct": 25.4,
+      "share_pct": 24.1,
       "tier": "Lead Contributor",
       "calendar": {
         "from": "2026-06-21",
@@ -2279,35 +2292,35 @@
         "website_url": null
       },
       "contributions": {
-        "total": 428,
-        "commits": 272,
-        "pull_requests": 138,
+        "total": 466,
+        "commits": 309,
+        "pull_requests": 139,
         "reviews": 16,
         "issues": 0,
         "restricted": 0
       },
       "firm_commits": {
-        "total": 267,
+        "total": 302,
         "by_repo": {
           "tender-intelligence-platform": 239,
-          "forensics-due-diligence-system": 28
+          "forensics-due-diligence-system": 63
         },
         "top_repos": [
           "tender-intelligence-platform",
           "forensics-due-diligence-system"
         ]
       },
-      "share_pct": 15.7,
+      "share_pct": 16.8,
       "tier": "Lead Contributor",
       "calendar": {
         "from": "2026-06-24",
         "to": "2026-09-08",
-        "total": 428,
-        "active_days": 55,
+        "total": 466,
+        "active_days": 57,
         "total_days": 77,
-        "active_pct": 71.4,
+        "active_pct": 74.0,
         "longest_streak": 13,
-        "current_streak": 2,
+        "current_streak": 10,
         "weeks": [
           {
             "days": [
@@ -2745,43 +2758,43 @@
               {
                 "date": "2026-08-17",
                 "weekday": 1,
-                "count": 8,
+                "count": 9,
                 "level": 3,
                 "in_range": true
               },
               {
                 "date": "2026-08-18",
                 "weekday": 2,
-                "count": 4,
-                "level": 2,
+                "count": 10,
+                "level": 4,
                 "in_range": true
               },
               {
                 "date": "2026-08-19",
                 "weekday": 3,
-                "count": 3,
+                "count": 5,
                 "level": 2,
                 "in_range": true
               },
               {
                 "date": "2026-08-20",
                 "weekday": 4,
-                "count": 3,
+                "count": 4,
                 "level": 2,
                 "in_range": true
               },
               {
                 "date": "2026-08-21",
                 "weekday": 5,
-                "count": 2,
-                "level": 1,
+                "count": 4,
+                "level": 2,
                 "in_range": true
               },
               {
                 "date": "2026-08-22",
                 "weekday": 6,
-                "count": 2,
-                "level": 1,
+                "count": 4,
+                "level": 2,
                 "in_range": true
               }
             ]
@@ -2791,14 +2804,14 @@
               {
                 "date": "2026-08-23",
                 "weekday": 0,
-                "count": 6,
-                "level": 3,
+                "count": 12,
+                "level": 4,
                 "in_range": true
               },
               {
                 "date": "2026-08-24",
                 "weekday": 1,
-                "count": 1,
+                "count": 2,
                 "level": 1,
                 "in_range": true
               },
@@ -2812,22 +2825,22 @@
               {
                 "date": "2026-08-26",
                 "weekday": 3,
-                "count": 2,
-                "level": 1,
+                "count": 5,
+                "level": 2,
                 "in_range": true
               },
               {
                 "date": "2026-08-27",
                 "weekday": 4,
-                "count": 6,
-                "level": 3,
+                "count": 10,
+                "level": 4,
                 "in_range": true
               },
               {
                 "date": "2026-08-28",
                 "weekday": 5,
-                "count": 0,
-                "level": 0,
+                "count": 1,
+                "level": 1,
                 "in_range": true
               },
               {
@@ -2844,7 +2857,7 @@
               {
                 "date": "2026-08-30",
                 "weekday": 0,
-                "count": 3,
+                "count": 4,
                 "level": 2,
                 "in_range": true
               },
@@ -2858,29 +2871,29 @@
               {
                 "date": "2026-09-01",
                 "weekday": 2,
-                "count": 2,
-                "level": 1,
+                "count": 4,
+                "level": 2,
                 "in_range": true
               },
               {
                 "date": "2026-09-02",
                 "weekday": 3,
-                "count": 2,
-                "level": 1,
+                "count": 4,
+                "level": 2,
                 "in_range": true
               },
               {
                 "date": "2026-09-03",
                 "weekday": 4,
-                "count": 1,
+                "count": 2,
                 "level": 1,
                 "in_range": true
               },
               {
                 "date": "2026-09-04",
                 "weekday": 5,
-                "count": 2,
-                "level": 1,
+                "count": 3,
+                "level": 2,
                 "in_range": true
               },
               {
@@ -2897,8 +2910,8 @@
               {
                 "date": "2026-09-06",
                 "weekday": 0,
-                "count": 0,
-                "level": 0,
+                "count": 1,
+                "level": 1,
                 "in_range": true
               },
               {
@@ -2911,8 +2924,8 @@
               {
                 "date": "2026-09-08",
                 "weekday": 2,
-                "count": 9,
-                "level": 3,
+                "count": 10,
+                "level": 4,
                 "in_range": true
               },
               {
@@ -2983,7 +2996,7 @@
           "forensics-due-diligence-system"
         ]
       },
-      "share_pct": 5.3,
+      "share_pct": 5.1,
       "tier": "Regular Contributor",
       "calendar": {
         "from": "2026-06-24",
@@ -3665,7 +3678,7 @@
           "Case-Management"
         ]
       },
-      "share_pct": 3.8,
+      "share_pct": 3.6,
       "tier": "Regular Contributor",
       "calendar": {
         "from": "2026-06-19",
@@ -5315,9 +5328,11 @@
     "generation_ok": true,
     "rate_limit": {
       "cost_used_total": 11,
-      "remaining": 4989,
-      "reset_at": "2026-09-08T17:23:35Z"
+      "remaining": 4927,
+      "reset_at": "2026-09-08T21:21:09Z"
     },
-    "warnings": []
+    "warnings": [
+      "Repository 'mb-invoicing-tool' has no commits yet."
+    ]
   }
 }
