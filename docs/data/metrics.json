@@ -1,20 +1,20 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-11T10:57:56Z",
-  "source_commit": "bd2e8f1d6a0522cd11698c34dc6921df9717f2e4",
+  "generated_at": "2026-09-11T16:13:32Z",
+  "source_commit": "c6bd05dae4933bd9a0a2db8cc1bd278cf30e65b0",
   "org": {
     "login": "Motsoeneng-Bill-Tech",
     "name": "Motsoeneng Bill Tech",
     "avatar_url": "https://github.com/Motsoeneng-Bill-Tech.png",
     "html_url": "https://github.com/Motsoeneng-Bill-Tech",
     "member_count": 7,
-    "repo_count": 10,
+    "repo_count": 11,
     "totals": {
-      "total_contributions": 3017,
-      "total_commit_contributions": 2155,
-      "total_pr_contributions": 715,
-      "total_review_contributions": 130,
-      "total_firm_commits": 1936
+      "total_contributions": 3057,
+      "total_commit_contributions": 2180,
+      "total_pr_contributions": 724,
+      "total_review_contributions": 136,
+      "total_firm_commits": 1961
     },
     "calendar": {
       "from": "2026-06-19",
@@ -696,7 +696,7 @@
             {
               "date": "2026-09-11",
               "weekday": 5,
-              "count": 19,
+              "count": 59,
               "level": 4,
               "in_range": true
             },
@@ -722,8 +722,8 @@
       "default_branch": "main",
       "is_empty": false,
       "is_archived": false,
-      "total_commits_default_branch": 960,
-      "attributed_member_commits": 913,
+      "total_commits_default_branch": 966,
+      "attributed_member_commits": 919,
       "unattributed_commits": 47
     },
     {
@@ -740,6 +740,19 @@
       "unattributed_commits": 23
     },
     {
+      "name": "Case-Management",
+      "description": "Multi-tenant enterprise case management platform for corporate and state-owned clients, covering the full matter lifecycle.",
+      "html_url": "https://github.com/Motsoeneng-Bill-Tech/Case-Management",
+      "visibility": "PRIVATE",
+      "primary_language": "Java",
+      "default_branch": "main",
+      "is_empty": false,
+      "is_archived": false,
+      "total_commits_default_branch": 224,
+      "attributed_member_commits": 224,
+      "unattributed_commits": 0
+    },
+    {
       "name": "mb-knowledge-vault-enterprise",
       "description": null,
       "html_url": "https://github.com/Motsoeneng-Bill-Tech/mb-knowledge-vault-enterprise",
@@ -750,19 +763,6 @@
       "is_archived": false,
       "total_commits_default_branch": 223,
       "attributed_member_commits": 223,
-      "unattributed_commits": 0
-    },
-    {
-      "name": "Case-Management",
-      "description": "Multi-tenant enterprise case management platform for corporate and state-owned clients, covering the full matter lifecycle.",
-      "html_url": "https://github.com/Motsoeneng-Bill-Tech/Case-Management",
-      "visibility": "PRIVATE",
-      "primary_language": "Java",
-      "default_branch": "main",
-      "is_empty": false,
-      "is_archived": false,
-      "total_commits_default_branch": 210,
-      "attributed_member_commits": 210,
       "unattributed_commits": 0
     },
     {
@@ -842,6 +842,19 @@
       "total_commits_default_branch": 11,
       "attributed_member_commits": 4,
       "unattributed_commits": 7
+    },
+    {
+      "name": "anchor-games",
+      "description": "MB Leaderboard and Anchor Games  counting down to the convention.",
+      "html_url": "https://github.com/Motsoeneng-Bill-Tech/anchor-games",
+      "visibility": "PRIVATE",
+      "primary_language": "TypeScript",
+      "default_branch": "main",
+      "is_empty": false,
+      "is_archived": false,
+      "total_commits_default_branch": 5,
+      "attributed_member_commits": 5,
+      "unattributed_commits": 0
     }
   ],
   "members": [
@@ -885,7 +898,7 @@
           ".github"
         ]
       },
-      "share_pct": 46.5,
+      "share_pct": 45.9,
       "tier": "Top Contributor",
       "calendar": {
         "from": "2026-06-19",
@@ -1604,19 +1617,19 @@
         "website_url": null
       },
       "contributions": {
-        "total": 843,
-        "commits": 670,
-        "pull_requests": 136,
-        "reviews": 33,
+        "total": 854,
+        "commits": 674,
+        "pull_requests": 139,
+        "reviews": 37,
         "issues": 0,
         "restricted": 0
       },
       "firm_commits": {
-        "total": 441,
+        "total": 445,
         "by_repo": {
           "mb-knowledge-vault-enterprise": 223,
           "mb-wills-week": 88,
-          "Case-Management": 76,
+          "Case-Management": 80,
           "mb-67-minutes": 37,
           "forensics-due-diligence-system": 17
         },
@@ -1628,12 +1641,12 @@
           "forensics-due-diligence-system"
         ]
       },
-      "share_pct": 22.8,
+      "share_pct": 22.7,
       "tier": "Lead Contributor",
       "calendar": {
         "from": "2026-06-21",
         "to": "2026-09-11",
-        "total": 843,
+        "total": 854,
         "active_days": 58,
         "total_days": 83,
         "active_pct": 69.9,
@@ -2263,8 +2276,8 @@
               {
                 "date": "2026-09-11",
                 "weekday": 5,
-                "count": 4,
-                "level": 2,
+                "count": 15,
+                "level": 4,
                 "in_range": true
               },
               {
@@ -2294,17 +2307,17 @@
         "website_url": null
       },
       "contributions": {
-        "total": 580,
-        "commits": 405,
-        "pull_requests": 157,
+        "total": 587,
+        "commits": 411,
+        "pull_requests": 158,
         "reviews": 16,
         "issues": 0,
         "restricted": 0
       },
       "firm_commits": {
-        "total": 398,
+        "total": 404,
         "by_repo": {
-          "tender-intelligence-platform": 335,
+          "tender-intelligence-platform": 341,
           "forensics-due-diligence-system": 63
         },
         "top_repos": [
@@ -2317,7 +2330,7 @@
       "calendar": {
         "from": "2026-06-24",
         "to": "2026-09-11",
-        "total": 580,
+        "total": 587,
         "active_days": 60,
         "total_days": 80,
         "active_pct": 75.0,
@@ -2947,8 +2960,8 @@
               {
                 "date": "2026-09-11",
                 "weekday": 5,
-                "count": 4,
-                "level": 2,
+                "count": 11,
+                "level": 4,
                 "in_range": true
               },
               {
@@ -2978,17 +2991,17 @@
         "website_url": null
       },
       "contributions": {
-        "total": 128,
-        "commits": 90,
-        "pull_requests": 26,
-        "reviews": 10,
+        "total": 145,
+        "commits": 100,
+        "pull_requests": 31,
+        "reviews": 12,
         "issues": 0,
         "restricted": 0
       },
       "firm_commits": {
-        "total": 93,
+        "total": 103,
         "by_repo": {
-          "Case-Management": 80,
+          "Case-Management": 90,
           "mb-invoicing-tool": 13
         },
         "top_repos": [
@@ -2996,12 +3009,12 @@
           "mb-invoicing-tool"
         ]
       },
-      "share_pct": 4.8,
-      "tier": "Regular Contributor",
+      "share_pct": 5.3,
+      "tier": "Core Contributor",
       "calendar": {
         "from": "2026-06-19",
         "to": "2026-09-11",
-        "total": 128,
+        "total": 145,
         "active_days": 28,
         "total_days": 85,
         "active_pct": 32.9,
@@ -3684,8 +3697,8 @@
               {
                 "date": "2026-09-11",
                 "weekday": 5,
-                "count": 5,
-                "level": 2,
+                "count": 22,
+                "level": 4,
                 "in_range": true
               },
               {
@@ -3735,7 +3748,7 @@
           "forensics-due-diligence-system"
         ]
       },
-      "share_pct": 4.8,
+      "share_pct": 4.7,
       "tier": "Regular Contributor",
       "calendar": {
         "from": "2026-06-24",
@@ -5083,33 +5096,35 @@
         "website_url": null
       },
       "contributions": {
-        "total": 5,
-        "commits": 2,
+        "total": 10,
+        "commits": 7,
         "pull_requests": 0,
         "reviews": 1,
         "issues": 0,
         "restricted": 0
       },
       "firm_commits": {
-        "total": 2,
+        "total": 7,
         "by_repo": {
+          "anchor-games": 5,
           ".github": 2
         },
         "top_repos": [
+          "anchor-games",
           ".github"
         ]
       },
-      "share_pct": 0.1,
+      "share_pct": 0.4,
       "tier": "Contributor",
       "calendar": {
         "from": "2026-08-20",
         "to": "2026-09-11",
-        "total": 5,
-        "active_days": 3,
+        "total": 10,
+        "active_days": 4,
         "total_days": 23,
-        "active_pct": 13.0,
+        "active_pct": 17.4,
         "longest_streak": 2,
-        "current_streak": 0,
+        "current_streak": 1,
         "weeks": [
           {
             "days": [
@@ -5310,8 +5325,8 @@
               {
                 "date": "2026-09-11",
                 "weekday": 5,
-                "count": 0,
-                "level": 0,
+                "count": 5,
+                "level": 2,
                 "in_range": true
               },
               {
@@ -5333,7 +5348,7 @@
     "rate_limit": {
       "cost_used_total": 11,
       "remaining": 4989,
-      "reset_at": "2026-09-11T11:57:55Z"
+      "reset_at": "2026-09-11T17:13:31Z"
     },
     "warnings": []
   }
