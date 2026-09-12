@@ -13,11 +13,11 @@
 </p>
 
 <!-- STATS_BADGES:START -->
-[![Total Contributions](https://img.shields.io/badge/Total_Contributions-3,060-c9a961?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Motsoeneng-Bill-Tech)
-[![Firm Commits](https://img.shields.io/badge/Firm_Commits-1,961-8a7130?style=for-the-badge&logo=git&logoColor=white)](https://github.com/Motsoeneng-Bill-Tech)
+[![Total Contributions](https://img.shields.io/badge/Total_Contributions-3,076-c9a961?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Motsoeneng-Bill-Tech)
+[![Firm Commits](https://img.shields.io/badge/Firm_Commits-1,977-8a7130?style=for-the-badge&logo=git&logoColor=white)](https://github.com/Motsoeneng-Bill-Tech)
 [![Engineers](https://img.shields.io/badge/Active_Engineers-7-34d399?style=for-the-badge&logo=codeforces&logoColor=white)](https://github.com/orgs/Motsoeneng-Bill-Tech/people)
 [![Compliance](https://img.shields.io/badge/Security-POPIA_Compliant-64748b?style=for-the-badge&logo=shield&logoColor=white)](https://mb.co.za/)
-[![Last Synced](https://img.shields.io/badge/Telemetry-2026-09-12_04-03-06_UTC-1e2430?style=for-the-badge&logo=clock&logoColor=white)](https://github.com/Motsoeneng-Bill-Tech/.github/actions)
+[![Last Synced](https://img.shields.io/badge/Telemetry-2026-09-12_10-25-47_UTC-1e2430?style=for-the-badge&logo=clock&logoColor=white)](https://github.com/Motsoeneng-Bill-Tech/.github/actions)
 <!-- STATS_BADGES:END -->
 
 </div>
@@ -76,10 +76,10 @@ We engineer systems for two core audiences:
 
 | Rank | Engineer | Member Since | Total Contributions | Firm Commits | Share | Tier | Recent Activity | Top Repositories |
 | :---: | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :--- |
-| **01** | [<img src="https://avatars.githubusercontent.com/u/295184973?u=26439f7693fc00f3d9afe692cfecacb80b7e07b6&v=4" width="26" height="26" style="border-radius:50%; vertical-align:middle;" /> **@konethegreatest**](https://github.com/konethegreatest) <br/>[↗ full profile](https://motsoeneng-bill-tech.github.io/.github/#/member/konethegreatest) | `Jun 19, 2026` | **1,306** | **900** | 45.9% | Top Contributor | <img src="https://raw.githubusercontent.com/Motsoeneng-Bill-Tech/.github/main/assets/graphs/konethegreatest.svg" width="200" height="60" alt="konethegreatest activity graph" /> | `tender-intelligence-platform` `forensics-due-diligence-system` |
-| **02** | [<img src="https://avatars.githubusercontent.com/u/295596016?v=4" width="26" height="26" style="border-radius:50%; vertical-align:middle;" /> **@Akonisaho-MB**](https://github.com/Akonisaho-MB) <br/>[↗ full profile](https://motsoeneng-bill-tech.github.io/.github/#/member/Akonisaho-MB) | `Jun 21, 2026` | **855** | **445** | 22.7% | Lead Contributor | <img src="https://raw.githubusercontent.com/Motsoeneng-Bill-Tech/.github/main/assets/graphs/Akonisaho-MB.svg" width="200" height="60" alt="Akonisaho-MB activity graph" /> | `mb-knowledge-vault-enterprise` `mb-wills-week` |
-| **03** | [<img src="https://avatars.githubusercontent.com/u/296428132?v=4" width="26" height="26" style="border-radius:50%; vertical-align:middle;" /> **@Amukelani-MB**](https://github.com/Amukelani-MB) <br/>[↗ full profile](https://motsoeneng-bill-tech.github.io/.github/#/member/Amukelani-MB) | `Jun 24, 2026` | **587** | **404** | 20.6% | Lead Contributor | <img src="https://raw.githubusercontent.com/Motsoeneng-Bill-Tech/.github/main/assets/graphs/Amukelani-MB.svg" width="200" height="60" alt="Amukelani-MB activity graph" /> | `tender-intelligence-platform` `forensics-due-diligence-system` |
-| **04** | [<img src="https://avatars.githubusercontent.com/u/295126059?v=4" width="26" height="26" style="border-radius:50%; vertical-align:middle;" /> **@VhutshiloMB**](https://github.com/VhutshiloMB) <br/>[↗ full profile](https://motsoeneng-bill-tech.github.io/.github/#/member/VhutshiloMB) | `Jun 19, 2026` | **145** | **103** | 5.3% | Core Contributor | <img src="https://raw.githubusercontent.com/Motsoeneng-Bill-Tech/.github/main/assets/graphs/VhutshiloMB.svg" width="200" height="60" alt="VhutshiloMB activity graph" /> | `Case-Management` `mb-invoicing-tool` |
+| **01** | [<img src="https://avatars.githubusercontent.com/u/295184973?u=26439f7693fc00f3d9afe692cfecacb80b7e07b6&v=4" width="26" height="26" style="border-radius:50%; vertical-align:middle;" /> **@konethegreatest**](https://github.com/konethegreatest) <br/>[↗ full profile](https://motsoeneng-bill-tech.github.io/.github/#/member/konethegreatest) | `Jun 19, 2026` | **1,322** | **916** | 46.3% | Top Contributor | <img src="https://raw.githubusercontent.com/Motsoeneng-Bill-Tech/.github/main/assets/graphs/konethegreatest.svg" width="200" height="60" alt="konethegreatest activity graph" /> | `tender-intelligence-platform` `forensics-due-diligence-system` |
+| **02** | [<img src="https://avatars.githubusercontent.com/u/295596016?v=4" width="26" height="26" style="border-radius:50%; vertical-align:middle;" /> **@Akonisaho-MB**](https://github.com/Akonisaho-MB) <br/>[↗ full profile](https://motsoeneng-bill-tech.github.io/.github/#/member/Akonisaho-MB) | `Jun 21, 2026` | **855** | **445** | 22.5% | Lead Contributor | <img src="https://raw.githubusercontent.com/Motsoeneng-Bill-Tech/.github/main/assets/graphs/Akonisaho-MB.svg" width="200" height="60" alt="Akonisaho-MB activity graph" /> | `mb-knowledge-vault-enterprise` `mb-wills-week` |
+| **03** | [<img src="https://avatars.githubusercontent.com/u/296428132?v=4" width="26" height="26" style="border-radius:50%; vertical-align:middle;" /> **@Amukelani-MB**](https://github.com/Amukelani-MB) <br/>[↗ full profile](https://motsoeneng-bill-tech.github.io/.github/#/member/Amukelani-MB) | `Jun 24, 2026` | **587** | **404** | 20.4% | Lead Contributor | <img src="https://raw.githubusercontent.com/Motsoeneng-Bill-Tech/.github/main/assets/graphs/Amukelani-MB.svg" width="200" height="60" alt="Amukelani-MB activity graph" /> | `tender-intelligence-platform` `forensics-due-diligence-system` |
+| **04** | [<img src="https://avatars.githubusercontent.com/u/295126059?v=4" width="26" height="26" style="border-radius:50%; vertical-align:middle;" /> **@VhutshiloMB**](https://github.com/VhutshiloMB) <br/>[↗ full profile](https://motsoeneng-bill-tech.github.io/.github/#/member/VhutshiloMB) | `Jun 19, 2026` | **145** | **103** | 5.2% | Core Contributor | <img src="https://raw.githubusercontent.com/Motsoeneng-Bill-Tech/.github/main/assets/graphs/VhutshiloMB.svg" width="200" height="60" alt="VhutshiloMB activity graph" /> | `Case-Management` `mb-invoicing-tool` |
 | **05** | [<img src="https://avatars.githubusercontent.com/u/296434638?v=4" width="26" height="26" style="border-radius:50%; vertical-align:middle;" /> **@pakisomb**](https://github.com/pakisomb) <br/>[↗ full profile](https://motsoeneng-bill-tech.github.io/.github/#/member/pakisomb) | `Jun 24, 2026` | **136** | **93** | 4.7% | Regular Contributor | <img src="https://raw.githubusercontent.com/Motsoeneng-Bill-Tech/.github/main/assets/graphs/pakisomb.svg" width="200" height="60" alt="pakisomb activity graph" /> | `mb-67-minutes` `Case-Management` |
 | **06** | [<img src="https://avatars.githubusercontent.com/u/295851105?v=4" width="26" height="26" style="border-radius:50%; vertical-align:middle;" /> **@Kea1m**](https://github.com/Kea1m) <br/>[↗ full profile](https://motsoeneng-bill-tech.github.io/.github/#/member/Kea1m) | `Jun 22, 2026` | **21** | **9** | 0.5% | Contributor | <img src="https://raw.githubusercontent.com/Motsoeneng-Bill-Tech/.github/main/assets/graphs/Kea1m.svg" width="200" height="60" alt="Kea1m activity graph" /> | `Case-Management` |
 | **07** | [<img src="https://avatars.githubusercontent.com/u/318985580?v=4" width="26" height="26" style="border-radius:50%; vertical-align:middle;" /> **@TheoSingo**](https://github.com/TheoSingo) <br/>[↗ full profile](https://motsoeneng-bill-tech.github.io/.github/#/member/TheoSingo) | `Aug 20, 2026` | **10** | **7** | 0.4% | Contributor | <img src="https://raw.githubusercontent.com/Motsoeneng-Bill-Tech/.github/main/assets/graphs/TheoSingo.svg" width="200" height="60" alt="TheoSingo activity graph" /> | `anchor-games` `.github` |
@@ -98,8 +98,8 @@ We engineer systems for two core audiences:
 
 ### 01 · konethegreatest ([@konethegreatest](https://github.com/konethegreatest)) · Top Contributor
 - **Member Since**: `Jun 19, 2026`
-- **Total Contributions**: **1,306** (`898 commits`, `371 pull requests`, `34 reviews`)
-- **Firm Repository Commits**: **900** (45.9% team share)
+- **Total Contributions**: **1,322** (`914 commits`, `371 pull requests`, `34 reviews`)
+- **Firm Repository Commits**: **916** (46.3% team share)
 - **Primary Focus**: `tender-intelligence-platform`, `forensics-due-diligence-system`, `MB-IQ-Revamped`
 
 <div align="center">
@@ -110,7 +110,7 @@ We engineer systems for two core audiences:
 ### 02 · Akonisaho-MB ([@Akonisaho-MB](https://github.com/Akonisaho-MB)) · Lead Contributor
 - **Member Since**: `Jun 21, 2026`
 - **Total Contributions**: **855** (`674 commits`, `140 pull requests`, `37 reviews`)
-- **Firm Repository Commits**: **445** (22.7% team share)
+- **Firm Repository Commits**: **445** (22.5% team share)
 - **Primary Focus**: `mb-knowledge-vault-enterprise`, `mb-wills-week`, `Case-Management`
 
 <div align="center">
@@ -121,7 +121,7 @@ We engineer systems for two core audiences:
 ### 03 · Amukelani-MB ([@Amukelani-MB](https://github.com/Amukelani-MB)) · Lead Contributor
 - **Member Since**: `Jun 24, 2026`
 - **Total Contributions**: **587** (`411 commits`, `158 pull requests`, `16 reviews`)
-- **Firm Repository Commits**: **404** (20.6% team share)
+- **Firm Repository Commits**: **404** (20.4% team share)
 - **Primary Focus**: `tender-intelligence-platform`, `forensics-due-diligence-system`
 
 <div align="center">
@@ -132,7 +132,7 @@ We engineer systems for two core audiences:
 ### 04 · VhutshiloMB ([@VhutshiloMB](https://github.com/VhutshiloMB)) · Core Contributor
 - **Member Since**: `Jun 19, 2026`
 - **Total Contributions**: **145** (`100 commits`, `31 pull requests`, `12 reviews`)
-- **Firm Repository Commits**: **103** (5.3% team share)
+- **Firm Repository Commits**: **103** (5.2% team share)
 - **Primary Focus**: `Case-Management`, `mb-invoicing-tool`
 
 <div align="center">
@@ -199,7 +199,7 @@ We welcome technical collaboration, industry inquiries, and strategic engagement
 
 **Motsoeneng Bill Tech** · Houghton, Johannesburg · South Africa
 <!-- TIMESTAMP:START -->
- *Last synced: 2026-09-12 04:03 UTC* 
+ *Last synced: 2026-09-12 10:25 UTC* 
 <!-- TIMESTAMP:END -->
 
 </div>
