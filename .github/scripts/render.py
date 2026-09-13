@@ -94,10 +94,7 @@ def calendar_streaks(day_counts):
 
 def render_member_calendar_svg(member, weeks_shown=14, min_width=300):
     """Compact activity heatmap for one member — used in the README leaderboard row.
-
-    Header is two stacked, left-aligned lines (never a competing right-aligned block) so
-    it can never collide with the username, regardless of how few weeks a new account has.
-    """
+    Header shows impact score and consistency instead of raw contribution count."""
     weeks = member["calendar"]["weeks"][-weeks_shown:]
     cell, gap = 10, 3
     start_x, start_y = 14, 48
@@ -128,33 +125,35 @@ def render_member_calendar_svg(member, weeks_shown=14, min_width=300):
         for name, x in month_labels.items()
     )
 
-    total = member["contributions"]["total"]
-    active_pct = member["calendar"]["active_pct"]
+    c = member.get("consistency", {})
+    score = member.get("impact_score", 0)
+    badge = member.get("tier_badge", "")
+    active_pct = c.get("pct", member["calendar"]["active_pct"])
+    streak = c.get("longest_streak", member["calendar"].get("longest_streak", 0))
     return f"""<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}">
   <rect width="{width}" height="{height}" rx="10" fill="{SURFACE}" stroke="{BORDER}" stroke-width="1" />
-  <text x="{start_x}" y="18" font-family="{FONT_STACK}" font-size="12" font-weight="700" fill="{TEXT_PRIMARY}">@{member['login']}</text>
-  <text x="{start_x}" y="32" font-family="{FONT_STACK}" font-size="10"><tspan font-weight="700" fill="{ACCENT}">{total:,}</tspan><tspan fill="{TEXT_TERTIARY}"> contributions · {active_pct:.0f}% active</tspan></text>
+  <text x="{start_x}" y="18" font-family="{FONT_STACK}" font-size="12" font-weight="700" fill="{TEXT_PRIMARY}">{badge} @{member['login']}</text>
+  <text x="{start_x}" y="32" font-family="{FONT_STACK}" font-size="10"><tspan font-weight="700" fill="{ACCENT}">Impact {score:.0f}</tspan><tspan fill="{TEXT_TERTIARY}"> · {active_pct:.0f}% consistent · {streak}d best streak</tspan></text>
   {months_svg}
   <g>{''.join(rects)}</g>
 </svg>"""
 
 
 def render_overview_card_svg(data, max_rows=8):
-    """Org-wide ranked bar chart — replaces the old 3-podium/medal graphic with a plain
-    ranked list (numeral rank, gold accent bars, no rainbow of segment colors)."""
+    """Org-wide ranked bar chart — bars represent Impact Score (0-100), not commit count.
+    Each row shows the member's tier badge, login, impact bar, and consistency %."""
     width = 860
     org = data["org"]
     members = data["members"][:max_rows]
     row_h = 34
     header_h = 96
     height = header_h + len(members) * row_h + 24
-    max_commits = max((m["firm_commits"]["total"] for m in members), default=1) or 1
 
     stats = [
-        ("TOTAL CONTRIBUTIONS", f'{org["totals"]["total_contributions"]:,}'),
-        ("FIRM COMMITS", f'{org["totals"]["total_firm_commits"]:,}'),
+        ("IMPACT MODEL", "Consistency-First"),
         ("ENGINEERS", str(org["member_count"])),
         ("REPOSITORIES", str(org["repo_count"])),
+        ("TOTAL CONTRIBUTIONS", f'{org["totals"]["total_contributions"]:,}'),
     ]
     stat_w = 180
     stats_svg = "".join(
@@ -165,22 +164,27 @@ def render_overview_card_svg(data, max_rows=8):
         for i, (label, value) in enumerate(stats)
     )
 
-    bar_x = 190
-    bar_max_w = width - bar_x - 110
+    bar_x = 210
+    bar_max_w = width - bar_x - 160
     rows_svg = []
     for i, m in enumerate(members):
         y = header_h + i * row_h
-        bar_w = max(3, (m["firm_commits"]["total"] / max_commits) * bar_max_w)
+        score = m["impact_score"]
+        bar_w = max(3, (score / 100) * bar_max_w)
+        c = m["consistency"]
+        consistency_label = f'{c["pct"]:.0f}% active · {c["longest_streak"]}d streak'
         rows_svg.append(f'''
-  <text x="32" y="{y + 21}" font-family="{FONT_STACK}" font-size="12" font-weight="700" fill="{TEXT_TERTIARY}">{i + 1:02d}</text>
-  <text x="62" y="{y + 21}" font-family="{FONT_STACK}" font-size="12" font-weight="600" fill="{TEXT_PRIMARY}">@{m['login']}</text>
+  <text x="32" y="{y + 21}" font-family="{FONT_STACK}" font-size="12" font-weight="700" fill="{TEXT_TERTIARY}">{m['tier_badge']}</text>
+  <text x="56" y="{y + 21}" font-family="{FONT_STACK}" font-size="12" font-weight="700" fill="{TEXT_TERTIARY}">{i + 1:02d}</text>
+  <text x="82" y="{y + 21}" font-family="{FONT_STACK}" font-size="12" font-weight="600" fill="{TEXT_PRIMARY}">@{m['login']}</text>
   <rect x="{bar_x}" y="{y + 8}" width="{bar_max_w}" height="8" rx="4" fill="{BORDER}" />
   <rect x="{bar_x}" y="{y + 8}" width="{bar_w:.1f}" height="8" rx="4" fill="{ACCENT}" />
-  <text x="{width - 24}" y="{y + 21}" font-family="{FONT_STACK}" font-size="12" font-weight="700" fill="{TEXT_SECONDARY}" text-anchor="end">{m['firm_commits']['total']:,}</text>''')
+  <text x="{bar_x + bar_max_w + 8}" y="{y + 17}" font-family="{FONT_STACK}" font-size="11" font-weight="700" fill="{ACCENT}">{score:.0f}</text>
+  <text x="{bar_x + bar_max_w + 8}" y="{y + 29}" font-family="{FONT_STACK}" font-size="9" fill="{TEXT_TERTIARY}">{consistency_label}</text>''')
 
     return f"""<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}">
   <rect width="{width}" height="{height}" rx="14" fill="{BG}" stroke="{BORDER}" stroke-width="1" />
-  <text x="32" y="32" font-family="{FONT_STACK}" font-size="11" font-weight="700" letter-spacing="1.5" fill="{ACCENT}">{org['name'].upper()} · ENGINEERING TELEMETRY</text>
+  <text x="32" y="32" font-family="{FONT_STACK}" font-size="11" font-weight="700" letter-spacing="1.5" fill="{ACCENT}">{org['name'].upper()} · ENGINEERING IMPACT SCORES</text>
   {stats_svg}
   {''.join(rows_svg)}
 </svg>"""
@@ -230,23 +234,48 @@ def render_solutions(data, display_names, descriptions):
     return "\n".join(rows)
 
 
+def _impact_bar(score, width=10):
+    """Text-based progress bar for impact score (0-100)."""
+    filled = round(score / 100 * width)
+    return "█" * filled + "░" * (width - filled)
+
+
 def render_leaderboard(data, org_name, repo_name, dashboard_url):
     rows = [
-        "| Rank | Engineer | Member Since | Total Contributions | Firm Commits | Share | Tier | Recent Activity | Top Repositories |",
-        "| :---: | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :--- |",
+        "| Rank | Engineer | Impact | Consistency | Streak | PRs | Reviews | Repos | Commits | Activity |",
+        "| :---: | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |",
     ]
     for m in data["members"]:
         avatar = f'<img src="{m["avatar_url"]}" width="26" height="26" style="border-radius:50%; vertical-align:middle;" />'
-        top_repos = " ".join(f"`{r}`" for r in m["firm_commits"]["top_repos"][:2]) or "—"
         activity_img = (
             f'<img src="https://raw.githubusercontent.com/{org_name}/{repo_name}/main/assets/graphs/{m["login"]}.svg" '
             f'width="200" height="60" alt="{m["login"]} activity graph" />'
         )
-        profile_link = f'[↗ full profile]({dashboard_url}#/member/{m["login"]})'
+        profile_link = f'[↗ profile]({dashboard_url}#/member/{m["login"]})'
+
+        # Impact score with tier badge and visual bar
+        impact_display = f'{m["tier_badge"]} `{_impact_bar(m["impact_score"])}` **{m["impact_score"]:.0f}**'
+
+        # Consistency: active days / total days (pct)
+        c = m["consistency"]
+        consistency_display = f'**{c["pct"]:.0f}%** ({c["active_days"]}/{c["total_days"]}d)'
+
+        # Streak: longest (current)
+        streak_display = f'**{c["longest_streak"]}d** ({c["current_streak"]}d now)'
+
+        # Inactive marker
+        inactive_marker = " 🔴" if c["is_inactive"] else ""
+
         rows.append(
-            f'| **{m["rank"]:02d}** | [{avatar} **@{m["login"]}**]({m["html_url"]}) <br/>{profile_link} '
-            f'| `{_fmt_date(m["created_at"])}` | **{m["contributions"]["total"]:,}** | **{m["firm_commits"]["total"]:,}** '
-            f'| {m["share_pct"]:.1f}% | {m["tier"]} | {activity_img} | {top_repos} |'
+            f'| **{m["rank"]:02d}** | [{avatar} **@{m["login"]}**]({m["html_url"]}){inactive_marker} <br/>{profile_link} '
+            f'| {impact_display} '
+            f'| {consistency_display} '
+            f'| {streak_display} '
+            f'| **{m["contributions"]["pull_requests"]}** '
+            f'| **{m["contributions"]["reviews"]}** '
+            f'| **{c["repos_breadth"]}** '
+            f'| {m["firm_commits"]["total"]:,} '
+            f'| {activity_img} |'
         )
     return "\n".join(rows)
 
@@ -257,12 +286,26 @@ def render_roster(data, org_name, repo_name, cap):
     for m in members:
         top_repos = ", ".join(f"`{r}`" for r in m["firm_commits"]["top_repos"][:3]) or "_No firm repository commits yet._"
         display_name = m["name"] or m["login"]
+        c = m["consistency"]
+        inactive_tag = " · 🔴 Inactive" if c["is_inactive"] else ""
+
+        # Impact score visual bar
+        bar = _impact_bar(m["impact_score"], width=20)
+
         cards.append(f"""
-### {m['rank']:02d} · {display_name} ([@{m['login']}]({m['html_url']})) · {m['tier']}
-- **Member Since**: `{_fmt_date(m["created_at"])}`
-- **Total Contributions**: **{m['contributions']['total']:,}** (`{m['contributions']['commits']} commits`, `{m['contributions']['pull_requests']} pull requests`, `{m['contributions']['reviews']} reviews`)
-- **Firm Repository Commits**: **{m['firm_commits']['total']:,}** ({m['share_pct']:.1f}% team share)
-- **Primary Focus**: {top_repos}
+### {m['rank']:02d} · {display_name} ([@{m['login']}]({m['html_url']})) · {m['tier_badge']} {m['tier']}{inactive_tag}
+
+| Metric | Value |
+| :--- | :--- |
+| **Impact Score** | `{bar}` **{m['impact_score']:.0f}** / 100 |
+| **Consistency** | **{c['pct']:.0f}%** — active {c['active_days']} of {c['total_days']} days since `{_fmt_date(m["created_at"])}` |
+| **Longest Streak** | **{c['longest_streak']} days** consecutive |
+| **Current Streak** | **{c['current_streak']} days** |
+| **Pull Requests** | **{m['contributions']['pull_requests']}** opened |
+| **Code Reviews** | **{m['contributions']['reviews']}** completed |
+| **Repo Breadth** | **{c['repos_breadth']}** of {data['org']['repo_count']} org repositories |
+| **Commits** | {m['contributions']['commits']:,} total · {m['firm_commits']['total']:,} firm ({m['share_pct']:.1f}% share) |
+| **Focus Areas** | {top_repos} |
 
 <div align="center">
   <img src="https://raw.githubusercontent.com/{org_name}/{repo_name}/main/assets/graphs/{m['login']}.svg" width="100%" alt="{m['login']} activity calendar" />
@@ -282,13 +325,13 @@ def update_readme(content, data, *, org_name, repo_name, dashboard_url, roster_c
     leaderboard_block = f"""
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/{org_name}/{repo_name}/main/assets/leaderboard_card.svg" alt="Engineering leaderboard overview" width="100%" />
+<img src="https://raw.githubusercontent.com/{org_name}/{repo_name}/main/assets/leaderboard_card.svg" alt="Engineering impact score overview" width="100%" />
 
 </div>
 
 {render_leaderboard(data, org_name, repo_name, dashboard_url)}
 
-> **Telemetry**: every number above is computed live from the GitHub API on each run — organization membership, repositories, and commit attribution are all discovered dynamically, never hand-maintained. No cached or placeholder values are ever published.
+> **Scoring Model**: Rankings are computed from a weighted composite of **consistency** (35%), **code reviews** (20%), **pull requests** (20%), **streak length** (15%), and **cross-repo breadth** (10%). Raw commit counts are displayed for context but carry **zero weight** in the ranking — sustained, quality engineering output determines standing.
 """
     content = _replace_marker(content, "LEADERBOARD", leaderboard_block)
 
