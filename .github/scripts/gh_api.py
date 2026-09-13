@@ -37,11 +37,11 @@ def get_token():
     """ORG_LEADERBOARD_TOKEN (needs read:org + repo) > GITHUB_TOKEN > local `gh auth token`."""
     token = os.environ.get("ORG_LEADERBOARD_TOKEN") or os.environ.get("GITHUB_TOKEN")
     if token:
-        return token.strip()
+        return token.strip().strip("\ufeff").strip()
     try:
         res = subprocess.run(["gh", "auth", "token"], capture_output=True, text=True, check=False)
         if res.returncode == 0 and res.stdout.strip():
-            return res.stdout.strip()
+            return res.stdout.strip().strip("\ufeff").strip()
     except Exception:
         pass
     return None
@@ -60,12 +60,13 @@ def gh_graphql(query, token, retries=2):
             "or run `gh auth login` locally."
         )
 
+    clean_token = token.strip().strip("\ufeff").strip()
     body = json.dumps({"query": query}).encode("utf-8")
     req = urllib.request.Request(
         GRAPHQL_URL,
         data=body,
         headers={
-            "Authorization": f"Bearer {token}",
+            "Authorization": f"Bearer {clean_token}",
             "Content-Type": "application/json",
             "Accept": "application/vnd.github+json",
             "User-Agent": USER_AGENT,
