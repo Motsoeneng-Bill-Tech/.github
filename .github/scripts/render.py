@@ -94,7 +94,7 @@ def calendar_streaks(day_counts):
 
 def render_member_calendar_svg(member, weeks_shown=14, min_width=300):
     """Compact activity heatmap for one member — used in the README leaderboard row.
-    Header shows impact score and consistency instead of raw contribution count."""
+    Header shows cadence status, active days, streak, and reviews."""
     weeks = member["calendar"]["weeks"][-weeks_shown:]
     cell, gap = 10, 3
     start_x, start_y = 14, 48
@@ -126,34 +126,35 @@ def render_member_calendar_svg(member, weeks_shown=14, min_width=300):
     )
 
     c = member.get("consistency", {})
-    score = member.get("impact_score", 0)
     badge = member.get("tier_badge", "")
+    status = member.get("cadence_status", member.get("tier", "Active"))
     active_pct = c.get("pct", member["calendar"]["active_pct"])
     streak = c.get("longest_streak", member["calendar"].get("longest_streak", 0))
+    reviews = member["contributions"].get("reviews", 0)
     return f"""<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}">
   <rect width="{width}" height="{height}" rx="10" fill="{SURFACE}" stroke="{BORDER}" stroke-width="1" />
-  <text x="{start_x}" y="18" font-family="{FONT_STACK}" font-size="12" font-weight="700" fill="{TEXT_PRIMARY}">{badge} @{member['login']}</text>
-  <text x="{start_x}" y="32" font-family="{FONT_STACK}" font-size="10"><tspan font-weight="700" fill="{ACCENT}">Impact {score:.0f}</tspan><tspan fill="{TEXT_TERTIARY}"> · {active_pct:.0f}% consistent · {streak}d best streak</tspan></text>
+  <text x="{start_x}" y="18" font-family="{FONT_STACK}" font-size="12" font-weight="700" fill="{TEXT_PRIMARY}">{badge} @{member['login']} · <tspan fill="{ACCENT}">{status}</tspan></text>
+  <text x="{start_x}" y="32" font-family="{FONT_STACK}" font-size="10"><tspan font-weight="700" fill="{TEXT_PRIMARY}">{active_pct:.0f}% active</tspan><tspan fill="{TEXT_TERTIARY}"> ({c.get('active_days', 0)}d) · {streak}d streak · {reviews} reviews</tspan></text>
   {months_svg}
   <g>{''.join(rects)}</g>
 </svg>"""
 
 
 def render_overview_card_svg(data, max_rows=8):
-    """Org-wide ranked bar chart — bars represent Impact Score (0-100), not commit count.
-    Each row shows the member's tier badge, login, impact bar, and consistency %."""
+    """Org-wide ranked bar chart — bars represent Active Days Consistency %, NOT commit volume.
+    Highlights consistent daily presence and unbroken streaks."""
     width = 860
     org = data["org"]
     members = data["members"][:max_rows]
-    row_h = 34
+    row_h = 36
     header_h = 96
     height = header_h + len(members) * row_h + 24
 
     stats = [
-        ("IMPACT MODEL", "Consistency-First"),
+        ("CADENCE MODEL", "Daily Active"),
         ("ENGINEERS", str(org["member_count"])),
-        ("REPOSITORIES", str(org["repo_count"])),
-        ("TOTAL CONTRIBUTIONS", f'{org["totals"]["total_contributions"]:,}'),
+        ("AVG CONSISTENCY", f'{org["totals"].get("avg_consistency_pct", 0):.0f}%'),
+        ("RECORD STREAK", f'{org["totals"].get("peak_streak", 0)} DAYS'),
     ]
     stat_w = 180
     stats_svg = "".join(
@@ -164,27 +165,29 @@ def render_overview_card_svg(data, max_rows=8):
         for i, (label, value) in enumerate(stats)
     )
 
-    bar_x = 210
-    bar_max_w = width - bar_x - 160
+    bar_x = 220
+    bar_max_w = width - bar_x - 170
     rows_svg = []
     for i, m in enumerate(members):
         y = header_h + i * row_h
-        score = m["impact_score"]
-        bar_w = max(3, (score / 100) * bar_max_w)
         c = m["consistency"]
-        consistency_label = f'{c["pct"]:.0f}% active · {c["longest_streak"]}d streak'
+        pct = c["pct"]
+        bar_w = max(3, (pct / 100) * bar_max_w)
+        badge = m.get("tier_badge", "")
+        status = m.get("cadence_status", "")
+        label_meta = f'{pct:.0f}% ({c["active_days"]}d) · {c["longest_streak"]}d streak'
         rows_svg.append(f'''
-  <text x="32" y="{y + 21}" font-family="{FONT_STACK}" font-size="12" font-weight="700" fill="{TEXT_TERTIARY}">{m['tier_badge']}</text>
-  <text x="56" y="{y + 21}" font-family="{FONT_STACK}" font-size="12" font-weight="700" fill="{TEXT_TERTIARY}">{i + 1:02d}</text>
-  <text x="82" y="{y + 21}" font-family="{FONT_STACK}" font-size="12" font-weight="600" fill="{TEXT_PRIMARY}">@{m['login']}</text>
-  <rect x="{bar_x}" y="{y + 8}" width="{bar_max_w}" height="8" rx="4" fill="{BORDER}" />
-  <rect x="{bar_x}" y="{y + 8}" width="{bar_w:.1f}" height="8" rx="4" fill="{ACCENT}" />
-  <text x="{bar_x + bar_max_w + 8}" y="{y + 17}" font-family="{FONT_STACK}" font-size="11" font-weight="700" fill="{ACCENT}">{score:.0f}</text>
-  <text x="{bar_x + bar_max_w + 8}" y="{y + 29}" font-family="{FONT_STACK}" font-size="9" fill="{TEXT_TERTIARY}">{consistency_label}</text>''')
+  <text x="32" y="{y + 22}" font-family="{FONT_STACK}" font-size="12" font-weight="700" fill="{TEXT_TERTIARY}">{badge}</text>
+  <text x="56" y="{y + 22}" font-family="{FONT_STACK}" font-size="12" font-weight="700" fill="{TEXT_TERTIARY}">{i + 1:02d}</text>
+  <text x="82" y="{y + 22}" font-family="{FONT_STACK}" font-size="12" font-weight="600" fill="{TEXT_PRIMARY}">@{m['login']}</text>
+  <rect x="{bar_x}" y="{y + 9}" width="{bar_max_w}" height="8" rx="4" fill="{BORDER}" />
+  <rect x="{bar_x}" y="{y + 9}" width="{bar_w:.1f}" height="8" rx="4" fill="{ACCENT}" />
+  <text x="{bar_x + bar_max_w + 10}" y="{y + 17}" font-family="{FONT_STACK}" font-size="11" font-weight="700" fill="{ACCENT}">{status}</text>
+  <text x="{bar_x + bar_max_w + 10}" y="{y + 29}" font-family="{FONT_STACK}" font-size="9" fill="{TEXT_TERTIARY}">{label_meta}</text>''')
 
     return f"""<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}">
   <rect width="{width}" height="{height}" rx="14" fill="{BG}" stroke="{BORDER}" stroke-width="1" />
-  <text x="32" y="32" font-family="{FONT_STACK}" font-size="11" font-weight="700" letter-spacing="1.5" fill="{ACCENT}">{org['name'].upper()} · ENGINEERING IMPACT SCORES</text>
+  <text x="32" y="32" font-family="{FONT_STACK}" font-size="11" font-weight="700" letter-spacing="1.5" fill="{ACCENT}">{org['name'].upper()} · ENGINEERING DISCIPLINE &amp; CADENCE</text>
   {stats_svg}
   {''.join(rows_svg)}
 </svg>"""
@@ -208,21 +211,19 @@ def _fmt_date(iso_str):
 
 def render_badges(data, org_name):
     org = data["org"]
-    synced = data["generated_at"].rstrip("Z").replace("T", "_").replace(":", "-")
+    avg_consistency = org["totals"].get("avg_consistency_pct", 0)
+    peak_streak = org["totals"].get("peak_streak", 0)
+    total_reviews = org["totals"].get("total_reviews", 0)
     return "\n".join([
-        f'[![Total Contributions](https://img.shields.io/badge/Total_Contributions-{org["totals"]["total_contributions"]:,}-c9a961?style=for-the-badge&logo=github&logoColor=white)](https://github.com/{org_name})',
-        f'[![Firm Commits](https://img.shields.io/badge/Firm_Commits-{org["totals"]["total_firm_commits"]:,}-8a7130?style=for-the-badge&logo=git&logoColor=white)](https://github.com/{org_name})',
-        f'[![Engineers](https://img.shields.io/badge/Active_Engineers-{org["member_count"]}-34d399?style=for-the-badge&logo=codeforces&logoColor=white)](https://github.com/orgs/{org_name}/people)',
-        '[![Compliance](https://img.shields.io/badge/Security-POPIA_Compliant-64748b?style=for-the-badge&logo=shield&logoColor=white)](https://mb.co.za/)',
-        f'[![Last Synced](https://img.shields.io/badge/Telemetry-{synced}_UTC-1e2430?style=for-the-badge&logo=clock&logoColor=white)](https://github.com/{org_name}/.github/actions)',
+        f'[![Cadence](https://img.shields.io/badge/Team_Cadence-{avg_consistency}%25_Active-c9a961?style=for-the-badge&logo=clock&logoColor=white)](https://github.com/{org_name})',
+        f'[![Record Streak](https://img.shields.io/badge/Record_Streak-{peak_streak}_Days-34d399?style=for-the-badge&logo=streak&logoColor=white)](https://github.com/{org_name})',
+        f'[![Code Reviews](https://img.shields.io/badge/Peer_Reviews-{total_reviews}_Completed-8a7130?style=for-the-badge&logo=github&logoColor=white)](https://github.com/{org_name})',
+        f'[![Active Engineers](https://img.shields.io/badge/Engineers-{org["member_count"]}-64748b?style=for-the-badge&logo=codeforces&logoColor=white)](https://github.com/orgs/{org_name}/people)',
+        '[![Compliance](https://img.shields.io/badge/Security-POPIA_Compliant-1e2430?style=for-the-badge&logo=shield&logoColor=white)](https://mb.co.za/)',
     ])
 
 
 def render_solutions(data, display_names, descriptions):
-    """Every real org repo, always — driven by live discovery, not a hand-typed list.
-    display_names/descriptions are curated editorial copy (product name + what it does),
-    keyed by repo slug; a repo with no curated entry still gets a row, with an honest
-    'no description set' note rather than an invented capability blurb."""
     rows = ["| Platform | Visibility | Primary Language | Description |",
             "| :--- | :---: | :---: | :--- |"]
     for r in data["repos"]:
@@ -234,47 +235,33 @@ def render_solutions(data, display_names, descriptions):
     return "\n".join(rows)
 
 
-def _impact_bar(score, width=10):
-    """Text-based progress bar for impact score (0-100)."""
-    filled = round(score / 100 * width)
-    return "█" * filled + "░" * (width - filled)
-
-
 def render_leaderboard(data, org_name, repo_name, dashboard_url):
     rows = [
-        "| Rank | Engineer | Impact | Consistency | Streak | PRs | Reviews | Repos | Commits | Activity |",
-        "| :---: | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |",
+        "| Rank | Engineer | Cadence Status | Active Days & Consistency | Streak Continuity | Code Reviews | Pull Requests | 14-Week Activity Heatmap |",
+        "| :---: | :--- | :---: | :---: | :---: | :---: | :---: | :---: |",
     ]
     for m in data["members"]:
-        avatar = f'<img src="{m["avatar_url"]}" width="26" height="26" style="border-radius:50%; vertical-align:middle;" />'
+        avatar = f'<img src="{m["avatar_url"]}" width="30" height="30" style="border-radius:50%; vertical-align:middle;" />'
         activity_img = (
             f'<img src="https://raw.githubusercontent.com/{org_name}/{repo_name}/main/assets/graphs/{m["login"]}.svg" '
-            f'width="200" height="60" alt="{m["login"]} activity graph" />'
+            f'width="220" height="64" alt="{m["login"]} activity graph" />'
         )
         profile_link = f'[↗ profile]({dashboard_url}#/member/{m["login"]})'
 
-        # Impact score with tier badge and visual bar
-        impact_display = f'{m["tier_badge"]} `{_impact_bar(m["impact_score"])}` **{m["impact_score"]:.0f}**'
-
-        # Consistency: active days / total days (pct)
         c = m["consistency"]
-        consistency_display = f'**{c["pct"]:.0f}%** ({c["active_days"]}/{c["total_days"]}d)'
-
-        # Streak: longest (current)
-        streak_display = f'**{c["longest_streak"]}d** ({c["current_streak"]}d now)'
-
-        # Inactive marker
-        inactive_marker = " 🔴" if c["is_inactive"] else ""
+        status_chip = f'**{m.get("tier_badge", "")} {m.get("cadence_status", "")}**'
+        consistency_display = f'**{c["pct"]:.0f}%** <br/>`{c["active_days"]}/{c["total_days"]} days`'
+        streak_display = f'**{c["longest_streak"]}d** record <br/>`{c["current_streak"]}d current`'
+        reviews_display = f'**{m["contributions"]["reviews"]}** reviews'
+        prs_display = f'**{m["contributions"]["pull_requests"]}** PRs'
 
         rows.append(
-            f'| **{m["rank"]:02d}** | [{avatar} **@{m["login"]}**]({m["html_url"]}){inactive_marker} <br/>{profile_link} '
-            f'| {impact_display} '
+            f'| **{m["rank"]:02d}** | [{avatar} **@{m["login"]}**]({m["html_url"]}) <br/>{profile_link} '
+            f'| {status_chip} '
             f'| {consistency_display} '
             f'| {streak_display} '
-            f'| **{m["contributions"]["pull_requests"]}** '
-            f'| **{m["contributions"]["reviews"]}** '
-            f'| **{c["repos_breadth"]}** '
-            f'| {m["firm_commits"]["total"]:,} '
+            f'| {reviews_display} '
+            f'| {prs_display} '
             f'| {activity_img} |'
         )
     return "\n".join(rows)
@@ -287,34 +274,40 @@ def render_roster(data, org_name, repo_name, cap):
         top_repos = ", ".join(f"`{r}`" for r in m["firm_commits"]["top_repos"][:3]) or "_No firm repository commits yet._"
         display_name = m["name"] or m["login"]
         c = m["consistency"]
-        inactive_tag = " · 🔴 Inactive" if c["is_inactive"] else ""
+        commits_per_active = m.get("commits_per_active_day", 0.0)
 
-        # Impact score visual bar
-        bar = _impact_bar(m["impact_score"], width=20)
+        # Build cadence callout:
+        if m.get("cadence_status") == "Sporadic Pusher":
+            callout = f"""> ⚠️ **Cadence Alert**: This member shows bursty bulk-push activity averaging **{commits_per_active:.1f} commits per active day**, but was present on only **{c['pct']:.0f}%** of days. The engineering division prioritizes consistent daily presence and code reviews over commit volume.\n"""
+        elif m.get("cadence_status") == "Daily Driver":
+            callout = f"""> ⚡ **Cadence Benchmark**: Daily engineering driver showing consistent presence (**{c['pct']:.0f}% of tenure days**) with an active **{c['longest_streak']}-day** streak and thorough code reviews.\n"""
+        else:
+            callout = ""
 
         cards.append(f"""
-### {m['rank']:02d} · {display_name} ([@{m['login']}]({m['html_url']})) · {m['tier_badge']} {m['tier']}{inactive_tag}
+### #{m['rank']:02d} · {display_name} ([@{m['login']}]({m['html_url']})) · {m.get('tier_badge', '')} {m.get('cadence_status', '')}
 
-| Metric | Value |
+<img src="{m['avatar_url']}" width="40" height="40" style="border-radius:50%; vertical-align:middle;" /> **{display_name}** (`@{m['login']}`) — *{m.get('cadence_desc', '')}*
+
+{callout}
+| Engineering Signal | Verified Output |
 | :--- | :--- |
-| **Impact Score** | `{bar}` **{m['impact_score']:.0f}** / 100 |
-| **Consistency** | **{c['pct']:.0f}%** — active {c['active_days']} of {c['total_days']} days since `{_fmt_date(m["created_at"])}` |
-| **Longest Streak** | **{c['longest_streak']} days** consecutive |
-| **Current Streak** | **{c['current_streak']} days** |
-| **Pull Requests** | **{m['contributions']['pull_requests']}** opened |
-| **Code Reviews** | **{m['contributions']['reviews']}** completed |
-| **Repo Breadth** | **{c['repos_breadth']}** of {data['org']['repo_count']} org repositories |
-| **Commits** | {m['contributions']['commits']:,} total · {m['firm_commits']['total']:,} firm ({m['share_pct']:.1f}% share) |
-| **Focus Areas** | {top_repos} |
+| 📅 **Daily Cadence** | **{c['pct']:.0f}%** active ({c['active_days']} of {c['total_days']} days since `{_fmt_date(m["created_at"])}`) |
+| 🔥 **Streak Continuity** | **{c['longest_streak']} days** record unbroken streak · **{c['current_streak']} days** current active |
+| 🔍 **Peer Code Reviews** | **{m['contributions']['reviews']}** reviews completed (enforcing code guidelines & peer quality) |
+| 🚀 **Pull Requests** | **{m['contributions']['pull_requests']}** delivered across **{c['repos_breadth']}** org repositories |
+| 📦 **Active Codebases** | {top_repos} |
 
 <div align="center">
   <img src="https://raw.githubusercontent.com/{org_name}/{repo_name}/main/assets/graphs/{m['login']}.svg" width="100%" alt="{m['login']} activity calendar" />
 </div>
+
+---
 """)
     roster_md = "\n".join(cards)
     remaining = data["org"]["member_count"] - len(members)
     if remaining > 0:
-        roster_md += f"\n\n> View all {data['org']['member_count']} engineers, including the {remaining} not shown here, on the [live interactive dashboard]({{dashboard_url}}).\n"
+        roster_md += f"\n\n> View all {data['org']['member_count']} engineers on the [live interactive dashboard]({{dashboard_url}}).\n"
     return roster_md
 
 
@@ -325,13 +318,13 @@ def update_readme(content, data, *, org_name, repo_name, dashboard_url, roster_c
     leaderboard_block = f"""
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/{org_name}/{repo_name}/main/assets/leaderboard_card.svg" alt="Engineering impact score overview" width="100%" />
+<img src="https://raw.githubusercontent.com/{org_name}/{repo_name}/main/assets/leaderboard_card.svg" alt="Engineering discipline and cadence overview" width="100%" />
 
 </div>
 
 {render_leaderboard(data, org_name, repo_name, dashboard_url)}
 
-> **Scoring Model**: Rankings are computed from a weighted composite of **consistency** (35%), **code reviews** (20%), **pull requests** (20%), **streak length** (15%), and **cross-repo breadth** (10%). Raw commit counts are displayed for context but carry **zero weight** in the ranking — sustained, quality engineering output determines standing.
+> **Discipline & Cadence Policy**: Standings are determined strictly by **daily consistency** (showing up on working days), **streak continuity**, **peer code reviews**, and **structured PR delivery**. Raw commit counts carry **zero ranking weight** to prevent bulk-commit gaming.
 """
     content = _replace_marker(content, "LEADERBOARD", leaderboard_block)
 

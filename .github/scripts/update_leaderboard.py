@@ -48,39 +48,43 @@ ROSTER_DETAIL_CAP = 12
 REPO_CHUNK_SIZE = 6
 INACTIVE_THRESHOLD_DAYS = 14
 
-# Impact Score weights — consistency is deliberately the dominant signal so that
-# commit-spamming (high volume, low consistency) doesn't move the needle.
-# Raw commit count has ZERO weight by design.
-SCORE_WEIGHTS = {
-    "consistency": 0.35,   # active_days / total_possible_days
-    "streak":      0.15,   # longest_streak normalized
-    "prs":         0.20,   # pull requests opened
-    "reviews":     0.20,   # code reviews completed
-    "breadth":     0.10,   # repos contributed to / total org repos
+# Cadence & Consistency Model
+# Raw commit volume has ZERO ranking weight by design.
+# We rank exclusively by active days consistency, streak continuity, peer code reviews,
+# and structured PR delivery.
+CADENCE_WEIGHTS = {
+    "active_days_pct": 0.40,  # active days as a percentage of tenure days
+    "streak":          0.25,  # longest streak + current momentum
+    "reviews":         0.20,  # peer code reviews (guideline enforcement)
+    "prs":             0.15,  # structured PR deliveries
 }
 
-# Tier thresholds: (min_impact_score, min_consistency_pct, label, badge)
-# Both conditions must be met — high score with low consistency still gets demoted.
-TIERS = [
-    (80, 60, "Principal",   "🏆"),
-    (60, 40, "Senior",      "🥇"),
-    (35, 25, "Core",        "🥈"),
-    (15, 10, "Active",      "🥉"),
-    (0,   0, "Contributor", "⭐"),
-]
-INACTIVE_TIER = ("Inactive", "🔴")
 
-
-def get_tier(impact_score, consistency_pct, is_inactive):
-    """Tier assignment requires BOTH an impact score AND a consistency gate.
-    An engineer who spams 1000 commits in one weekend can't reach Principal
-    if they only showed up 5% of their tenure days."""
+def get_cadence_tier(consistency_pct, longest_streak, commits, active_days, is_inactive):
+    """Replaces corporate titles ('Principal', 'Senior') with authentic engineering cadence statuses.
+    Directly flags sporadic bulk-pushing where an engineer commits heavily on rare sporadic days."""
     if is_inactive:
-        return INACTIVE_TIER
-    for min_score, min_consistency, label, badge in TIERS:
-        if impact_score >= min_score and consistency_pct >= min_consistency:
-            return (label, badge)
-    return (TIERS[-1][2], TIERS[-1][3])
+        return ("Dormant", "💤", "No contributions in 14+ days")
+
+    commits_per_active = (commits / active_days) if active_days else 0.0
+
+    # If someone has low consistency (< 30%) but very high commit volume (> 12 commits/day),
+    # that is the textbook sporadic bulk-committer pattern:
+    if consistency_pct < 30 and commits_per_active > 12:
+        return (
+            "Sporadic Pusher",
+            "⏳",
+            f"Bursty commit activity (avg {commits_per_active:.1f} commits/active day) across only {consistency_pct:.0f}% of tenure days",
+        )
+
+    if consistency_pct >= 65 and longest_streak >= 10:
+        return ("Daily Driver", "⚡", "Consistent daily contributor with sustained streak and high peer review activity")
+    elif consistency_pct >= 40:
+        return ("Consistent Builder", "🟢", "Regular weekly presence and steady PR delivery")
+    elif consistency_pct >= 20:
+        return ("Steady Contributor", "🟡", "Weekly task contributor")
+    else:
+        return ("Intermittent", "⚪", "Infrequent contributions across tenure")
 
 
 def _normalize(value, values):
@@ -91,34 +95,28 @@ def _normalize(value, values):
     return min(100.0, (value / max_val) * 100.0)
 
 
-def compute_impact_scores(members, total_org_repos):
-    """Compute Impact Scores for all members using the weighted composite model.
-    Normalization is relative — the top performer in each dimension scores 100,
-    everyone else is proportional. This ensures the score is always a fair
-    comparison within the team, not an absolute threshold."""
-
-    # Collect raw values for normalization
+def compute_cadence_scores(members):
+    """Compute Consistency / Cadence Scores for all members.
+    Zero weight given to raw commit count."""
     all_consistency = [m["_raw_consistency_pct"] for m in members]
     all_streaks = [m["_raw_longest_streak"] for m in members]
-    all_prs = [m["contributions"]["pull_requests"] for m in members]
     all_reviews = [m["contributions"]["reviews"] for m in members]
-    all_breadth = [m["_raw_repos_breadth"] for m in members]
+    all_prs = [m["contributions"]["pull_requests"] for m in members]
 
     for m in members:
         consistency_norm = _normalize(m["_raw_consistency_pct"], all_consistency)
         streak_norm = _normalize(m["_raw_longest_streak"], all_streaks)
-        pr_norm = _normalize(m["contributions"]["pull_requests"], all_prs)
         review_norm = _normalize(m["contributions"]["reviews"], all_reviews)
-        breadth_norm = _normalize(m["_raw_repos_breadth"], all_breadth)
+        pr_norm = _normalize(m["contributions"]["pull_requests"], all_prs)
 
         score = (
-            SCORE_WEIGHTS["consistency"] * consistency_norm +
-            SCORE_WEIGHTS["streak"]      * streak_norm +
-            SCORE_WEIGHTS["prs"]         * pr_norm +
-            SCORE_WEIGHTS["reviews"]     * review_norm +
-            SCORE_WEIGHTS["breadth"]     * breadth_norm
+            CADENCE_WEIGHTS["active_days_pct"] * consistency_norm +
+            CADENCE_WEIGHTS["streak"]          * streak_norm +
+            CADENCE_WEIGHTS["reviews"]         * review_norm +
+            CADENCE_WEIGHTS["prs"]             * pr_norm
         )
         m["impact_score"] = round(score, 1)
+        m["cadence_score"] = round(score, 1)
 
 
 def gather_all_data():
@@ -302,25 +300,34 @@ def build_dataset(members_raw, repos_raw, member_contribs, commit_matrix, now, r
             },
         })
 
-    # Compute impact scores across all members (relative normalization)
-    compute_impact_scores(members_out, total_org_repos)
+    # Compute cadence scores across all members (zero weight to raw commits)
+    compute_cadence_scores(members_out)
 
-    # Assign tiers and clean up temp fields
+    # Assign cadence tiers and clean up temp fields
     for m in members_out:
-        tier_label, tier_badge = get_tier(
-            m["impact_score"],
+        tier_label, tier_badge, tier_desc = get_cadence_tier(
             m["consistency"]["pct"],
+            m["consistency"]["longest_streak"],
+            m["firm_commits"]["total"],
+            m["consistency"]["active_days"],
             m["consistency"]["is_inactive"],
         )
         m["tier"] = tier_label
         m["tier_badge"] = tier_badge
+        m["cadence_status"] = tier_label
+        m["cadence_desc"] = tier_desc
+        m["commits_per_active_day"] = (
+            round((m["firm_commits"]["total"] / m["consistency"]["active_days"]), 1)
+            if m["consistency"]["active_days"]
+            else 0.0
+        )
         # Clean up temporary normalization fields
         del m["_raw_consistency_pct"]
         del m["_raw_longest_streak"]
         del m["_raw_repos_breadth"]
 
-    # RANK BY IMPACT SCORE, not commit count
-    members_out.sort(key=lambda x: (-x["impact_score"], -x["consistency"]["pct"]))
+    # RANK BY CADENCE & CONSISTENCY (Active days % + Streaks + Guidelines adherence)
+    members_out.sort(key=lambda x: (-x["cadence_score"], -x["consistency"]["pct"], -x["consistency"]["longest_streak"]))
     for idx, m in enumerate(members_out, start=1):
         m["rank"] = idx
 
@@ -339,10 +346,12 @@ def build_dataset(members_raw, repos_raw, member_contribs, commit_matrix, now, r
             "member_count": len(members_out),
             "repo_count": len(repos_out),
             "totals": {
+                "avg_consistency_pct": round(sum(m["consistency"]["pct"] for m in members_out) / len(members_out), 1) if members_out else 0.0,
+                "peak_streak": max((m["consistency"]["longest_streak"] for m in members_out), default=0),
+                "total_active_days": sum(m["consistency"]["active_days"] for m in members_out),
+                "total_reviews": sum(m["contributions"]["reviews"] for m in members_out),
+                "total_prs": sum(m["contributions"]["pull_requests"] for m in members_out),
                 "total_contributions": sum(m["contributions"]["total"] for m in members_out),
-                "total_commit_contributions": sum(m["contributions"]["commits"] for m in members_out),
-                "total_pr_contributions": sum(m["contributions"]["pull_requests"] for m in members_out),
-                "total_review_contributions": sum(m["contributions"]["reviews"] for m in members_out),
                 "total_firm_commits": total_firm_commits_org,
             },
             "calendar": {

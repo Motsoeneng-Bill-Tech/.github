@@ -2,16 +2,15 @@ const Leaderboard = (() => {
   const COLUMNS = [
     { key: 'rank', label: 'Rank', sortable: true, get: (m) => m.rank, dir: 'asc' },
     { key: 'engineer', label: 'Engineer', sortable: false },
-    { key: 'created_at', label: 'Member Since', sortable: true, get: (m) => new Date(m.created_at).getTime() },
-    { key: 'total', label: 'Total Contributions', sortable: true, get: (m) => m.contributions.total },
-    { key: 'firm', label: 'Firm Commits', sortable: true, get: (m) => m.firm_commits.total },
-    { key: 'share', label: 'Share', sortable: true, get: (m) => m.share_pct },
-    { key: 'tier', label: 'Tier', sortable: false },
-    { key: 'activity', label: 'Recent Activity', sortable: false },
-    { key: 'repos', label: 'Top Repositories', sortable: false },
+    { key: 'status', label: 'Cadence Status', sortable: false },
+    { key: 'consistency', label: 'Active Days', sortable: true, get: (m) => m.consistency.pct, dir: 'desc' },
+    { key: 'streak', label: 'Record Streak', sortable: true, get: (m) => m.consistency.longest_streak, dir: 'desc' },
+    { key: 'reviews', label: 'Code Reviews', sortable: true, get: (m) => m.contributions.reviews, dir: 'desc' },
+    { key: 'prs', label: 'PRs Delivered', sortable: true, get: (m) => m.contributions.pull_requests, dir: 'desc' },
+    { key: 'activity', label: '14-Week Activity Heatmap', sortable: false },
   ];
 
-  const state = { sortKey: 'firm', sortDir: 'desc', query: '' };
+  const state = { sortKey: 'rank', sortDir: 'asc', query: '' };
   let lastArgs = null;
 
   function filterAndSort(members) {
@@ -31,18 +30,12 @@ const Leaderboard = (() => {
 
   function engineerCell(m) {
     return `<div class="engineer-cell">
-      <img src="${m.avatar_url}" alt="" width="30" height="30" loading="lazy" />
+      <img src="${m.avatar_url}" alt="" width="34" height="34" loading="lazy" />
       <div>
         <div class="engineer-cell__name">${Format.escapeHtml(m.name || m.login)}</div>
         <div class="engineer-cell__login">@${Format.escapeHtml(m.login)}</div>
       </div>
     </div>`;
-  }
-
-  function repoTags(m) {
-    const repos = m.firm_commits.top_repos.slice(0, 2);
-    if (!repos.length) return '<span class="repo-tags">—</span>';
-    return `<div class="repo-tags">${repos.map((r) => `<span class="repo-tag">${Format.escapeHtml(r)}</span>`).join('')}</div>`;
   }
 
   function renderTable(container, list) {
@@ -53,17 +46,30 @@ const Leaderboard = (() => {
       return `<th class="is-sortable ${active ? 'is-active' : ''}" data-sort-key="${c.key}" tabindex="0" role="button" aria-label="Sort by ${c.label}">${c.label} <span class="sort-arrow">${arrow}</span></th>`;
     }).join('')}</tr></thead>`;
 
-    const rows = list.map((m) => `<tr data-login="${m.login}" tabindex="0" role="button" aria-label="View ${m.login}'s profile">
-      <td class="rank-num">${String(m.rank).padStart(2, '0')}</td>
-      <td>${engineerCell(m)}</td>
-      <td>${Format.date(m.created_at)}</td>
-      <td class="num-cell">${Format.number(m.contributions.total)}</td>
-      <td class="num-cell">${Format.number(m.firm_commits.total)}</td>
-      <td class="share-cell">${Format.pct(m.share_pct)}</td>
-      <td><span class="tier-chip">${Format.escapeHtml(m.tier)}</span></td>
-      <td><div data-login-cal="${m.login}"></div></td>
-      <td>${repoTags(m)}</td>
-    </tr>`).join('');
+    const rows = list.map((m) => {
+      const c = m.consistency;
+      const badge = m.tier_badge || '';
+      const status = m.cadence_status || m.tier || 'Active';
+      const isSporadic = status === 'Sporadic Pusher';
+      const chipClass = isSporadic ? 'tier-chip tier-chip--warn' : 'tier-chip';
+
+      return `<tr data-login="${m.login}" tabindex="0" role="button" aria-label="View ${m.login}'s profile">
+        <td class="rank-num">#${String(m.rank).padStart(2, '0')}</td>
+        <td>${engineerCell(m)}</td>
+        <td><span class="${chipClass}">${badge} ${Format.escapeHtml(status)}</span></td>
+        <td class="num-cell">
+          <strong>${c.pct.toFixed(0)}%</strong>
+          <div class="cell-sub">${c.active_days} / ${c.total_days} days</div>
+        </td>
+        <td class="num-cell">
+          <strong>${c.longest_streak}d</strong>
+          <div class="cell-sub">${c.current_streak}d current</div>
+        </td>
+        <td class="num-cell">${Format.number(m.contributions.reviews)}</td>
+        <td class="num-cell">${Format.number(m.contributions.pull_requests)}</td>
+        <td><div data-login-cal="${m.login}"></div></td>
+      </tr>`;
+    }).join('');
 
     container.innerHTML = `<table class="leaderboard">${thead}<tbody>${rows}</tbody></table>`;
     list.forEach((m) => {
@@ -73,21 +79,25 @@ const Leaderboard = (() => {
   }
 
   function renderCards(container, list) {
-    container.innerHTML = list.map((m) => `<div class="leaderboard-card" data-login="${m.login}" tabindex="0" role="button" aria-label="View ${m.login}'s profile">
-      <div class="leaderboard-card__top">
-        <img src="${m.avatar_url}" alt="" width="36" height="36" loading="lazy" />
-        <div>
-          <div class="engineer-cell__name">${Format.escapeHtml(m.name || m.login)}</div>
-          <div class="engineer-cell__login">@${Format.escapeHtml(m.login)} &middot; <span class="tier-chip">${Format.escapeHtml(m.tier)}</span></div>
+    container.innerHTML = list.map((m) => {
+      const c = m.consistency;
+      const status = m.cadence_status || m.tier;
+      return `<div class="leaderboard-card" data-login="${m.login}" tabindex="0" role="button" aria-label="View ${m.login}'s profile">
+        <div class="leaderboard-card__top">
+          <img src="${m.avatar_url}" alt="" width="40" height="40" loading="lazy" />
+          <div>
+            <div class="engineer-cell__name">${Format.escapeHtml(m.name || m.login)}</div>
+            <div class="engineer-cell__login">@${Format.escapeHtml(m.login)} &middot; <span class="tier-chip">${m.tier_badge || ''} ${Format.escapeHtml(status)}</span></div>
+          </div>
         </div>
-      </div>
-      <div class="leaderboard-card__meta">
-        <div class="leaderboard-card__stat">Rank<strong>#${m.rank}</strong></div>
-        <div class="leaderboard-card__stat">Total<strong>${Format.number(m.contributions.total)}</strong></div>
-        <div class="leaderboard-card__stat">Firm Commits<strong>${Format.number(m.firm_commits.total)}</strong></div>
-        <div class="leaderboard-card__stat">Share<strong>${Format.pct(m.share_pct)}</strong></div>
-      </div>
-    </div>`).join('');
+        <div class="leaderboard-card__meta">
+          <div class="leaderboard-card__stat">Rank<strong>#${m.rank}</strong></div>
+          <div class="leaderboard-card__stat">Active Days<strong>${c.pct.toFixed(0)}% (${c.active_days}d)</strong></div>
+          <div class="leaderboard-card__stat">Streak<strong>${c.longest_streak} days</strong></div>
+          <div class="leaderboard-card__stat">Reviews<strong>${m.contributions.reviews}</strong></div>
+        </div>
+      </div>`;
+    }).join('');
   }
 
   function wireActivation(container, onSelect) {

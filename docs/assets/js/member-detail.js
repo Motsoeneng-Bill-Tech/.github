@@ -3,6 +3,11 @@ const MemberDetail = (() => {
     const repos = Object.entries(member.firm_commits.by_repo);
     const maxCount = repos.length ? repos[0][1] : 1;
 
+    const c = member.consistency || {};
+    const badge = member.tier_badge || '';
+    const status = member.cadence_status || member.tier || 'Active';
+    const isSporadic = status === 'Sporadic Pusher';
+
     container.innerHTML = `
       <a class="detail-back" href="./#/">&larr; Back to leaderboard</a>
       <div class="detail-header">
@@ -14,17 +19,24 @@ const MemberDetail = (() => {
             &middot; Member since ${Format.date(member.created_at)}
           </div>
           <div class="detail-header__badges">
-            <span class="tier-chip">${Format.escapeHtml(member.tier)}</span>
+            <span class="tier-chip ${isSporadic ? 'tier-chip--warn' : ''}">${badge} ${Format.escapeHtml(status)}</span>
             <span class="tier-chip">Rank #${member.rank} of ${data.org.member_count}</span>
           </div>
+          <div class="detail-header__desc">${Format.escapeHtml(member.cadence_desc || '')}</div>
         </div>
       </div>
 
+      ${isSporadic ? `
+        <div class="alert-banner alert-banner--warn">
+          <strong>⚠️ Cadence Notice:</strong> This engineer displays high commit bursts (${member.commits_per_active_day || 0} commits per active day) but low daily presence (${c.pct ? c.pct.toFixed(0) : 0}% of days). The engineering division prioritizes consistent daily presence and code reviews over commit volume.
+        </div>
+      ` : ''}
+
       <div class="stat-grid">
-        <div class="stat-tile"><div class="stat-tile__label">Total Contributions</div><div class="stat-tile__value">${Format.number(member.contributions.total)}</div></div>
-        <div class="stat-tile"><div class="stat-tile__label">Firm Commits</div><div class="stat-tile__value stat-tile__value--accent">${Format.number(member.firm_commits.total)}</div></div>
-        <div class="stat-tile"><div class="stat-tile__label">Active Days</div><div class="stat-tile__value">${Format.number(member.calendar.active_days)}<span class="stat-tile__hint">${Format.pct(member.calendar.active_pct, 0)}</span></div></div>
-        <div class="stat-tile"><div class="stat-tile__label">Longest Streak</div><div class="stat-tile__value">${Format.number(member.calendar.longest_streak)}<span class="stat-tile__hint">days</span></div></div>
+        <div class="stat-tile"><div class="stat-tile__label">Active Days</div><div class="stat-tile__value stat-tile__value--accent">${c.pct ? c.pct.toFixed(0) : 0}%<span class="stat-tile__hint">(${c.active_days || 0}/${c.total_days || 0}d)</span></div><div class="stat-tile__sub">Daily consistency</div></div>
+        <div class="stat-tile"><div class="stat-tile__label">Record Streak</div><div class="stat-tile__value">${c.longest_streak || 0}<span class="stat-tile__hint">days</span></div><div class="stat-tile__sub">${c.current_streak || 0}d current streak</div></div>
+        <div class="stat-tile"><div class="stat-tile__label">Peer Code Reviews</div><div class="stat-tile__value">${Format.number(member.contributions.reviews)}</div><div class="stat-tile__sub">Standards & guidelines</div></div>
+        <div class="stat-tile"><div class="stat-tile__label">Pull Requests</div><div class="stat-tile__value">${Format.number(member.contributions.pull_requests)}</div><div class="stat-tile__sub">Delivered across ${c.repos_breadth || 0} repos</div></div>
       </div>
 
       <div class="detail-calendar-card">

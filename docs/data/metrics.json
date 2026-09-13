@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-13T19:29:09Z",
-  "source_commit": "ad32b73544f8a6b5e6e6138eadc75650f9489596",
+  "generated_at": "2026-09-13T19:50:05Z",
+  "source_commit": "local",
   "org": {
     "login": "Motsoeneng-Bill-Tech",
     "name": "Motsoeneng Bill Tech",
@@ -10,10 +10,12 @@
     "member_count": 7,
     "repo_count": 12,
     "totals": {
-      "total_contributions": 4172,
-      "total_commit_contributions": 3254,
-      "total_pr_contributions": 749,
-      "total_review_contributions": 152,
+      "avg_consistency_pct": 46.1,
+      "peak_streak": 74,
+      "total_active_days": 264,
+      "total_reviews": 152,
+      "total_prs": 750,
+      "total_contributions": 4173,
       "total_firm_commits": 2534
     },
     "calendar": {
@@ -714,7 +716,7 @@
             {
               "date": "2026-09-13",
               "weekday": 0,
-              "count": 66,
+              "count": 67,
               "level": 4,
               "in_range": true
             },
@@ -905,9 +907,9 @@
       "default_branch": "main",
       "is_empty": false,
       "is_archived": false,
-      "total_commits_default_branch": 14,
+      "total_commits_default_branch": 15,
       "attributed_member_commits": 5,
-      "unattributed_commits": 9
+      "unattributed_commits": 10
     },
     {
       "name": "anchor-games",
@@ -1731,8 +1733,12 @@
         ]
       },
       "impact_score": 97.9,
-      "tier": "Principal",
-      "tier_badge": "\ud83c\udfc6",
+      "cadence_score": 97.9,
+      "tier": "Daily Driver",
+      "tier_badge": "\u26a1",
+      "cadence_status": "Daily Driver",
+      "cadence_desc": "Consistent daily contributor with sustained streak and high peer review activity",
+      "commits_per_active_day": 12.1,
       "rank": 1
     },
     {
@@ -1749,9 +1755,9 @@
         "website_url": null
       },
       "contributions": {
-        "total": 866,
+        "total": 867,
         "commits": 682,
-        "pull_requests": 142,
+        "pull_requests": 143,
         "reviews": 38,
         "issues": 0,
         "restricted": 0
@@ -1788,7 +1794,7 @@
       "calendar": {
         "from": "2026-06-21",
         "to": "2026-09-13",
-        "total": 866,
+        "total": 867,
         "active_days": 60,
         "total_days": 85,
         "active_pct": 70.6,
@@ -2436,7 +2442,7 @@
               {
                 "date": "2026-09-13",
                 "weekday": 0,
-                "count": 3,
+                "count": 4,
                 "level": 2,
                 "in_range": true
               },
@@ -2486,9 +2492,13 @@
           }
         ]
       },
-      "impact_score": 67.5,
-      "tier": "Senior",
-      "tier_badge": "\ud83e\udd47",
+      "impact_score": 63.7,
+      "cadence_score": 63.7,
+      "tier": "Daily Driver",
+      "tier_badge": "\u26a1",
+      "cadence_status": "Daily Driver",
+      "cadence_desc": "Consistent daily contributor with sustained streak and high peer review activity",
+      "commits_per_active_day": 7.5,
       "rank": 2
     },
     {
@@ -3236,9 +3246,13 @@
           }
         ]
       },
-      "impact_score": 52.8,
-      "tier": "Core",
-      "tier_badge": "\ud83e\udd48",
+      "impact_score": 53.5,
+      "cadence_score": 53.5,
+      "tier": "Daily Driver",
+      "tier_badge": "\u26a1",
+      "cadence_status": "Daily Driver",
+      "cadence_desc": "Consistent daily contributor with sustained streak and high peer review activity",
+      "commits_per_active_day": 6.7,
       "rank": 3
     },
     {
@@ -3990,9 +4004,13 @@
           }
         ]
       },
-      "impact_score": 39.4,
-      "tier": "Core",
-      "tier_badge": "\ud83e\udd48",
+      "impact_score": 34.6,
+      "cadence_score": 34.6,
+      "tier": "Sporadic Pusher",
+      "tier_badge": "\u23f3",
+      "cadence_status": "Sporadic Pusher",
+      "cadence_desc": "Bursty commit activity (avg 26.6 commits/active day) across only 28% of tenure days",
+      "commits_per_active_day": 26.6,
       "rank": 4
     },
     {
@@ -4793,9 +4811,13 @@
           }
         ]
       },
-      "impact_score": 28.2,
-      "tier": "Active",
-      "tier_badge": "\ud83e\udd49",
+      "impact_score": 27.2,
+      "cadence_score": 27.2,
+      "tier": "Steady Contributor",
+      "tier_badge": "\ud83d\udfe1",
+      "cadence_status": "Steady Contributor",
+      "cadence_desc": "Weekly task contributor",
+      "commits_per_active_day": 4.2,
       "rank": 5
     },
     {
@@ -5541,9 +5563,13 @@
           }
         ]
       },
-      "impact_score": 13.3,
-      "tier": "Contributor",
-      "tier_badge": "\u2b50",
+      "impact_score": 12.6,
+      "cadence_score": 12.6,
+      "tier": "Intermittent",
+      "tier_badge": "\u26aa",
+      "cadence_status": "Intermittent",
+      "cadence_desc": "Infrequent contributions across tenure",
+      "commits_per_active_day": 1.0,
       "rank": 6
     },
     {
@@ -5867,9 +5893,13 @@
           }
         ]
       },
-      "impact_score": 10.7,
-      "tier": "Contributor",
-      "tier_badge": "\u2b50",
+      "impact_score": 8.5,
+      "cadence_score": 8.5,
+      "tier": "Intermittent",
+      "tier_badge": "\u26aa",
+      "cadence_status": "Intermittent",
+      "cadence_desc": "Infrequent contributions across tenure",
+      "commits_per_active_day": 1.8,
       "rank": 7
     }
   ],
@@ -5877,7 +5907,7 @@
     "generation_ok": true,
     "rate_limit": {
       "cost_used_total": 11,
-      "remaining": 4901,
+      "remaining": 4859,
       "reset_at": "2026-09-13T20:03:06Z"
     },
     "warnings": []

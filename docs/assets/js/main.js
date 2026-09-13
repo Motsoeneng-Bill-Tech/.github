@@ -15,32 +15,35 @@
 
   function overviewTemplate() {
     const org = DATA.org;
+    const avgCadence = org.totals.avg_consistency_pct ? `${org.totals.avg_consistency_pct}%` : '—';
+    const peakStreak = org.totals.peak_streak ? `${org.totals.peak_streak}d` : '—';
+    const totalReviews = org.totals.total_reviews != null ? Format.number(org.totals.total_reviews) : '—';
     return `
       <section class="hero view-enter">
         <div class="hero__top">
           <div>
-            <h1 class="hero__title">Engineering Dashboard</h1>
-            <p class="hero__subtitle">Real, live GitHub contribution data for every ${Format.escapeHtml(org.name)} engineer.</p>
+            <h1 class="hero__title">Engineering Cadence & Discipline</h1>
+            <p class="hero__subtitle">Verified daily activity, continuous streaks, and peer reviews for every ${Format.escapeHtml(org.name)} engineer.</p>
           </div>
           <div class="sync-badge ${isStale(DATA.generated_at) ? 'is-stale' : ''}">${syncBadgeHTML()}</div>
         </div>
 
         <div class="stat-grid">
-          <div class="stat-tile"><div class="stat-tile__label">Total Contributions</div><div class="stat-tile__value">${Format.number(org.totals.total_contributions)}</div></div>
-          <div class="stat-tile"><div class="stat-tile__label">Firm Commits</div><div class="stat-tile__value stat-tile__value--accent">${Format.number(org.totals.total_firm_commits)}</div></div>
-          <div class="stat-tile"><div class="stat-tile__label">Engineers</div><div class="stat-tile__value">${org.member_count}</div></div>
-          <div class="stat-tile"><div class="stat-tile__label">Repositories</div><div class="stat-tile__value">${org.repo_count}</div></div>
+          <div class="stat-tile"><div class="stat-tile__label">Team Cadence</div><div class="stat-tile__value stat-tile__value--accent">${avgCadence}</div><div class="stat-tile__sub">Avg active days</div></div>
+          <div class="stat-tile"><div class="stat-tile__label">Record Streak</div><div class="stat-tile__value">${peakStreak}</div><div class="stat-tile__sub">Unbroken days</div></div>
+          <div class="stat-tile"><div class="stat-tile__label">Peer Code Reviews</div><div class="stat-tile__value">${totalReviews}</div><div class="stat-tile__sub">Standards & guidelines</div></div>
+          <div class="stat-tile"><div class="stat-tile__label">Active Squad</div><div class="stat-tile__value">${org.member_count} <span class="stat-tile__hint">engineers</span></div><div class="stat-tile__sub">${org.repo_count} repositories</div></div>
         </div>
 
         <div class="org-calendar-card">
-          <div class="org-calendar-card__title">Firm-wide activity since ${Format.date(org.calendar.from)}</div>
+          <div class="org-calendar-card__title">Daily firm-wide engineering cadence since ${Format.date(org.calendar.from)}</div>
           <div id="org-calendar-slot"></div>
         </div>
       </section>
 
       <div class="section-head">
-        <h2>Engineering Leaderboard</h2>
-        <span class="section-head__hint">Click any engineer for their full profile</span>
+        <h2>Engineering Discipline Leaderboard</h2>
+        <span class="section-head__hint">Ranked by daily consistency, streaks, and peer reviews — click any engineer for details</span>
       </div>
       <div class="table-scroll" id="leaderboard-table"></div>
       <div class="leaderboard-cards" id="leaderboard-cards"></div>

@@ -233,6 +233,7 @@ ul { margin: 0; padding: 0; list-style: none; }
 }
 .stat-tile__value--accent { color: var(--accent); }
 .stat-tile__hint { font-size: 13px; font-weight: 500; color: var(--text-tertiary); margin-left: 6px; }
+.stat-tile__sub { font-size: 12px; color: var(--text-tertiary); margin-top: 4px; }
 
 .org-calendar-card {
   background: var(--bg-surface);
@@ -260,8 +261,22 @@ ul { margin: 0; padding: 0; list-style: none; }
   margin: 8px 0 16px;
   flex-wrap: wrap;
 }
-.section-head h2 { font-size: 18px; }
-.section-head__hint { font-size: 13px; color: var(--text-tertiary); }
+.section-head h2 { font-size: 20px; }
+.section-head__hint { font-size: 13.5px; color: var(--text-tertiary); }
+
+/* Alert banners ----------------------------------------------------------- */
+.alert-banner {
+  padding: 14px 18px;
+  border-radius: var(--radius-md);
+  margin-bottom: 24px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+.alert-banner--warn {
+  background: rgba(245, 158, 11, 0.12);
+  border: 1px solid rgba(245, 158, 11, 0.35);
+  color: #fde68a;
+}
 
 /* Leaderboard table ------------------------------------------------------- */
 .table-scroll {
@@ -274,17 +289,17 @@ ul { margin: 0; padding: 0; list-style: none; }
 .leaderboard {
   width: 100%;
   border-collapse: collapse;
-  font-size: 13.5px;
-  min-width: 760px;
+  font-size: 14.5px;
+  min-width: 820px;
 }
 .leaderboard th {
   text-align: left;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.05em;
   color: var(--text-tertiary);
-  padding: 14px 16px;
+  padding: 16px 18px;
   border-bottom: 1px solid var(--border-subtle);
   white-space: nowrap;
 }
@@ -294,7 +309,7 @@ ul { margin: 0; padding: 0; list-style: none; }
 .leaderboard th.is-active { color: var(--accent); }
 .leaderboard th.is-active .sort-arrow { opacity: 1; }
 .leaderboard td {
-  padding: 12px 16px;
+  padding: 14px 18px;
   border-bottom: 1px solid var(--border-subtle);
   vertical-align: middle;
 }
@@ -306,37 +321,42 @@ ul { margin: 0; padding: 0; list-style: none; }
   font-family: var(--font-mono);
   font-weight: 700;
   color: var(--text-tertiary);
-  font-size: 13px;
+  font-size: 14px;
 }
-.engineer-cell { display: flex; align-items: center; gap: 10px; min-width: 170px; }
-.engineer-cell img { width: 30px; height: 30px; border-radius: 50%; flex-shrink: 0; }
-.engineer-cell__name { font-weight: 600; color: var(--text-primary); }
-.engineer-cell__login { font-size: 12px; color: var(--text-tertiary); }
+.engineer-cell { display: flex; align-items: center; gap: 12px; min-width: 190px; }
+.engineer-cell img {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  border: 1.5px solid var(--border-strong);
+}
+.engineer-cell__name { font-weight: 600; color: var(--text-primary); font-size: 15px; }
+.engineer-cell__login { font-size: 12.5px; color: var(--text-tertiary); }
 
 .tier-chip {
-  display: inline-block;
-  padding: 3px 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 12px;
   border-radius: 999px;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 600;
   background: var(--accent-wash);
   color: var(--accent);
   border: 1px solid var(--accent-dim);
   white-space: nowrap;
 }
+.tier-chip--warn {
+  background: rgba(245, 158, 11, 0.15);
+  color: #fbbf24;
+  border-color: rgba(245, 158, 11, 0.4);
+}
 
 .num-cell { font-variant-numeric: tabular-nums; font-weight: 600; }
+.cell-sub { font-size: 11.5px; font-weight: normal; color: var(--text-tertiary); margin-top: 2px; }
+.detail-header__desc { color: var(--text-secondary); font-size: 14px; margin-top: 8px; max-width: 600px; }
 .share-cell { color: var(--text-secondary); font-variant-numeric: tabular-nums; }
-.repo-tags { display: flex; gap: 6px; flex-wrap: wrap; max-width: 220px; }
-.repo-tag {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  color: var(--text-secondary);
-  background: var(--bg-surface-raised);
-  border: 1px solid var(--border-subtle);
-  padding: 2px 7px;
-  border-radius: 5px;
-}
 
 /* Leaderboard mobile card layout ------------------------------------------ */
 .leaderboard-cards { display: none; flex-direction: column; gap: 10px; margin-bottom: 48px; }
