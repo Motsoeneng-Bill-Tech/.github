@@ -4925,15 +4925,15 @@
               {
                 "date": "2026-08-31",
                 "weekday": 1,
-                "count": 0,
-                "level": 0,
+                "count": 4,
+                "level": 2,
                 "in_range": true
               },
               {
                 "date": "2026-09-01",
                 "weekday": 2,
-                "count": 0,
-                "level": 0,
+                "count": 3,
+                "level": 2,
                 "in_range": true
               },
               {
