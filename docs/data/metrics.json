@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-13T20:15:56Z",
-  "source_commit": "a96be39f596b62b76d4cbcb75ad051a3992c2a6a",
+  "generated_at": "2026-09-13T20:21:39Z",
+  "source_commit": "local",
   "org": {
     "login": "Motsoeneng-Bill-Tech",
     "name": "Motsoeneng Bill Tech",
@@ -886,6 +886,19 @@
       "unattributed_commits": 1
     },
     {
+      "name": ".github",
+      "description": null,
+      "html_url": "https://github.com/Motsoeneng-Bill-Tech/.github",
+      "visibility": "PUBLIC",
+      "primary_language": null,
+      "default_branch": "main",
+      "is_empty": false,
+      "is_archived": false,
+      "total_commits_default_branch": 19,
+      "attributed_member_commits": 5,
+      "unattributed_commits": 14
+    },
+    {
       "name": "mb-invoicing-tool",
       "description": "Decodes glyph-obfuscated legal invoice PDFs, reconciles every fee line to the cent, auto-categorises by learned rules, and exports the team's Excel analysis. Multi-matter.",
       "html_url": "https://github.com/Motsoeneng-Bill-Tech/mb-invoicing-tool",
@@ -897,19 +910,6 @@
       "total_commits_default_branch": 19,
       "attributed_member_commits": 16,
       "unattributed_commits": 3
-    },
-    {
-      "name": ".github",
-      "description": null,
-      "html_url": "https://github.com/Motsoeneng-Bill-Tech/.github",
-      "visibility": "PUBLIC",
-      "primary_language": null,
-      "default_branch": "main",
-      "is_empty": false,
-      "is_archived": false,
-      "total_commits_default_branch": 18,
-      "attributed_member_commits": 5,
-      "unattributed_commits": 13
     },
     {
       "name": "anchor-games",
@@ -5907,7 +5907,7 @@
     "generation_ok": true,
     "rate_limit": {
       "cost_used_total": 11,
-      "remaining": 4936,
+      "remaining": 4913,
       "reset_at": "2026-09-13T21:03:24Z"
     },
     "warnings": []
