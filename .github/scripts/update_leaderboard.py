@@ -46,25 +46,79 @@ DOCS_DATA_PATH = os.path.join(ROOT_DIR, "docs", "data", "metrics.json")
 SCHEMA_VERSION = 1
 ROSTER_DETAIL_CAP = 12
 REPO_CHUNK_SIZE = 6
+INACTIVE_THRESHOLD_DAYS = 14
 
-# Contribution tiers are activity descriptors, not job titles — thresholds are on
-# real, live-computed firm commits. (Previously the site presented these as if they
-# were actual org roles, e.g. "Principal Architect" — that was never true data.)
+# Impact Score weights — consistency is deliberately the dominant signal so that
+# commit-spamming (high volume, low consistency) doesn't move the needle.
+# Raw commit count has ZERO weight by design.
+SCORE_WEIGHTS = {
+    "consistency": 0.35,   # active_days / total_possible_days
+    "streak":      0.15,   # longest_streak normalized
+    "prs":         0.20,   # pull requests opened
+    "reviews":     0.20,   # code reviews completed
+    "breadth":     0.10,   # repos contributed to / total org repos
+}
+
+# Tier thresholds: (min_impact_score, min_consistency_pct, label, badge)
+# Both conditions must be met — high score with low consistency still gets demoted.
 TIERS = [
-    (500, "Top Contributor"),
-    (200, "Lead Contributor"),
-    (100, "Core Contributor"),
-    (40, "Regular Contributor"),
-    (1, "Contributor"),
-    (0, "New Member"),
+    (80, 60, "Principal",   "🏆"),
+    (60, 40, "Senior",      "🥇"),
+    (35, 25, "Core",        "🥈"),
+    (15, 10, "Active",      "🥉"),
+    (0,   0, "Contributor", "⭐"),
 ]
+INACTIVE_TIER = ("Inactive", "🔴")
 
 
-def get_tier_label(firm_commits):
-    for threshold, label in TIERS:
-        if firm_commits >= threshold:
-            return label
-    return TIERS[-1][1]
+def get_tier(impact_score, consistency_pct, is_inactive):
+    """Tier assignment requires BOTH an impact score AND a consistency gate.
+    An engineer who spams 1000 commits in one weekend can't reach Principal
+    if they only showed up 5% of their tenure days."""
+    if is_inactive:
+        return INACTIVE_TIER
+    for min_score, min_consistency, label, badge in TIERS:
+        if impact_score >= min_score and consistency_pct >= min_consistency:
+            return (label, badge)
+    return (TIERS[-1][2], TIERS[-1][3])
+
+
+def _normalize(value, values):
+    """Min-max normalize a value against all members' values (0-100 scale)."""
+    max_val = max(values) if values else 1
+    if max_val == 0:
+        return 0.0
+    return min(100.0, (value / max_val) * 100.0)
+
+
+def compute_impact_scores(members, total_org_repos):
+    """Compute Impact Scores for all members using the weighted composite model.
+    Normalization is relative — the top performer in each dimension scores 100,
+    everyone else is proportional. This ensures the score is always a fair
+    comparison within the team, not an absolute threshold."""
+
+    # Collect raw values for normalization
+    all_consistency = [m["_raw_consistency_pct"] for m in members]
+    all_streaks = [m["_raw_longest_streak"] for m in members]
+    all_prs = [m["contributions"]["pull_requests"] for m in members]
+    all_reviews = [m["contributions"]["reviews"] for m in members]
+    all_breadth = [m["_raw_repos_breadth"] for m in members]
+
+    for m in members:
+        consistency_norm = _normalize(m["_raw_consistency_pct"], all_consistency)
+        streak_norm = _normalize(m["_raw_longest_streak"], all_streaks)
+        pr_norm = _normalize(m["contributions"]["pull_requests"], all_prs)
+        review_norm = _normalize(m["contributions"]["reviews"], all_reviews)
+        breadth_norm = _normalize(m["_raw_repos_breadth"], all_breadth)
+
+        score = (
+            SCORE_WEIGHTS["consistency"] * consistency_norm +
+            SCORE_WEIGHTS["streak"]      * streak_norm +
+            SCORE_WEIGHTS["prs"]         * pr_norm +
+            SCORE_WEIGHTS["reviews"]     * review_norm +
+            SCORE_WEIGHTS["breadth"]     * breadth_norm
+        )
+        m["impact_score"] = round(score, 1)
 
 
 def gather_all_data():
@@ -140,6 +194,7 @@ def build_dataset(members_raw, repos_raw, member_contribs, commit_matrix, now, r
         })
 
     total_firm_commits_org = sum(sum(mat["by_login"].values()) for mat in commit_matrix.values())
+    total_org_repos = len(repos_out)
 
     # --- per-member derivation ---
     members_out = []
@@ -171,6 +226,26 @@ def build_dataset(members_raw, repos_raw, member_contribs, commit_matrix, now, r
 
         active_days = sum(1 for c in day_counts.values() if c > 0)
         total_days = len(day_counts)
+        consistency_pct = round((active_days / total_days * 100), 1) if total_days else 0.0
+
+        # Streak computation
+        streaks = render.calendar_streaks(day_counts)
+
+        # Last active date and inactive detection
+        sorted_dates = sorted(day_counts.keys())
+        last_active_date = None
+        for d in reversed(sorted_dates):
+            if day_counts[d] > 0:
+                last_active_date = d
+                break
+        if last_active_date:
+            days_since_last = (now.date() - datetime.fromisoformat(last_active_date).date()).days
+        else:
+            days_since_last = total_days or 999
+        is_inactive = days_since_last >= INACTIVE_THRESHOLD_DAYS
+
+        # Repo breadth — how many distinct org repos this member has commits in
+        repos_breadth = len(firm_by_repo)
 
         members_out.append({
             "login": login,
@@ -199,20 +274,53 @@ def build_dataset(members_raw, repos_raw, member_contribs, commit_matrix, now, r
                 "top_repos": list(firm_by_repo.keys()),
             },
             "share_pct": round((firm_total / total_firm_commits_org * 100), 1) if total_firm_commits_org else 0.0,
-            "tier": get_tier_label(firm_total),
+            # New consistency-first fields
+            "consistency": {
+                "active_days": active_days,
+                "total_days": total_days,
+                "pct": consistency_pct,
+                "longest_streak": streaks["longest_streak"],
+                "current_streak": streaks["current_streak"],
+                "last_active_date": last_active_date,
+                "days_since_last_active": days_since_last,
+                "is_inactive": is_inactive,
+                "repos_breadth": repos_breadth,
+            },
+            # Temporary raw fields for impact score normalization (cleaned up below)
+            "_raw_consistency_pct": consistency_pct,
+            "_raw_longest_streak": streaks["longest_streak"],
+            "_raw_repos_breadth": repos_breadth,
             "calendar": {
                 "from": created_dt.date().isoformat(),
                 "to": now.date().isoformat(),
                 "total": cal["totalContributions"],
                 "active_days": active_days,
                 "total_days": total_days,
-                "active_pct": round((active_days / total_days * 100), 1) if total_days else 0.0,
-                **render.calendar_streaks(day_counts),
+                "active_pct": consistency_pct,
+                **streaks,
                 "weeks": render.build_calendar_grid(day_counts, created_dt.date(), now.date()),
             },
         })
 
-    members_out.sort(key=lambda x: -x["firm_commits"]["total"])
+    # Compute impact scores across all members (relative normalization)
+    compute_impact_scores(members_out, total_org_repos)
+
+    # Assign tiers and clean up temp fields
+    for m in members_out:
+        tier_label, tier_badge = get_tier(
+            m["impact_score"],
+            m["consistency"]["pct"],
+            m["consistency"]["is_inactive"],
+        )
+        m["tier"] = tier_label
+        m["tier_badge"] = tier_badge
+        # Clean up temporary normalization fields
+        del m["_raw_consistency_pct"]
+        del m["_raw_longest_streak"]
+        del m["_raw_repos_breadth"]
+
+    # RANK BY IMPACT SCORE, not commit count
+    members_out.sort(key=lambda x: (-x["impact_score"], -x["consistency"]["pct"]))
     for idx, m in enumerate(members_out, start=1):
         m["rank"] = idx
 

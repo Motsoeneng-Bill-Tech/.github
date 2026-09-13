@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-04T07:55:34Z",
+  "generated_at": "2026-09-13T19:23:41Z",
   "source_commit": "local",
   "org": {
     "login": "Motsoeneng-Bill-Tech",
@@ -8,17 +8,17 @@
     "avatar_url": "https://github.com/Motsoeneng-Bill-Tech.png",
     "html_url": "https://github.com/Motsoeneng-Bill-Tech",
     "member_count": 7,
-    "repo_count": 8,
+    "repo_count": 12,
     "totals": {
-      "total_contributions": 2391,
-      "total_commit_contributions": 1579,
-      "total_pr_contributions": 602,
-      "total_review_contributions": 112,
-      "total_firm_commits": 1523
+      "total_contributions": 4170,
+      "total_commit_contributions": 3253,
+      "total_pr_contributions": 748,
+      "total_review_contributions": 152,
+      "total_firm_commits": 2533
     },
     "calendar": {
       "from": "2026-06-19",
-      "to": "2026-09-04",
+      "to": "2026-09-13",
       "weeks": [
         {
           "days": [
@@ -99,7 +99,7 @@
             {
               "date": "2026-06-24",
               "weekday": 3,
-              "count": 11,
+              "count": 12,
               "level": 4,
               "in_range": true
             },
@@ -152,21 +152,21 @@
             {
               "date": "2026-07-01",
               "weekday": 3,
-              "count": 4,
-              "level": 2,
+              "count": 8,
+              "level": 3,
               "in_range": true
             },
             {
               "date": "2026-07-02",
               "weekday": 4,
-              "count": 34,
+              "count": 64,
               "level": 4,
               "in_range": true
             },
             {
               "date": "2026-07-03",
               "weekday": 5,
-              "count": 24,
+              "count": 26,
               "level": 4,
               "in_range": true
             },
@@ -191,28 +191,28 @@
             {
               "date": "2026-07-06",
               "weekday": 1,
-              "count": 25,
+              "count": 37,
               "level": 4,
               "in_range": true
             },
             {
               "date": "2026-07-07",
               "weekday": 2,
-              "count": 13,
+              "count": 17,
               "level": 4,
               "in_range": true
             },
             {
               "date": "2026-07-08",
               "weekday": 3,
-              "count": 44,
+              "count": 57,
               "level": 4,
               "in_range": true
             },
             {
               "date": "2026-07-09",
               "weekday": 4,
-              "count": 35,
+              "count": 44,
               "level": 4,
               "in_range": true
             },
@@ -304,7 +304,7 @@
             {
               "date": "2026-07-21",
               "weekday": 2,
-              "count": 55,
+              "count": 58,
               "level": 4,
               "in_range": true
             },
@@ -378,7 +378,7 @@
             {
               "date": "2026-07-31",
               "weekday": 5,
-              "count": 46,
+              "count": 48,
               "level": 4,
               "in_range": true
             },
@@ -509,43 +509,43 @@
             {
               "date": "2026-08-17",
               "weekday": 1,
-              "count": 58,
+              "count": 59,
               "level": 4,
               "in_range": true
             },
             {
               "date": "2026-08-18",
               "weekday": 2,
-              "count": 44,
+              "count": 51,
               "level": 4,
               "in_range": true
             },
             {
               "date": "2026-08-19",
               "weekday": 3,
-              "count": 35,
+              "count": 42,
               "level": 4,
               "in_range": true
             },
             {
               "date": "2026-08-20",
               "weekday": 4,
-              "count": 14,
+              "count": 17,
               "level": 4,
               "in_range": true
             },
             {
               "date": "2026-08-21",
               "weekday": 5,
-              "count": 10,
+              "count": 14,
               "level": 4,
               "in_range": true
             },
             {
               "date": "2026-08-22",
               "weekday": 6,
-              "count": 9,
-              "level": 3,
+              "count": 17,
+              "level": 4,
               "in_range": true
             }
           ]
@@ -555,50 +555,50 @@
             {
               "date": "2026-08-23",
               "weekday": 0,
-              "count": 7,
-              "level": 3,
+              "count": 15,
+              "level": 4,
               "in_range": true
             },
             {
               "date": "2026-08-24",
               "weekday": 1,
-              "count": 50,
+              "count": 52,
               "level": 4,
               "in_range": true
             },
             {
               "date": "2026-08-25",
               "weekday": 2,
-              "count": 4,
-              "level": 2,
+              "count": 7,
+              "level": 3,
               "in_range": true
             },
             {
               "date": "2026-08-26",
               "weekday": 3,
-              "count": 14,
+              "count": 19,
               "level": 4,
               "in_range": true
             },
             {
               "date": "2026-08-27",
               "weekday": 4,
-              "count": 31,
+              "count": 38,
               "level": 4,
               "in_range": true
             },
             {
               "date": "2026-08-28",
               "weekday": 5,
-              "count": 11,
+              "count": 14,
               "level": 4,
               "in_range": true
             },
             {
               "date": "2026-08-29",
               "weekday": 6,
-              "count": 3,
-              "level": 2,
+              "count": 6,
+              "level": 3,
               "in_range": true
             }
           ]
@@ -608,47 +608,153 @@
             {
               "date": "2026-08-30",
               "weekday": 0,
-              "count": 11,
+              "count": 16,
               "level": 4,
               "in_range": true
             },
             {
               "date": "2026-08-31",
               "weekday": 1,
-              "count": 13,
+              "count": 21,
               "level": 4,
               "in_range": true
             },
             {
               "date": "2026-09-01",
               "weekday": 2,
-              "count": 19,
+              "count": 29,
               "level": 4,
               "in_range": true
             },
             {
               "date": "2026-09-02",
               "weekday": 3,
-              "count": 26,
+              "count": 32,
               "level": 4,
               "in_range": true
             },
             {
               "date": "2026-09-03",
               "weekday": 4,
-              "count": 12,
+              "count": 15,
               "level": 4,
               "in_range": true
             },
             {
               "date": "2026-09-04",
               "weekday": 5,
-              "count": 2,
-              "level": 1,
+              "count": 58,
+              "level": 4,
               "in_range": true
             },
             {
               "date": "2026-09-05",
+              "weekday": 6,
+              "count": 58,
+              "level": 4,
+              "in_range": true
+            }
+          ]
+        },
+        {
+          "days": [
+            {
+              "date": "2026-09-06",
+              "weekday": 0,
+              "count": 44,
+              "level": 4,
+              "in_range": true
+            },
+            {
+              "date": "2026-09-07",
+              "weekday": 1,
+              "count": 79,
+              "level": 4,
+              "in_range": true
+            },
+            {
+              "date": "2026-09-08",
+              "weekday": 2,
+              "count": 71,
+              "level": 4,
+              "in_range": true
+            },
+            {
+              "date": "2026-09-09",
+              "weekday": 3,
+              "count": 75,
+              "level": 4,
+              "in_range": true
+            },
+            {
+              "date": "2026-09-10",
+              "weekday": 4,
+              "count": 65,
+              "level": 4,
+              "in_range": true
+            },
+            {
+              "date": "2026-09-11",
+              "weekday": 5,
+              "count": 67,
+              "level": 4,
+              "in_range": true
+            },
+            {
+              "date": "2026-09-12",
+              "weekday": 6,
+              "count": 1027,
+              "level": 4,
+              "in_range": true
+            }
+          ]
+        },
+        {
+          "days": [
+            {
+              "date": "2026-09-13",
+              "weekday": 0,
+              "count": 64,
+              "level": 4,
+              "in_range": true
+            },
+            {
+              "date": "2026-09-14",
+              "weekday": 1,
+              "count": 0,
+              "level": 0,
+              "in_range": false
+            },
+            {
+              "date": "2026-09-15",
+              "weekday": 2,
+              "count": 0,
+              "level": 0,
+              "in_range": false
+            },
+            {
+              "date": "2026-09-16",
+              "weekday": 3,
+              "count": 0,
+              "level": 0,
+              "in_range": false
+            },
+            {
+              "date": "2026-09-17",
+              "weekday": 4,
+              "count": 0,
+              "level": 0,
+              "in_range": false
+            },
+            {
+              "date": "2026-09-18",
+              "weekday": 5,
+              "count": 0,
+              "level": 0,
+              "in_range": false
+            },
+            {
+              "date": "2026-09-19",
               "weekday": 6,
               "count": 0,
               "level": 0,
@@ -669,9 +775,22 @@
       "default_branch": "main",
       "is_empty": false,
       "is_archived": false,
-      "total_commits_default_branch": 788,
-      "attributed_member_commits": 787,
-      "unattributed_commits": 1
+      "total_commits_default_branch": 968,
+      "attributed_member_commits": 921,
+      "unattributed_commits": 47
+    },
+    {
+      "name": "mb-anchor-games",
+      "description": "MB Leaderboard and Anchor Games counting down to the convention.",
+      "html_url": "https://github.com/Motsoeneng-Bill-Tech/mb-anchor-games",
+      "visibility": "PRIVATE",
+      "primary_language": "JavaScript",
+      "default_branch": "main",
+      "is_empty": false,
+      "is_archived": false,
+      "total_commits_default_branch": 518,
+      "attributed_member_commits": 518,
+      "unattributed_commits": 0
     },
     {
       "name": "forensics-due-diligence-system",
@@ -682,9 +801,22 @@
       "default_branch": "main",
       "is_empty": false,
       "is_archived": false,
-      "total_commits_default_branch": 236,
-      "attributed_member_commits": 227,
-      "unattributed_commits": 9
+      "total_commits_default_branch": 379,
+      "attributed_member_commits": 337,
+      "unattributed_commits": 42
+    },
+    {
+      "name": "Case-Management",
+      "description": "Multi-tenant enterprise case management platform for corporate and state-owned clients, covering the full matter lifecycle.",
+      "html_url": "https://github.com/Motsoeneng-Bill-Tech/Case-Management",
+      "visibility": "PRIVATE",
+      "primary_language": "Java",
+      "default_branch": "main",
+      "is_empty": false,
+      "is_archived": false,
+      "total_commits_default_branch": 257,
+      "attributed_member_commits": 257,
+      "unattributed_commits": 0
     },
     {
       "name": "mb-knowledge-vault-enterprise",
@@ -700,16 +832,16 @@
       "unattributed_commits": 0
     },
     {
-      "name": "Case-Management",
-      "description": "Multi-tenant enterprise case management platform for corporate and state-owned clients, covering the full matter lifecycle.",
-      "html_url": "https://github.com/Motsoeneng-Bill-Tech/Case-Management",
+      "name": "mb-wills-week",
+      "description": null,
+      "html_url": "https://github.com/Motsoeneng-Bill-Tech/mb-wills-week",
       "visibility": "PRIVATE",
-      "primary_language": "Java",
+      "primary_language": "JavaScript",
       "default_branch": "main",
       "is_empty": false,
       "is_archived": false,
-      "total_commits_default_branch": 173,
-      "attributed_member_commits": 173,
+      "total_commits_default_branch": 88,
+      "attributed_member_commits": 88,
       "unattributed_commits": 0
     },
     {
@@ -726,6 +858,19 @@
       "unattributed_commits": 0
     },
     {
+      "name": "MB-IQ-Revamped",
+      "description": "MB IQ Revamped",
+      "html_url": "https://github.com/Motsoeneng-Bill-Tech/MB-IQ-Revamped",
+      "visibility": "PRIVATE",
+      "primary_language": "TypeScript",
+      "default_branch": "main",
+      "is_empty": false,
+      "is_archived": false,
+      "total_commits_default_branch": 61,
+      "attributed_member_commits": 54,
+      "unattributed_commits": 7
+    },
+    {
       "name": "job-portal",
       "description": null,
       "html_url": "https://github.com/Motsoeneng-Bill-Tech/job-portal",
@@ -734,9 +879,22 @@
       "default_branch": "main",
       "is_empty": false,
       "is_archived": false,
-      "total_commits_default_branch": 27,
-      "attributed_member_commits": 27,
-      "unattributed_commits": 0
+      "total_commits_default_branch": 29,
+      "attributed_member_commits": 28,
+      "unattributed_commits": 1
+    },
+    {
+      "name": "mb-invoicing-tool",
+      "description": "Decodes glyph-obfuscated legal invoice PDFs, reconciles every fee line to the cent, auto-categorises by learned rules, and exports the team's Excel analysis. Multi-matter.",
+      "html_url": "https://github.com/Motsoeneng-Bill-Tech/mb-invoicing-tool",
+      "visibility": "PRIVATE",
+      "primary_language": "Java",
+      "default_branch": "master",
+      "is_empty": false,
+      "is_archived": false,
+      "total_commits_default_branch": 19,
+      "attributed_member_commits": 16,
+      "unattributed_commits": 3
     },
     {
       "name": ".github",
@@ -747,21 +905,21 @@
       "default_branch": "main",
       "is_empty": false,
       "is_archived": false,
-      "total_commits_default_branch": 8,
-      "attributed_member_commits": 3,
-      "unattributed_commits": 5
+      "total_commits_default_branch": 11,
+      "attributed_member_commits": 4,
+      "unattributed_commits": 7
     },
     {
-      "name": "mb-wills-week",
-      "description": null,
-      "html_url": "https://github.com/Motsoeneng-Bill-Tech/mb-wills-week",
+      "name": "anchor-games",
+      "description": "MB Leaderboard and Anchor Games  counting down to the convention.",
+      "html_url": "https://github.com/Motsoeneng-Bill-Tech/anchor-games",
       "visibility": "PRIVATE",
-      "primary_language": "JavaScript",
+      "primary_language": "TypeScript",
       "default_branch": "main",
       "is_empty": false,
       "is_archived": false,
-      "total_commits_default_branch": 1,
-      "attributed_member_commits": 1,
+      "total_commits_default_branch": 5,
+      "attributed_member_commits": 5,
       "unattributed_commits": 0
     }
   ],
@@ -780,39 +938,53 @@
         "website_url": null
       },
       "contributions": {
-        "total": 1136,
-        "commits": 772,
-        "pull_requests": 328,
-        "reviews": 33,
+        "total": 1332,
+        "commits": 917,
+        "pull_requests": 378,
+        "reviews": 34,
         "issues": 0,
         "restricted": 0
       },
       "firm_commits": {
-        "total": 774,
+        "total": 919,
         "by_repo": {
-          "tender-intelligence-platform": 566,
-          "forensics-due-diligence-system": 179,
-          "job-portal": 27,
+          "tender-intelligence-platform": 578,
+          "forensics-due-diligence-system": 254,
+          "MB-IQ-Revamped": 54,
+          "job-portal": 28,
+          "mb-invoicing-tool": 3,
           ".github": 2
         },
         "top_repos": [
           "tender-intelligence-platform",
           "forensics-due-diligence-system",
+          "MB-IQ-Revamped",
           "job-portal",
+          "mb-invoicing-tool",
           ".github"
         ]
       },
-      "share_pct": 50.8,
-      "tier": "Top Contributor",
+      "share_pct": 36.3,
+      "consistency": {
+        "active_days": 76,
+        "total_days": 87,
+        "pct": 87.4,
+        "longest_streak": 74,
+        "current_streak": 74,
+        "last_active_date": "2026-09-13",
+        "days_since_last_active": 0,
+        "is_inactive": false,
+        "repos_breadth": 6
+      },
       "calendar": {
         "from": "2026-06-19",
-        "to": "2026-09-04",
-        "total": 1136,
-        "active_days": 65,
-        "total_days": 78,
-        "active_pct": 83.3,
-        "longest_streak": 55,
-        "current_streak": 0,
+        "to": "2026-09-13",
+        "total": 1332,
+        "active_days": 76,
+        "total_days": 87,
+        "active_pct": 87.4,
+        "longest_streak": 74,
+        "current_streak": 74,
         "weeks": [
           {
             "days": [
@@ -893,7 +1065,7 @@
               {
                 "date": "2026-06-24",
                 "weekday": 3,
-                "count": 3,
+                "count": 4,
                 "level": 2,
                 "in_range": true
               },
@@ -1310,36 +1482,36 @@
               {
                 "date": "2026-08-18",
                 "weekday": 2,
-                "count": 5,
-                "level": 2,
+                "count": 6,
+                "level": 3,
                 "in_range": true
               },
               {
                 "date": "2026-08-19",
                 "weekday": 3,
-                "count": 7,
-                "level": 3,
+                "count": 12,
+                "level": 4,
                 "in_range": true
               },
               {
                 "date": "2026-08-20",
                 "weekday": 4,
-                "count": 4,
-                "level": 2,
+                "count": 6,
+                "level": 3,
                 "in_range": true
               },
               {
                 "date": "2026-08-21",
                 "weekday": 5,
-                "count": 3,
+                "count": 5,
                 "level": 2,
                 "in_range": true
               },
               {
                 "date": "2026-08-22",
                 "weekday": 6,
-                "count": 7,
-                "level": 3,
+                "count": 13,
+                "level": 4,
                 "in_range": true
               }
             ]
@@ -1349,50 +1521,50 @@
               {
                 "date": "2026-08-23",
                 "weekday": 0,
-                "count": 1,
-                "level": 1,
+                "count": 3,
+                "level": 2,
                 "in_range": true
               },
               {
                 "date": "2026-08-24",
                 "weekday": 1,
-                "count": 2,
-                "level": 1,
+                "count": 3,
+                "level": 2,
                 "in_range": true
               },
               {
                 "date": "2026-08-25",
                 "weekday": 2,
-                "count": 4,
-                "level": 2,
+                "count": 7,
+                "level": 3,
                 "in_range": true
               },
               {
                 "date": "2026-08-26",
                 "weekday": 3,
-                "count": 0,
-                "level": 0,
+                "count": 2,
+                "level": 1,
                 "in_range": true
               },
               {
                 "date": "2026-08-27",
                 "weekday": 4,
-                "count": 8,
-                "level": 3,
+                "count": 11,
+                "level": 4,
                 "in_range": true
               },
               {
                 "date": "2026-08-28",
                 "weekday": 5,
-                "count": 1,
-                "level": 1,
+                "count": 3,
+                "level": 2,
                 "in_range": true
               },
               {
                 "date": "2026-08-29",
                 "weekday": 6,
-                "count": 3,
-                "level": 2,
+                "count": 6,
+                "level": 3,
                 "in_range": true
               }
             ]
@@ -1402,47 +1574,153 @@
               {
                 "date": "2026-08-30",
                 "weekday": 0,
-                "count": 8,
-                "level": 3,
+                "count": 12,
+                "level": 4,
                 "in_range": true
               },
               {
                 "date": "2026-08-31",
                 "weekday": 1,
-                "count": 3,
-                "level": 2,
+                "count": 7,
+                "level": 3,
                 "in_range": true
               },
               {
                 "date": "2026-09-01",
                 "weekday": 2,
-                "count": 5,
-                "level": 2,
+                "count": 10,
+                "level": 4,
                 "in_range": true
               },
               {
                 "date": "2026-09-02",
                 "weekday": 3,
-                "count": 6,
-                "level": 3,
+                "count": 10,
+                "level": 4,
                 "in_range": true
               },
               {
                 "date": "2026-09-03",
                 "weekday": 4,
-                "count": 5,
-                "level": 2,
+                "count": 7,
+                "level": 3,
                 "in_range": true
               },
               {
                 "date": "2026-09-04",
                 "weekday": 5,
-                "count": 0,
-                "level": 0,
+                "count": 18,
+                "level": 4,
                 "in_range": true
               },
               {
                 "date": "2026-09-05",
+                "weekday": 6,
+                "count": 26,
+                "level": 4,
+                "in_range": true
+              }
+            ]
+          },
+          {
+            "days": [
+              {
+                "date": "2026-09-06",
+                "weekday": 0,
+                "count": 22,
+                "level": 4,
+                "in_range": true
+              },
+              {
+                "date": "2026-09-07",
+                "weekday": 1,
+                "count": 12,
+                "level": 4,
+                "in_range": true
+              },
+              {
+                "date": "2026-09-08",
+                "weekday": 2,
+                "count": 14,
+                "level": 4,
+                "in_range": true
+              },
+              {
+                "date": "2026-09-09",
+                "weekday": 3,
+                "count": 11,
+                "level": 4,
+                "in_range": true
+              },
+              {
+                "date": "2026-09-10",
+                "weekday": 4,
+                "count": 20,
+                "level": 4,
+                "in_range": true
+              },
+              {
+                "date": "2026-09-11",
+                "weekday": 5,
+                "count": 8,
+                "level": 3,
+                "in_range": true
+              },
+              {
+                "date": "2026-09-12",
+                "weekday": 6,
+                "count": 6,
+                "level": 3,
+                "in_range": true
+              }
+            ]
+          },
+          {
+            "days": [
+              {
+                "date": "2026-09-13",
+                "weekday": 0,
+                "count": 7,
+                "level": 3,
+                "in_range": true
+              },
+              {
+                "date": "2026-09-14",
+                "weekday": 1,
+                "count": 0,
+                "level": 0,
+                "in_range": false
+              },
+              {
+                "date": "2026-09-15",
+                "weekday": 2,
+                "count": 0,
+                "level": 0,
+                "in_range": false
+              },
+              {
+                "date": "2026-09-16",
+                "weekday": 3,
+                "count": 0,
+                "level": 0,
+                "in_range": false
+              },
+              {
+                "date": "2026-09-17",
+                "weekday": 4,
+                "count": 0,
+                "level": 0,
+                "in_range": false
+              },
+              {
+                "date": "2026-09-18",
+                "weekday": 5,
+                "count": 0,
+                "level": 0,
+                "in_range": false
+              },
+              {
+                "date": "2026-09-19",
                 "weekday": 6,
                 "count": 0,
                 "level": 0,
@@ -1452,6 +1730,9 @@
           }
         ]
       },
+      "impact_score": 97.9,
+      "tier": "Principal",
+      "tier_badge": "\ud83c\udfc6",
       "rank": 1
     },
     {
@@ -1468,41 +1749,51 @@
         "website_url": null
       },
       "contributions": {
-        "total": 633,
-        "commits": 417,
-        "pull_requests": 101,
-        "reviews": 30,
+        "total": 866,
+        "commits": 682,
+        "pull_requests": 142,
+        "reviews": 38,
         "issues": 0,
-        "restricted": 82
+        "restricted": 0
       },
       "firm_commits": {
-        "total": 346,
+        "total": 453,
         "by_repo": {
           "mb-knowledge-vault-enterprise": 223,
-          "Case-Management": 68,
+          "Case-Management": 88,
+          "mb-wills-week": 88,
           "mb-67-minutes": 37,
-          "forensics-due-diligence-system": 17,
-          "mb-wills-week": 1
+          "forensics-due-diligence-system": 17
         },
         "top_repos": [
           "mb-knowledge-vault-enterprise",
           "Case-Management",
+          "mb-wills-week",
           "mb-67-minutes",
-          "forensics-due-diligence-system",
-          "mb-wills-week"
+          "forensics-due-diligence-system"
         ]
       },
-      "share_pct": 22.7,
-      "tier": "Lead Contributor",
+      "share_pct": 17.9,
+      "consistency": {
+        "active_days": 60,
+        "total_days": 85,
+        "pct": 70.6,
+        "longest_streak": 17,
+        "current_streak": 14,
+        "last_active_date": "2026-09-13",
+        "days_since_last_active": 0,
+        "is_inactive": false,
+        "repos_breadth": 5
+      },
       "calendar": {
         "from": "2026-06-21",
-        "to": "2026-09-04",
-        "total": 633,
-        "active_days": 51,
-        "total_days": 76,
-        "active_pct": 67.1,
+        "to": "2026-09-13",
+        "total": 866,
+        "active_days": 60,
+        "total_days": 85,
+        "active_pct": 70.6,
         "longest_streak": 17,
-        "current_streak": 5,
+        "current_streak": 14,
         "weeks": [
           {
             "days": [
@@ -1583,22 +1874,22 @@
               {
                 "date": "2026-07-01",
                 "weekday": 3,
-                "count": 4,
-                "level": 2,
+                "count": 8,
+                "level": 3,
                 "in_range": true
               },
               {
                 "date": "2026-07-02",
                 "weekday": 4,
-                "count": 32,
+                "count": 62,
                 "level": 4,
                 "in_range": true
               },
               {
                 "date": "2026-07-03",
                 "weekday": 5,
-                "count": 2,
-                "level": 1,
+                "count": 4,
+                "level": 2,
                 "in_range": true
               },
               {
@@ -1622,28 +1913,28 @@
               {
                 "date": "2026-07-06",
                 "weekday": 1,
-                "count": 12,
+                "count": 24,
                 "level": 4,
                 "in_range": true
               },
               {
                 "date": "2026-07-07",
                 "weekday": 2,
-                "count": 4,
-                "level": 2,
+                "count": 8,
+                "level": 3,
                 "in_range": true
               },
               {
                 "date": "2026-07-08",
                 "weekday": 3,
-                "count": 13,
+                "count": 26,
                 "level": 4,
                 "in_range": true
               },
               {
                 "date": "2026-07-09",
                 "weekday": 4,
-                "count": 11,
+                "count": 20,
                 "level": 4,
                 "in_range": true
               },
@@ -1735,7 +2026,7 @@
               {
                 "date": "2026-07-21",
                 "weekday": 2,
-                "count": 1,
+                "count": 2,
                 "level": 1,
                 "in_range": true
               },
@@ -1809,7 +2100,7 @@
               {
                 "date": "2026-07-31",
                 "weekday": 5,
-                "count": 11,
+                "count": 13,
                 "level": 4,
                 "in_range": true
               },
@@ -2074,12 +2365,118 @@
               {
                 "date": "2026-09-04",
                 "weekday": 5,
+                "count": 35,
+                "level": 4,
+                "in_range": true
+              },
+              {
+                "date": "2026-09-05",
+                "weekday": 6,
+                "count": 31,
+                "level": 4,
+                "in_range": true
+              }
+            ]
+          },
+          {
+            "days": [
+              {
+                "date": "2026-09-06",
+                "weekday": 0,
+                "count": 21,
+                "level": 4,
+                "in_range": true
+              },
+              {
+                "date": "2026-09-07",
+                "weekday": 1,
+                "count": 32,
+                "level": 4,
+                "in_range": true
+              },
+              {
+                "date": "2026-09-08",
+                "weekday": 2,
+                "count": 3,
+                "level": 2,
+                "in_range": true
+              },
+              {
+                "date": "2026-09-09",
+                "weekday": 3,
+                "count": 7,
+                "level": 3,
+                "in_range": true
+              },
+              {
+                "date": "2026-09-10",
+                "weekday": 4,
                 "count": 2,
                 "level": 1,
                 "in_range": true
               },
               {
-                "date": "2026-09-05",
+                "date": "2026-09-11",
+                "weekday": 5,
+                "count": 19,
+                "level": 4,
+                "in_range": true
+              },
+              {
+                "date": "2026-09-12",
+                "weekday": 6,
+                "count": 5,
+                "level": 2,
+                "in_range": true
+              }
+            ]
+          },
+          {
+            "days": [
+              {
+                "date": "2026-09-13",
+                "weekday": 0,
+                "count": 3,
+                "level": 2,
+                "in_range": true
+              },
+              {
+                "date": "2026-09-14",
+                "weekday": 1,
+                "count": 0,
+                "level": 0,
+                "in_range": false
+              },
+              {
+                "date": "2026-09-15",
+                "weekday": 2,
+                "count": 0,
+                "level": 0,
+                "in_range": false
+              },
+              {
+                "date": "2026-09-16",
+                "weekday": 3,
+                "count": 0,
+                "level": 0,
+                "in_range": false
+              },
+              {
+                "date": "2026-09-17",
+                "weekday": 4,
+                "count": 0,
+                "level": 0,
+                "in_range": false
+              },
+              {
+                "date": "2026-09-18",
+                "weekday": 5,
+                "count": 0,
+                "level": 0,
+                "in_range": false
+              },
+              {
+                "date": "2026-09-19",
                 "weekday": 6,
                 "count": 0,
                 "level": 0,
@@ -2089,6 +2486,9 @@
           }
         ]
       },
+      "impact_score": 67.6,
+      "tier": "Senior",
+      "tier_badge": "\ud83e\udd47",
       "rank": 2
     },
     {
@@ -2105,34 +2505,44 @@
         "website_url": null
       },
       "contributions": {
-        "total": 398,
-        "commits": 253,
-        "pull_requests": 130,
-        "reviews": 13,
+        "total": 590,
+        "commits": 413,
+        "pull_requests": 159,
+        "reviews": 16,
         "issues": 0,
         "restricted": 0
       },
       "firm_commits": {
-        "total": 249,
+        "total": 406,
         "by_repo": {
-          "tender-intelligence-platform": 221,
-          "forensics-due-diligence-system": 28
+          "tender-intelligence-platform": 343,
+          "forensics-due-diligence-system": 63
         },
         "top_repos": [
           "tender-intelligence-platform",
           "forensics-due-diligence-system"
         ]
       },
-      "share_pct": 16.3,
-      "tier": "Lead Contributor",
+      "share_pct": 16.0,
+      "consistency": {
+        "active_days": 61,
+        "total_days": 82,
+        "pct": 74.4,
+        "longest_streak": 14,
+        "current_streak": 0,
+        "last_active_date": "2026-09-12",
+        "days_since_last_active": 1,
+        "is_inactive": false,
+        "repos_breadth": 2
+      },
       "calendar": {
         "from": "2026-06-24",
-        "to": "2026-09-04",
-        "total": 398,
-        "active_days": 51,
-        "total_days": 73,
-        "active_pct": 69.9,
-        "longest_streak": 13,
+        "to": "2026-09-13",
+        "total": 590,
+        "active_days": 61,
+        "total_days": 82,
+        "active_pct": 74.4,
+        "longest_streak": 14,
         "current_streak": 0,
         "weeks": [
           {
@@ -2571,43 +2981,43 @@
               {
                 "date": "2026-08-17",
                 "weekday": 1,
-                "count": 8,
+                "count": 9,
                 "level": 3,
                 "in_range": true
               },
               {
                 "date": "2026-08-18",
                 "weekday": 2,
-                "count": 4,
-                "level": 2,
+                "count": 10,
+                "level": 4,
                 "in_range": true
               },
               {
                 "date": "2026-08-19",
                 "weekday": 3,
-                "count": 3,
+                "count": 5,
                 "level": 2,
                 "in_range": true
               },
               {
                 "date": "2026-08-20",
                 "weekday": 4,
-                "count": 3,
+                "count": 4,
                 "level": 2,
                 "in_range": true
               },
               {
                 "date": "2026-08-21",
                 "weekday": 5,
-                "count": 2,
-                "level": 1,
+                "count": 4,
+                "level": 2,
                 "in_range": true
               },
               {
                 "date": "2026-08-22",
                 "weekday": 6,
-                "count": 2,
-                "level": 1,
+                "count": 4,
+                "level": 2,
                 "in_range": true
               }
             ]
@@ -2617,14 +3027,14 @@
               {
                 "date": "2026-08-23",
                 "weekday": 0,
-                "count": 6,
-                "level": 3,
+                "count": 12,
+                "level": 4,
                 "in_range": true
               },
               {
                 "date": "2026-08-24",
                 "weekday": 1,
-                "count": 1,
+                "count": 2,
                 "level": 1,
                 "in_range": true
               },
@@ -2638,22 +3048,22 @@
               {
                 "date": "2026-08-26",
                 "weekday": 3,
-                "count": 2,
-                "level": 1,
+                "count": 5,
+                "level": 2,
                 "in_range": true
               },
               {
                 "date": "2026-08-27",
                 "weekday": 4,
-                "count": 6,
-                "level": 3,
+                "count": 10,
+                "level": 4,
                 "in_range": true
               },
               {
                 "date": "2026-08-28",
                 "weekday": 5,
-                "count": 0,
-                "level": 0,
+                "count": 1,
+                "level": 1,
                 "in_range": true
               },
               {
@@ -2670,7 +3080,7 @@
               {
                 "date": "2026-08-30",
                 "weekday": 0,
-                "count": 3,
+                "count": 4,
                 "level": 2,
                 "in_range": true
               },
@@ -2684,33 +3094,139 @@
               {
                 "date": "2026-09-01",
                 "weekday": 2,
-                "count": 2,
-                "level": 1,
+                "count": 4,
+                "level": 2,
                 "in_range": true
               },
               {
                 "date": "2026-09-02",
                 "weekday": 3,
-                "count": 2,
-                "level": 1,
+                "count": 4,
+                "level": 2,
                 "in_range": true
               },
               {
                 "date": "2026-09-03",
                 "weekday": 4,
-                "count": 1,
+                "count": 2,
                 "level": 1,
                 "in_range": true
               },
               {
                 "date": "2026-09-04",
                 "weekday": 5,
+                "count": 3,
+                "level": 2,
+                "in_range": true
+              },
+              {
+                "date": "2026-09-05",
+                "weekday": 6,
+                "count": 1,
+                "level": 1,
+                "in_range": true
+              }
+            ]
+          },
+          {
+            "days": [
+              {
+                "date": "2026-09-06",
+                "weekday": 0,
+                "count": 1,
+                "level": 1,
+                "in_range": true
+              },
+              {
+                "date": "2026-09-07",
+                "weekday": 1,
+                "count": 18,
+                "level": 4,
+                "in_range": true
+              },
+              {
+                "date": "2026-09-08",
+                "weekday": 2,
+                "count": 40,
+                "level": 4,
+                "in_range": true
+              },
+              {
+                "date": "2026-09-09",
+                "weekday": 3,
+                "count": 39,
+                "level": 4,
+                "in_range": true
+              },
+              {
+                "date": "2026-09-10",
+                "weekday": 4,
+                "count": 41,
+                "level": 4,
+                "in_range": true
+              },
+              {
+                "date": "2026-09-11",
+                "weekday": 5,
+                "count": 11,
+                "level": 4,
+                "in_range": true
+              },
+              {
+                "date": "2026-09-12",
+                "weekday": 6,
+                "count": 3,
+                "level": 2,
+                "in_range": true
+              }
+            ]
+          },
+          {
+            "days": [
+              {
+                "date": "2026-09-13",
+                "weekday": 0,
                 "count": 0,
                 "level": 0,
                 "in_range": true
               },
               {
-                "date": "2026-09-05",
+                "date": "2026-09-14",
+                "weekday": 1,
+                "count": 0,
+                "level": 0,
+                "in_range": false
+              },
+              {
+                "date": "2026-09-15",
+                "weekday": 2,
+                "count": 0,
+                "level": 0,
+                "in_range": false
+              },
+              {
+                "date": "2026-09-16",
+                "weekday": 3,
+                "count": 0,
+                "level": 0,
+                "in_range": false
+              },
+              {
+                "date": "2026-09-17",
+                "weekday": 4,
+                "count": 0,
+                "level": 0,
+                "in_range": false
+              },
+              {
+                "date": "2026-09-18",
+                "weekday": 5,
+                "count": 0,
+                "level": 0,
+                "in_range": false
+              },
+              {
+                "date": "2026-09-19",
                 "weekday": 6,
                 "count": 0,
                 "level": 0,
@@ -2720,6 +3236,9 @@
           }
         ]
       },
+      "impact_score": 52.8,
+      "tier": "Core",
+      "tier_badge": "\ud83e\udd48",
       "rank": 3
     },
     {
@@ -2736,37 +3255,49 @@
         "website_url": null
       },
       "contributions": {
-        "total": 128,
-        "commits": 84,
-        "pull_requests": 22,
-        "reviews": 20,
+        "total": 1171,
+        "commits": 1108,
+        "pull_requests": 24,
+        "reviews": 37,
         "issues": 0,
         "restricted": 0
       },
       "firm_commits": {
-        "total": 91,
+        "total": 612,
         "by_repo": {
+          "mb-anchor-games": 518,
+          "Case-Management": 46,
           "mb-67-minutes": 45,
-          "Case-Management": 43,
           "forensics-due-diligence-system": 3
         },
         "top_repos": [
-          "mb-67-minutes",
+          "mb-anchor-games",
           "Case-Management",
+          "mb-67-minutes",
           "forensics-due-diligence-system"
         ]
       },
-      "share_pct": 6.0,
-      "tier": "Regular Contributor",
+      "share_pct": 24.2,
+      "consistency": {
+        "active_days": 23,
+        "total_days": 82,
+        "pct": 28.0,
+        "longest_streak": 4,
+        "current_streak": 2,
+        "last_active_date": "2026-09-13",
+        "days_since_last_active": 0,
+        "is_inactive": false,
+        "repos_breadth": 4
+      },
       "calendar": {
         "from": "2026-06-24",
-        "to": "2026-09-04",
-        "total": 128,
-        "active_days": 19,
-        "total_days": 73,
-        "active_pct": 26.0,
+        "to": "2026-09-13",
+        "total": 1171,
+        "active_days": 23,
+        "total_days": 82,
+        "active_pct": 28.0,
         "longest_streak": 4,
-        "current_streak": 0,
+        "current_streak": 2,
         "weeks": [
           {
             "days": [
@@ -3347,12 +3878,121 @@
                 "weekday": 6,
                 "count": 0,
                 "level": 0,
+                "in_range": true
+              }
+            ]
+          },
+          {
+            "days": [
+              {
+                "date": "2026-09-06",
+                "weekday": 0,
+                "count": 0,
+                "level": 0,
+                "in_range": true
+              },
+              {
+                "date": "2026-09-07",
+                "weekday": 1,
+                "count": 0,
+                "level": 0,
+                "in_range": true
+              },
+              {
+                "date": "2026-09-08",
+                "weekday": 2,
+                "count": 4,
+                "level": 2,
+                "in_range": true
+              },
+              {
+                "date": "2026-09-09",
+                "weekday": 3,
+                "count": 4,
+                "level": 2,
+                "in_range": true
+              },
+              {
+                "date": "2026-09-10",
+                "weekday": 4,
+                "count": 0,
+                "level": 0,
+                "in_range": true
+              },
+              {
+                "date": "2026-09-11",
+                "weekday": 5,
+                "count": 0,
+                "level": 0,
+                "in_range": true
+              },
+              {
+                "date": "2026-09-12",
+                "weekday": 6,
+                "count": 1011,
+                "level": 4,
+                "in_range": true
+              }
+            ]
+          },
+          {
+            "days": [
+              {
+                "date": "2026-09-13",
+                "weekday": 0,
+                "count": 24,
+                "level": 4,
+                "in_range": true
+              },
+              {
+                "date": "2026-09-14",
+                "weekday": 1,
+                "count": 0,
+                "level": 0,
+                "in_range": false
+              },
+              {
+                "date": "2026-09-15",
+                "weekday": 2,
+                "count": 0,
+                "level": 0,
+                "in_range": false
+              },
+              {
+                "date": "2026-09-16",
+                "weekday": 3,
+                "count": 0,
+                "level": 0,
+                "in_range": false
+              },
+              {
+                "date": "2026-09-17",
+                "weekday": 4,
+                "count": 0,
+                "level": 0,
+                "in_range": false
+              },
+              {
+                "date": "2026-09-18",
+                "weekday": 5,
+                "count": 0,
+                "level": 0,
+                "in_range": false
+              },
+              {
+                "date": "2026-09-19",
+                "weekday": 6,
+                "count": 0,
+                "level": 0,
                 "in_range": false
               }
             ]
           }
         ]
       },
+      "impact_score": 39.4,
+      "tier": "Core",
+      "tier_badge": "\ud83e\udd48",
       "rank": 4
     },
     {
@@ -3369,33 +4009,45 @@
         "website_url": null
       },
       "contributions": {
-        "total": 78,
-        "commits": 51,
-        "pull_requests": 19,
-        "reviews": 6,
+        "total": 179,
+        "commits": 121,
+        "pull_requests": 42,
+        "reviews": 14,
         "issues": 0,
         "restricted": 0
       },
       "firm_commits": {
-        "total": 56,
+        "total": 126,
         "by_repo": {
-          "Case-Management": 56
+          "Case-Management": 113,
+          "mb-invoicing-tool": 13
         },
         "top_repos": [
-          "Case-Management"
+          "Case-Management",
+          "mb-invoicing-tool"
         ]
       },
-      "share_pct": 3.7,
-      "tier": "Regular Contributor",
+      "share_pct": 5.0,
+      "consistency": {
+        "active_days": 30,
+        "total_days": 87,
+        "pct": 34.5,
+        "longest_streak": 7,
+        "current_streak": 7,
+        "last_active_date": "2026-09-13",
+        "days_since_last_active": 0,
+        "is_inactive": false,
+        "repos_breadth": 2
+      },
       "calendar": {
         "from": "2026-06-19",
-        "to": "2026-09-04",
-        "total": 78,
-        "active_days": 20,
-        "total_days": 78,
-        "active_pct": 25.6,
-        "longest_streak": 3,
-        "current_streak": 0,
+        "to": "2026-09-13",
+        "total": 179,
+        "active_days": 30,
+        "total_days": 87,
+        "active_pct": 34.5,
+        "longest_streak": 7,
+        "current_streak": 7,
         "weeks": [
           {
             "days": [
@@ -3681,8 +4333,8 @@
               {
                 "date": "2026-07-21",
                 "weekday": 2,
-                "count": 1,
-                "level": 1,
+                "count": 3,
+                "level": 2,
                 "in_range": true
               },
               {
@@ -3992,15 +4644,15 @@
               {
                 "date": "2026-08-31",
                 "weekday": 1,
-                "count": 0,
-                "level": 0,
+                "count": 4,
+                "level": 2,
                 "in_range": true
               },
               {
                 "date": "2026-09-01",
                 "weekday": 2,
-                "count": 0,
-                "level": 0,
+                "count": 3,
+                "level": 2,
                 "in_range": true
               },
               {
@@ -4020,12 +4672,118 @@
               {
                 "date": "2026-09-04",
                 "weekday": 5,
+                "count": 1,
+                "level": 1,
+                "in_range": true
+              },
+              {
+                "date": "2026-09-05",
+                "weekday": 6,
+                "count": 0,
+                "level": 0,
+                "in_range": true
+              }
+            ]
+          },
+          {
+            "days": [
+              {
+                "date": "2026-09-06",
+                "weekday": 0,
                 "count": 0,
                 "level": 0,
                 "in_range": true
               },
               {
-                "date": "2026-09-05",
+                "date": "2026-09-07",
+                "weekday": 1,
+                "count": 13,
+                "level": 4,
+                "in_range": true
+              },
+              {
+                "date": "2026-09-08",
+                "weekday": 2,
+                "count": 10,
+                "level": 4,
+                "in_range": true
+              },
+              {
+                "date": "2026-09-09",
+                "weekday": 3,
+                "count": 10,
+                "level": 4,
+                "in_range": true
+              },
+              {
+                "date": "2026-09-10",
+                "weekday": 4,
+                "count": 2,
+                "level": 1,
+                "in_range": true
+              },
+              {
+                "date": "2026-09-11",
+                "weekday": 5,
+                "count": 24,
+                "level": 4,
+                "in_range": true
+              },
+              {
+                "date": "2026-09-12",
+                "weekday": 6,
+                "count": 2,
+                "level": 1,
+                "in_range": true
+              }
+            ]
+          },
+          {
+            "days": [
+              {
+                "date": "2026-09-13",
+                "weekday": 0,
+                "count": 30,
+                "level": 4,
+                "in_range": true
+              },
+              {
+                "date": "2026-09-14",
+                "weekday": 1,
+                "count": 0,
+                "level": 0,
+                "in_range": false
+              },
+              {
+                "date": "2026-09-15",
+                "weekday": 2,
+                "count": 0,
+                "level": 0,
+                "in_range": false
+              },
+              {
+                "date": "2026-09-16",
+                "weekday": 3,
+                "count": 0,
+                "level": 0,
+                "in_range": false
+              },
+              {
+                "date": "2026-09-17",
+                "weekday": 4,
+                "count": 0,
+                "level": 0,
+                "in_range": false
+              },
+              {
+                "date": "2026-09-18",
+                "weekday": 5,
+                "count": 0,
+                "level": 0,
+                "in_range": false
+              },
+              {
+                "date": "2026-09-19",
                 "weekday": 6,
                 "count": 0,
                 "level": 0,
@@ -4035,6 +4793,9 @@
           }
         ]
       },
+      "impact_score": 28.2,
+      "tier": "Active",
+      "tier_badge": "\ud83e\udd49",
       "rank": 5
     },
     {
@@ -4051,31 +4812,41 @@
         "website_url": "https://github.com/Kea1m"
       },
       "contributions": {
-        "total": 14,
-        "commits": 1,
-        "pull_requests": 2,
-        "reviews": 9,
+        "total": 22,
+        "commits": 5,
+        "pull_requests": 3,
+        "reviews": 12,
         "issues": 0,
         "restricted": 0
       },
       "firm_commits": {
-        "total": 6,
+        "total": 10,
         "by_repo": {
-          "Case-Management": 6
+          "Case-Management": 10
         },
         "top_repos": [
           "Case-Management"
         ]
       },
       "share_pct": 0.4,
-      "tier": "Contributor",
+      "consistency": {
+        "active_days": 10,
+        "total_days": 84,
+        "pct": 11.9,
+        "longest_streak": 2,
+        "current_streak": 0,
+        "last_active_date": "2026-09-09",
+        "days_since_last_active": 4,
+        "is_inactive": false,
+        "repos_breadth": 1
+      },
       "calendar": {
         "from": "2026-06-22",
-        "to": "2026-09-04",
-        "total": 14,
-        "active_days": 8,
-        "total_days": 75,
-        "active_pct": 10.7,
+        "to": "2026-09-13",
+        "total": 22,
+        "active_days": 10,
+        "total_days": 84,
+        "active_pct": 11.9,
         "longest_streak": 2,
         "current_streak": 0,
         "weeks": [
@@ -4658,12 +5429,121 @@
                 "weekday": 6,
                 "count": 0,
                 "level": 0,
+                "in_range": true
+              }
+            ]
+          },
+          {
+            "days": [
+              {
+                "date": "2026-09-06",
+                "weekday": 0,
+                "count": 0,
+                "level": 0,
+                "in_range": true
+              },
+              {
+                "date": "2026-09-07",
+                "weekday": 1,
+                "count": 4,
+                "level": 2,
+                "in_range": true
+              },
+              {
+                "date": "2026-09-08",
+                "weekday": 2,
+                "count": 0,
+                "level": 0,
+                "in_range": true
+              },
+              {
+                "date": "2026-09-09",
+                "weekday": 3,
+                "count": 4,
+                "level": 2,
+                "in_range": true
+              },
+              {
+                "date": "2026-09-10",
+                "weekday": 4,
+                "count": 0,
+                "level": 0,
+                "in_range": true
+              },
+              {
+                "date": "2026-09-11",
+                "weekday": 5,
+                "count": 0,
+                "level": 0,
+                "in_range": true
+              },
+              {
+                "date": "2026-09-12",
+                "weekday": 6,
+                "count": 0,
+                "level": 0,
+                "in_range": true
+              }
+            ]
+          },
+          {
+            "days": [
+              {
+                "date": "2026-09-13",
+                "weekday": 0,
+                "count": 0,
+                "level": 0,
+                "in_range": true
+              },
+              {
+                "date": "2026-09-14",
+                "weekday": 1,
+                "count": 0,
+                "level": 0,
+                "in_range": false
+              },
+              {
+                "date": "2026-09-15",
+                "weekday": 2,
+                "count": 0,
+                "level": 0,
+                "in_range": false
+              },
+              {
+                "date": "2026-09-16",
+                "weekday": 3,
+                "count": 0,
+                "level": 0,
+                "in_range": false
+              },
+              {
+                "date": "2026-09-17",
+                "weekday": 4,
+                "count": 0,
+                "level": 0,
+                "in_range": false
+              },
+              {
+                "date": "2026-09-18",
+                "weekday": 5,
+                "count": 0,
+                "level": 0,
+                "in_range": false
+              },
+              {
+                "date": "2026-09-19",
+                "weekday": 6,
+                "count": 0,
+                "level": 0,
                 "in_range": false
               }
             ]
           }
         ]
       },
+      "impact_score": 13.3,
+      "tier": "Contributor",
+      "tier_badge": "\u2b50",
       "rank": 6
     },
     {
@@ -4680,32 +5560,44 @@
         "website_url": null
       },
       "contributions": {
-        "total": 4,
-        "commits": 1,
+        "total": 10,
+        "commits": 7,
         "pull_requests": 0,
         "reviews": 1,
         "issues": 0,
         "restricted": 0
       },
       "firm_commits": {
-        "total": 1,
+        "total": 7,
         "by_repo": {
-          ".github": 1
+          "anchor-games": 5,
+          ".github": 2
         },
         "top_repos": [
+          "anchor-games",
           ".github"
         ]
       },
-      "share_pct": 0.1,
-      "tier": "Contributor",
+      "share_pct": 0.3,
+      "consistency": {
+        "active_days": 4,
+        "total_days": 25,
+        "pct": 16.0,
+        "longest_streak": 2,
+        "current_streak": 0,
+        "last_active_date": "2026-09-11",
+        "days_since_last_active": 2,
+        "is_inactive": false,
+        "repos_breadth": 2
+      },
       "calendar": {
         "from": "2026-08-20",
-        "to": "2026-09-04",
-        "total": 4,
-        "active_days": 2,
-        "total_days": 16,
-        "active_pct": 12.5,
-        "longest_streak": 1,
+        "to": "2026-09-13",
+        "total": 10,
+        "active_days": 4,
+        "total_days": 25,
+        "active_pct": 16.0,
+        "longest_streak": 2,
         "current_streak": 0,
         "weeks": [
           {
@@ -4854,12 +5746,118 @@
               {
                 "date": "2026-09-04",
                 "weekday": 5,
+                "count": 1,
+                "level": 1,
+                "in_range": true
+              },
+              {
+                "date": "2026-09-05",
+                "weekday": 6,
+                "count": 0,
+                "level": 0,
+                "in_range": true
+              }
+            ]
+          },
+          {
+            "days": [
+              {
+                "date": "2026-09-06",
+                "weekday": 0,
                 "count": 0,
                 "level": 0,
                 "in_range": true
               },
               {
-                "date": "2026-09-05",
+                "date": "2026-09-07",
+                "weekday": 1,
+                "count": 0,
+                "level": 0,
+                "in_range": true
+              },
+              {
+                "date": "2026-09-08",
+                "weekday": 2,
+                "count": 0,
+                "level": 0,
+                "in_range": true
+              },
+              {
+                "date": "2026-09-09",
+                "weekday": 3,
+                "count": 0,
+                "level": 0,
+                "in_range": true
+              },
+              {
+                "date": "2026-09-10",
+                "weekday": 4,
+                "count": 0,
+                "level": 0,
+                "in_range": true
+              },
+              {
+                "date": "2026-09-11",
+                "weekday": 5,
+                "count": 5,
+                "level": 2,
+                "in_range": true
+              },
+              {
+                "date": "2026-09-12",
+                "weekday": 6,
+                "count": 0,
+                "level": 0,
+                "in_range": true
+              }
+            ]
+          },
+          {
+            "days": [
+              {
+                "date": "2026-09-13",
+                "weekday": 0,
+                "count": 0,
+                "level": 0,
+                "in_range": true
+              },
+              {
+                "date": "2026-09-14",
+                "weekday": 1,
+                "count": 0,
+                "level": 0,
+                "in_range": false
+              },
+              {
+                "date": "2026-09-15",
+                "weekday": 2,
+                "count": 0,
+                "level": 0,
+                "in_range": false
+              },
+              {
+                "date": "2026-09-16",
+                "weekday": 3,
+                "count": 0,
+                "level": 0,
+                "in_range": false
+              },
+              {
+                "date": "2026-09-17",
+                "weekday": 4,
+                "count": 0,
+                "level": 0,
+                "in_range": false
+              },
+              {
+                "date": "2026-09-18",
+                "weekday": 5,
+                "count": 0,
+                "level": 0,
+                "in_range": false
+              },
+              {
+                "date": "2026-09-19",
                 "weekday": 6,
                 "count": 0,
                 "level": 0,
@@ -4869,6 +5867,9 @@
           }
         ]
       },
+      "impact_score": 10.7,
+      "tier": "Contributor",
+      "tier_badge": "\u2b50",
       "rank": 7
     }
   ],
@@ -4876,8 +5877,8 @@
     "generation_ok": true,
     "rate_limit": {
       "cost_used_total": 11,
-      "remaining": 4953,
-      "reset_at": "2026-09-04T07:55:01Z"
+      "remaining": 4921,
+      "reset_at": "2026-09-13T20:03:06Z"
     },
     "warnings": []
   }
