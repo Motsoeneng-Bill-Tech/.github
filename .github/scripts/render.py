@@ -243,7 +243,7 @@ def render_leaderboard(data, org_name, repo_name, dashboard_url):
     for m in data["members"]:
         avatar = f'<img src="{m["avatar_url"]}" width="30" height="30" style="border-radius:50%; vertical-align:middle;" />'
         activity_img = (
-            f'<img src="https://raw.githubusercontent.com/{org_name}/{repo_name}/main/assets/graphs/{m["login"]}.svg" '
+            f'<img src="https://cdn.jsdelivr.net/gh/{org_name}/{repo_name}@main/assets/graphs/{m["login"]}.svg" '
             f'width="220" height="64" alt="{m["login"]} activity graph" />'
         )
         profile_link = f'[↗ profile]({dashboard_url}#/member/{m["login"]})'
@@ -299,7 +299,7 @@ def render_roster(data, org_name, repo_name, cap):
 | 📦 **Active Codebases** | {top_repos} |
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/{org_name}/{repo_name}/main/assets/graphs/{m['login']}.svg" width="100%" alt="{m['login']} activity calendar" />
+  <img src="https://cdn.jsdelivr.net/gh/{org_name}/{repo_name}@main/assets/graphs/{m['login']}.svg" width="100%" alt="{m['login']} activity calendar" />
 </div>
 
 ---
@@ -318,7 +318,7 @@ def update_readme(content, data, *, org_name, repo_name, dashboard_url, roster_c
     leaderboard_block = f"""
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/{org_name}/{repo_name}/main/assets/leaderboard_card.svg" alt="Engineering discipline and cadence overview" width="100%" />
+<img src="https://cdn.jsdelivr.net/gh/{org_name}/{repo_name}@main/assets/leaderboard_card.svg" alt="Engineering discipline and cadence overview" width="100%" />
 
 </div>
 
