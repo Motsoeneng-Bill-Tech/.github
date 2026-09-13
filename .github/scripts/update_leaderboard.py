@@ -47,22 +47,28 @@ SCHEMA_VERSION = 1
 ROSTER_DETAIL_CAP = 12
 REPO_CHUNK_SIZE = 6
 
-# Contribution tiers are activity descriptors, not job titles — thresholds are on
-# real, live-computed firm commits. (Previously the site presented these as if they
-# were actual org roles, e.g. "Principal Architect" — that was never true data.)
+CONSISTENCY_WINDOW_DAYS = 30
+NEW_MEMBER_TENURE_DAYS = 7  # too little history for a consistency label to mean anything yet
+
+# Tiers are consistency descriptors, not job titles, and not volume thresholds — a
+# member cannot buy their way into a higher tier by committing more in a single day.
+# They're on recent_active_pct: the % of the last CONSISTENCY_WINDOW_DAYS days with at
+# least one real commit. (Previously these thresholds were on raw commit *volume*,
+# which is exactly what let one high-volume day inflate someone's standing.)
 TIERS = [
-    (500, "Top Contributor"),
-    (200, "Lead Contributor"),
-    (100, "Core Contributor"),
-    (40, "Regular Contributor"),
-    (1, "Contributor"),
-    (0, "New Member"),
+    (90, "Highly Consistent"),
+    (70, "Consistent"),
+    (40, "Intermittent"),
+    (10, "Sporadic"),
+    (0, "Inactive"),
 ]
 
 
-def get_tier_label(firm_commits):
+def get_tier_label(recent_active_pct, tenure_days):
+    if tenure_days < NEW_MEMBER_TENURE_DAYS:
+        return "New Member"
     for threshold, label in TIERS:
-        if firm_commits >= threshold:
+        if recent_active_pct >= threshold:
             return label
     return TIERS[-1][1]
 
@@ -171,6 +177,9 @@ def build_dataset(members_raw, repos_raw, member_contribs, commit_matrix, now, r
 
         active_days = sum(1 for c in day_counts.values() if c > 0)
         total_days = len(day_counts)
+        streaks = render.calendar_streaks(day_counts)
+        consistency = render.compute_consistency(day_counts, now.date(), window_days=CONSISTENCY_WINDOW_DAYS)
+        tenure_days = (now.date() - created_dt.date()).days + 1
 
         members_out.append({
             "login": login,
@@ -199,7 +208,8 @@ def build_dataset(members_raw, repos_raw, member_contribs, commit_matrix, now, r
                 "top_repos": list(firm_by_repo.keys()),
             },
             "share_pct": round((firm_total / total_firm_commits_org * 100), 1) if total_firm_commits_org else 0.0,
-            "tier": get_tier_label(firm_total),
+            "tier": get_tier_label(consistency["recent_active_pct"], tenure_days),
+            "consistency": consistency,
             "calendar": {
                 "from": created_dt.date().isoformat(),
                 "to": now.date().isoformat(),
@@ -207,12 +217,21 @@ def build_dataset(members_raw, repos_raw, member_contribs, commit_matrix, now, r
                 "active_days": active_days,
                 "total_days": total_days,
                 "active_pct": round((active_days / total_days * 100), 1) if total_days else 0.0,
-                **render.calendar_streaks(day_counts),
+                **streaks,
                 "weeks": render.build_calendar_grid(day_counts, created_dt.date(), now.date()),
             },
         })
 
-    members_out.sort(key=lambda x: -x["firm_commits"]["total"])
+    # Ranked by consistency, never by volume: recent_active_pct first (a day counts once
+    # whether it had one commit or a thousand, so a single high-volume day can't move this),
+    # then current streak, then longest streak, then tenure as a final, hardest-to-fake
+    # tiebreak — a longer proven track record outranks a short perfect one.
+    members_out.sort(key=lambda x: (
+        -x["consistency"]["recent_active_pct"],
+        -x["calendar"]["current_streak"],
+        -x["calendar"]["longest_streak"],
+        x["created_at"],
+    ))
     for idx, m in enumerate(members_out, start=1):
         m["rank"] = idx
 

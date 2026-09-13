@@ -21,11 +21,13 @@ const MemberDetail = (() => {
       </div>
 
       <div class="stat-grid">
-        <div class="stat-tile"><div class="stat-tile__label">Total Contributions</div><div class="stat-tile__value">${Format.number(member.contributions.total)}</div></div>
-        <div class="stat-tile"><div class="stat-tile__label">Firm Commits</div><div class="stat-tile__value stat-tile__value--accent">${Format.number(member.firm_commits.total)}</div></div>
-        <div class="stat-tile"><div class="stat-tile__label">Active Days</div><div class="stat-tile__value">${Format.number(member.calendar.active_days)}<span class="stat-tile__hint">${Format.pct(member.calendar.active_pct, 0)}</span></div></div>
+        <div class="stat-tile"><div class="stat-tile__label">Consistency (${member.consistency.window_days}d)</div><div class="stat-tile__value stat-tile__value--accent">${Format.pct(member.consistency.recent_active_pct, 0)}</div></div>
+        <div class="stat-tile"><div class="stat-tile__label">Current Streak</div><div class="stat-tile__value">${Format.number(member.calendar.current_streak)}<span class="stat-tile__hint">days</span></div></div>
         <div class="stat-tile"><div class="stat-tile__label">Longest Streak</div><div class="stat-tile__value">${Format.number(member.calendar.longest_streak)}<span class="stat-tile__hint">days</span></div></div>
+        <div class="stat-tile"><div class="stat-tile__label">Active Days (all-time)</div><div class="stat-tile__value">${Format.number(member.calendar.active_days)}<span class="stat-tile__hint">${Format.pct(member.calendar.active_pct, 0)}</span></div></div>
       </div>
+
+      <p class="raw-activity-note">Raw activity (informational — not used for rank): ${Format.number(member.contributions.total)} total contributions, ${Format.number(member.firm_commits.total)} firm commits.</p>
 
       <div class="detail-calendar-card">
         <div class="org-calendar-card__title">Contribution activity since ${Format.date(member.calendar.from)}</div>

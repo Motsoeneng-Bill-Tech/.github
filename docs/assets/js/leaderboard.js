@@ -1,17 +1,21 @@
 const Leaderboard = (() => {
+  // Ranked by consistency, never by volume — total contributions, commit counts, and PR
+  // counts are deliberately not sortable columns here, since a single high-volume day
+  // (someone padding out commits) can inflate any of them. Consistency % and streak
+  // length can't be padded that way: showing up every day is the only lever that moves
+  // either number.
   const COLUMNS = [
     { key: 'rank', label: 'Rank', sortable: true, get: (m) => m.rank, dir: 'asc' },
     { key: 'engineer', label: 'Engineer', sortable: false },
     { key: 'created_at', label: 'Member Since', sortable: true, get: (m) => new Date(m.created_at).getTime() },
-    { key: 'total', label: 'Total Contributions', sortable: true, get: (m) => m.contributions.total },
-    { key: 'firm', label: 'Firm Commits', sortable: true, get: (m) => m.firm_commits.total },
-    { key: 'share', label: 'Share', sortable: true, get: (m) => m.share_pct },
+    { key: 'consistency', label: 'Consistency (30d)', sortable: true, get: (m) => m.consistency.recent_active_pct },
+    { key: 'streak', label: 'Current Streak', sortable: true, get: (m) => m.calendar.current_streak },
     { key: 'tier', label: 'Tier', sortable: false },
     { key: 'activity', label: 'Recent Activity', sortable: false },
     { key: 'repos', label: 'Top Repositories', sortable: false },
   ];
 
-  const state = { sortKey: 'firm', sortDir: 'desc', query: '' };
+  const state = { sortKey: 'consistency', sortDir: 'desc', query: '' };
   let lastArgs = null;
 
   function filterAndSort(members) {
@@ -57,9 +61,8 @@ const Leaderboard = (() => {
       <td class="rank-num">${String(m.rank).padStart(2, '0')}</td>
       <td>${engineerCell(m)}</td>
       <td>${Format.date(m.created_at)}</td>
-      <td class="num-cell">${Format.number(m.contributions.total)}</td>
-      <td class="num-cell">${Format.number(m.firm_commits.total)}</td>
-      <td class="share-cell">${Format.pct(m.share_pct)}</td>
+      <td class="num-cell">${Format.pct(m.consistency.recent_active_pct, 0)}</td>
+      <td class="num-cell">${m.calendar.current_streak}d</td>
       <td><span class="tier-chip">${Format.escapeHtml(m.tier)}</span></td>
       <td><div data-login-cal="${m.login}"></div></td>
       <td>${repoTags(m)}</td>
@@ -83,9 +86,8 @@ const Leaderboard = (() => {
       </div>
       <div class="leaderboard-card__meta">
         <div class="leaderboard-card__stat">Rank<strong>#${m.rank}</strong></div>
-        <div class="leaderboard-card__stat">Total<strong>${Format.number(m.contributions.total)}</strong></div>
-        <div class="leaderboard-card__stat">Firm Commits<strong>${Format.number(m.firm_commits.total)}</strong></div>
-        <div class="leaderboard-card__stat">Share<strong>${Format.pct(m.share_pct)}</strong></div>
+        <div class="leaderboard-card__stat">Consistency<strong>${Format.pct(m.consistency.recent_active_pct, 0)}</strong></div>
+        <div class="leaderboard-card__stat">Streak<strong>${m.calendar.current_streak}d</strong></div>
       </div>
     </div>`).join('');
   }

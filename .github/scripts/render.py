@@ -4,7 +4,7 @@ SVGs and the profile/README.md markdown. Nothing in this module calls the
 GitHub API — it only formats data it's handed.
 """
 
-from datetime import datetime, timedelta
+from datetime import date, datetime, timedelta
 
 # --- Shared visual language -------------------------------------------------
 # These hex values are duplicated (deliberately — standalone SVG files can't
@@ -90,6 +90,28 @@ def calendar_streaks(day_counts):
     return {"longest_streak": longest, "current_streak": current}
 
 
+def compute_consistency(day_counts, as_of_date, window_days=30):
+    """% of the last `window_days` days (or the member's whole history if they've existed
+    for less than that) with at least one real commit. A day counts as active or not —
+    one commit and one thousand commits on the same day both just count as "showed up
+    today" — so no single burst day can inflate this. This is the metric ranking is based
+    on; raw totals are never used for rank."""
+    if not day_counts:
+        return {"window_days": 0, "active_days": 0, "recent_active_pct": 0.0}
+    earliest = date.fromisoformat(min(day_counts.keys()))
+    window = min(window_days, (as_of_date - earliest).days + 1)
+    window_start = as_of_date - timedelta(days=window - 1)
+    active_days = sum(
+        1 for d_str, count in day_counts.items()
+        if count > 0 and window_start <= date.fromisoformat(d_str) <= as_of_date
+    )
+    return {
+        "window_days": window,
+        "active_days": active_days,
+        "recent_active_pct": round((active_days / window * 100), 1) if window else 0.0,
+    }
+
+
 # --- SVG rendering -----------------------------------------------------------
 
 def render_member_calendar_svg(member, weeks_shown=14, min_width=300):
@@ -128,27 +150,28 @@ def render_member_calendar_svg(member, weeks_shown=14, min_width=300):
         for name, x in month_labels.items()
     )
 
-    total = member["contributions"]["total"]
-    active_pct = member["calendar"]["active_pct"]
+    pct = member["consistency"]["recent_active_pct"]
+    window = member["consistency"]["window_days"]
+    streak = member["calendar"]["current_streak"]
     return f"""<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}">
   <rect width="{width}" height="{height}" rx="10" fill="{SURFACE}" stroke="{BORDER}" stroke-width="1" />
   <text x="{start_x}" y="18" font-family="{FONT_STACK}" font-size="12" font-weight="700" fill="{TEXT_PRIMARY}">@{member['login']}</text>
-  <text x="{start_x}" y="32" font-family="{FONT_STACK}" font-size="10"><tspan font-weight="700" fill="{ACCENT}">{total:,}</tspan><tspan fill="{TEXT_TERTIARY}"> contributions · {active_pct:.0f}% active</tspan></text>
+  <text x="{start_x}" y="32" font-family="{FONT_STACK}" font-size="10"><tspan font-weight="700" fill="{ACCENT}">{pct:.0f}%</tspan><tspan fill="{TEXT_TERTIARY}"> active (last {window}d) · {streak}-day streak</tspan></text>
   {months_svg}
   <g>{''.join(rects)}</g>
 </svg>"""
 
 
 def render_overview_card_svg(data, max_rows=8):
-    """Org-wide ranked bar chart — replaces the old 3-podium/medal graphic with a plain
-    ranked list (numeral rank, gold accent bars, no rainbow of segment colors)."""
+    """Org-wide ranked bar chart — bars are proportional to consistency (% of the last
+    30 days active), not raw commit volume, so this can never be gamed by a single
+    high-volume day. Replaces the old 3-podium/medal graphic with a plain ranked list."""
     width = 860
     org = data["org"]
     members = data["members"][:max_rows]
     row_h = 34
     header_h = 96
     height = header_h + len(members) * row_h + 24
-    max_commits = max((m["firm_commits"]["total"] for m in members), default=1) or 1
 
     stats = [
         ("TOTAL CONTRIBUTIONS", f'{org["totals"]["total_contributions"]:,}'),
@@ -170,13 +193,14 @@ def render_overview_card_svg(data, max_rows=8):
     rows_svg = []
     for i, m in enumerate(members):
         y = header_h + i * row_h
-        bar_w = max(3, (m["firm_commits"]["total"] / max_commits) * bar_max_w)
+        pct = m["consistency"]["recent_active_pct"]
+        bar_w = max(3, (pct / 100) * bar_max_w)
         rows_svg.append(f'''
   <text x="32" y="{y + 21}" font-family="{FONT_STACK}" font-size="12" font-weight="700" fill="{TEXT_TERTIARY}">{i + 1:02d}</text>
   <text x="62" y="{y + 21}" font-family="{FONT_STACK}" font-size="12" font-weight="600" fill="{TEXT_PRIMARY}">@{m['login']}</text>
   <rect x="{bar_x}" y="{y + 8}" width="{bar_max_w}" height="8" rx="4" fill="{BORDER}" />
   <rect x="{bar_x}" y="{y + 8}" width="{bar_w:.1f}" height="8" rx="4" fill="{ACCENT}" />
-  <text x="{width - 24}" y="{y + 21}" font-family="{FONT_STACK}" font-size="12" font-weight="700" fill="{TEXT_SECONDARY}" text-anchor="end">{m['firm_commits']['total']:,}</text>''')
+  <text x="{width - 24}" y="{y + 21}" font-family="{FONT_STACK}" font-size="12" font-weight="700" fill="{TEXT_SECONDARY}" text-anchor="end">{pct:.0f}%</text>''')
 
     return f"""<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}">
   <rect width="{width}" height="{height}" rx="14" fill="{BG}" stroke="{BORDER}" stroke-width="1" />
@@ -231,9 +255,14 @@ def render_solutions(data, display_names, descriptions):
 
 
 def render_leaderboard(data, org_name, repo_name, dashboard_url):
+    """Ranked by consistency (% of the last 30 days with real activity), never by raw
+    volume — total contributions, commit counts, and PR counts are intentionally absent
+    from this table, since they're exactly what a single high-volume day can inflate.
+    Streak length and consistency % can't be padded that way: showing up every day is
+    the only way to move either number."""
     rows = [
-        "| Rank | Engineer | Member Since | Total Contributions | Firm Commits | Share | Tier | Recent Activity | Top Repositories |",
-        "| :---: | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :--- |",
+        "| Rank | Engineer | Member Since | Consistency (30d) | Current Streak | Tier | Recent Activity | Top Repositories |",
+        "| :---: | :--- | :---: | :---: | :---: | :---: | :---: | :--- |",
     ]
     for m in data["members"]:
         avatar = f'<img src="{m["avatar_url"]}" width="26" height="26" style="border-radius:50%; vertical-align:middle;" />'
@@ -245,8 +274,8 @@ def render_leaderboard(data, org_name, repo_name, dashboard_url):
         profile_link = f'[↗ full profile]({dashboard_url}#/member/{m["login"]})'
         rows.append(
             f'| **{m["rank"]:02d}** | [{avatar} **@{m["login"]}**]({m["html_url"]}) <br/>{profile_link} '
-            f'| `{_fmt_date(m["created_at"])}` | **{m["contributions"]["total"]:,}** | **{m["firm_commits"]["total"]:,}** '
-            f'| {m["share_pct"]:.1f}% | {m["tier"]} | {activity_img} | {top_repos} |'
+            f'| `{_fmt_date(m["created_at"])}` | **{m["consistency"]["recent_active_pct"]:.0f}%** '
+            f'| {m["calendar"]["current_streak"]} days | {m["tier"]} | {activity_img} | {top_repos} |'
         )
     return "\n".join(rows)
 
@@ -260,9 +289,9 @@ def render_roster(data, org_name, repo_name, cap):
         cards.append(f"""
 ### {m['rank']:02d} · {display_name} ([@{m['login']}]({m['html_url']})) · {m['tier']}
 - **Member Since**: `{_fmt_date(m["created_at"])}`
-- **Total Contributions**: **{m['contributions']['total']:,}** (`{m['contributions']['commits']} commits`, `{m['contributions']['pull_requests']} pull requests`, `{m['contributions']['reviews']} reviews`)
-- **Firm Repository Commits**: **{m['firm_commits']['total']:,}** ({m['share_pct']:.1f}% team share)
+- **Consistency**: **{m['consistency']['recent_active_pct']:.0f}% active** over the last {m['consistency']['window_days']} days · current streak **{m['calendar']['current_streak']} days** · longest streak **{m['calendar']['longest_streak']} days**
 - **Primary Focus**: {top_repos}
+- *Raw activity (informational — not used for rank): {m['contributions']['total']:,} total contributions, {m['firm_commits']['total']:,} firm commits*
 
 <div align="center">
   <img src="https://raw.githubusercontent.com/{org_name}/{repo_name}/main/assets/graphs/{m['login']}.svg" width="100%" alt="{m['login']} activity calendar" />
@@ -288,7 +317,7 @@ def update_readme(content, data, *, org_name, repo_name, dashboard_url, roster_c
 
 {render_leaderboard(data, org_name, repo_name, dashboard_url)}
 
-> **Telemetry**: every number above is computed live from the GitHub API on each run — organization membership, repositories, and commit attribution are all discovered dynamically, never hand-maintained. No cached or placeholder values are ever published.
+> **Ranked by consistency, not volume.** Rank is driven by the percentage of the last 30 days each engineer was actually active — a day counts once whether it had one commit or one thousand, so a single high-volume day can't buy rank. Total contribution and commit counts are computed live from the GitHub API on every run but are intentionally not part of the ranking.
 """
     content = _replace_marker(content, "LEADERBOARD", leaderboard_block)
 
