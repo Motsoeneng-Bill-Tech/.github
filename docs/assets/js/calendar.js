@@ -68,7 +68,12 @@ const Calendar = (() => {
       if (!date) return;
       const d = new Date(`${date}T00:00:00`);
       const label = d.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric', year: 'numeric' });
-      tooltip.innerHTML = `<strong>${count}</strong> contribution${count === '1' ? '' : 's'} on ${label}`;
+      const cNum = parseInt(count, 10);
+      if (cNum > 0) {
+        tooltip.innerHTML = `<strong>Active Day</strong> &middot; ${cNum} action${cNum === 1 ? '' : 's'} on ${label}`;
+      } else {
+        tooltip.innerHTML = `<strong>Inactive Day</strong> &middot; No activity on ${label}`;
+      }
       tooltip.hidden = false;
       const rect = target.getBoundingClientRect();
       position(rect.left + rect.width / 2, rect.top);
