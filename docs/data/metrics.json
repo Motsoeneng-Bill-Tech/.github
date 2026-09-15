@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-14T21:37:00Z",
-  "source_commit": "0e60bb74149a6efdfc637b52ec056da0a8c79c4a",
+  "generated_at": "2026-09-15T03:56:03Z",
+  "source_commit": "495c1844679f82f76871cc8f780d672dc25be6bc",
   "org": {
     "login": "Motsoeneng-Bill-Tech",
     "name": "Motsoeneng Bill Tech",
@@ -10,17 +10,17 @@
     "member_count": 7,
     "repo_count": 12,
     "totals": {
-      "avg_consistency_pct": 46.5,
-      "peak_streak": 75,
-      "total_active_days": 270,
+      "avg_consistency_pct": 46.2,
+      "peak_streak": 76,
+      "total_active_days": 272,
       "total_reviews": 160,
-      "total_prs": 780,
-      "total_contributions": 4287,
+      "total_prs": 783,
+      "total_contributions": 4290,
       "total_firm_commits": 2610
     },
     "calendar": {
       "from": "2026-06-19",
-      "to": "2026-09-14",
+      "to": "2026-09-15",
       "weeks": [
         {
           "days": [
@@ -730,9 +730,9 @@
             {
               "date": "2026-09-15",
               "weekday": 2,
-              "count": 0,
-              "level": 0,
-              "in_range": false
+              "count": 3,
+              "level": 2,
+              "in_range": true
             },
             {
               "date": "2026-09-16",
@@ -873,6 +873,19 @@
       "unattributed_commits": 7
     },
     {
+      "name": "mb-invoicing-tool",
+      "description": "Decodes glyph-obfuscated legal invoice PDFs, reconciles every fee line to the cent, auto-categorises by learned rules, and exports the team's Excel analysis. Multi-matter.",
+      "html_url": "https://github.com/Motsoeneng-Bill-Tech/mb-invoicing-tool",
+      "visibility": "PRIVATE",
+      "primary_language": "Java",
+      "default_branch": "master",
+      "is_empty": false,
+      "is_archived": false,
+      "total_commits_default_branch": 30,
+      "attributed_member_commits": 18,
+      "unattributed_commits": 12
+    },
+    {
       "name": "job-portal",
       "description": null,
       "html_url": "https://github.com/Motsoeneng-Bill-Tech/job-portal",
@@ -894,22 +907,9 @@
       "default_branch": "main",
       "is_empty": false,
       "is_archived": false,
-      "total_commits_default_branch": 27,
+      "total_commits_default_branch": 28,
       "attributed_member_commits": 6,
-      "unattributed_commits": 21
-    },
-    {
-      "name": "mb-invoicing-tool",
-      "description": "Decodes glyph-obfuscated legal invoice PDFs, reconciles every fee line to the cent, auto-categorises by learned rules, and exports the team's Excel analysis. Multi-matter.",
-      "html_url": "https://github.com/Motsoeneng-Bill-Tech/mb-invoicing-tool",
-      "visibility": "PRIVATE",
-      "primary_language": "Java",
-      "default_branch": "master",
-      "is_empty": false,
-      "is_archived": false,
-      "total_commits_default_branch": 25,
-      "attributed_member_commits": 18,
-      "unattributed_commits": 7
+      "unattributed_commits": 22
     },
     {
       "name": "anchor-games",
@@ -940,9 +940,9 @@
         "website_url": null
       },
       "contributions": {
-        "total": 1372,
+        "total": 1373,
         "commits": 937,
-        "pull_requests": 398,
+        "pull_requests": 399,
         "reviews": 34,
         "issues": 0,
         "restricted": 0
@@ -968,25 +968,25 @@
       },
       "share_pct": 36.0,
       "consistency": {
-        "active_days": 77,
-        "total_days": 88,
-        "pct": 87.5,
-        "longest_streak": 75,
-        "current_streak": 75,
-        "last_active_date": "2026-09-14",
+        "active_days": 78,
+        "total_days": 89,
+        "pct": 87.6,
+        "longest_streak": 76,
+        "current_streak": 76,
+        "last_active_date": "2026-09-15",
         "days_since_last_active": 0,
         "is_inactive": false,
         "repos_breadth": 6
       },
       "calendar": {
         "from": "2026-06-19",
-        "to": "2026-09-14",
-        "total": 1372,
-        "active_days": 77,
-        "total_days": 88,
-        "active_pct": 87.5,
-        "longest_streak": 75,
-        "current_streak": 75,
+        "to": "2026-09-15",
+        "total": 1373,
+        "active_days": 78,
+        "total_days": 89,
+        "active_pct": 87.6,
+        "longest_streak": 76,
+        "current_streak": 76,
         "weeks": [
           {
             "days": [
@@ -1696,9 +1696,9 @@
               {
                 "date": "2026-09-15",
                 "weekday": 2,
-                "count": 0,
-                "level": 0,
-                "in_range": false
+                "count": 1,
+                "level": 1,
+                "in_range": true
               },
               {
                 "date": "2026-09-16",
@@ -1738,7 +1738,7 @@
       "tier_badge": "\u26a1",
       "cadence_status": "Daily Driver",
       "cadence_desc": "Consistent daily contributor with sustained streak and high peer review activity",
-      "commits_per_active_day": 12.2,
+      "commits_per_active_day": 12.0,
       "rank": 1
     },
     {
@@ -1755,9 +1755,9 @@
         "website_url": null
       },
       "contributions": {
-        "total": 903,
+        "total": 905,
         "commits": 711,
-        "pull_requests": 147,
+        "pull_requests": 149,
         "reviews": 41,
         "issues": 0,
         "restricted": 0
@@ -1781,25 +1781,25 @@
       },
       "share_pct": 18.5,
       "consistency": {
-        "active_days": 61,
-        "total_days": 86,
-        "pct": 70.9,
+        "active_days": 62,
+        "total_days": 87,
+        "pct": 71.3,
         "longest_streak": 17,
-        "current_streak": 15,
-        "last_active_date": "2026-09-14",
+        "current_streak": 16,
+        "last_active_date": "2026-09-15",
         "days_since_last_active": 0,
         "is_inactive": false,
         "repos_breadth": 5
       },
       "calendar": {
         "from": "2026-06-21",
-        "to": "2026-09-14",
-        "total": 903,
-        "active_days": 61,
-        "total_days": 86,
-        "active_pct": 70.9,
+        "to": "2026-09-15",
+        "total": 905,
+        "active_days": 62,
+        "total_days": 87,
+        "active_pct": 71.3,
         "longest_streak": 17,
-        "current_streak": 15,
+        "current_streak": 16,
         "weeks": [
           {
             "days": [
@@ -2456,9 +2456,9 @@
               {
                 "date": "2026-09-15",
                 "weekday": 2,
-                "count": 0,
-                "level": 0,
-                "in_range": false
+                "count": 2,
+                "level": 1,
+                "in_range": true
               },
               {
                 "date": "2026-09-16",
@@ -2492,13 +2492,13 @@
           }
         ]
       },
-      "impact_score": 63.6,
-      "cadence_score": 63.6,
+      "impact_score": 63.8,
+      "cadence_score": 63.8,
       "tier": "Daily Driver",
       "tier_badge": "\u26a1",
       "cadence_status": "Daily Driver",
       "cadence_desc": "Consistent daily contributor with sustained streak and high peer review activity",
-      "commits_per_active_day": 7.9,
+      "commits_per_active_day": 7.8,
       "rank": 2
     },
     {
@@ -2536,24 +2536,24 @@
       "share_pct": 16.1,
       "consistency": {
         "active_days": 63,
-        "total_days": 83,
-        "pct": 75.9,
+        "total_days": 84,
+        "pct": 75.0,
         "longest_streak": 16,
-        "current_streak": 16,
+        "current_streak": 0,
         "last_active_date": "2026-09-14",
-        "days_since_last_active": 0,
+        "days_since_last_active": 1,
         "is_inactive": false,
         "repos_breadth": 2
       },
       "calendar": {
         "from": "2026-06-24",
-        "to": "2026-09-14",
+        "to": "2026-09-15",
         "total": 609,
         "active_days": 63,
-        "total_days": 83,
-        "active_pct": 75.9,
+        "total_days": 84,
+        "active_pct": 75.0,
         "longest_streak": 16,
-        "current_streak": 16,
+        "current_streak": 0,
         "weeks": [
           {
             "days": [
@@ -3212,7 +3212,7 @@
                 "weekday": 2,
                 "count": 0,
                 "level": 0,
-                "in_range": false
+                "in_range": true
               },
               {
                 "date": "2026-09-16",
@@ -3246,8 +3246,8 @@
           }
         ]
       },
-      "impact_score": 54.0,
-      "cadence_score": 54.0,
+      "impact_score": 53.4,
+      "cadence_score": 53.4,
       "tier": "Daily Driver",
       "tier_badge": "\u26a1",
       "cadence_status": "Daily Driver",
@@ -3294,24 +3294,24 @@
       "share_pct": 23.8,
       "consistency": {
         "active_days": 24,
-        "total_days": 83,
-        "pct": 28.9,
+        "total_days": 84,
+        "pct": 28.6,
         "longest_streak": 4,
-        "current_streak": 3,
+        "current_streak": 0,
         "last_active_date": "2026-09-14",
-        "days_since_last_active": 0,
+        "days_since_last_active": 1,
         "is_inactive": false,
         "repos_breadth": 4
       },
       "calendar": {
         "from": "2026-06-24",
-        "to": "2026-09-14",
+        "to": "2026-09-15",
         "total": 1182,
         "active_days": 24,
-        "total_days": 83,
-        "active_pct": 28.9,
+        "total_days": 84,
+        "active_pct": 28.6,
         "longest_streak": 4,
-        "current_streak": 3,
+        "current_streak": 0,
         "weeks": [
           {
             "days": [
@@ -3970,7 +3970,7 @@
                 "weekday": 2,
                 "count": 0,
                 "level": 0,
-                "in_range": false
+                "in_range": true
               },
               {
                 "date": "2026-09-16",
@@ -4004,8 +4004,8 @@
           }
         ]
       },
-      "impact_score": 34.5,
-      "cadence_score": 34.5,
+      "impact_score": 34.3,
+      "cadence_score": 34.3,
       "tier": "Sporadic Pusher",
       "tier_badge": "\u23f3",
       "cadence_status": "Sporadic Pusher",
@@ -4048,24 +4048,24 @@
       "share_pct": 5.0,
       "consistency": {
         "active_days": 31,
-        "total_days": 88,
-        "pct": 35.2,
+        "total_days": 89,
+        "pct": 34.8,
         "longest_streak": 8,
-        "current_streak": 8,
+        "current_streak": 0,
         "last_active_date": "2026-09-14",
-        "days_since_last_active": 0,
+        "days_since_last_active": 1,
         "is_inactive": false,
         "repos_breadth": 2
       },
       "calendar": {
         "from": "2026-06-19",
-        "to": "2026-09-14",
+        "to": "2026-09-15",
         "total": 189,
         "active_days": 31,
-        "total_days": 88,
-        "active_pct": 35.2,
+        "total_days": 89,
+        "active_pct": 34.8,
         "longest_streak": 8,
-        "current_streak": 8,
+        "current_streak": 0,
         "weeks": [
           {
             "days": [
@@ -4777,7 +4777,7 @@
                 "weekday": 2,
                 "count": 0,
                 "level": 0,
-                "in_range": false
+                "in_range": true
               },
               {
                 "date": "2026-09-16",
@@ -4811,8 +4811,8 @@
           }
         ]
       },
-      "impact_score": 28.7,
-      "cadence_score": 28.7,
+      "impact_score": 28.5,
+      "cadence_score": 28.5,
       "tier": "Steady Contributor",
       "tier_badge": "\ud83d\udfe1",
       "cadence_status": "Steady Contributor",
@@ -4853,22 +4853,22 @@
       "share_pct": 0.4,
       "consistency": {
         "active_days": 10,
-        "total_days": 85,
-        "pct": 11.8,
+        "total_days": 86,
+        "pct": 11.6,
         "longest_streak": 2,
         "current_streak": 0,
         "last_active_date": "2026-09-09",
-        "days_since_last_active": 5,
+        "days_since_last_active": 6,
         "is_inactive": false,
         "repos_breadth": 1
       },
       "calendar": {
         "from": "2026-06-22",
-        "to": "2026-09-14",
+        "to": "2026-09-15",
         "total": 22,
         "active_days": 10,
-        "total_days": 85,
-        "active_pct": 11.8,
+        "total_days": 86,
+        "active_pct": 11.6,
         "longest_streak": 2,
         "current_streak": 0,
         "weeks": [
@@ -5529,7 +5529,7 @@
                 "weekday": 2,
                 "count": 0,
                 "level": 0,
-                "in_range": false
+                "in_range": true
               },
               {
                 "date": "2026-09-16",
@@ -5563,8 +5563,8 @@
           }
         ]
       },
-      "impact_score": 12.0,
-      "cadence_score": 12.0,
+      "impact_score": 11.9,
+      "cadence_score": 11.9,
       "tier": "Intermittent",
       "tier_badge": "\u26aa",
       "cadence_status": "Intermittent",
@@ -5607,22 +5607,22 @@
       "share_pct": 0.3,
       "consistency": {
         "active_days": 4,
-        "total_days": 26,
-        "pct": 15.4,
+        "total_days": 27,
+        "pct": 14.8,
         "longest_streak": 2,
         "current_streak": 0,
         "last_active_date": "2026-09-11",
-        "days_since_last_active": 3,
+        "days_since_last_active": 4,
         "is_inactive": false,
         "repos_breadth": 2
       },
       "calendar": {
         "from": "2026-08-20",
-        "to": "2026-09-14",
+        "to": "2026-09-15",
         "total": 10,
         "active_days": 4,
-        "total_days": 26,
-        "active_pct": 15.4,
+        "total_days": 27,
+        "active_pct": 14.8,
         "longest_streak": 2,
         "current_streak": 0,
         "weeks": [
@@ -5859,7 +5859,7 @@
                 "weekday": 2,
                 "count": 0,
                 "level": 0,
-                "in_range": false
+                "in_range": true
               },
               {
                 "date": "2026-09-16",
@@ -5893,8 +5893,8 @@
           }
         ]
       },
-      "impact_score": 8.2,
-      "cadence_score": 8.2,
+      "impact_score": 7.9,
+      "cadence_score": 7.9,
       "tier": "Intermittent",
       "tier_badge": "\u26aa",
       "cadence_status": "Intermittent",
@@ -5907,8 +5907,8 @@
     "generation_ok": true,
     "rate_limit": {
       "cost_used_total": 11,
-      "remaining": 4766,
-      "reset_at": "2026-09-14T21:39:03Z"
+      "remaining": 4989,
+      "reset_at": "2026-09-15T04:56:02Z"
     },
     "warnings": []
   }
