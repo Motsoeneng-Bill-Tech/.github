@@ -9,7 +9,7 @@
     <text x="0" y="24" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="20" font-weight="800" fill="#f1f5f9">7</text>
   </g><g transform="translate(416, 56)">
     <text x="0" y="0" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" letter-spacing="0.6" fill="#64748b">AVG CONSISTENCY</text>
-    <text x="0" y="24" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="20" font-weight="800" fill="#f1f5f9">46%</text>
+    <text x="0" y="24" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="20" font-weight="800" fill="#f1f5f9">47%</text>
   </g><g transform="translate(608, 56)">
     <text x="0" y="0" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" letter-spacing="0.6" fill="#64748b">RECORD STREAK</text>
     <text x="0" y="24" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="20" font-weight="800" fill="#f1f5f9">76 DAYS</text>
@@ -33,30 +33,30 @@
   <text x="56" y="190" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#64748b">03</text>
   <text x="82" y="190" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="600" fill="#f1f5f9">@Amukelani-MB</text>
   <rect x="220" y="177" width="470" height="8" rx="4" fill="#232b38" />
-  <rect x="220" y="177" width="352.5" height="8" rx="4" fill="#c9a961" />
+  <rect x="220" y="177" width="358.1" height="8" rx="4" fill="#c9a961" />
   <text x="700" y="185" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" font-weight="700" fill="#c9a961">Daily Driver</text>
-  <text x="700" y="197" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="9" fill="#64748b">75% (63d) · 16d streak</text>
+  <text x="700" y="197" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="9" fill="#64748b">76% (64d) · 17d streak</text>
   <text x="32" y="226" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#64748b">⏳</text>
   <text x="56" y="226" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#64748b">04</text>
   <text x="82" y="226" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="600" fill="#f1f5f9">@pakisomb</text>
   <rect x="220" y="213" width="470" height="8" rx="4" fill="#232b38" />
-  <rect x="220" y="213" width="134.4" height="8" rx="4" fill="#c9a961" />
+  <rect x="220" y="213" width="140.1" height="8" rx="4" fill="#c9a961" />
   <text x="700" y="221" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" font-weight="700" fill="#c9a961">Sporadic Pusher</text>
-  <text x="700" y="233" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="9" fill="#64748b">29% (24d) · 4d streak</text>
+  <text x="700" y="233" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="9" fill="#64748b">30% (25d) · 4d streak</text>
   <text x="32" y="262" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#64748b">🟡</text>
   <text x="56" y="262" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#64748b">05</text>
   <text x="82" y="262" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="600" fill="#f1f5f9">@VhutshiloMB</text>
   <rect x="220" y="249" width="470" height="8" rx="4" fill="#232b38" />
-  <rect x="220" y="249" width="163.6" height="8" rx="4" fill="#c9a961" />
+  <rect x="220" y="249" width="169.2" height="8" rx="4" fill="#c9a961" />
   <text x="700" y="257" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" font-weight="700" fill="#c9a961">Steady Contributor</text>
-  <text x="700" y="269" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="9" fill="#64748b">35% (31d) · 8d streak</text>
+  <text x="700" y="269" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="9" fill="#64748b">36% (32d) · 9d streak</text>
   <text x="32" y="298" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#64748b">⚪</text>
   <text x="56" y="298" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#64748b">06</text>
   <text x="82" y="298" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="600" fill="#f1f5f9">@Kea1m</text>
   <rect x="220" y="285" width="470" height="8" rx="4" fill="#232b38" />
-  <rect x="220" y="285" width="54.5" height="8" rx="4" fill="#c9a961" />
+  <rect x="220" y="285" width="60.2" height="8" rx="4" fill="#c9a961" />
   <text x="700" y="293" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" font-weight="700" fill="#c9a961">Intermittent</text>
-  <text x="700" y="305" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="9" fill="#64748b">12% (10d) · 2d streak</text>
+  <text x="700" y="305" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="9" fill="#64748b">13% (11d) · 2d streak</text>
   <text x="32" y="334" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#64748b">⚪</text>
   <text x="56" y="334" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#64748b">07</text>
   <text x="82" y="334" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="600" fill="#f1f5f9">@TheoSingo</text>
