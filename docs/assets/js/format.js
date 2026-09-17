@@ -1,12 +1,4 @@
 const Format = (() => {
-  function number(n) {
-    return (n ?? 0).toLocaleString('en-US');
-  }
-
-  function pct(n, digits = 1) {
-    return `${(n ?? 0).toFixed(digits)}%`;
-  }
-
   function date(iso, opts = { month: 'short', day: 'numeric', year: 'numeric' }) {
     return new Date(iso).toLocaleDateString('en-US', opts);
   }
@@ -36,5 +28,5 @@ const Format = (() => {
     }[c]));
   }
 
-  return { number, pct, date, relativeTime, dayAgo, escapeHtml };
+  return { date, relativeTime, dayAgo, escapeHtml };
 })();

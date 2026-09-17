@@ -9,6 +9,10 @@ const ProjectDetail = (() => {
     return 'status--dormant';
   }
 
+  function recentEngineerCount(project) {
+    return project.engineers.filter((e) => e.days_since_last !== null && e.days_since_last <= 30).length;
+  }
+
   function engineerRow(e, membersByLogin) {
     const m = membersByLogin[e.login];
     const avatar = m ? m.avatar_url : `https://github.com/${e.login}.png`;
@@ -38,6 +42,19 @@ const ProjectDetail = (() => {
         Consider pairing a second engineer onto it.
       </div>` : '';
 
+    const unstaffedBanner = project.unstaffed ? `
+      <div class="alert-banner alert-banner--warn">
+        <strong>Nobody is on this.</strong> It is not finished, but no engineer has touched it
+        ${project.days_since_activity !== null ? `for ${project.days_since_activity} days.` : 'at all yet.'}
+        It needs an owner before it is treated as in flight.
+      </div>` : '';
+
+    const truncatedBanner = project.history_truncated ? `
+      <div class="alert-banner">
+        <strong>Partial history.</strong> This project has more commits than a single run can read,
+        so the earliest dates below may be later than the truth. Figures for recent work are unaffected.
+      </div>` : '';
+
     const dormantBanner = (project.status === 'Dormant' || project.status === 'No activity') ? `
       <div class="alert-banner">
         <strong>No recent activity.</strong> Nothing has landed on this project
@@ -53,6 +70,14 @@ const ProjectDetail = (() => {
           `<span class="repo-tag">${Format.escapeHtml(o.login)} · ${o.active_days}d</span>`).join('')}</div>
       </section>` : '';
 
+    const automation = (project.automation || []).length ? `
+      <section class="panel">
+        <h3 class="panel__title">Automation</h3>
+        <p class="panel__hint">Bot accounts that push to this project. Their activity is listed for completeness and is excluded from every figure above — a project kept moving by a robot is not staffed.</p>
+        <div class="tag-row">${project.automation.map((a) =>
+          `<span class="repo-tag">${Format.escapeHtml(a.login)} · ${a.active_days}d</span>`).join('')}</div>
+      </section>` : '';
+
     container.innerHTML = `
       <a class="detail-back" href="./#/">&larr; Back to overview</a>
 
@@ -62,6 +87,7 @@ const ProjectDetail = (() => {
           <div class="detail-header__login">
             <a href="${project.html_url}" target="_blank" rel="noopener">${Format.escapeHtml(project.name)} ↗</a>
             &middot; ${project.visibility === 'PUBLIC' ? 'Public' : 'Private'}
+            &middot; <span title="The main version of the project that this page measures">main version: ${Format.escapeHtml(project.default_branch || '—')}</span>
             ${project.primary_language ? `&middot; ${Format.escapeHtml(project.primary_language)}` : ''}
           </div>
           <div class="detail-header__badges">
@@ -73,6 +99,8 @@ const ProjectDetail = (() => {
       </div>
 
       ${riskBanner}
+      ${unstaffedBanner}
+      ${truncatedBanner}
       ${dormantBanner}
 
       <div class="stat-grid">
@@ -92,9 +120,9 @@ const ProjectDetail = (() => {
           <div class="stat-tile__sub">distinct days with work landed</div>
         </div>
         <div class="stat-tile">
-          <div class="stat-tile__label">Branch</div>
-          <div class="stat-tile__value stat-tile__value--sm">${Format.escapeHtml(project.default_branch || '—')}</div>
-          <div class="stat-tile__sub">default branch measured</div>
+          <div class="stat-tile__label">Engineers in last 30 days</div>
+          <div class="stat-tile__value">${recentEngineerCount(project)}</div>
+          <div class="stat-tile__sub">how wide the recent knowledge of this project is</div>
         </div>
       </div>
 
@@ -106,6 +134,9 @@ const ProjectDetail = (() => {
       </section>
 
       ${outside}
+      ${automation}
+
+      ${window.Disclosures ? window.Disclosures.html() : ''}
     `;
 
     document.title = `${project.display_name} — ${data.org.name} Engineering`;

@@ -9,7 +9,7 @@
     <text x="0" y="24" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="20" font-weight="800" fill="#f1f5f9">7</text>
   </g><g transform="translate(416, 56)">
     <text x="0" y="0" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" letter-spacing="0.6" fill="#64748b">VERIFIED PRESENCE</text>
-    <text x="0" y="24" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="20" font-weight="800" fill="#f1f5f9">50%</text>
+    <text x="0" y="24" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="20" font-weight="800" fill="#f1f5f9">51%</text>
   </g><g transform="translate(608, 56)">
     <text x="0" y="0" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" letter-spacing="0.6" fill="#64748b">PROJECTS AT RISK</text>
     <text x="0" y="24" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="20" font-weight="800" fill="#f1f5f9">5</text>
@@ -54,7 +54,7 @@
   <text x="32" y="334" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#64748b">07</text>
   <text x="60" y="334" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="600" fill="#f1f5f9">@TheoSingo</text>
   <rect x="220" y="321" width="460" height="8" rx="4" fill="#232b38" />
-  <rect x="220" y="321" width="15.6" height="8" rx="4" fill="#c9a961" />
-  <text x="690" y="329" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" font-weight="700" fill="#c9a961">3% · Dormant</text>
+  <rect x="220" y="321" width="30.8" height="8" rx="4" fill="#c9a961" />
+  <text x="690" y="329" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" font-weight="700" fill="#c9a961">7% · Dormant</text>
   <text x="690" y="341" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="9" fill="#64748b">2 active projects · 0d verified streak</text>
 </svg>

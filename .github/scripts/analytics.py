@@ -15,6 +15,14 @@ CURRENT_WINDOW_DAYS = 14   # "currently working on it"
 MAINTENANCE_WINDOW_DAYS = 60  # beyond this with no activity, a project reads as dormant
 
 
+def is_bot(login):
+    """GitHub suffixes every bot account with '[bot]'. Their commits must not set a
+    project's liveness: this repo's own telemetry job pushes to it every single day, so
+    counting bot pushes would make the dashboard's robot keep the dashboard's repo
+    permanently 'Active' — a project that looks staffed because nobody is working on it."""
+    return bool(login) and login.endswith("[bot]")
+
+
 def _to_date(iso_day):
     return date.fromisoformat(iso_day)
 
@@ -42,9 +50,14 @@ def build_project_involvement(repo_histories, member_logins, today):
         outside_days = {}     # login or None -> set of dates
         all_days = set()
 
+        automation_days = {}   # bot login -> set of dates, reported but never counted as work
+
         for commit in history.get("commits", []):
             day = commit["date"]
             login = commit.get("login")
+            if is_bot(login):
+                automation_days.setdefault(login, set()).add(day)
+                continue
             all_days.add(day)
             if login in members:
                 member_days.setdefault(login, set()).add(day)
@@ -79,9 +92,15 @@ def build_project_involvement(repo_histories, member_logins, today):
             "last_activity": last_activity,
             "days_since_activity": days_since,
             "status": status,
-            # Key-person risk: the project is still live, but only one engineer has
-            # been near it recently. This is the single most useful risk signal here.
-            "key_person_risk": status in ("Active", "Maintenance") and len(active_engineers) <= 1,
+            # Key-person risk: the project is live and exactly ONE engineer has been
+            # near it recently. "Maintenance" means the last commit is already older
+            # than the is_current window, so no engineer can be current on one — it
+            # used to be included here, which flagged every maintenance project as
+            # carried by one engineer while reporting zero active engineers.
+            "key_person_risk": status == "Active" and len(active_engineers) == 1,
+            # A live project nobody has touched recently is a different problem, and
+            # saying "carried by one engineer" about it would be plainly false.
+            "unstaffed": status in ("Active", "Maintenance") and not active_engineers,
             "sole_engineer": engineers[0]["login"] if len(engineers) == 1 else None,
             "outside_contributors": sorted(
                 [
@@ -91,6 +110,10 @@ def build_project_involvement(repo_histories, member_logins, today):
                 key=lambda o: -o["active_days"],
             ),
             "history_truncated": bool(history.get("truncated")),
+            "automation": sorted(
+                [{"login": login, "active_days": len(days)} for login, days in automation_days.items()],
+                key=lambda a: -a["active_days"],
+            ),
         }
 
     # Flatten each member's map into a list ordered by depth of involvement.
@@ -169,13 +192,24 @@ def weekday_pattern(day_counts, today):
     ]
 
 
-def cadence_trend(day_counts, today, weeks=12):
+MIN_TREND_WEEKS = 4  # below this there is no "before" to compare a "now" against
+
+
+def cadence_trend(day_counts, today, weeks=12, start_date=None):
     """Active days per week over the recent past, plus a direction. Answers the question
-    an executive actually asks about a person: is this getting better or worse?"""
+    an executive actually asks about a person: is this getting better or worse?
+
+    Weeks that end before `start_date` are dropped rather than recorded as zero. Without
+    that clamp a four-week-old joiner is charted against eight weeks when they did not
+    work here, the empty bars read as months of doing nothing, and the zero baseline they
+    create biases the direction toward "Improving" for the simple reason that the person
+    did not exist in the earlier window."""
     series = []
     for w in range(weeks - 1, -1, -1):
         week_end = today - timedelta(days=7 * w)
         week_start = week_end - timedelta(days=6)
+        if start_date is not None and week_end < start_date:
+            continue
         active = sum(
             1 for iso_day, count in day_counts.items()
             if count > 0 and week_start <= _to_date(iso_day) <= week_end
@@ -185,6 +219,15 @@ def cadence_trend(day_counts, today, weeks=12):
             "week_end": week_end.isoformat(),
             "active_days": active,
         })
+
+    if len(series) < MIN_TREND_WEEKS:
+        return {
+            "weeks": series,
+            "recent_avg_active_days": None,
+            "earlier_avg_active_days": None,
+            "direction": "Not enough history",
+            "weeks_observed": len(series),
+        }
 
     half = max(1, len(series) // 2)
     recent = series[-half:]
@@ -205,6 +248,7 @@ def cadence_trend(day_counts, today, weeks=12):
         "recent_avg_active_days": round(recent_avg, 1),
         "earlier_avg_active_days": round(earlier_avg, 1),
         "direction": direction,
+        "weeks_observed": len(series),
     }
 
 

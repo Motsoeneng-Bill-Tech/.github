@@ -22,12 +22,10 @@
   --success: #34d399;
   --danger: #f87171;
 
-  /* Calendar heat ramp — keep in sync with .github/scripts/render.py CAL_RAMP */
-  --cal-0: #161a22;
-  --cal-1: #3a2f1a;
-  --cal-2: #6b5424;
-  --cal-3: #a3812f;
-  --cal-4: #c9a961;
+  /* Calendar cells — two tones, not a ramp. Shading by volume would put "how much
+     was pushed" back on the page. Keep in sync with .github/scripts/render.py. */
+  --cal-off: #161a22;
+  --cal-on: #c9a961;
 
   --radius-sm: 6px;
   --radius-md: 10px;

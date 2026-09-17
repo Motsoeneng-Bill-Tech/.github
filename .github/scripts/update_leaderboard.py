@@ -50,11 +50,12 @@ GRAPHS_DIR = os.path.join(ROOT_DIR, "assets", "graphs")
 ASSETS_DIR = os.path.join(ROOT_DIR, "assets")
 DOCS_DATA_PATH = os.path.join(ROOT_DIR, "docs", "data", "metrics.json")
 
-SCHEMA_VERSION = 2
+SCHEMA_VERSION = 3
 ROSTER_DETAIL_CAP = 12
 RELIABILITY_WINDOW_DAYS = 30
 DORMANT_AFTER_DAYS = 14
-NEW_MEMBER_DAYS = 7
+# A joiner needs a fair run before a 30-day presence window says anything about them.
+NEW_MEMBER_DAYS = 14
 RECENTLY_ACTIVE_DAYS = 7
 
 # Cadence bands describe how regularly someone shows up. They are not job titles and
@@ -69,8 +70,8 @@ CADENCE_BANDS = [
 ]
 
 
-def cadence_band(reliability_pct, days_since_last, tenure_days):
-    if tenure_days < NEW_MEMBER_DAYS:
+def cadence_band(reliability_pct, days_since_last, observed_days):
+    if observed_days < NEW_MEMBER_DAYS:
         return "Newly onboarded"
     if days_since_last is None or days_since_last >= DORMANT_AFTER_DAYS:
         return "Dormant"
@@ -188,6 +189,11 @@ def build_dataset(members_raw, repos_raw, member_contribs, repo_histories, verif
             warnings.append(f"Repository '{r['name']}' has no commits yet.")
         if p.get("history_truncated"):
             warnings.append(f"Repository '{r['name']}' history was truncated — earliest activity may be under-reported.")
+        # Archived repositories are closed by definition. Left on recency alone an
+        # archived repo with a recent final commit reports as a live project, inflates
+        # the "live projects" tile, and can raise a "pair a second engineer onto it"
+        # recommendation for work nobody is meant to touch again.
+        status = "Archived" if r["is_archived"] else p.get("status", "No activity")
         projects_out.append({
             "name": r["name"],
             "display_name": render.REPO_DISPLAY_NAMES.get(r["name"], r["name"]),
@@ -197,13 +203,15 @@ def build_dataset(members_raw, repos_raw, member_contribs, repo_histories, verif
             "primary_language": r["primary_language"],
             "default_branch": r["default_branch"],
             "is_archived": r["is_archived"],
-            "status": p.get("status", "No activity"),
+            "status": status,
             "last_activity": p.get("last_activity"),
             "days_since_activity": p.get("days_since_activity"),
             "active_days_total": p.get("active_days_total", 0),
             "engineer_count": p.get("engineer_count", 0),
             "active_engineer_count": p.get("active_engineer_count", 0),
-            "key_person_risk": p.get("key_person_risk", False),
+            "key_person_risk": p.get("key_person_risk", False) and not r["is_archived"],
+            "unstaffed": p.get("unstaffed", False) and not r["is_archived"],
+            "history_truncated": p.get("history_truncated", False),
             "sole_engineer": p.get("sole_engineer"),
             "current_engineers": p.get("current_engineers", []),
             "engineers": [
@@ -218,6 +226,7 @@ def build_dataset(members_raw, repos_raw, member_contribs, repo_histories, verif
                 for e in p.get("engineers", [])
             ],
             "outside_contributors": p.get("outside_contributors", []),
+            "automation": p.get("automation", []),
         })
 
     # --- engineers ---
@@ -233,6 +242,20 @@ def build_dataset(members_raw, repos_raw, member_contribs, repo_histories, verif
         if earliest_created is None or created_dt < earliest_created:
             earliest_created = created_dt
 
+        # GitHub does not expose when someone joined an organisation, only when they
+        # opened their GitHub account. Treating account age as firm tenure punishes a
+        # genuine new hire who already had an account: they get measured against a full
+        # 30-day window covering weeks before they were employed, rank last, and never
+        # reach the "Newly onboarded" band that exists to protect exactly them.
+        # The first day they were seen working here is the honest floor. It can only be
+        # moved EARLIER by backdating, which lengthens the window and helps nobody.
+        first_seen = [r["first_active"] for r in by_member_projects.get(login, []) if r.get("first_active")]
+        first_seen += verified.get(login, {}).get("days", [])[:1]
+        observed_from = min(
+            [datetime.fromisoformat(d).date() for d in first_seen] + [today]
+        ) if first_seen else created_dt.date()
+        observed_days = (today - observed_from).days + 1
+
         day_counts = {}
         for week in cal["weeks"]:
             for day in week["contributionDays"]:
@@ -243,7 +266,7 @@ def build_dataset(members_raw, repos_raw, member_contribs, repo_histories, verif
         total_days = len(day_counts)
         streaks = render.calendar_streaks(day_counts)
         recorded = analytics.recent_active_ratio(day_counts, today, RELIABILITY_WINDOW_DAYS)
-        trend = analytics.cadence_trend(day_counts, today)
+        trend = analytics.cadence_trend(day_counts, today, start_date=observed_from)
         weekdays = analytics.weekday_pattern(day_counts, today)
 
         # Verified presence — the ranked signal. Commit dates are written by the
@@ -251,7 +274,7 @@ def build_dataset(members_raw, repos_raw, member_contribs, repo_histories, verif
         # nothing; these dates are stamped by GitHub when the action arrived.
         verified_days = verified.get(login, {}).get("days", [])
         verified_presence = analytics.presence_from_dates(
-            verified_days, created_dt.date(), today, RELIABILITY_WINDOW_DAYS
+            verified_days, observed_from, today, RELIABILITY_WINDOW_DAYS
         )
         verified_presence["sources"] = verified.get(login, {}).get("sources", [])
         verified_presence["corroboration_pct"] = (
@@ -264,7 +287,7 @@ def build_dataset(members_raw, repos_raw, member_contribs, repo_histories, verif
                 last_active_date = d
                 break
         days_since_last = (today - datetime.fromisoformat(last_active_date).date()).days if last_active_date else None
-        tenure_days = (today - created_dt.date()).days + 1
+        account_age_days = (today - created_dt.date()).days + 1
 
         # Project portfolio, enriched with each project's own metadata
         projects = []
@@ -298,8 +321,12 @@ def build_dataset(members_raw, repos_raw, member_contribs, repo_histories, verif
             "avatar_url": m["avatar_url"],
             "html_url": f"https://github.com/{login}",
             "org_role": m["org_role"],
-            "created_at": m["created_at"],
-            "tenure_days": tenure_days,
+            "account_created_at": m["created_at"],
+            "created_at": m["created_at"],  # retained for stable sort tiebreaks
+            "account_age_days": account_age_days,
+            "observed_from": observed_from.isoformat(),
+            "observed_days": observed_days,
+            "is_new_joiner": observed_days < NEW_MEMBER_DAYS,
             "profile": {
                 "bio": m.get("bio"),
                 "company": m.get("company"),
@@ -326,7 +353,7 @@ def build_dataset(members_raw, repos_raw, member_contribs, repo_histories, verif
             "carries_key_person_risk_for": carries_risk,
             "engagement_status": engagement_status(days_since_last),
             "engagement_level": engagement_level(days_since_last),
-            "cadence_band": cadence_band(verified_presence["pct"], verified_presence["days_since_last"], tenure_days),
+            "cadence_band": cadence_band(verified_presence["pct"], verified_presence["days_since_last"], observed_days),
             "calendar": {
                 "from": created_dt.date().isoformat(),
                 "to": today.isoformat(),
@@ -354,8 +381,10 @@ def build_dataset(members_raw, repos_raw, member_contribs, repo_histories, verif
     org_calendar_weeks = render.build_calendar_grid(day_counts_union, org_calendar_start, today)
 
     at_risk = [p for p in projects_out if p["key_person_risk"]]
+    unstaffed = [p for p in projects_out if p["unstaffed"]]
     active_projects = [p for p in projects_out if p["status"] == "Active"]
     dormant_projects = [p for p in projects_out if p["status"] in ("Dormant", "No activity")]
+    archived_projects = [p for p in projects_out if p["status"] == "Archived"]
 
     return {
         "schema_version": SCHEMA_VERSION,
@@ -368,6 +397,7 @@ def build_dataset(members_raw, repos_raw, member_contribs, repo_histories, verif
             "html_url": f"https://github.com/{ORG_NAME}",
             "member_count": len(members_out),
             "repo_count": len(projects_out),
+            "live_repo_count": len([p for p in projects_out if p["status"] != "Archived"]),
             "summary": {
                 "avg_reliability_pct": round(
                     sum(m["reliability"]["pct"] for m in members_out) / len(members_out), 1
@@ -386,6 +416,8 @@ def build_dataset(members_raw, repos_raw, member_contribs, repo_histories, verif
                 "projects_dormant": len(dormant_projects),
                 "projects_at_key_person_risk": len(at_risk),
                 "key_person_risk_projects": [p["display_name"] for p in at_risk],
+                "projects_unstaffed": len(unstaffed),
+                "projects_archived": len(archived_projects),
                 "reliability_window_days": RELIABILITY_WINDOW_DAYS,
             },
             "calendar": {
@@ -409,7 +441,9 @@ def build_dataset(members_raw, repos_raw, member_contribs, repo_histories, verif
                 "A day counts once whether it held one action or a thousand, so nothing on this page can be improved by doing more in a single day.",
                 "An engineer who works without opening pull requests will show few verified days. That means the evidence is thin, not that the person was absent — read a low verified figure as a question, not a verdict.",
                 "Commit attribution follows GitHub's own account linking. Work committed from an unlinked email address is listed against the project as an unmatched author, never merged into an engineer's record.",
-                "Project involvement reflects work merged into each project's default branch. Work still in progress on a side branch is not yet visible here.",
+                "Only work that has been completed and merged into each project's main version counts here. Work still in progress on a side branch is not yet visible, so recent effort can be understated.",
+                "Leave, sick days and public holidays are not recorded anywhere in this data and will read as inactive days. Before drawing a conclusion about a quiet period, check whether the person was working.",
+                "Automated accounts are excluded. A project kept moving only by a bot is not reported as active work.",
                 "This page measures engagement and delivery cadence. It cannot measure the difficulty, quality or business value of the work, and must not be read as a performance rating.",
             ],
         },

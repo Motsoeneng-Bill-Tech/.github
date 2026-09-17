@@ -1,7 +1,7 @@
 {
-  "schema_version": 2,
-  "generated_at": "2026-09-17T14:14:38Z",
-  "source_commit": "89da2cfbabc86f3ec183c90f3fda6d9ff4781fa7",
+  "schema_version": 3,
+  "generated_at": "2026-09-17T17:40:55Z",
+  "source_commit": "local",
   "org": {
     "login": "Motsoeneng-Bill-Tech",
     "name": "Motsoeneng Bill Tech",
@@ -9,8 +9,9 @@
     "html_url": "https://github.com/Motsoeneng-Bill-Tech",
     "member_count": 7,
     "repo_count": 12,
+    "live_repo_count": 12,
     "summary": {
-      "avg_reliability_pct": 50.5,
+      "avg_reliability_pct": 51.0,
       "engineers_active_this_week": 7,
       "engineers_without_recent_evidence": 1,
       "peak_streak": 51,
@@ -25,6 +26,8 @@
         "MB-IQ-Revamped",
         "anchor-games"
       ],
+      "projects_unstaffed": 0,
+      "projects_archived": 0,
       "reliability_window_days": 30
     },
     "calendar": {
@@ -36,50 +39,43 @@
             {
               "date": "2026-06-14",
               "weekday": 0,
-              "count": 0,
-              "level": 0,
+              "active": false,
               "in_range": false
             },
             {
               "date": "2026-06-15",
               "weekday": 1,
-              "count": 0,
-              "level": 0,
+              "active": false,
               "in_range": false
             },
             {
               "date": "2026-06-16",
               "weekday": 2,
-              "count": 0,
-              "level": 0,
+              "active": false,
               "in_range": false
             },
             {
               "date": "2026-06-17",
               "weekday": 3,
-              "count": 0,
-              "level": 0,
+              "active": false,
               "in_range": false
             },
             {
               "date": "2026-06-18",
               "weekday": 4,
-              "count": 0,
-              "level": 0,
+              "active": false,
               "in_range": false
             },
             {
               "date": "2026-06-19",
               "weekday": 5,
-              "count": 2,
-              "level": 1,
+              "active": true,
               "in_range": true
             },
             {
               "date": "2026-06-20",
               "weekday": 6,
-              "count": 0,
-              "level": 0,
+              "active": false,
               "in_range": true
             }
           ]
@@ -89,50 +85,43 @@
             {
               "date": "2026-06-21",
               "weekday": 0,
-              "count": 1,
-              "level": 1,
+              "active": true,
               "in_range": true
             },
             {
               "date": "2026-06-22",
               "weekday": 1,
-              "count": 1,
-              "level": 1,
+              "active": true,
               "in_range": true
             },
             {
               "date": "2026-06-23",
               "weekday": 2,
-              "count": 0,
-              "level": 0,
+              "active": false,
               "in_range": true
             },
             {
               "date": "2026-06-24",
               "weekday": 3,
-              "count": 12,
-              "level": 4,
+              "active": true,
               "in_range": true
             },
             {
               "date": "2026-06-25",
               "weekday": 4,
-              "count": 0,
-              "level": 0,
+              "active": false,
               "in_range": true
             },
             {
               "date": "2026-06-26",
               "weekday": 5,
-              "count": 0,
-              "level": 0,
+              "active": false,
               "in_range": true
             },
             {
               "date": "2026-06-27",
               "weekday": 6,
-              "count": 0,
-              "level": 0,
+              "active": false,
               "in_range": true
             }
           ]
@@ -142,50 +131,43 @@
             {
               "date": "2026-06-28",
               "weekday": 0,
-              "count": 0,
-              "level": 0,
+              "active": false,
               "in_range": true
             },
             {
               "date": "2026-06-29",
               "weekday": 1,
-              "count": 0,
-              "level": 0,
+              "active": false,
               "in_range": true
             },
             {
               "date": "2026-06-30",
               "weekday": 2,
-              "count": 0,
-              "level": 0,
+              "active": false,
               "in_range": true
             },
             {
               "date": "2026-07-01",
               "weekday": 3,
-              "count": 8,
-              "level": 3,
+              "active": true,
               "in_range": true
             },
             {
               "date": "2026-07-02",
               "weekday": 4,
-              "count": 64,
-              "level": 4,
+              "active": true,
               "in_range": true
             },
             {
               "date": "2026-07-03",
               "weekday": 5,
-              "count": 26,
-              "level": 4,
+              "active": true,
               "in_range": true
             },
             {
               "date": "2026-07-04",
               "weekday": 6,
-              "count": 1,
-              "level": 1,
+              "active": true,
               "in_range": true
             }
           ]
@@ -195,50 +177,43 @@
             {
               "date": "2026-07-05",
               "weekday": 0,
-              "count": 12,
-              "level": 4,
+              "active": true,
               "in_range": true
             },
             {
               "date": "2026-07-06",
               "weekday": 1,
-              "count": 37,
-              "level": 4,
+              "active": true,
               "in_range": true
             },
             {
               "date": "2026-07-07",
               "weekday": 2,
-              "count": 17,
-              "level": 4,
+              "active": true,
               "in_range": true
             },
             {
               "date": "2026-07-08",
               "weekday": 3,
-              "count": 57,
-              "level": 4,
+              "active": true,
               "in_range": true
             },
             {
               "date": "2026-07-09",
               "weekday": 4,
-              "count": 44,
-              "level": 4,
+              "active": true,
               "in_range": true
             },
             {
               "date": "2026-07-10",
               "weekday": 5,
-              "count": 63,
-              "level": 4,
+              "active": true,
               "in_range": true
             },
             {
               "date": "2026-07-11",
               "weekday": 6,
-              "count": 69,
-              "level": 4,
+              "active": true,
               "in_range": true
             }
           ]
@@ -248,50 +223,43 @@
             {
               "date": "2026-07-12",
               "weekday": 0,
-              "count": 95,
-              "level": 4,
+              "active": true,
               "in_range": true
             },
             {
               "date": "2026-07-13",
               "weekday": 1,
-              "count": 83,
-              "level": 4,
+              "active": true,
               "in_range": true
             },
             {
               "date": "2026-07-14",
               "weekday": 2,
-              "count": 29,
-              "level": 4,
+              "active": true,
               "in_range": true
             },
             {
               "date": "2026-07-15",
               "weekday": 3,
-              "count": 32,
-              "level": 4,
+              "active": true,
               "in_range": true
             },
             {
               "date": "2026-07-16",
               "weekday": 4,
-              "count": 46,
-              "level": 4,
+              "active": true,
               "in_range": true
             },
             {
               "date": "2026-07-17",
               "weekday": 5,
-              "count": 46,
-              "level": 4,
+              "active": true,
               "in_range": true
             },
             {
               "date": "2026-07-18",
               "weekday": 6,
-              "count": 54,
-              "level": 4,
+              "active": true,
               "in_range": true
             }
           ]
@@ -301,50 +269,43 @@
             {
               "date": "2026-07-19",
               "weekday": 0,
-              "count": 51,
-              "level": 4,
+              "active": true,
               "in_range": true
             },
             {
               "date": "2026-07-20",
               "weekday": 1,
-              "count": 42,
-              "level": 4,
+              "active": true,
               "in_range": true
             },
             {
               "date": "2026-07-21",
               "weekday": 2,
-              "count": 58,
-              "level": 4,
+              "active": true,
               "in_range": true
             },
             {
               "date": "2026-07-22",
               "weekday": 3,
-              "count": 46,
-              "level": 4,
+              "active": true,
               "in_range": true
             },
             {
               "date": "2026-07-23",
               "weekday": 4,
-              "count": 45,
-              "level": 4,
+              "active": true,
               "in_range": true
             },
             {
               "date": "2026-07-24",
               "weekday": 5,
-              "count": 64,
-              "level": 4,
+              "active": true,
               "in_range": true
             },
             {
               "date": "2026-07-25",
               "weekday": 6,
-              "count": 58,
-              "level": 4,
+              "active": true,
               "in_range": true
             }
           ]
@@ -354,50 +315,43 @@
             {
               "date": "2026-07-26",
               "weekday": 0,
-              "count": 22,
-              "level": 4,
+              "active": true,
               "in_range": true
             },
             {
               "date": "2026-07-27",
               "weekday": 1,
-              "count": 102,
-              "level": 4,
+              "active": true,
               "in_range": true
             },
             {
               "date": "2026-07-28",
               "weekday": 2,
-              "count": 30,
-              "level": 4,
+              "active": true,
               "in_range": true
             },
             {
               "date": "2026-07-29",
               "weekday": 3,
-              "count": 44,
-              "level": 4,
+              "active": true,
               "in_range": true
             },
             {
               "date": "2026-07-30",
               "weekday": 4,
-              "count": 44,
-              "level": 4,
+              "active": true,
               "in_range": true
             },
             {
               "date": "2026-07-31",
               "weekday": 5,
-              "count": 48,
-              "level": 4,
+              "active": true,
               "in_range": true
             },
             {
               "date": "2026-08-01",
               "weekday": 6,
-              "count": 8,
-              "level": 3,
+              "active": true,
               "in_range": true
             }
           ]
@@ -407,50 +361,43 @@
             {
               "date": "2026-08-02",
               "weekday": 0,
-              "count": 10,
-              "level": 4,
+              "active": true,
               "in_range": true
             },
             {
               "date": "2026-08-03",
               "weekday": 1,
-              "count": 23,
-              "level": 4,
+              "active": true,
               "in_range": true
             },
             {
               "date": "2026-08-04",
               "weekday": 2,
-              "count": 44,
-              "level": 4,
+              "active": true,
               "in_range": true
             },
             {
               "date": "2026-08-05",
               "weekday": 3,
-              "count": 69,
-              "level": 4,
+              "active": true,
               "in_range": true
             },
             {
               "date": "2026-08-06",
               "weekday": 4,
-              "count": 26,
-              "level": 4,
+              "active": true,
               "in_range": true
             },
             {
               "date": "2026-08-07",
               "weekday": 5,
-              "count": 74,
-              "level": 4,
+              "active": true,
               "in_range": true
             },
             {
               "date": "2026-08-08",
               "weekday": 6,
-              "count": 56,
-              "level": 4,
+              "active": true,
               "in_range": true
             }
           ]
@@ -460,50 +407,43 @@
             {
               "date": "2026-08-09",
               "weekday": 0,
-              "count": 35,
-              "level": 4,
+              "active": true,
               "in_range": true
             },
             {
               "date": "2026-08-10",
               "weekday": 1,
-              "count": 44,
-              "level": 4,
+              "active": true,
               "in_range": true
             },
             {
               "date": "2026-08-11",
               "weekday": 2,
-              "count": 75,
-              "level": 4,
+              "active": true,
               "in_range": true
             },
             {
               "date": "2026-08-12",
               "weekday": 3,
-              "count": 19,
-              "level": 4,
+              "active": true,
               "in_range": true
             },
             {
               "date": "2026-08-13",
               "weekday": 4,
-              "count": 47,
-              "level": 4,
+              "active": true,
               "in_range": true
             },
             {
               "date": "2026-08-14",
               "weekday": 5,
-              "count": 19,
-              "level": 4,
+              "active": true,
               "in_range": true
             },
             {
               "date": "2026-08-15",
               "weekday": 6,
-              "count": 20,
-              "level": 4,
+              "active": true,
               "in_range": true
             }
           ]
@@ -513,50 +453,43 @@
             {
               "date": "2026-08-16",
               "weekday": 0,
-              "count": 76,
-              "level": 4,
+              "active": true,
               "in_range": true
             },
             {
               "date": "2026-08-17",
               "weekday": 1,
-              "count": 59,
-              "level": 4,
+              "active": true,
               "in_range": true
             },
             {
               "date": "2026-08-18",
               "weekday": 2,
-              "count": 51,
-              "level": 4,
+              "active": true,
               "in_range": true
             },
             {
               "date": "2026-08-19",
               "weekday": 3,
-              "count": 42,
-              "level": 4,
+              "active": true,
               "in_range": true
             },
             {
               "date": "2026-08-20",
               "weekday": 4,
-              "count": 17,
-              "level": 4,
+              "active": true,
               "in_range": true
             },
             {
               "date": "2026-08-21",
               "weekday": 5,
-              "count": 14,
-              "level": 4,
+              "active": true,
               "in_range": true
             },
             {
               "date": "2026-08-22",
               "weekday": 6,
-              "count": 17,
-              "level": 4,
+              "active": true,
               "in_range": true
             }
           ]
@@ -566,50 +499,43 @@
             {
               "date": "2026-08-23",
               "weekday": 0,
-              "count": 15,
-              "level": 4,
+              "active": true,
               "in_range": true
             },
             {
               "date": "2026-08-24",
               "weekday": 1,
-              "count": 52,
-              "level": 4,
+              "active": true,
               "in_range": true
             },
             {
               "date": "2026-08-25",
               "weekday": 2,
-              "count": 7,
-              "level": 3,
+              "active": true,
               "in_range": true
             },
             {
               "date": "2026-08-26",
               "weekday": 3,
-              "count": 19,
-              "level": 4,
+              "active": true,
               "in_range": true
             },
             {
               "date": "2026-08-27",
               "weekday": 4,
-              "count": 38,
-              "level": 4,
+              "active": true,
               "in_range": true
             },
             {
               "date": "2026-08-28",
               "weekday": 5,
-              "count": 14,
-              "level": 4,
+              "active": true,
               "in_range": true
             },
             {
               "date": "2026-08-29",
               "weekday": 6,
-              "count": 6,
-              "level": 3,
+              "active": true,
               "in_range": true
             }
           ]
@@ -619,50 +545,43 @@
             {
               "date": "2026-08-30",
               "weekday": 0,
-              "count": 16,
-              "level": 4,
+              "active": true,
               "in_range": true
             },
             {
               "date": "2026-08-31",
               "weekday": 1,
-              "count": 21,
-              "level": 4,
+              "active": true,
               "in_range": true
             },
             {
               "date": "2026-09-01",
               "weekday": 2,
-              "count": 29,
-              "level": 4,
+              "active": true,
               "in_range": true
             },
             {
               "date": "2026-09-02",
               "weekday": 3,
-              "count": 32,
-              "level": 4,
+              "active": true,
               "in_range": true
             },
             {
               "date": "2026-09-03",
               "weekday": 4,
-              "count": 15,
-              "level": 4,
+              "active": true,
               "in_range": true
             },
             {
               "date": "2026-09-04",
               "weekday": 5,
-              "count": 58,
-              "level": 4,
+              "active": true,
               "in_range": true
             },
             {
               "date": "2026-09-05",
               "weekday": 6,
-              "count": 58,
-              "level": 4,
+              "active": true,
               "in_range": true
             }
           ]
@@ -672,50 +591,43 @@
             {
               "date": "2026-09-06",
               "weekday": 0,
-              "count": 44,
-              "level": 4,
+              "active": true,
               "in_range": true
             },
             {
               "date": "2026-09-07",
               "weekday": 1,
-              "count": 79,
-              "level": 4,
+              "active": true,
               "in_range": true
             },
             {
               "date": "2026-09-08",
               "weekday": 2,
-              "count": 71,
-              "level": 4,
+              "active": true,
               "in_range": true
             },
             {
               "date": "2026-09-09",
               "weekday": 3,
-              "count": 77,
-              "level": 4,
+              "active": true,
               "in_range": true
             },
             {
               "date": "2026-09-10",
               "weekday": 4,
-              "count": 65,
-              "level": 4,
+              "active": true,
               "in_range": true
             },
             {
               "date": "2026-09-11",
               "weekday": 5,
-              "count": 69,
-              "level": 4,
+              "active": true,
               "in_range": true
             },
             {
               "date": "2026-09-12",
               "weekday": 6,
-              "count": 1030,
-              "level": 4,
+              "active": true,
               "in_range": true
             }
           ]
@@ -725,50 +637,43 @@
             {
               "date": "2026-09-13",
               "weekday": 0,
-              "count": 79,
-              "level": 4,
+              "active": true,
               "in_range": true
             },
             {
               "date": "2026-09-14",
               "weekday": 1,
-              "count": 137,
-              "level": 4,
+              "active": true,
               "in_range": true
             },
             {
               "date": "2026-09-15",
               "weekday": 2,
-              "count": 101,
-              "level": 4,
+              "active": true,
               "in_range": true
             },
             {
               "date": "2026-09-16",
               "weekday": 3,
-              "count": 114,
-              "level": 4,
+              "active": true,
               "in_range": true
             },
             {
               "date": "2026-09-17",
               "weekday": 4,
-              "count": 94,
-              "level": 4,
+              "active": true,
               "in_range": true
             },
             {
               "date": "2026-09-18",
               "weekday": 5,
-              "count": 0,
-              "level": 0,
+              "active": false,
               "in_range": false
             },
             {
               "date": "2026-09-19",
               "weekday": 6,
-              "count": 0,
-              "level": 0,
+              "active": false,
               "in_range": false
             }
           ]
@@ -789,10 +694,12 @@
       "status": "Active",
       "last_activity": "2026-09-17",
       "days_since_activity": 0,
-      "active_days_total": 8,
+      "active_days_total": 6,
       "engineer_count": 2,
       "active_engineer_count": 2,
       "key_person_risk": false,
+      "unstaffed": false,
+      "history_truncated": false,
       "sole_engineer": null,
       "current_engineers": [
         "konethegreatest",
@@ -818,12 +725,14 @@
       ],
       "outside_contributors": [
         {
-          "login": "github-actions[bot]",
-          "active_days": 7
-        },
-        {
           "login": "konethegreat",
           "active_days": 5
+        }
+      ],
+      "automation": [
+        {
+          "login": "github-actions[bot]",
+          "active_days": 7
         }
       ]
     },
@@ -843,6 +752,8 @@
       "engineer_count": 4,
       "active_engineer_count": 4,
       "key_person_risk": false,
+      "unstaffed": false,
+      "history_truncated": false,
       "sole_engineer": null,
       "current_engineers": [
         "VhutshiloMB",
@@ -884,7 +795,8 @@
           "is_current": true
         }
       ],
-      "outside_contributors": []
+      "outside_contributors": [],
+      "automation": []
     },
     {
       "name": "MB-IQ-Revamped",
@@ -898,10 +810,12 @@
       "status": "Active",
       "last_activity": "2026-09-17",
       "days_since_activity": 0,
-      "active_days_total": 6,
+      "active_days_total": 5,
       "engineer_count": 1,
       "active_engineer_count": 1,
       "key_person_risk": true,
+      "unstaffed": false,
+      "history_truncated": false,
       "sole_engineer": "konethegreatest",
       "current_engineers": [
         "konethegreatest"
@@ -916,7 +830,8 @@
           "is_current": true
         }
       ],
-      "outside_contributors": [
+      "outside_contributors": [],
+      "automation": [
         {
           "login": "dependabot[bot]",
           "active_days": 4
@@ -939,6 +854,8 @@
       "engineer_count": 4,
       "active_engineer_count": 2,
       "key_person_risk": false,
+      "unstaffed": false,
+      "history_truncated": false,
       "sole_engineer": null,
       "current_engineers": [
         "konethegreatest",
@@ -983,7 +900,8 @@
           "login": "konethegreat",
           "active_days": 14
         }
-      ]
+      ],
+      "automation": []
     },
     {
       "name": "mb-anchor-games",
@@ -1001,6 +919,8 @@
       "engineer_count": 2,
       "active_engineer_count": 2,
       "key_person_risk": false,
+      "unstaffed": false,
+      "history_truncated": false,
       "sole_engineer": null,
       "current_engineers": [
         "pakisomb",
@@ -1024,7 +944,8 @@
           "is_current": true
         }
       ],
-      "outside_contributors": []
+      "outside_contributors": [],
+      "automation": []
     },
     {
       "name": "tender-intelligence-platform",
@@ -1042,6 +963,8 @@
       "engineer_count": 2,
       "active_engineer_count": 2,
       "key_person_risk": false,
+      "unstaffed": false,
+      "history_truncated": false,
       "sole_engineer": null,
       "current_engineers": [
         "konethegreatest",
@@ -1074,7 +997,8 @@
           "login": "motsoeneng-bill-technology",
           "active_days": 1
         }
-      ]
+      ],
+      "automation": []
     },
     {
       "name": "mb-invoicing-tool",
@@ -1092,6 +1016,8 @@
       "engineer_count": 2,
       "active_engineer_count": 2,
       "key_person_risk": false,
+      "unstaffed": false,
+      "history_truncated": false,
       "sole_engineer": null,
       "current_engineers": [
         "VhutshiloMB",
@@ -1120,7 +1046,8 @@
           "login": "konethegreat",
           "active_days": 4
         }
-      ]
+      ],
+      "automation": []
     },
     {
       "name": "anchor-games",
@@ -1138,6 +1065,8 @@
       "engineer_count": 1,
       "active_engineer_count": 1,
       "key_person_risk": true,
+      "unstaffed": false,
+      "history_truncated": false,
       "sole_engineer": "TheoSingo",
       "current_engineers": [
         "TheoSingo"
@@ -1152,7 +1081,8 @@
           "is_current": true
         }
       ],
-      "outside_contributors": []
+      "outside_contributors": [],
+      "automation": []
     },
     {
       "name": "mb-wills-week",
@@ -1170,6 +1100,8 @@
       "engineer_count": 1,
       "active_engineer_count": 1,
       "key_person_risk": true,
+      "unstaffed": false,
+      "history_truncated": false,
       "sole_engineer": "Akonisaho-MB",
       "current_engineers": [
         "Akonisaho-MB"
@@ -1184,7 +1116,8 @@
           "is_current": true
         }
       ],
-      "outside_contributors": []
+      "outside_contributors": [],
+      "automation": []
     },
     {
       "name": "job-portal",
@@ -1202,6 +1135,8 @@
       "engineer_count": 1,
       "active_engineer_count": 1,
       "key_person_risk": true,
+      "unstaffed": false,
+      "history_truncated": false,
       "sole_engineer": "konethegreatest",
       "current_engineers": [
         "konethegreatest"
@@ -1221,7 +1156,8 @@
           "login": "konethegreat",
           "active_days": 1
         }
-      ]
+      ],
+      "automation": []
     },
     {
       "name": "mb-knowledge-vault-enterprise",
@@ -1239,6 +1175,8 @@
       "engineer_count": 1,
       "active_engineer_count": 1,
       "key_person_risk": true,
+      "unstaffed": false,
+      "history_truncated": false,
       "sole_engineer": "Akonisaho-MB",
       "current_engineers": [
         "Akonisaho-MB"
@@ -1253,7 +1191,8 @@
           "is_current": true
         }
       ],
-      "outside_contributors": []
+      "outside_contributors": [],
+      "automation": []
     },
     {
       "name": "mb-67-minutes",
@@ -1271,6 +1210,8 @@
       "engineer_count": 2,
       "active_engineer_count": 0,
       "key_person_risk": false,
+      "unstaffed": false,
+      "history_truncated": false,
       "sole_engineer": null,
       "current_engineers": [],
       "engineers": [
@@ -1291,7 +1232,8 @@
           "is_current": false
         }
       ],
-      "outside_contributors": []
+      "outside_contributors": [],
+      "automation": []
     }
   ],
   "members": [
@@ -1301,8 +1243,12 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/295184973?u=26439f7693fc00f3d9afe692cfecacb80b7e07b6&v=4",
       "html_url": "https://github.com/konethegreatest",
       "org_role": "MEMBER",
+      "account_created_at": "2026-06-19T17:04:57Z",
       "created_at": "2026-06-19T17:04:57Z",
-      "tenure_days": 91,
+      "account_age_days": 91,
+      "observed_from": "2026-06-24",
+      "observed_days": 86,
+      "is_new_joiner": false,
       "profile": {
         "bio": null,
         "company": null,
@@ -1403,7 +1349,8 @@
         ],
         "recent_avg_active_days": 7.0,
         "earlier_avg_active_days": 6.0,
-        "direction": "Improving"
+        "direction": "Improving",
+        "weeks_observed": 12
       },
       "weekday_pattern": [
         {
@@ -1563,50 +1510,43 @@
               {
                 "date": "2026-06-14",
                 "weekday": 0,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": false
               },
               {
                 "date": "2026-06-15",
                 "weekday": 1,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": false
               },
               {
                 "date": "2026-06-16",
                 "weekday": 2,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": false
               },
               {
                 "date": "2026-06-17",
                 "weekday": 3,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": false
               },
               {
                 "date": "2026-06-18",
                 "weekday": 4,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": false
               },
               {
                 "date": "2026-06-19",
                 "weekday": 5,
-                "count": 1,
-                "level": 1,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-06-20",
                 "weekday": 6,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               }
             ]
@@ -1616,50 +1556,43 @@
               {
                 "date": "2026-06-21",
                 "weekday": 0,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-06-22",
                 "weekday": 1,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-06-23",
                 "weekday": 2,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-06-24",
                 "weekday": 3,
-                "count": 4,
-                "level": 2,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-06-25",
                 "weekday": 4,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-06-26",
                 "weekday": 5,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-06-27",
                 "weekday": 6,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               }
             ]
@@ -1669,50 +1602,43 @@
               {
                 "date": "2026-06-28",
                 "weekday": 0,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-06-29",
                 "weekday": 1,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-06-30",
                 "weekday": 2,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-07-01",
                 "weekday": 3,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-07-02",
                 "weekday": 4,
-                "count": 2,
-                "level": 1,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-07-03",
                 "weekday": 5,
-                "count": 19,
-                "level": 4,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-07-04",
                 "weekday": 6,
-                "count": 1,
-                "level": 1,
+                "active": true,
                 "in_range": true
               }
             ]
@@ -1722,50 +1648,43 @@
               {
                 "date": "2026-07-05",
                 "weekday": 0,
-                "count": 12,
-                "level": 4,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-07-06",
                 "weekday": 1,
-                "count": 9,
-                "level": 3,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-07-07",
                 "weekday": 2,
-                "count": 8,
-                "level": 3,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-07-08",
                 "weekday": 3,
-                "count": 31,
-                "level": 4,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-07-09",
                 "weekday": 4,
-                "count": 24,
-                "level": 4,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-07-10",
                 "weekday": 5,
-                "count": 24,
-                "level": 4,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-07-11",
                 "weekday": 6,
-                "count": 45,
-                "level": 4,
+                "active": true,
                 "in_range": true
               }
             ]
@@ -1775,50 +1694,43 @@
               {
                 "date": "2026-07-12",
                 "weekday": 0,
-                "count": 69,
-                "level": 4,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-07-13",
                 "weekday": 1,
-                "count": 36,
-                "level": 4,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-07-14",
                 "weekday": 2,
-                "count": 16,
-                "level": 4,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-07-15",
                 "weekday": 3,
-                "count": 22,
-                "level": 4,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-07-16",
                 "weekday": 4,
-                "count": 29,
-                "level": 4,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-07-17",
                 "weekday": 5,
-                "count": 42,
-                "level": 4,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-07-18",
                 "weekday": 6,
-                "count": 16,
-                "level": 4,
+                "active": true,
                 "in_range": true
               }
             ]
@@ -1828,50 +1740,43 @@
               {
                 "date": "2026-07-19",
                 "weekday": 0,
-                "count": 28,
-                "level": 4,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-07-20",
                 "weekday": 1,
-                "count": 27,
-                "level": 4,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-07-21",
                 "weekday": 2,
-                "count": 53,
-                "level": 4,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-07-22",
                 "weekday": 3,
-                "count": 35,
-                "level": 4,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-07-23",
                 "weekday": 4,
-                "count": 21,
-                "level": 4,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-07-24",
                 "weekday": 5,
-                "count": 38,
-                "level": 4,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-07-25",
                 "weekday": 6,
-                "count": 53,
-                "level": 4,
+                "active": true,
                 "in_range": true
               }
             ]
@@ -1881,50 +1786,43 @@
               {
                 "date": "2026-07-26",
                 "weekday": 0,
-                "count": 2,
-                "level": 1,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-07-27",
                 "weekday": 1,
-                "count": 24,
-                "level": 4,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-07-28",
                 "weekday": 2,
-                "count": 6,
-                "level": 3,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-07-29",
                 "weekday": 3,
-                "count": 17,
-                "level": 4,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-07-30",
                 "weekday": 4,
-                "count": 40,
-                "level": 4,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-07-31",
                 "weekday": 5,
-                "count": 23,
-                "level": 4,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-08-01",
                 "weekday": 6,
-                "count": 8,
-                "level": 3,
+                "active": true,
                 "in_range": true
               }
             ]
@@ -1934,50 +1832,43 @@
               {
                 "date": "2026-08-02",
                 "weekday": 0,
-                "count": 10,
-                "level": 4,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-08-03",
                 "weekday": 1,
-                "count": 7,
-                "level": 3,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-08-04",
                 "weekday": 2,
-                "count": 15,
-                "level": 4,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-08-05",
                 "weekday": 3,
-                "count": 37,
-                "level": 4,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-08-06",
                 "weekday": 4,
-                "count": 14,
-                "level": 4,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-08-07",
                 "weekday": 5,
-                "count": 21,
-                "level": 4,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-08-08",
                 "weekday": 6,
-                "count": 36,
-                "level": 4,
+                "active": true,
                 "in_range": true
               }
             ]
@@ -1987,50 +1878,43 @@
               {
                 "date": "2026-08-09",
                 "weekday": 0,
-                "count": 29,
-                "level": 4,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-08-10",
                 "weekday": 1,
-                "count": 14,
-                "level": 4,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-08-11",
                 "weekday": 2,
-                "count": 18,
-                "level": 4,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-08-12",
                 "weekday": 3,
-                "count": 10,
-                "level": 4,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-08-13",
                 "weekday": 4,
-                "count": 19,
-                "level": 4,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-08-14",
                 "weekday": 5,
-                "count": 8,
-                "level": 3,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-08-15",
                 "weekday": 6,
-                "count": 18,
-                "level": 4,
+                "active": true,
                 "in_range": true
               }
             ]
@@ -2040,50 +1924,43 @@
               {
                 "date": "2026-08-16",
                 "weekday": 0,
-                "count": 18,
-                "level": 4,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-08-17",
                 "weekday": 1,
-                "count": 6,
-                "level": 3,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-08-18",
                 "weekday": 2,
-                "count": 6,
-                "level": 3,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-08-19",
                 "weekday": 3,
-                "count": 12,
-                "level": 4,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-08-20",
                 "weekday": 4,
-                "count": 6,
-                "level": 3,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-08-21",
                 "weekday": 5,
-                "count": 5,
-                "level": 2,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-08-22",
                 "weekday": 6,
-                "count": 13,
-                "level": 4,
+                "active": true,
                 "in_range": true
               }
             ]
@@ -2093,50 +1970,43 @@
               {
                 "date": "2026-08-23",
                 "weekday": 0,
-                "count": 3,
-                "level": 2,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-08-24",
                 "weekday": 1,
-                "count": 3,
-                "level": 2,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-08-25",
                 "weekday": 2,
-                "count": 7,
-                "level": 3,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-08-26",
                 "weekday": 3,
-                "count": 2,
-                "level": 1,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-08-27",
                 "weekday": 4,
-                "count": 11,
-                "level": 4,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-08-28",
                 "weekday": 5,
-                "count": 3,
-                "level": 2,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-08-29",
                 "weekday": 6,
-                "count": 6,
-                "level": 3,
+                "active": true,
                 "in_range": true
               }
             ]
@@ -2146,50 +2016,43 @@
               {
                 "date": "2026-08-30",
                 "weekday": 0,
-                "count": 12,
-                "level": 4,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-08-31",
                 "weekday": 1,
-                "count": 7,
-                "level": 3,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-09-01",
                 "weekday": 2,
-                "count": 10,
-                "level": 4,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-09-02",
                 "weekday": 3,
-                "count": 10,
-                "level": 4,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-09-03",
                 "weekday": 4,
-                "count": 7,
-                "level": 3,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-09-04",
                 "weekday": 5,
-                "count": 18,
-                "level": 4,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-09-05",
                 "weekday": 6,
-                "count": 26,
-                "level": 4,
+                "active": true,
                 "in_range": true
               }
             ]
@@ -2199,50 +2062,43 @@
               {
                 "date": "2026-09-06",
                 "weekday": 0,
-                "count": 22,
-                "level": 4,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-09-07",
                 "weekday": 1,
-                "count": 12,
-                "level": 4,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-09-08",
                 "weekday": 2,
-                "count": 14,
-                "level": 4,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-09-09",
                 "weekday": 3,
-                "count": 11,
-                "level": 4,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-09-10",
                 "weekday": 4,
-                "count": 20,
-                "level": 4,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-09-11",
                 "weekday": 5,
-                "count": 8,
-                "level": 3,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-09-12",
                 "weekday": 6,
-                "count": 6,
-                "level": 3,
+                "active": true,
                 "in_range": true
               }
             ]
@@ -2252,50 +2108,43 @@
               {
                 "date": "2026-09-13",
                 "weekday": 0,
-                "count": 13,
-                "level": 4,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-09-14",
                 "weekday": 1,
-                "count": 36,
-                "level": 4,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-09-15",
                 "weekday": 2,
-                "count": 14,
-                "level": 4,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-09-16",
                 "weekday": 3,
-                "count": 28,
-                "level": 4,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-09-17",
                 "weekday": 4,
-                "count": 32,
-                "level": 4,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-09-18",
                 "weekday": 5,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": false
               },
               {
                 "date": "2026-09-19",
                 "weekday": 6,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": false
               }
             ]
@@ -2310,8 +2159,12 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/295596016?v=4",
       "html_url": "https://github.com/Akonisaho-MB",
       "org_role": "MEMBER",
+      "account_created_at": "2026-06-21T13:22:28Z",
       "created_at": "2026-06-21T13:22:28Z",
-      "tenure_days": 89,
+      "account_age_days": 89,
+      "observed_from": "2026-07-09",
+      "observed_days": 71,
+      "is_new_joiner": false,
       "profile": {
         "bio": null,
         "company": null,
@@ -2349,11 +2202,6 @@
       },
       "trend": {
         "weeks": [
-          {
-            "week_start": "2026-06-26",
-            "week_end": "2026-07-02",
-            "active_days": 2
-          },
           {
             "week_start": "2026-07-03",
             "week_end": "2026-07-09",
@@ -2410,9 +2258,10 @@
             "active_days": 7
           }
         ],
-        "recent_avg_active_days": 6.2,
-        "earlier_avg_active_days": 4.2,
-        "direction": "Improving"
+        "recent_avg_active_days": 6.0,
+        "earlier_avg_active_days": 5.0,
+        "direction": "Improving",
+        "weeks_observed": 11
       },
       "weekday_pattern": [
         {
@@ -2558,50 +2407,43 @@
               {
                 "date": "2026-06-21",
                 "weekday": 0,
-                "count": 1,
-                "level": 1,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-06-22",
                 "weekday": 1,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-06-23",
                 "weekday": 2,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-06-24",
                 "weekday": 3,
-                "count": 2,
-                "level": 1,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-06-25",
                 "weekday": 4,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-06-26",
                 "weekday": 5,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-06-27",
                 "weekday": 6,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               }
             ]
@@ -2611,50 +2453,43 @@
               {
                 "date": "2026-06-28",
                 "weekday": 0,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-06-29",
                 "weekday": 1,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-06-30",
                 "weekday": 2,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-07-01",
                 "weekday": 3,
-                "count": 8,
-                "level": 3,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-07-02",
                 "weekday": 4,
-                "count": 62,
-                "level": 4,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-07-03",
                 "weekday": 5,
-                "count": 4,
-                "level": 2,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-07-04",
                 "weekday": 6,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               }
             ]
@@ -2664,50 +2499,43 @@
               {
                 "date": "2026-07-05",
                 "weekday": 0,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-07-06",
                 "weekday": 1,
-                "count": 24,
-                "level": 4,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-07-07",
                 "weekday": 2,
-                "count": 8,
-                "level": 3,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-07-08",
                 "weekday": 3,
-                "count": 26,
-                "level": 4,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-07-09",
                 "weekday": 4,
-                "count": 20,
-                "level": 4,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-07-10",
                 "weekday": 5,
-                "count": 14,
-                "level": 4,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-07-11",
                 "weekday": 6,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               }
             ]
@@ -2717,50 +2545,43 @@
               {
                 "date": "2026-07-12",
                 "weekday": 0,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-07-13",
                 "weekday": 1,
-                "count": 26,
-                "level": 4,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-07-14",
                 "weekday": 2,
-                "count": 10,
-                "level": 4,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-07-15",
                 "weekday": 3,
-                "count": 5,
-                "level": 2,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-07-16",
                 "weekday": 4,
-                "count": 1,
-                "level": 1,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-07-17",
                 "weekday": 5,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-07-18",
                 "weekday": 6,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               }
             ]
@@ -2770,50 +2591,43 @@
               {
                 "date": "2026-07-19",
                 "weekday": 0,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-07-20",
                 "weekday": 1,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-07-21",
                 "weekday": 2,
-                "count": 2,
-                "level": 1,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-07-22",
                 "weekday": 3,
-                "count": 2,
-                "level": 1,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-07-23",
                 "weekday": 4,
-                "count": 7,
-                "level": 3,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-07-24",
                 "weekday": 5,
-                "count": 10,
-                "level": 4,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-07-25",
                 "weekday": 6,
-                "count": 3,
-                "level": 2,
+                "active": true,
                 "in_range": true
               }
             ]
@@ -2823,50 +2637,43 @@
               {
                 "date": "2026-07-26",
                 "weekday": 0,
-                "count": 7,
-                "level": 3,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-07-27",
                 "weekday": 1,
-                "count": 34,
-                "level": 4,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-07-28",
                 "weekday": 2,
-                "count": 2,
-                "level": 1,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-07-29",
                 "weekday": 3,
-                "count": 9,
-                "level": 3,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-07-30",
                 "weekday": 4,
-                "count": 4,
-                "level": 2,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-07-31",
                 "weekday": 5,
-                "count": 13,
-                "level": 4,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-08-01",
                 "weekday": 6,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               }
             ]
@@ -2876,50 +2683,43 @@
               {
                 "date": "2026-08-02",
                 "weekday": 0,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-08-03",
                 "weekday": 1,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-08-04",
                 "weekday": 2,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-08-05",
                 "weekday": 3,
-                "count": 7,
-                "level": 3,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-08-06",
                 "weekday": 4,
-                "count": 2,
-                "level": 1,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-08-07",
                 "weekday": 5,
-                "count": 21,
-                "level": 4,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-08-08",
                 "weekday": 6,
-                "count": 5,
-                "level": 2,
+                "active": true,
                 "in_range": true
               }
             ]
@@ -2929,50 +2729,43 @@
               {
                 "date": "2026-08-09",
                 "weekday": 0,
-                "count": 4,
-                "level": 2,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-08-10",
                 "weekday": 1,
-                "count": 26,
-                "level": 4,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-08-11",
                 "weekday": 2,
-                "count": 34,
-                "level": 4,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-08-12",
                 "weekday": 3,
-                "count": 4,
-                "level": 2,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-08-13",
                 "weekday": 4,
-                "count": 16,
-                "level": 4,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-08-14",
                 "weekday": 5,
-                "count": 7,
-                "level": 3,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-08-15",
                 "weekday": 6,
-                "count": 1,
-                "level": 1,
+                "active": true,
                 "in_range": true
               }
             ]
@@ -2982,50 +2775,43 @@
               {
                 "date": "2026-08-16",
                 "weekday": 0,
-                "count": 58,
-                "level": 4,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-08-17",
                 "weekday": 1,
-                "count": 44,
-                "level": 4,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-08-18",
                 "weekday": 2,
-                "count": 34,
-                "level": 4,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-08-19",
                 "weekday": 3,
-                "count": 23,
-                "level": 4,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-08-20",
                 "weekday": 4,
-                "count": 2,
-                "level": 1,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-08-21",
                 "weekday": 5,
-                "count": 5,
-                "level": 2,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-08-22",
                 "weekday": 6,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               }
             ]
@@ -3035,50 +2821,43 @@
               {
                 "date": "2026-08-23",
                 "weekday": 0,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-08-24",
                 "weekday": 1,
-                "count": 40,
-                "level": 4,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-08-25",
                 "weekday": 2,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-08-26",
                 "weekday": 3,
-                "count": 12,
-                "level": 4,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-08-27",
                 "weekday": 4,
-                "count": 10,
-                "level": 4,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-08-28",
                 "weekday": 5,
-                "count": 10,
-                "level": 4,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-08-29",
                 "weekday": 6,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               }
             ]
@@ -3088,50 +2867,43 @@
               {
                 "date": "2026-08-30",
                 "weekday": 0,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-08-31",
                 "weekday": 1,
-                "count": 9,
-                "level": 3,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-09-01",
                 "weekday": 2,
-                "count": 11,
-                "level": 4,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-09-02",
                 "weekday": 3,
-                "count": 15,
-                "level": 4,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-09-03",
                 "weekday": 4,
-                "count": 4,
-                "level": 2,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-09-04",
                 "weekday": 5,
-                "count": 35,
-                "level": 4,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-09-05",
                 "weekday": 6,
-                "count": 31,
-                "level": 4,
+                "active": true,
                 "in_range": true
               }
             ]
@@ -3141,50 +2913,43 @@
               {
                 "date": "2026-09-06",
                 "weekday": 0,
-                "count": 21,
-                "level": 4,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-09-07",
                 "weekday": 1,
-                "count": 32,
-                "level": 4,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-09-08",
                 "weekday": 2,
-                "count": 3,
-                "level": 2,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-09-09",
                 "weekday": 3,
-                "count": 7,
-                "level": 3,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-09-10",
                 "weekday": 4,
-                "count": 2,
-                "level": 1,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-09-11",
                 "weekday": 5,
-                "count": 21,
-                "level": 4,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-09-12",
                 "weekday": 6,
-                "count": 8,
-                "level": 3,
+                "active": true,
                 "in_range": true
               }
             ]
@@ -3194,50 +2959,43 @@
               {
                 "date": "2026-09-13",
                 "weekday": 0,
-                "count": 8,
-                "level": 3,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-09-14",
                 "weekday": 1,
-                "count": 28,
-                "level": 4,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-09-15",
                 "weekday": 2,
-                "count": 18,
-                "level": 4,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-09-16",
                 "weekday": 3,
-                "count": 33,
-                "level": 4,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-09-17",
                 "weekday": 4,
-                "count": 22,
-                "level": 4,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-09-18",
                 "weekday": 5,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": false
               },
               {
                 "date": "2026-09-19",
                 "weekday": 6,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": false
               }
             ]
@@ -3252,8 +3010,12 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/296428132?v=4",
       "html_url": "https://github.com/Amukelani-MB",
       "org_role": "MEMBER",
+      "account_created_at": "2026-06-24T08:20:22Z",
       "created_at": "2026-06-24T08:20:22Z",
-      "tenure_days": 86,
+      "account_age_days": 86,
+      "observed_from": "2026-07-03",
+      "observed_days": 77,
+      "is_new_joiner": false,
       "profile": {
         "bio": null,
         "company": null,
@@ -3291,11 +3053,6 @@
       },
       "trend": {
         "weeks": [
-          {
-            "week_start": "2026-06-26",
-            "week_end": "2026-07-02",
-            "active_days": 0
-          },
           {
             "week_start": "2026-07-03",
             "week_end": "2026-07-09",
@@ -3352,9 +3109,10 @@
             "active_days": 7
           }
         ],
-        "recent_avg_active_days": 6.5,
-        "earlier_avg_active_days": 4.3,
-        "direction": "Improving"
+        "recent_avg_active_days": 6.4,
+        "earlier_avg_active_days": 5.5,
+        "direction": "Improving",
+        "weeks_observed": 11
       },
       "weekday_pattern": [
         {
@@ -3468,50 +3226,43 @@
               {
                 "date": "2026-06-21",
                 "weekday": 0,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": false
               },
               {
                 "date": "2026-06-22",
                 "weekday": 1,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": false
               },
               {
                 "date": "2026-06-23",
                 "weekday": 2,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": false
               },
               {
                 "date": "2026-06-24",
                 "weekday": 3,
-                "count": 2,
-                "level": 1,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-06-25",
                 "weekday": 4,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-06-26",
                 "weekday": 5,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-06-27",
                 "weekday": 6,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               }
             ]
@@ -3521,50 +3272,43 @@
               {
                 "date": "2026-06-28",
                 "weekday": 0,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-06-29",
                 "weekday": 1,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-06-30",
                 "weekday": 2,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-07-01",
                 "weekday": 3,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-07-02",
                 "weekday": 4,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-07-03",
                 "weekday": 5,
-                "count": 3,
-                "level": 2,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-07-04",
                 "weekday": 6,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               }
             ]
@@ -3574,50 +3318,43 @@
               {
                 "date": "2026-07-05",
                 "weekday": 0,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-07-06",
                 "weekday": 1,
-                "count": 4,
-                "level": 2,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-07-07",
                 "weekday": 2,
-                "count": 1,
-                "level": 1,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-07-08",
                 "weekday": 3,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-07-09",
                 "weekday": 4,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-07-10",
                 "weekday": 5,
-                "count": 20,
-                "level": 4,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-07-11",
                 "weekday": 6,
-                "count": 15,
-                "level": 4,
+                "active": true,
                 "in_range": true
               }
             ]
@@ -3627,50 +3364,43 @@
               {
                 "date": "2026-07-12",
                 "weekday": 0,
-                "count": 7,
-                "level": 3,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-07-13",
                 "weekday": 1,
-                "count": 3,
-                "level": 2,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-07-14",
                 "weekday": 2,
-                "count": 1,
-                "level": 1,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-07-15",
                 "weekday": 3,
-                "count": 5,
-                "level": 2,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-07-16",
                 "weekday": 4,
-                "count": 16,
-                "level": 4,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-07-17",
                 "weekday": 5,
-                "count": 4,
-                "level": 2,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-07-18",
                 "weekday": 6,
-                "count": 38,
-                "level": 4,
+                "active": true,
                 "in_range": true
               }
             ]
@@ -3680,50 +3410,43 @@
               {
                 "date": "2026-07-19",
                 "weekday": 0,
-                "count": 23,
-                "level": 4,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-07-20",
                 "weekday": 1,
-                "count": 15,
-                "level": 4,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-07-21",
                 "weekday": 2,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-07-22",
                 "weekday": 3,
-                "count": 7,
-                "level": 3,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-07-23",
                 "weekday": 4,
-                "count": 9,
-                "level": 3,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-07-24",
                 "weekday": 5,
-                "count": 3,
-                "level": 2,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-07-25",
                 "weekday": 6,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               }
             ]
@@ -3733,50 +3456,43 @@
               {
                 "date": "2026-07-26",
                 "weekday": 0,
-                "count": 13,
-                "level": 4,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-07-27",
                 "weekday": 1,
-                "count": 8,
-                "level": 3,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-07-28",
                 "weekday": 2,
-                "count": 22,
-                "level": 4,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-07-29",
                 "weekday": 3,
-                "count": 7,
-                "level": 3,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-07-30",
                 "weekday": 4,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-07-31",
                 "weekday": 5,
-                "count": 4,
-                "level": 2,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-08-01",
                 "weekday": 6,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               }
             ]
@@ -3786,50 +3502,43 @@
               {
                 "date": "2026-08-02",
                 "weekday": 0,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-08-03",
                 "weekday": 1,
-                "count": 16,
-                "level": 4,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-08-04",
                 "weekday": 2,
-                "count": 27,
-                "level": 4,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-08-05",
                 "weekday": 3,
-                "count": 20,
-                "level": 4,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-08-06",
                 "weekday": 4,
-                "count": 2,
-                "level": 1,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-08-07",
                 "weekday": 5,
-                "count": 16,
-                "level": 4,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-08-08",
                 "weekday": 6,
-                "count": 15,
-                "level": 4,
+                "active": true,
                 "in_range": true
               }
             ]
@@ -3839,50 +3548,43 @@
               {
                 "date": "2026-08-09",
                 "weekday": 0,
-                "count": 2,
-                "level": 1,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-08-10",
                 "weekday": 1,
-                "count": 4,
-                "level": 2,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-08-11",
                 "weekday": 2,
-                "count": 6,
-                "level": 3,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-08-12",
                 "weekday": 3,
-                "count": 2,
-                "level": 1,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-08-13",
                 "weekday": 4,
-                "count": 7,
-                "level": 3,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-08-14",
                 "weekday": 5,
-                "count": 4,
-                "level": 2,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-08-15",
                 "weekday": 6,
-                "count": 1,
-                "level": 1,
+                "active": true,
                 "in_range": true
               }
             ]
@@ -3892,50 +3594,43 @@
               {
                 "date": "2026-08-16",
                 "weekday": 0,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-08-17",
                 "weekday": 1,
-                "count": 9,
-                "level": 3,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-08-18",
                 "weekday": 2,
-                "count": 10,
-                "level": 4,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-08-19",
                 "weekday": 3,
-                "count": 5,
-                "level": 2,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-08-20",
                 "weekday": 4,
-                "count": 4,
-                "level": 2,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-08-21",
                 "weekday": 5,
-                "count": 4,
-                "level": 2,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-08-22",
                 "weekday": 6,
-                "count": 4,
-                "level": 2,
+                "active": true,
                 "in_range": true
               }
             ]
@@ -3945,50 +3640,43 @@
               {
                 "date": "2026-08-23",
                 "weekday": 0,
-                "count": 12,
-                "level": 4,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-08-24",
                 "weekday": 1,
-                "count": 2,
-                "level": 1,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-08-25",
                 "weekday": 2,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-08-26",
                 "weekday": 3,
-                "count": 5,
-                "level": 2,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-08-27",
                 "weekday": 4,
-                "count": 10,
-                "level": 4,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-08-28",
                 "weekday": 5,
-                "count": 1,
-                "level": 1,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-08-29",
                 "weekday": 6,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               }
             ]
@@ -3998,50 +3686,43 @@
               {
                 "date": "2026-08-30",
                 "weekday": 0,
-                "count": 4,
-                "level": 2,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-08-31",
                 "weekday": 1,
-                "count": 1,
-                "level": 1,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-09-01",
                 "weekday": 2,
-                "count": 4,
-                "level": 2,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-09-02",
                 "weekday": 3,
-                "count": 4,
-                "level": 2,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-09-03",
                 "weekday": 4,
-                "count": 2,
-                "level": 1,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-09-04",
                 "weekday": 5,
-                "count": 3,
-                "level": 2,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-09-05",
                 "weekday": 6,
-                "count": 1,
-                "level": 1,
+                "active": true,
                 "in_range": true
               }
             ]
@@ -4051,50 +3732,43 @@
               {
                 "date": "2026-09-06",
                 "weekday": 0,
-                "count": 1,
-                "level": 1,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-09-07",
                 "weekday": 1,
-                "count": 18,
-                "level": 4,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-09-08",
                 "weekday": 2,
-                "count": 40,
-                "level": 4,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-09-09",
                 "weekday": 3,
-                "count": 39,
-                "level": 4,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-09-10",
                 "weekday": 4,
-                "count": 41,
-                "level": 4,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-09-11",
                 "weekday": 5,
-                "count": 11,
-                "level": 4,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-09-12",
                 "weekday": 6,
-                "count": 3,
-                "level": 2,
+                "active": true,
                 "in_range": true
               }
             ]
@@ -4104,50 +3778,43 @@
               {
                 "date": "2026-09-13",
                 "weekday": 0,
-                "count": 2,
-                "level": 1,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-09-14",
                 "weekday": 1,
-                "count": 17,
-                "level": 4,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-09-15",
                 "weekday": 2,
-                "count": 31,
-                "level": 4,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-09-16",
                 "weekday": 3,
-                "count": 24,
-                "level": 4,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-09-17",
                 "weekday": 4,
-                "count": 12,
-                "level": 4,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-09-18",
                 "weekday": 5,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": false
               },
               {
                 "date": "2026-09-19",
                 "weekday": 6,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": false
               }
             ]
@@ -4162,8 +3829,12 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/295126059?v=4",
       "html_url": "https://github.com/VhutshiloMB",
       "org_role": "MEMBER",
+      "account_created_at": "2026-06-19T13:02:32Z",
       "created_at": "2026-06-19T13:02:32Z",
-      "tenure_days": 91,
+      "account_age_days": 91,
+      "observed_from": "2026-07-13",
+      "observed_days": 67,
+      "is_new_joiner": false,
       "profile": {
         "bio": null,
         "company": null,
@@ -4201,16 +3872,6 @@
       },
       "trend": {
         "weeks": [
-          {
-            "week_start": "2026-06-26",
-            "week_end": "2026-07-02",
-            "active_days": 0
-          },
-          {
-            "week_start": "2026-07-03",
-            "week_end": "2026-07-09",
-            "active_days": 0
-          },
           {
             "week_start": "2026-07-10",
             "week_end": "2026-07-16",
@@ -4262,9 +3923,10 @@
             "active_days": 7
           }
         ],
-        "recent_avg_active_days": 3.7,
-        "earlier_avg_active_days": 1.7,
-        "direction": "Improving"
+        "recent_avg_active_days": 3.6,
+        "earlier_avg_active_days": 2.8,
+        "direction": "Improving",
+        "weeks_observed": 10
       },
       "weekday_pattern": [
         {
@@ -4363,50 +4025,43 @@
               {
                 "date": "2026-06-14",
                 "weekday": 0,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": false
               },
               {
                 "date": "2026-06-15",
                 "weekday": 1,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": false
               },
               {
                 "date": "2026-06-16",
                 "weekday": 2,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": false
               },
               {
                 "date": "2026-06-17",
                 "weekday": 3,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": false
               },
               {
                 "date": "2026-06-18",
                 "weekday": 4,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": false
               },
               {
                 "date": "2026-06-19",
                 "weekday": 5,
-                "count": 1,
-                "level": 1,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-06-20",
                 "weekday": 6,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               }
             ]
@@ -4416,50 +4071,43 @@
               {
                 "date": "2026-06-21",
                 "weekday": 0,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-06-22",
                 "weekday": 1,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-06-23",
                 "weekday": 2,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-06-24",
                 "weekday": 3,
-                "count": 1,
-                "level": 1,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-06-25",
                 "weekday": 4,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-06-26",
                 "weekday": 5,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-06-27",
                 "weekday": 6,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               }
             ]
@@ -4469,50 +4117,43 @@
               {
                 "date": "2026-06-28",
                 "weekday": 0,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-06-29",
                 "weekday": 1,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-06-30",
                 "weekday": 2,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-07-01",
                 "weekday": 3,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-07-02",
                 "weekday": 4,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-07-03",
                 "weekday": 5,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-07-04",
                 "weekday": 6,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               }
             ]
@@ -4522,50 +4163,43 @@
               {
                 "date": "2026-07-05",
                 "weekday": 0,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-07-06",
                 "weekday": 1,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-07-07",
                 "weekday": 2,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-07-08",
                 "weekday": 3,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-07-09",
                 "weekday": 4,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-07-10",
                 "weekday": 5,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-07-11",
                 "weekday": 6,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               }
             ]
@@ -4575,50 +4209,43 @@
               {
                 "date": "2026-07-12",
                 "weekday": 0,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-07-13",
                 "weekday": 1,
-                "count": 5,
-                "level": 2,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-07-14",
                 "weekday": 2,
-                "count": 1,
-                "level": 1,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-07-15",
                 "weekday": 3,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-07-16",
                 "weekday": 4,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-07-17",
                 "weekday": 5,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-07-18",
                 "weekday": 6,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               }
             ]
@@ -4628,50 +4255,43 @@
               {
                 "date": "2026-07-19",
                 "weekday": 0,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-07-20",
                 "weekday": 1,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-07-21",
                 "weekday": 2,
-                "count": 3,
-                "level": 2,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-07-22",
                 "weekday": 3,
-                "count": 2,
-                "level": 1,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-07-23",
                 "weekday": 4,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-07-24",
                 "weekday": 5,
-                "count": 5,
-                "level": 2,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-07-25",
                 "weekday": 6,
-                "count": 2,
-                "level": 1,
+                "active": true,
                 "in_range": true
               }
             ]
@@ -4681,50 +4301,43 @@
               {
                 "date": "2026-07-26",
                 "weekday": 0,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-07-27",
                 "weekday": 1,
-                "count": 13,
-                "level": 4,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-07-28",
                 "weekday": 2,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-07-29",
                 "weekday": 3,
-                "count": 8,
-                "level": 3,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-07-30",
                 "weekday": 4,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-07-31",
                 "weekday": 5,
-                "count": 5,
-                "level": 2,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-08-01",
                 "weekday": 6,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               }
             ]
@@ -4734,50 +4347,43 @@
               {
                 "date": "2026-08-02",
                 "weekday": 0,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-08-03",
                 "weekday": 1,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-08-04",
                 "weekday": 2,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-08-05",
                 "weekday": 3,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-08-06",
                 "weekday": 4,
-                "count": 3,
-                "level": 2,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-08-07",
                 "weekday": 5,
-                "count": 6,
-                "level": 3,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-08-08",
                 "weekday": 6,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               }
             ]
@@ -4787,50 +4393,43 @@
               {
                 "date": "2026-08-09",
                 "weekday": 0,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-08-10",
                 "weekday": 1,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-08-11",
                 "weekday": 2,
-                "count": 10,
-                "level": 4,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-08-12",
                 "weekday": 3,
-                "count": 3,
-                "level": 2,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-08-13",
                 "weekday": 4,
-                "count": 1,
-                "level": 1,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-08-14",
                 "weekday": 5,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-08-15",
                 "weekday": 6,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               }
             ]
@@ -4840,50 +4439,43 @@
               {
                 "date": "2026-08-16",
                 "weekday": 0,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-08-17",
                 "weekday": 1,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-08-18",
                 "weekday": 2,
-                "count": 1,
-                "level": 1,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-08-19",
                 "weekday": 3,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-08-20",
                 "weekday": 4,
-                "count": 3,
-                "level": 2,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-08-21",
                 "weekday": 5,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-08-22",
                 "weekday": 6,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               }
             ]
@@ -4893,50 +4485,43 @@
               {
                 "date": "2026-08-23",
                 "weekday": 0,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-08-24",
                 "weekday": 1,
-                "count": 4,
-                "level": 2,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-08-25",
                 "weekday": 2,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-08-26",
                 "weekday": 3,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-08-27",
                 "weekday": 4,
-                "count": 3,
-                "level": 2,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-08-28",
                 "weekday": 5,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-08-29",
                 "weekday": 6,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               }
             ]
@@ -4946,50 +4531,43 @@
               {
                 "date": "2026-08-30",
                 "weekday": 0,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-08-31",
                 "weekday": 1,
-                "count": 4,
-                "level": 2,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-09-01",
                 "weekday": 2,
-                "count": 3,
-                "level": 2,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-09-02",
                 "weekday": 3,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-09-03",
                 "weekday": 4,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-09-04",
                 "weekday": 5,
-                "count": 1,
-                "level": 1,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-09-05",
                 "weekday": 6,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               }
             ]
@@ -4999,50 +4577,43 @@
               {
                 "date": "2026-09-06",
                 "weekday": 0,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-09-07",
                 "weekday": 1,
-                "count": 13,
-                "level": 4,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-09-08",
                 "weekday": 2,
-                "count": 10,
-                "level": 4,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-09-09",
                 "weekday": 3,
-                "count": 10,
-                "level": 4,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-09-10",
                 "weekday": 4,
-                "count": 2,
-                "level": 1,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-09-11",
                 "weekday": 5,
-                "count": 24,
-                "level": 4,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-09-12",
                 "weekday": 6,
-                "count": 2,
-                "level": 1,
+                "active": true,
                 "in_range": true
               }
             ]
@@ -5052,50 +4623,43 @@
               {
                 "date": "2026-09-13",
                 "weekday": 0,
-                "count": 31,
-                "level": 4,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-09-14",
                 "weekday": 1,
-                "count": 10,
-                "level": 4,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-09-15",
                 "weekday": 2,
-                "count": 2,
-                "level": 1,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-09-16",
                 "weekday": 3,
-                "count": 15,
-                "level": 4,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-09-17",
                 "weekday": 4,
-                "count": 20,
-                "level": 4,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-09-18",
                 "weekday": 5,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": false
               },
               {
                 "date": "2026-09-19",
                 "weekday": 6,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": false
               }
             ]
@@ -5110,8 +4674,12 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/296434638?v=4",
       "html_url": "https://github.com/pakisomb",
       "org_role": "MEMBER",
+      "account_created_at": "2026-06-24T08:45:05Z",
       "created_at": "2026-06-24T08:45:05Z",
-      "tenure_days": 86,
+      "account_age_days": 86,
+      "observed_from": "2026-07-10",
+      "observed_days": 70,
+      "is_new_joiner": false,
       "profile": {
         "bio": null,
         "company": null,
@@ -5149,16 +4717,6 @@
       },
       "trend": {
         "weeks": [
-          {
-            "week_start": "2026-06-26",
-            "week_end": "2026-07-02",
-            "active_days": 0
-          },
-          {
-            "week_start": "2026-07-03",
-            "week_end": "2026-07-09",
-            "active_days": 0
-          },
           {
             "week_start": "2026-07-10",
             "week_end": "2026-07-16",
@@ -5210,9 +4768,10 @@
             "active_days": 5
           }
         ],
-        "recent_avg_active_days": 2.2,
-        "earlier_avg_active_days": 2.0,
-        "direction": "Steady"
+        "recent_avg_active_days": 2.0,
+        "earlier_avg_active_days": 3.0,
+        "direction": "Declining",
+        "weeks_observed": 10
       },
       "weekday_pattern": [
         {
@@ -5341,50 +4900,43 @@
               {
                 "date": "2026-06-21",
                 "weekday": 0,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": false
               },
               {
                 "date": "2026-06-22",
                 "weekday": 1,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": false
               },
               {
                 "date": "2026-06-23",
                 "weekday": 2,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": false
               },
               {
                 "date": "2026-06-24",
                 "weekday": 3,
-                "count": 2,
-                "level": 1,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-06-25",
                 "weekday": 4,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-06-26",
                 "weekday": 5,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-06-27",
                 "weekday": 6,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               }
             ]
@@ -5394,50 +4946,43 @@
               {
                 "date": "2026-06-28",
                 "weekday": 0,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-06-29",
                 "weekday": 1,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-06-30",
                 "weekday": 2,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-07-01",
                 "weekday": 3,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-07-02",
                 "weekday": 4,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-07-03",
                 "weekday": 5,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-07-04",
                 "weekday": 6,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               }
             ]
@@ -5447,50 +4992,43 @@
               {
                 "date": "2026-07-05",
                 "weekday": 0,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-07-06",
                 "weekday": 1,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-07-07",
                 "weekday": 2,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-07-08",
                 "weekday": 3,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-07-09",
                 "weekday": 4,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-07-10",
                 "weekday": 5,
-                "count": 5,
-                "level": 2,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-07-11",
                 "weekday": 6,
-                "count": 9,
-                "level": 3,
+                "active": true,
                 "in_range": true
               }
             ]
@@ -5500,50 +5038,43 @@
               {
                 "date": "2026-07-12",
                 "weekday": 0,
-                "count": 19,
-                "level": 4,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-07-13",
                 "weekday": 1,
-                "count": 13,
-                "level": 4,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-07-14",
                 "weekday": 2,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-07-15",
                 "weekday": 3,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-07-16",
                 "weekday": 4,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-07-17",
                 "weekday": 5,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-07-18",
                 "weekday": 6,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               }
             ]
@@ -5553,50 +5084,43 @@
               {
                 "date": "2026-07-19",
                 "weekday": 0,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-07-20",
                 "weekday": 1,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-07-21",
                 "weekday": 2,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-07-22",
                 "weekday": 3,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-07-23",
                 "weekday": 4,
-                "count": 8,
-                "level": 3,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-07-24",
                 "weekday": 5,
-                "count": 8,
-                "level": 3,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-07-25",
                 "weekday": 6,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               }
             ]
@@ -5606,50 +5130,43 @@
               {
                 "date": "2026-07-26",
                 "weekday": 0,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-07-27",
                 "weekday": 1,
-                "count": 23,
-                "level": 4,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-07-28",
                 "weekday": 2,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-07-29",
                 "weekday": 3,
-                "count": 3,
-                "level": 2,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-07-30",
                 "weekday": 4,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-07-31",
                 "weekday": 5,
-                "count": 3,
-                "level": 2,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-08-01",
                 "weekday": 6,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               }
             ]
@@ -5659,50 +5176,43 @@
               {
                 "date": "2026-08-02",
                 "weekday": 0,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-08-03",
                 "weekday": 1,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-08-04",
                 "weekday": 2,
-                "count": 2,
-                "level": 1,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-08-05",
                 "weekday": 3,
-                "count": 5,
-                "level": 2,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-08-06",
                 "weekday": 4,
-                "count": 5,
-                "level": 2,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-08-07",
                 "weekday": 5,
-                "count": 8,
-                "level": 3,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-08-08",
                 "weekday": 6,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               }
             ]
@@ -5712,50 +5222,43 @@
               {
                 "date": "2026-08-09",
                 "weekday": 0,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-08-10",
                 "weekday": 1,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-08-11",
                 "weekday": 2,
-                "count": 3,
-                "level": 2,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-08-12",
                 "weekday": 3,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-08-13",
                 "weekday": 4,
-                "count": 3,
-                "level": 2,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-08-14",
                 "weekday": 5,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-08-15",
                 "weekday": 6,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               }
             ]
@@ -5765,50 +5268,43 @@
               {
                 "date": "2026-08-16",
                 "weekday": 0,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-08-17",
                 "weekday": 1,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-08-18",
                 "weekday": 2,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-08-19",
                 "weekday": 3,
-                "count": 2,
-                "level": 1,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-08-20",
                 "weekday": 4,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-08-21",
                 "weekday": 5,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-08-22",
                 "weekday": 6,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               }
             ]
@@ -5818,50 +5314,43 @@
               {
                 "date": "2026-08-23",
                 "weekday": 0,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-08-24",
                 "weekday": 1,
-                "count": 3,
-                "level": 2,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-08-25",
                 "weekday": 2,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-08-26",
                 "weekday": 3,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-08-27",
                 "weekday": 4,
-                "count": 4,
-                "level": 2,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-08-28",
                 "weekday": 5,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-08-29",
                 "weekday": 6,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               }
             ]
@@ -5871,50 +5360,43 @@
               {
                 "date": "2026-08-30",
                 "weekday": 0,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-08-31",
                 "weekday": 1,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-09-01",
                 "weekday": 2,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-09-02",
                 "weekday": 3,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-09-03",
                 "weekday": 4,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-09-04",
                 "weekday": 5,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-09-05",
                 "weekday": 6,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               }
             ]
@@ -5924,50 +5406,43 @@
               {
                 "date": "2026-09-06",
                 "weekday": 0,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-09-07",
                 "weekday": 1,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-09-08",
                 "weekday": 2,
-                "count": 4,
-                "level": 2,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-09-09",
                 "weekday": 3,
-                "count": 4,
-                "level": 2,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-09-10",
                 "weekday": 4,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-09-11",
                 "weekday": 5,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-09-12",
                 "weekday": 6,
-                "count": 1011,
-                "level": 4,
+                "active": true,
                 "in_range": true
               }
             ]
@@ -5977,50 +5452,43 @@
               {
                 "date": "2026-09-13",
                 "weekday": 0,
-                "count": 24,
-                "level": 4,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-09-14",
                 "weekday": 1,
-                "count": 46,
-                "level": 4,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-09-15",
                 "weekday": 2,
-                "count": 33,
-                "level": 4,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-09-16",
                 "weekday": 3,
-                "count": 5,
-                "level": 2,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-09-17",
                 "weekday": 4,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-09-18",
                 "weekday": 5,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": false
               },
               {
                 "date": "2026-09-19",
                 "weekday": 6,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": false
               }
             ]
@@ -6035,8 +5503,12 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/295851105?v=4",
       "html_url": "https://github.com/Kea1m",
       "org_role": "MEMBER",
+      "account_created_at": "2026-06-22T12:42:55Z",
       "created_at": "2026-06-22T12:42:55Z",
-      "tenure_days": 88,
+      "account_age_days": 88,
+      "observed_from": "2026-07-14",
+      "observed_days": 66,
+      "is_new_joiner": false,
       "profile": {
         "bio": "",
         "company": null,
@@ -6074,16 +5546,6 @@
       },
       "trend": {
         "weeks": [
-          {
-            "week_start": "2026-06-26",
-            "week_end": "2026-07-02",
-            "active_days": 0
-          },
-          {
-            "week_start": "2026-07-03",
-            "week_end": "2026-07-09",
-            "active_days": 0
-          },
           {
             "week_start": "2026-07-10",
             "week_end": "2026-07-16",
@@ -6135,9 +5597,10 @@
             "active_days": 4
           }
         ],
-        "recent_avg_active_days": 1.8,
-        "earlier_avg_active_days": 0.2,
-        "direction": "Improving"
+        "recent_avg_active_days": 1.6,
+        "earlier_avg_active_days": 0.8,
+        "direction": "Improving",
+        "weeks_observed": 10
       },
       "weekday_pattern": [
         {
@@ -6222,50 +5685,43 @@
               {
                 "date": "2026-06-21",
                 "weekday": 0,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": false
               },
               {
                 "date": "2026-06-22",
                 "weekday": 1,
-                "count": 1,
-                "level": 1,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-06-23",
                 "weekday": 2,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-06-24",
                 "weekday": 3,
-                "count": 1,
-                "level": 1,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-06-25",
                 "weekday": 4,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-06-26",
                 "weekday": 5,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-06-27",
                 "weekday": 6,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               }
             ]
@@ -6275,50 +5731,43 @@
               {
                 "date": "2026-06-28",
                 "weekday": 0,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-06-29",
                 "weekday": 1,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-06-30",
                 "weekday": 2,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-07-01",
                 "weekday": 3,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-07-02",
                 "weekday": 4,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-07-03",
                 "weekday": 5,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-07-04",
                 "weekday": 6,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               }
             ]
@@ -6328,50 +5777,43 @@
               {
                 "date": "2026-07-05",
                 "weekday": 0,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-07-06",
                 "weekday": 1,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-07-07",
                 "weekday": 2,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-07-08",
                 "weekday": 3,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-07-09",
                 "weekday": 4,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-07-10",
                 "weekday": 5,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-07-11",
                 "weekday": 6,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               }
             ]
@@ -6381,50 +5823,43 @@
               {
                 "date": "2026-07-12",
                 "weekday": 0,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-07-13",
                 "weekday": 1,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-07-14",
                 "weekday": 2,
-                "count": 1,
-                "level": 1,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-07-15",
                 "weekday": 3,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-07-16",
                 "weekday": 4,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-07-17",
                 "weekday": 5,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-07-18",
                 "weekday": 6,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               }
             ]
@@ -6434,50 +5869,43 @@
               {
                 "date": "2026-07-19",
                 "weekday": 0,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-07-20",
                 "weekday": 1,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-07-21",
                 "weekday": 2,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-07-22",
                 "weekday": 3,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-07-23",
                 "weekday": 4,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-07-24",
                 "weekday": 5,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-07-25",
                 "weekday": 6,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               }
             ]
@@ -6487,50 +5915,43 @@
               {
                 "date": "2026-07-26",
                 "weekday": 0,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-07-27",
                 "weekday": 1,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-07-28",
                 "weekday": 2,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-07-29",
                 "weekday": 3,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-07-30",
                 "weekday": 4,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-07-31",
                 "weekday": 5,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-08-01",
                 "weekday": 6,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               }
             ]
@@ -6540,50 +5961,43 @@
               {
                 "date": "2026-08-02",
                 "weekday": 0,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-08-03",
                 "weekday": 1,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-08-04",
                 "weekday": 2,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-08-05",
                 "weekday": 3,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-08-06",
                 "weekday": 4,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-08-07",
                 "weekday": 5,
-                "count": 2,
-                "level": 1,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-08-08",
                 "weekday": 6,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               }
             ]
@@ -6593,50 +6007,43 @@
               {
                 "date": "2026-08-09",
                 "weekday": 0,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-08-10",
                 "weekday": 1,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-08-11",
                 "weekday": 2,
-                "count": 4,
-                "level": 2,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-08-12",
                 "weekday": 3,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-08-13",
                 "weekday": 4,
-                "count": 1,
-                "level": 1,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-08-14",
                 "weekday": 5,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-08-15",
                 "weekday": 6,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               }
             ]
@@ -6646,50 +6053,43 @@
               {
                 "date": "2026-08-16",
                 "weekday": 0,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-08-17",
                 "weekday": 1,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-08-18",
                 "weekday": 2,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-08-19",
                 "weekday": 3,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-08-20",
                 "weekday": 4,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-08-21",
                 "weekday": 5,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-08-22",
                 "weekday": 6,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               }
             ]
@@ -6699,50 +6099,43 @@
               {
                 "date": "2026-08-23",
                 "weekday": 0,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-08-24",
                 "weekday": 1,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-08-25",
                 "weekday": 2,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-08-26",
                 "weekday": 3,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-08-27",
                 "weekday": 4,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-08-28",
                 "weekday": 5,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-08-29",
                 "weekday": 6,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               }
             ]
@@ -6752,50 +6145,43 @@
               {
                 "date": "2026-08-30",
                 "weekday": 0,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-08-31",
                 "weekday": 1,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-09-01",
                 "weekday": 2,
-                "count": 1,
-                "level": 1,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-09-02",
                 "weekday": 3,
-                "count": 3,
-                "level": 2,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-09-03",
                 "weekday": 4,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-09-04",
                 "weekday": 5,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-09-05",
                 "weekday": 6,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               }
             ]
@@ -6805,50 +6191,43 @@
               {
                 "date": "2026-09-06",
                 "weekday": 0,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-09-07",
                 "weekday": 1,
-                "count": 4,
-                "level": 2,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-09-08",
                 "weekday": 2,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-09-09",
                 "weekday": 3,
-                "count": 6,
-                "level": 3,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-09-10",
                 "weekday": 4,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-09-11",
                 "weekday": 5,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-09-12",
                 "weekday": 6,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               }
             ]
@@ -6858,50 +6237,43 @@
               {
                 "date": "2026-09-13",
                 "weekday": 0,
-                "count": 1,
-                "level": 1,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-09-14",
                 "weekday": 1,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-09-15",
                 "weekday": 2,
-                "count": 3,
-                "level": 2,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-09-16",
                 "weekday": 3,
-                "count": 9,
-                "level": 3,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-09-17",
                 "weekday": 4,
-                "count": 8,
-                "level": 3,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-09-18",
                 "weekday": 5,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": false
               },
               {
                 "date": "2026-09-19",
                 "weekday": 6,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": false
               }
             ]
@@ -6916,8 +6288,12 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/318985580?v=4",
       "html_url": "https://github.com/TheoSingo",
       "org_role": "ADMIN",
+      "account_created_at": "2026-08-20T10:18:12Z",
       "created_at": "2026-08-20T10:18:12Z",
-      "tenure_days": 29,
+      "account_age_days": 29,
+      "observed_from": "2026-09-03",
+      "observed_days": 15,
+      "is_new_joiner": false,
       "profile": {
         "bio": null,
         "company": null,
@@ -6925,9 +6301,9 @@
         "website_url": null
       },
       "reliability": {
-        "window_days": 29,
+        "window_days": 15,
         "active_days": 1,
-        "pct": 3.4,
+        "pct": 6.7,
         "total_days": 1,
         "longest_streak": 1,
         "current_streak": 0,
@@ -6955,51 +6331,6 @@
       "trend": {
         "weeks": [
           {
-            "week_start": "2026-06-26",
-            "week_end": "2026-07-02",
-            "active_days": 0
-          },
-          {
-            "week_start": "2026-07-03",
-            "week_end": "2026-07-09",
-            "active_days": 0
-          },
-          {
-            "week_start": "2026-07-10",
-            "week_end": "2026-07-16",
-            "active_days": 0
-          },
-          {
-            "week_start": "2026-07-17",
-            "week_end": "2026-07-23",
-            "active_days": 0
-          },
-          {
-            "week_start": "2026-07-24",
-            "week_end": "2026-07-30",
-            "active_days": 0
-          },
-          {
-            "week_start": "2026-07-31",
-            "week_end": "2026-08-06",
-            "active_days": 0
-          },
-          {
-            "week_start": "2026-08-07",
-            "week_end": "2026-08-13",
-            "active_days": 0
-          },
-          {
-            "week_start": "2026-08-14",
-            "week_end": "2026-08-20",
-            "active_days": 1
-          },
-          {
-            "week_start": "2026-08-21",
-            "week_end": "2026-08-27",
-            "active_days": 0
-          },
-          {
             "week_start": "2026-08-28",
             "week_end": "2026-09-03",
             "active_days": 1
@@ -7015,9 +6346,10 @@
             "active_days": 1
           }
         ],
-        "recent_avg_active_days": 0.7,
-        "earlier_avg_active_days": 0.0,
-        "direction": "Steady"
+        "recent_avg_active_days": null,
+        "earlier_avg_active_days": null,
+        "direction": "Not enough history",
+        "weeks_observed": 3
       },
       "weekday_pattern": [
         {
@@ -7118,50 +6450,43 @@
               {
                 "date": "2026-08-16",
                 "weekday": 0,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": false
               },
               {
                 "date": "2026-08-17",
                 "weekday": 1,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": false
               },
               {
                 "date": "2026-08-18",
                 "weekday": 2,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": false
               },
               {
                 "date": "2026-08-19",
                 "weekday": 3,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": false
               },
               {
                 "date": "2026-08-20",
                 "weekday": 4,
-                "count": 2,
-                "level": 1,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-08-21",
                 "weekday": 5,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-08-22",
                 "weekday": 6,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               }
             ]
@@ -7171,50 +6496,43 @@
               {
                 "date": "2026-08-23",
                 "weekday": 0,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-08-24",
                 "weekday": 1,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-08-25",
                 "weekday": 2,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-08-26",
                 "weekday": 3,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-08-27",
                 "weekday": 4,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-08-28",
                 "weekday": 5,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-08-29",
                 "weekday": 6,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               }
             ]
@@ -7224,50 +6542,43 @@
               {
                 "date": "2026-08-30",
                 "weekday": 0,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-08-31",
                 "weekday": 1,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-09-01",
                 "weekday": 2,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-09-02",
                 "weekday": 3,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-09-03",
                 "weekday": 4,
-                "count": 2,
-                "level": 1,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-09-04",
                 "weekday": 5,
-                "count": 1,
-                "level": 1,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-09-05",
                 "weekday": 6,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               }
             ]
@@ -7277,50 +6588,43 @@
               {
                 "date": "2026-09-06",
                 "weekday": 0,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-09-07",
                 "weekday": 1,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-09-08",
                 "weekday": 2,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-09-09",
                 "weekday": 3,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-09-10",
                 "weekday": 4,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-09-11",
                 "weekday": 5,
-                "count": 5,
-                "level": 2,
+                "active": true,
                 "in_range": true
               },
               {
                 "date": "2026-09-12",
                 "weekday": 6,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               }
             ]
@@ -7330,50 +6634,43 @@
               {
                 "date": "2026-09-13",
                 "weekday": 0,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-09-14",
                 "weekday": 1,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-09-15",
                 "weekday": 2,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-09-16",
                 "weekday": 3,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-09-17",
                 "weekday": 4,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": true
               },
               {
                 "date": "2026-09-18",
                 "weekday": 5,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": false
               },
               {
                 "date": "2026-09-19",
                 "weekday": 6,
-                "count": 0,
-                "level": 0,
+                "active": false,
                 "in_range": false
               }
             ]
@@ -7387,8 +6684,8 @@
     "generation_ok": true,
     "rate_limit": {
       "cost_used_total": 73,
-      "remaining": 4357,
-      "reset_at": "2026-09-17T14:38:41Z"
+      "remaining": 4850,
+      "reset_at": "2026-09-17T18:30:28Z"
     },
     "warnings": [],
     "disclosures": [
@@ -7397,7 +6694,9 @@
       "A day counts once whether it held one action or a thousand, so nothing on this page can be improved by doing more in a single day.",
       "An engineer who works without opening pull requests will show few verified days. That means the evidence is thin, not that the person was absent \u2014 read a low verified figure as a question, not a verdict.",
       "Commit attribution follows GitHub's own account linking. Work committed from an unlinked email address is listed against the project as an unmatched author, never merged into an engineer's record.",
-      "Project involvement reflects work merged into each project's default branch. Work still in progress on a side branch is not yet visible here.",
+      "Only work that has been completed and merged into each project's main version counts here. Work still in progress on a side branch is not yet visible, so recent effort can be understated.",
+      "Leave, sick days and public holidays are not recorded anywhere in this data and will read as inactive days. Before drawing a conclusion about a quiet period, check whether the person was working.",
+      "Automated accounts are excluded. A project kept moving only by a bot is not reported as active work.",
       "This page measures engagement and delivery cadence. It cannot measure the difficulty, quality or business value of the work, and must not be read as a performance rating."
     ]
   }
