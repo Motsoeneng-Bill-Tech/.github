@@ -13,10 +13,10 @@
 </p>
 
 <!-- STATS_BADGES:START -->
-[![Cadence](https://img.shields.io/badge/Team_Cadence-45.9%25_Active-c9a961?style=for-the-badge&logo=clock&logoColor=white)](https://github.com/Motsoeneng-Bill-Tech)
-[![Record Streak](https://img.shields.io/badge/Record_Streak-75_Days-34d399?style=for-the-badge&logo=streak&logoColor=white)](https://github.com/Motsoeneng-Bill-Tech)
-[![Code Reviews](https://img.shields.io/badge/Peer_Reviews-153_Completed-8a7130?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Motsoeneng-Bill-Tech)
-[![Active Engineers](https://img.shields.io/badge/Engineers-7-64748b?style=for-the-badge&logo=codeforces&logoColor=white)](https://github.com/orgs/Motsoeneng-Bill-Tech/people)
+[![Team Reliability](https://img.shields.io/badge/Team_Reliability-58%25-c9a961?style=for-the-badge&logo=clockify&logoColor=white)](https://github.com/Motsoeneng-Bill-Tech)
+[![Active This Week](https://img.shields.io/badge/Active_This_Week-7_of_7-34d399?style=for-the-badge&logo=githubactions&logoColor=white)](https://github.com/orgs/Motsoeneng-Bill-Tech/people)
+[![Projects](https://img.shields.io/badge/Live_Projects-11_of_12-8a7130?style=for-the-badge&logo=git&logoColor=white)](https://github.com/Motsoeneng-Bill-Tech)
+[![Key Person Risk](https://img.shields.io/badge/Key_Person_Risk-5_projects-64748b?style=for-the-badge&logo=shield&logoColor=white)](https://github.com/Motsoeneng-Bill-Tech)
 [![Compliance](https://img.shields.io/badge/Security-POPIA_Compliant-1e2430?style=for-the-badge&logo=shield&logoColor=white)](https://mb.co.za/)
 <!-- STATS_BADGES:END -->
 
@@ -24,9 +24,9 @@
 
 <div align="center">
 
-### [→ Explore the interactive engineering dashboard](https://motsoeneng-bill-tech.github.io/.github/)
+### [→ Open the executive dashboard](https://motsoeneng-bill-tech.github.io/.github/)
 
-*Every member's real, live GitHub contribution history — searchable, sortable, and updated automatically.*
+*Engineers, the projects they carry, delivery cadence and continuity risk — refreshed every day at midday.*
 
 </div>
 
@@ -45,37 +45,43 @@ We engineer systems for two core audiences:
 ## Enterprise Solutions & Ecosystem
 
 <!-- SOLUTIONS:START -->
-| Platform | Visibility | Primary Language | Description |
-| :--- | :---: | :---: | :--- |
-| **Tender Intelligence Platform** | Private | Python | Automated tender scraping, eligibility scoring, procurement risk detection, and deadline pipeline tracking. |
-| **mb-anchor-games** | Private | JavaScript | MB Leaderboard and Anchor Games counting down to the convention. |
-| **Forensics Due Diligence System** | Private | Python | Multi-source background screening, corporate directorship graph analysis, sanctions & PEP verification, automated risk scoring. |
-| **Enterprise Case Management** | Private | Java | Multi-tenant enterprise case management platform for corporate and state-owned clients, covering the full matter lifecycle. |
-| **MB Knowledge Vault Enterprise** | Private | JavaScript | Centralized institutional knowledge repository, precedent search engine, and automated compliance policy cross-referencing. |
-| **mb-wills-week** | Private | JavaScript | _No description set yet._ |
-| **MB 67 Minutes** | Private | JavaScript | Community outreach and pro-bono engagement initiative supporting the firm's public-good programs. |
-| **MB-IQ-Revamped** | Private | TypeScript | MB IQ Revamped |
-| **Job Portal** | Private | TypeScript | Recruitment platform supporting firm hiring pipelines and public-good community engagements. |
-| **Organization Profile & Telemetry** | Public | — | This repository — organization profile, health files, and the engineering telemetry pipeline that generates this page. |
-| **mb-invoicing-tool** | Private | Java | Decodes glyph-obfuscated legal invoice PDFs, reconciles every fee line to the cent, auto-categorises by learned rules, and exports the team's Excel analysis. Multi-matter. |
-| **anchor-games** | Private | TypeScript | MB Leaderboard and Anchor Games  counting down to the convention. |
+| Platform | Status | Engineers | Last Activity | Description |
+| :--- | :---: | :---: | :---: | :--- |
+| **Organization Profile & Telemetry** | Active | 2 active / 2 total | 0d ago | This repository — organization profile, health files, and the engineering telemetry pipeline that generates this page. |
+| **Enterprise Case Management** · `Java` | Active | 4 active / 4 total | 0d ago | Multi-tenant enterprise case management platform for corporate and state-owned clients, covering the full matter lifecycle. |
+| **MB-IQ-Revamped** · `TypeScript` | Active | 1 active / 1 total ⚠️ | 0d ago | MB IQ Revamped |
+| **Forensics Due Diligence System** · `Python` | Active | 2 active / 4 total | 0d ago | Multi-source background screening, corporate directorship graph analysis, sanctions & PEP verification, automated risk scoring. |
+| **mb-anchor-games** · `JavaScript` | Active | 2 active / 2 total | 0d ago | MB Leaderboard and Anchor Games counting down to the convention. |
+| **Tender Intelligence Platform** · `Python` | Active | 2 active / 2 total | 0d ago | Automated tender scraping, eligibility scoring, procurement risk detection, and deadline pipeline tracking. |
+| **mb-invoicing-tool** · `Java` | Active | 2 active / 2 total | 1d ago | Decodes glyph-obfuscated legal invoice PDFs, reconciles every fee line to the cent, auto-categorises by learned rules, and exports the team's Excel analysis. Multi-matter. |
+| **anchor-games** · `TypeScript` | Active | 1 active / 1 total ⚠️ | 6d ago | MB Leaderboard and Anchor Games  counting down to the convention. |
+| **mb-wills-week** · `JavaScript` | Active | 1 active / 1 total ⚠️ | 9d ago | _No description set yet._ |
+| **Job Portal** · `TypeScript` | Active | 1 active / 1 total ⚠️ | 10d ago | Recruitment platform supporting firm hiring pipelines and public-good community engagements. |
+| **MB Knowledge Vault Enterprise** · `JavaScript` | Active | 1 active / 1 total ⚠️ | 14d ago | Centralized institutional knowledge repository, precedent search engine, and automated compliance policy cross-referencing. |
+| **MB 67 Minutes** · `JavaScript` | Dormant | 0 active / 2 total | 63d ago | Community outreach and pro-bono engagement initiative supporting the firm's public-good programs. |
+
+> ⚠️ marks a project currently carried by a single engineer — a continuity risk worth staffing against.
 <!-- SOLUTIONS:END -->
 
 ---
 
-## Engineering Discipline & Cadence Leaderboard
+## Engineering Division — Engineers
 
-> Standings are determined strictly by **daily consistency** (showing up on working days), **unbroken streaks**, **peer code reviews**, and **structured PR delivery**. Raw commit counts carry **zero ranking weight** — we do not reward bulk commit bursts. Every metric is computed live from the GitHub API.
+> Ranked by how consistently each engineer shows up, not by how much they push. Every figure below is a count of **days**, never a count of commits, pull requests or reviews.
 
-### Evaluation Criteria & Coding Standards
+### How standing is determined
 
-| Cadence Status | Daily Presence | Unbroken Streak | Code Reviews | Standard & Policy |
-| :--- | :---: | :---: | :---: | :--- |
-| ⚡ **Daily Driver** | **≥ 65%** active days | **≥ 10 days** record | Active | Daily active engineering presence, peer code reviews, and structured PR deliveries. |
-| 🟢 **Consistent Builder** | **≥ 40%** active days | **≥ 5 days** record | Regular | Solid weekly cadence with steady feature deliveries. |
-| 🟡 **Steady Contributor** | **≥ 20%** active days | Any | Intermittent | Weekly task contributor adhering to branch guidelines. |
-| ⏳ **Sporadic Pusher** | **< 30%** active days | Any | Any | **Bursty commit bursts (> 12 commits/active day) across few days**. We do not reward bulk-push gaming. |
-| ⚪ **Intermittent** | **< 20%** active days | Any | Any | Minimal active presence across tenure. |
+| Cadence band | Share of the last 30 days worked | What it means |
+| :--- | :---: | :--- |
+| **Daily** | ≥ 90% | Present essentially every day. |
+| **Near-daily** | ≥ 70% | Present most days, with occasional gaps. |
+| **Regular** | ≥ 40% | A steady but part-time rhythm on firm work. |
+| **Intermittent** | ≥ 15% | Present in bursts rather than routinely. |
+| **Occasional** | < 15% | Rarely present in the recent window. |
+| **Dormant** | — | Nothing recorded for 14 days or more. |
+| **Newly onboarded** | — | Less than a week with the firm; too early to read. |
+
+A day counts once whether it carried one commit or a thousand, so no amount of activity crammed into a single day can move anyone up this table.
 
 <!-- LEADERBOARD:START -->
 
@@ -85,168 +91,221 @@ We engineer systems for two core audiences:
 
 </div>
 
-| Rank | Engineer | Cadence Status | Active Days & Consistency | Streak Continuity | Code Reviews | Pull Requests | 14-Week Activity Heatmap |
+| # | Engineer | Cadence | Reliability (last 30d) | Current Streak | Projects | Status | Activity |
 | :---: | :--- | :---: | :---: | :---: | :---: | :---: | :---: |
-| **01** | [<img src="https://avatars.githubusercontent.com/u/295184973?u=26439f7693fc00f3d9afe692cfecacb80b7e07b6&v=4" width="30" height="30" style="border-radius:50%; vertical-align:middle;" /> **@konethegreatest**](https://github.com/konethegreatest) <br/>[↗ profile](https://motsoeneng-bill-tech.github.io/.github/#/member/konethegreatest) | **⚡ Daily Driver** | **88%** <br/>`77/88 days` | **75d** record <br/>`75d current` | **34** reviews | **381** PRs | <img src="https://cdn.jsdelivr.net/gh/Motsoeneng-Bill-Tech/.github@main/assets/graphs/konethegreatest.svg?v=2" width="220" height="64" alt="konethegreatest activity graph" /> |
-| **02** | [<img src="https://avatars.githubusercontent.com/u/295596016?v=4" width="30" height="30" style="border-radius:50%; vertical-align:middle;" /> **@Akonisaho-MB**](https://github.com/Akonisaho-MB) <br/>[↗ profile](https://motsoeneng-bill-tech.github.io/.github/#/member/Akonisaho-MB) | **⚡ Daily Driver** | **70%** <br/>`60/86 days` | **17d** record <br/>`0d current` | **38** reviews | **143** PRs | <img src="https://cdn.jsdelivr.net/gh/Motsoeneng-Bill-Tech/.github@main/assets/graphs/Akonisaho-MB.svg?v=2" width="220" height="64" alt="Akonisaho-MB activity graph" /> |
-| **03** | [<img src="https://avatars.githubusercontent.com/u/296428132?v=4" width="30" height="30" style="border-radius:50%; vertical-align:middle;" /> **@Amukelani-MB**](https://github.com/Amukelani-MB) <br/>[↗ profile](https://motsoeneng-bill-tech.github.io/.github/#/member/Amukelani-MB) | **⚡ Daily Driver** | **74%** <br/>`61/83 days` | **14d** record <br/>`0d current` | **16** reviews | **159** PRs | <img src="https://cdn.jsdelivr.net/gh/Motsoeneng-Bill-Tech/.github@main/assets/graphs/Amukelani-MB.svg?v=2" width="220" height="64" alt="Amukelani-MB activity graph" /> |
-| **04** | [<img src="https://avatars.githubusercontent.com/u/296434638?v=4" width="30" height="30" style="border-radius:50%; vertical-align:middle;" /> **@pakisomb**](https://github.com/pakisomb) <br/>[↗ profile](https://motsoeneng-bill-tech.github.io/.github/#/member/pakisomb) | **⏳ Sporadic Pusher** | **29%** <br/>`24/83 days` | **4d** record <br/>`3d current` | **38** reviews | **24** PRs | <img src="https://cdn.jsdelivr.net/gh/Motsoeneng-Bill-Tech/.github@main/assets/graphs/pakisomb.svg?v=2" width="220" height="64" alt="pakisomb activity graph" /> |
-| **05** | [<img src="https://avatars.githubusercontent.com/u/295126059?v=4" width="30" height="30" style="border-radius:50%; vertical-align:middle;" /> **@VhutshiloMB**](https://github.com/VhutshiloMB) <br/>[↗ profile](https://motsoeneng-bill-tech.github.io/.github/#/member/VhutshiloMB) | **🟡 Steady Contributor** | **34%** <br/>`30/88 days` | **7d** record <br/>`0d current` | **14** reviews | **42** PRs | <img src="https://cdn.jsdelivr.net/gh/Motsoeneng-Bill-Tech/.github@main/assets/graphs/VhutshiloMB.svg?v=2" width="220" height="64" alt="VhutshiloMB activity graph" /> |
-| **06** | [<img src="https://avatars.githubusercontent.com/u/295851105?v=4" width="30" height="30" style="border-radius:50%; vertical-align:middle;" /> **@Kea1m**](https://github.com/Kea1m) <br/>[↗ profile](https://motsoeneng-bill-tech.github.io/.github/#/member/Kea1m) | **⚪ Intermittent** | **12%** <br/>`10/85 days` | **2d** record <br/>`0d current` | **12** reviews | **3** PRs | <img src="https://cdn.jsdelivr.net/gh/Motsoeneng-Bill-Tech/.github@main/assets/graphs/Kea1m.svg?v=2" width="220" height="64" alt="Kea1m activity graph" /> |
-| **07** | [<img src="https://avatars.githubusercontent.com/u/318985580?v=4" width="30" height="30" style="border-radius:50%; vertical-align:middle;" /> **@TheoSingo**](https://github.com/TheoSingo) <br/>[↗ profile](https://motsoeneng-bill-tech.github.io/.github/#/member/TheoSingo) | **⚪ Intermittent** | **15%** <br/>`4/26 days` | **2d** record <br/>`0d current` | **1** reviews | **0** PRs | <img src="https://cdn.jsdelivr.net/gh/Motsoeneng-Bill-Tech/.github@main/assets/graphs/TheoSingo.svg?v=2" width="220" height="64" alt="TheoSingo activity graph" /> |
+| **01** | [<img src="https://avatars.githubusercontent.com/u/295184973?u=26439f7693fc00f3d9afe692cfecacb80b7e07b6&v=4" width="30" height="30" style="border-radius:50%; vertical-align:middle;" /> **@konethegreatest**](https://github.com/konethegreatest) <br/>[↗ profile](https://motsoeneng-bill-tech.github.io/.github/#/member/konethegreatest) | **Daily** | **100%** <br/>`30/30 days` | **78d** <br/>`78d record` | **6** active <br/>`6 total` | Active today | <img src="https://cdn.jsdelivr.net/gh/Motsoeneng-Bill-Tech/.github@main/assets/graphs/konethegreatest.svg?v=3" width="220" height="64" alt="konethegreatest activity calendar" /> |
+| **02** | [<img src="https://avatars.githubusercontent.com/u/296428132?v=4" width="30" height="30" style="border-radius:50%; vertical-align:middle;" /> **@Amukelani-MB**](https://github.com/Amukelani-MB) <br/>[↗ profile](https://motsoeneng-bill-tech.github.io/.github/#/member/Amukelani-MB) | **Daily** | **93%** <br/>`28/30 days` | **19d** <br/>`19d record` | **3** active <br/>`3 total` | Active today | <img src="https://cdn.jsdelivr.net/gh/Motsoeneng-Bill-Tech/.github@main/assets/graphs/Amukelani-MB.svg?v=3" width="220" height="64" alt="Amukelani-MB activity calendar" /> |
+| **03** | [<img src="https://avatars.githubusercontent.com/u/295596016?v=4" width="30" height="30" style="border-radius:50%; vertical-align:middle;" /> **@Akonisaho-MB**](https://github.com/Akonisaho-MB) <br/>[↗ profile](https://motsoeneng-bill-tech.github.io/.github/#/member/Akonisaho-MB) | **Near-daily** | **83%** <br/>`25/30 days` | **18d** <br/>`18d record` | **3** active <br/>`5 total` | Active today | <img src="https://cdn.jsdelivr.net/gh/Motsoeneng-Bill-Tech/.github@main/assets/graphs/Akonisaho-MB.svg?v=3" width="220" height="64" alt="Akonisaho-MB activity calendar" /> |
+| **04** | [<img src="https://avatars.githubusercontent.com/u/295126059?v=4" width="30" height="30" style="border-radius:50%; vertical-align:middle;" /> **@VhutshiloMB**](https://github.com/VhutshiloMB) <br/>[↗ profile](https://motsoeneng-bill-tech.github.io/.github/#/member/VhutshiloMB) | **Regular** | **57%** <br/>`17/30 days` | **11d** <br/>`11d record` | **2** active <br/>`2 total` | Active today | <img src="https://cdn.jsdelivr.net/gh/Motsoeneng-Bill-Tech/.github@main/assets/graphs/VhutshiloMB.svg?v=3" width="220" height="64" alt="VhutshiloMB activity calendar" /> |
+| **05** | [<img src="https://avatars.githubusercontent.com/u/296434638?v=4" width="30" height="30" style="border-radius:50%; vertical-align:middle;" /> **@pakisomb**](https://github.com/pakisomb) <br/>[↗ profile](https://motsoeneng-bill-tech.github.io/.github/#/member/pakisomb) | **Intermittent** | **33%** <br/>`10/30 days` | **0d** <br/>`5d record` | **2** active <br/>`4 total` | Active today | <img src="https://cdn.jsdelivr.net/gh/Motsoeneng-Bill-Tech/.github@main/assets/graphs/pakisomb.svg?v=3" width="220" height="64" alt="pakisomb activity calendar" /> |
+| **06** | [<img src="https://avatars.githubusercontent.com/u/295851105?v=4" width="30" height="30" style="border-radius:50%; vertical-align:middle;" /> **@Kea1m**](https://github.com/Kea1m) <br/>[↗ profile](https://motsoeneng-bill-tech.github.io/.github/#/member/Kea1m) | **Intermittent** | **27%** <br/>`8/30 days` | **3d** <br/>`3d record` | **1** active <br/>`1 total` | Active today | <img src="https://cdn.jsdelivr.net/gh/Motsoeneng-Bill-Tech/.github@main/assets/graphs/Kea1m.svg?v=3" width="220" height="64" alt="Kea1m activity calendar" /> |
+| **07** | [<img src="https://avatars.githubusercontent.com/u/318985580?v=4" width="30" height="30" style="border-radius:50%; vertical-align:middle;" /> **@TheoSingo**](https://github.com/TheoSingo) <br/>[↗ profile](https://motsoeneng-bill-tech.github.io/.github/#/member/TheoSingo) | **Occasional** | **14%** <br/>`4/29 days` | **0d** <br/>`2d record` | **2** active <br/>`2 total` | Active this week | <img src="https://cdn.jsdelivr.net/gh/Motsoeneng-Bill-Tech/.github@main/assets/graphs/TheoSingo.svg?v=3" width="220" height="64" alt="TheoSingo activity calendar" /> |
 
-> **Discipline & Cadence Policy**: Standings are determined strictly by **daily consistency** (showing up on working days), **streak continuity**, **peer code reviews**, and **structured PR delivery**. Raw commit counts carry **zero ranking weight** to prevent bulk-commit gaming.
+> **How this is measured.** Standing is based on how regularly an engineer shows up — the share of recent days with recorded work, streak continuity, and how many projects they are currently carrying. A day counts once whether it held one commit or a thousand, so nothing here can be inflated by pushing harder on a single day. Commit, pull request and review counts are deliberately not published and carry no weight: counting output rewards volume, and volume is easy to manufacture.
 
 <!-- LEADERBOARD:END -->
 
 ---
 
-## Engineering Team — Verified Cadence Profiles
+## Engineer Profiles
 
-> Individual engineer breakdowns showing verified active days, streak continuity, peer code reviews, and authentic GitHub contribution heatmaps.
+> For each engineer: how reliably they show up, which projects they are carrying, where the firm depends on them alone, and their day-by-day activity.
 
 <!-- ROSTER:START -->
 
-### #01 · konethegreatest ([@konethegreatest](https://github.com/konethegreatest)) · ⚡ Daily Driver
+### #01 · konethegreatest — Daily
 
-<img src="https://avatars.githubusercontent.com/u/295184973?u=26439f7693fc00f3d9afe692cfecacb80b7e07b6&v=4" width="40" height="40" style="border-radius:50%; vertical-align:middle;" /> **konethegreatest** (`@konethegreatest`) — *Consistent daily contributor with sustained streak and high peer review activity*
+<img src="https://avatars.githubusercontent.com/u/295184973?u=26439f7693fc00f3d9afe692cfecacb80b7e07b6&v=4" width="40" height="40" style="border-radius:50%; vertical-align:middle;" /> [`@konethegreatest`](https://github.com/konethegreatest) · joined Jun 19, 2026 · Active today
 
-> ⚡ **Cadence Benchmark**: Daily engineering driver showing consistent presence (**88% of tenure days**) with an active **75-day** streak and thorough code reviews.
+> **Continuity risk:** currently the only active engineer on **MB-IQ-Revamped**, **Job Portal**. Worth a second pair of hands.
 
-| Engineering Signal | Verified Output |
+| | |
 | :--- | :--- |
-| 📅 **Daily Cadence** | **88%** active (77 of 88 days since `Jun 19, 2026`) |
-| 🔥 **Streak Continuity** | **75 days** record unbroken streak · **75 days** current active |
-| 🔍 **Peer Code Reviews** | **34** reviews completed (enforcing code guidelines & peer quality) |
-| 🚀 **Pull Requests** | **381** delivered across **6** org repositories |
-| 📦 **Active Codebases** | `tender-intelligence-platform`, `forensics-due-diligence-system`, `MB-IQ-Revamped` |
+| **Reliability** | **100%** of the last 30 days (30 of 30) |
+| **Streak** | **78 days** current · 78 days best |
+| **Trend** | Improving — 7.0 active days/week recently vs 6.0 before |
+| **Projects** | **6** active of 6 worked on |
+| **Technologies** | `Java`, `Python`, `TypeScript` |
+
+| | Project | Days engaged | Span | Position |
+| :---: | :--- | :---: | :---: | :--- |
+| ▸ | **Forensics Due Diligence System** | 43 | `Aug 03, 2026 → Sep 17, 2026` | Active now |
+| ▸ | **Tender Intelligence Platform** | 37 | `Jul 02, 2026 → Sep 09, 2026` | Active now |
+| ▸ | **MB-IQ-Revamped** | 5 | `Sep 04, 2026 → Sep 17, 2026` | Active now · **sole active engineer** |
+| ▸ | **Job Portal** | 4 | `Jul 25, 2026 → Sep 07, 2026` | Active now · **sole active engineer** |
+| ▸ | **Organization Profile & Telemetry** | 3 | `Jun 24, 2026 → Sep 14, 2026` | Active now |
+| ▸ | **mb-invoicing-tool** | 3 | `Sep 11, 2026 → Sep 16, 2026` | Active now |
 
 <div align="center">
-  <img src="https://cdn.jsdelivr.net/gh/Motsoeneng-Bill-Tech/.github@main/assets/graphs/konethegreatest.svg?v=2" width="100%" alt="konethegreatest activity calendar" />
+  <img src="https://cdn.jsdelivr.net/gh/Motsoeneng-Bill-Tech/.github@main/assets/graphs/konethegreatest.svg?v=3" width="100%" alt="konethegreatest activity calendar" />
 </div>
+
+[View full profile →](https://motsoeneng-bill-tech.github.io/.github/#/member/konethegreatest)
 
 ---
 
 
-### #02 · Akonisaho-MB ([@Akonisaho-MB](https://github.com/Akonisaho-MB)) · ⚡ Daily Driver
+### #02 · Amukelani-MB — Daily
 
-<img src="https://avatars.githubusercontent.com/u/295596016?v=4" width="40" height="40" style="border-radius:50%; vertical-align:middle;" /> **Akonisaho-MB** (`@Akonisaho-MB`) — *Consistent daily contributor with sustained streak and high peer review activity*
+<img src="https://avatars.githubusercontent.com/u/296428132?v=4" width="40" height="40" style="border-radius:50%; vertical-align:middle;" /> [`@Amukelani-MB`](https://github.com/Amukelani-MB) · joined Jun 24, 2026 · Active today
 
-> ⚡ **Cadence Benchmark**: Daily engineering driver showing consistent presence (**70% of tenure days**) with an active **17-day** streak and thorough code reviews.
-
-| Engineering Signal | Verified Output |
+| | |
 | :--- | :--- |
-| 📅 **Daily Cadence** | **70%** active (60 of 86 days since `Jun 21, 2026`) |
-| 🔥 **Streak Continuity** | **17 days** record unbroken streak · **0 days** current active |
-| 🔍 **Peer Code Reviews** | **38** reviews completed (enforcing code guidelines & peer quality) |
-| 🚀 **Pull Requests** | **143** delivered across **5** org repositories |
-| 📦 **Active Codebases** | `mb-knowledge-vault-enterprise`, `Case-Management`, `mb-wills-week` |
+| **Reliability** | **93%** of the last 30 days (28 of 30) |
+| **Streak** | **19 days** current · 19 days best |
+| **Trend** | Improving — 6.5 active days/week recently vs 4.3 before |
+| **Projects** | **3** active of 3 worked on |
+| **Technologies** | `JavaScript`, `Python` |
+
+| | Project | Days engaged | Span | Position |
+| :---: | :--- | :---: | :---: | :--- |
+| ▸ | **Tender Intelligence Platform** | 35 | `Jul 03, 2026 → Sep 17, 2026` | Active now |
+| ▸ | **Forensics Due Diligence System** | 24 | `Aug 07, 2026 → Sep 06, 2026` | Active now |
+| ▸ | **mb-anchor-games** | 3 | `Sep 15, 2026 → Sep 17, 2026` | Active now |
 
 <div align="center">
-  <img src="https://cdn.jsdelivr.net/gh/Motsoeneng-Bill-Tech/.github@main/assets/graphs/Akonisaho-MB.svg?v=2" width="100%" alt="Akonisaho-MB activity calendar" />
+  <img src="https://cdn.jsdelivr.net/gh/Motsoeneng-Bill-Tech/.github@main/assets/graphs/Amukelani-MB.svg?v=3" width="100%" alt="Amukelani-MB activity calendar" />
 </div>
+
+[View full profile →](https://motsoeneng-bill-tech.github.io/.github/#/member/Amukelani-MB)
 
 ---
 
 
-### #03 · Amukelani-MB ([@Amukelani-MB](https://github.com/Amukelani-MB)) · ⚡ Daily Driver
+### #03 · Akonisaho-MB — Near-daily
 
-<img src="https://avatars.githubusercontent.com/u/296428132?v=4" width="40" height="40" style="border-radius:50%; vertical-align:middle;" /> **Amukelani-MB** (`@Amukelani-MB`) — *Consistent daily contributor with sustained streak and high peer review activity*
+<img src="https://avatars.githubusercontent.com/u/295596016?v=4" width="40" height="40" style="border-radius:50%; vertical-align:middle;" /> [`@Akonisaho-MB`](https://github.com/Akonisaho-MB) · joined Jun 21, 2026 · Active today
 
-> ⚡ **Cadence Benchmark**: Daily engineering driver showing consistent presence (**74% of tenure days**) with an active **14-day** streak and thorough code reviews.
+> **Continuity risk:** currently the only active engineer on **MB Knowledge Vault Enterprise**, **mb-wills-week**. Worth a second pair of hands.
 
-| Engineering Signal | Verified Output |
+| | |
 | :--- | :--- |
-| 📅 **Daily Cadence** | **74%** active (61 of 83 days since `Jun 24, 2026`) |
-| 🔥 **Streak Continuity** | **14 days** record unbroken streak · **0 days** current active |
-| 🔍 **Peer Code Reviews** | **16** reviews completed (enforcing code guidelines & peer quality) |
-| 🚀 **Pull Requests** | **159** delivered across **2** org repositories |
-| 📦 **Active Codebases** | `tender-intelligence-platform`, `forensics-due-diligence-system` |
+| **Reliability** | **83%** of the last 30 days (25 of 30) |
+| **Streak** | **18 days** current · 18 days best |
+| **Trend** | Improving — 6.2 active days/week recently vs 4.2 before |
+| **Projects** | **3** active of 5 worked on |
+| **Technologies** | `Java`, `JavaScript`, `Python` |
+
+| | Project | Days engaged | Span | Position |
+| :---: | :--- | :---: | :---: | :--- |
+| ▸ | **Enterprise Case Management** | 23 | `Jul 22, 2026 → Sep 17, 2026` | Active now |
+| ▸ | **MB Knowledge Vault Enterprise** | 19 | `Aug 07, 2026 → Sep 03, 2026` | Active now · **sole active engineer** |
+| · | **MB 67 Minutes** | 6 | `Jul 09, 2026 → Jul 16, 2026` | Last active 63d ago |
+| ▸ | **mb-wills-week** | 6 | `Sep 03, 2026 → Sep 08, 2026` | Active now · **sole active engineer** |
+| · | **Forensics Due Diligence System** | 5 | `Aug 07, 2026 → Aug 14, 2026` | Last active 34d ago |
 
 <div align="center">
-  <img src="https://cdn.jsdelivr.net/gh/Motsoeneng-Bill-Tech/.github@main/assets/graphs/Amukelani-MB.svg?v=2" width="100%" alt="Amukelani-MB activity calendar" />
+  <img src="https://cdn.jsdelivr.net/gh/Motsoeneng-Bill-Tech/.github@main/assets/graphs/Akonisaho-MB.svg?v=3" width="100%" alt="Akonisaho-MB activity calendar" />
 </div>
+
+[View full profile →](https://motsoeneng-bill-tech.github.io/.github/#/member/Akonisaho-MB)
 
 ---
 
 
-### #04 · pakisomb ([@pakisomb](https://github.com/pakisomb)) · ⏳ Sporadic Pusher
+### #04 · VhutshiloMB — Regular
 
-<img src="https://avatars.githubusercontent.com/u/296434638?v=4" width="40" height="40" style="border-radius:50%; vertical-align:middle;" /> **pakisomb** (`@pakisomb`) — *Bursty commit activity (avg 25.5 commits/active day) across only 29% of tenure days*
+<img src="https://avatars.githubusercontent.com/u/295126059?v=4" width="40" height="40" style="border-radius:50%; vertical-align:middle;" /> [`@VhutshiloMB`](https://github.com/VhutshiloMB) · joined Jun 19, 2026 · Active today
 
-> ⚠️ **Cadence Alert**: This member shows bursty bulk-push activity averaging **25.5 commits per active day**, but was present on only **29%** of days. The engineering division prioritizes consistent daily presence and code reviews over commit volume.
-
-| Engineering Signal | Verified Output |
+| | |
 | :--- | :--- |
-| 📅 **Daily Cadence** | **29%** active (24 of 83 days since `Jun 24, 2026`) |
-| 🔥 **Streak Continuity** | **4 days** record unbroken streak · **3 days** current active |
-| 🔍 **Peer Code Reviews** | **38** reviews completed (enforcing code guidelines & peer quality) |
-| 🚀 **Pull Requests** | **24** delivered across **4** org repositories |
-| 📦 **Active Codebases** | `mb-anchor-games`, `Case-Management`, `mb-67-minutes` |
+| **Reliability** | **57%** of the last 30 days (17 of 30) |
+| **Streak** | **11 days** current · 11 days best |
+| **Trend** | Improving — 3.7 active days/week recently vs 1.7 before |
+| **Projects** | **2** active of 2 worked on |
+| **Technologies** | `Java` |
+
+| | Project | Days engaged | Span | Position |
+| :---: | :--- | :---: | :---: | :--- |
+| ▸ | **Enterprise Case Management** | 27 | `Jul 13, 2026 → Sep 17, 2026` | Active now |
+| ▸ | **mb-invoicing-tool** | 5 | `Aug 31, 2026 → Sep 16, 2026` | Active now |
 
 <div align="center">
-  <img src="https://cdn.jsdelivr.net/gh/Motsoeneng-Bill-Tech/.github@main/assets/graphs/pakisomb.svg?v=2" width="100%" alt="pakisomb activity calendar" />
+  <img src="https://cdn.jsdelivr.net/gh/Motsoeneng-Bill-Tech/.github@main/assets/graphs/VhutshiloMB.svg?v=3" width="100%" alt="VhutshiloMB activity calendar" />
 </div>
+
+[View full profile →](https://motsoeneng-bill-tech.github.io/.github/#/member/VhutshiloMB)
 
 ---
 
 
-### #05 · VhutshiloMB ([@VhutshiloMB](https://github.com/VhutshiloMB)) · 🟡 Steady Contributor
+### #05 · pakisomb — Intermittent
 
-<img src="https://avatars.githubusercontent.com/u/295126059?v=4" width="40" height="40" style="border-radius:50%; vertical-align:middle;" /> **VhutshiloMB** (`@VhutshiloMB`) — *Weekly task contributor*
+<img src="https://avatars.githubusercontent.com/u/296434638?v=4" width="40" height="40" style="border-radius:50%; vertical-align:middle;" /> [`@pakisomb`](https://github.com/pakisomb) · joined Jun 24, 2026 · Active today
 
-
-| Engineering Signal | Verified Output |
+| | |
 | :--- | :--- |
-| 📅 **Daily Cadence** | **34%** active (30 of 88 days since `Jun 19, 2026`) |
-| 🔥 **Streak Continuity** | **7 days** record unbroken streak · **0 days** current active |
-| 🔍 **Peer Code Reviews** | **14** reviews completed (enforcing code guidelines & peer quality) |
-| 🚀 **Pull Requests** | **42** delivered across **2** org repositories |
-| 📦 **Active Codebases** | `Case-Management`, `mb-invoicing-tool` |
+| **Reliability** | **33%** of the last 30 days (10 of 30) |
+| **Streak** | **0 days** current · 5 days best |
+| **Trend** | Steady — 2.2 active days/week recently vs 2.0 before |
+| **Projects** | **2** active of 4 worked on |
+| **Technologies** | `Java`, `JavaScript`, `Python` |
+
+| | Project | Days engaged | Span | Position |
+| :---: | :--- | :---: | :---: | :--- |
+| ▸ | **Enterprise Case Management** | 14 | `Jul 23, 2026 → Sep 13, 2026` | Active now |
+| ▸ | **mb-anchor-games** | 5 | `Sep 12, 2026 → Sep 16, 2026` | Active now |
+| · | **MB 67 Minutes** | 4 | `Jul 10, 2026 → Jul 13, 2026` | Last active 66d ago |
+| · | **Forensics Due Diligence System** | 1 | `Aug 06, 2026 → Aug 06, 2026` | Last active 42d ago |
 
 <div align="center">
-  <img src="https://cdn.jsdelivr.net/gh/Motsoeneng-Bill-Tech/.github@main/assets/graphs/VhutshiloMB.svg?v=2" width="100%" alt="VhutshiloMB activity calendar" />
+  <img src="https://cdn.jsdelivr.net/gh/Motsoeneng-Bill-Tech/.github@main/assets/graphs/pakisomb.svg?v=3" width="100%" alt="pakisomb activity calendar" />
 </div>
+
+[View full profile →](https://motsoeneng-bill-tech.github.io/.github/#/member/pakisomb)
 
 ---
 
 
-### #06 · Keabetswe Matloha ([@Kea1m](https://github.com/Kea1m)) · ⚪ Intermittent
+### #06 · Keabetswe Matloha — Intermittent
 
-<img src="https://avatars.githubusercontent.com/u/295851105?v=4" width="40" height="40" style="border-radius:50%; vertical-align:middle;" /> **Keabetswe Matloha** (`@Kea1m`) — *Infrequent contributions across tenure*
+<img src="https://avatars.githubusercontent.com/u/295851105?v=4" width="40" height="40" style="border-radius:50%; vertical-align:middle;" /> [`@Kea1m`](https://github.com/Kea1m) · joined Jun 22, 2026 · Active today
 
-
-| Engineering Signal | Verified Output |
+| | |
 | :--- | :--- |
-| 📅 **Daily Cadence** | **12%** active (10 of 85 days since `Jun 22, 2026`) |
-| 🔥 **Streak Continuity** | **2 days** record unbroken streak · **0 days** current active |
-| 🔍 **Peer Code Reviews** | **12** reviews completed (enforcing code guidelines & peer quality) |
-| 🚀 **Pull Requests** | **3** delivered across **1** org repositories |
-| 📦 **Active Codebases** | `Case-Management` |
+| **Reliability** | **27%** of the last 30 days (8 of 30) |
+| **Streak** | **3 days** current · 3 days best |
+| **Trend** | Improving — 1.8 active days/week recently vs 0.2 before |
+| **Projects** | **1** active of 1 worked on |
+| **Technologies** | `Java` |
+
+| | Project | Days engaged | Span | Position |
+| :---: | :--- | :---: | :---: | :--- |
+| ▸ | **Enterprise Case Management** | 8 | `Aug 31, 2026 → Sep 17, 2026` | Active now |
 
 <div align="center">
-  <img src="https://cdn.jsdelivr.net/gh/Motsoeneng-Bill-Tech/.github@main/assets/graphs/Kea1m.svg?v=2" width="100%" alt="Kea1m activity calendar" />
+  <img src="https://cdn.jsdelivr.net/gh/Motsoeneng-Bill-Tech/.github@main/assets/graphs/Kea1m.svg?v=3" width="100%" alt="Kea1m activity calendar" />
 </div>
+
+[View full profile →](https://motsoeneng-bill-tech.github.io/.github/#/member/Kea1m)
 
 ---
 
 
-### #07 · TheoSingo ([@TheoSingo](https://github.com/TheoSingo)) · ⚪ Intermittent
+### #07 · TheoSingo — Occasional
 
-<img src="https://avatars.githubusercontent.com/u/318985580?v=4" width="40" height="40" style="border-radius:50%; vertical-align:middle;" /> **TheoSingo** (`@TheoSingo`) — *Infrequent contributions across tenure*
+<img src="https://avatars.githubusercontent.com/u/318985580?v=4" width="40" height="40" style="border-radius:50%; vertical-align:middle;" /> [`@TheoSingo`](https://github.com/TheoSingo) · joined Aug 20, 2026 · Active this week
 
+> **Continuity risk:** currently the only active engineer on **anchor-games**. Worth a second pair of hands.
 
-| Engineering Signal | Verified Output |
+| | |
 | :--- | :--- |
-| 📅 **Daily Cadence** | **15%** active (4 of 26 days since `Aug 20, 2026`) |
-| 🔥 **Streak Continuity** | **2 days** record unbroken streak · **0 days** current active |
-| 🔍 **Peer Code Reviews** | **1** reviews completed (enforcing code guidelines & peer quality) |
-| 🚀 **Pull Requests** | **0** delivered across **2** org repositories |
-| 📦 **Active Codebases** | `anchor-games`, `.github` |
+| **Reliability** | **14%** of the last 29 days (4 of 29) |
+| **Streak** | **0 days** current · 2 days best |
+| **Trend** | Steady — 0.7 active days/week recently vs 0.0 before |
+| **Projects** | **2** active of 2 worked on |
+| **Technologies** | `TypeScript` |
+
+| | Project | Days engaged | Span | Position |
+| :---: | :--- | :---: | :---: | :--- |
+| ▸ | **Organization Profile & Telemetry** | 2 | `Sep 03, 2026 → Sep 04, 2026` | Active now |
+| ▸ | **anchor-games** | 1 | `Sep 11, 2026 → Sep 11, 2026` | Active now · **sole active engineer** |
 
 <div align="center">
-  <img src="https://cdn.jsdelivr.net/gh/Motsoeneng-Bill-Tech/.github@main/assets/graphs/TheoSingo.svg?v=2" width="100%" alt="TheoSingo activity calendar" />
+  <img src="https://cdn.jsdelivr.net/gh/Motsoeneng-Bill-Tech/.github@main/assets/graphs/TheoSingo.svg?v=3" width="100%" alt="TheoSingo activity calendar" />
 </div>
+
+[View full profile →](https://motsoeneng-bill-tech.github.io/.github/#/member/TheoSingo)
 
 ---
 
@@ -277,7 +336,7 @@ We welcome technical collaboration, industry inquiries, and strategic engagement
 
 **Motsoeneng Bill Tech** · Houghton, Johannesburg · South Africa
 <!-- TIMESTAMP:START -->
- *Last synced: 2026-09-14 07:08 UTC* 
+ *Last synced: 2026-09-17 13:54 UTC* 
 <!-- TIMESTAMP:END -->
 
 </div>

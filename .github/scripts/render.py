@@ -125,36 +125,35 @@ def render_member_calendar_svg(member, weeks_shown=14, min_width=300):
         for name, x in month_labels.items()
     )
 
-    c = member.get("consistency", {})
-    badge = member.get("tier_badge", "")
-    status = member.get("cadence_status", member.get("tier", "Active"))
-    active_pct = c.get("pct", member["calendar"]["active_pct"])
-    streak = c.get("longest_streak", member["calendar"].get("longest_streak", 0))
-    reviews = member["contributions"].get("reviews", 0)
+    c = member["consistency"]
+    rel = member["reliability"]
+    band = member["cadence_band"]
+    projects = member["current_project_count"]
     return f"""<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}">
   <rect width="{width}" height="{height}" rx="10" fill="{SURFACE}" stroke="{BORDER}" stroke-width="1" />
-  <text x="{start_x}" y="18" font-family="{FONT_STACK}" font-size="12" font-weight="700" fill="{TEXT_PRIMARY}">{badge} @{member['login']} · <tspan fill="{ACCENT}">{status}</tspan></text>
-  <text x="{start_x}" y="32" font-family="{FONT_STACK}" font-size="10"><tspan font-weight="700" fill="{TEXT_PRIMARY}">{active_pct:.0f}% active</tspan><tspan fill="{TEXT_TERTIARY}"> ({c.get('active_days', 0)}d) · {streak}d streak · {reviews} reviews</tspan></text>
+  <text x="{start_x}" y="18" font-family="{FONT_STACK}" font-size="12" font-weight="700" fill="{TEXT_PRIMARY}">@{member['login']} · <tspan fill="{ACCENT}">{band}</tspan></text>
+  <text x="{start_x}" y="32" font-family="{FONT_STACK}" font-size="10"><tspan font-weight="700" fill="{TEXT_PRIMARY}">{rel['pct']:.0f}% of last {rel['window_days']} days</tspan><tspan fill="{TEXT_TERTIARY}"> · {c['current_streak']}d streak · {projects} active project{'' if projects == 1 else 's'}</tspan></text>
   {months_svg}
   <g>{''.join(rects)}</g>
 </svg>"""
 
 
 def render_overview_card_svg(data, max_rows=8):
-    """Org-wide ranked bar chart — bars represent Active Days Consistency %, NOT commit volume.
-    Highlights consistent daily presence and unbroken streaks."""
+    """Org-wide ranked bar chart. Bars are reliability — the share of recent days each
+    engineer was present — never volume, so no single day can lengthen anyone's bar."""
     width = 860
     org = data["org"]
+    summary = org["summary"]
     members = data["members"][:max_rows]
     row_h = 36
     header_h = 96
     height = header_h + len(members) * row_h + 24
 
     stats = [
-        ("CADENCE MODEL", "Daily Active"),
         ("ENGINEERS", str(org["member_count"])),
-        ("AVG CONSISTENCY", f'{org["totals"].get("avg_consistency_pct", 0):.0f}%'),
-        ("RECORD STREAK", f'{org["totals"].get("peak_streak", 0)} DAYS'),
+        ("ACTIVE THIS WEEK", str(summary["engineers_active_this_week"])),
+        ("TEAM RELIABILITY", f'{summary["avg_reliability_pct"]:.0f}%'),
+        ("PROJECTS AT RISK", str(summary["projects_at_key_person_risk"])),
     ]
     stat_w = 180
     stats_svg = "".join(
@@ -166,28 +165,24 @@ def render_overview_card_svg(data, max_rows=8):
     )
 
     bar_x = 220
-    bar_max_w = width - bar_x - 170
+    bar_max_w = width - bar_x - 180
     rows_svg = []
     for i, m in enumerate(members):
         y = header_h + i * row_h
-        c = m["consistency"]
-        pct = c["pct"]
-        bar_w = max(3, (pct / 100) * bar_max_w)
-        badge = m.get("tier_badge", "")
-        status = m.get("cadence_status", "")
-        label_meta = f'{pct:.0f}% ({c["active_days"]}d) · {c["longest_streak"]}d streak'
+        rel = m["reliability"]
+        bar_w = max(3, (rel["pct"] / 100) * bar_max_w)
+        label_meta = f'{m["current_project_count"]} active project{"" if m["current_project_count"] == 1 else "s"} · {m["consistency"]["current_streak"]}d streak'
         rows_svg.append(f'''
-  <text x="32" y="{y + 22}" font-family="{FONT_STACK}" font-size="12" font-weight="700" fill="{TEXT_TERTIARY}">{badge}</text>
-  <text x="56" y="{y + 22}" font-family="{FONT_STACK}" font-size="12" font-weight="700" fill="{TEXT_TERTIARY}">{i + 1:02d}</text>
-  <text x="82" y="{y + 22}" font-family="{FONT_STACK}" font-size="12" font-weight="600" fill="{TEXT_PRIMARY}">@{m['login']}</text>
+  <text x="32" y="{y + 22}" font-family="{FONT_STACK}" font-size="12" font-weight="700" fill="{TEXT_TERTIARY}">{i + 1:02d}</text>
+  <text x="60" y="{y + 22}" font-family="{FONT_STACK}" font-size="12" font-weight="600" fill="{TEXT_PRIMARY}">@{m['login']}</text>
   <rect x="{bar_x}" y="{y + 9}" width="{bar_max_w}" height="8" rx="4" fill="{BORDER}" />
   <rect x="{bar_x}" y="{y + 9}" width="{bar_w:.1f}" height="8" rx="4" fill="{ACCENT}" />
-  <text x="{bar_x + bar_max_w + 10}" y="{y + 17}" font-family="{FONT_STACK}" font-size="11" font-weight="700" fill="{ACCENT}">{status}</text>
+  <text x="{bar_x + bar_max_w + 10}" y="{y + 17}" font-family="{FONT_STACK}" font-size="11" font-weight="700" fill="{ACCENT}">{rel['pct']:.0f}% · {m['cadence_band']}</text>
   <text x="{bar_x + bar_max_w + 10}" y="{y + 29}" font-family="{FONT_STACK}" font-size="9" fill="{TEXT_TERTIARY}">{label_meta}</text>''')
 
     return f"""<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}">
   <rect width="{width}" height="{height}" rx="14" fill="{BG}" stroke="{BORDER}" stroke-width="1" />
-  <text x="32" y="32" font-family="{FONT_STACK}" font-size="11" font-weight="700" letter-spacing="1.5" fill="{ACCENT}">{org['name'].upper()} · ENGINEERING DISCIPLINE &amp; CADENCE</text>
+  <text x="32" y="32" font-family="{FONT_STACK}" font-size="11" font-weight="700" letter-spacing="1.5" fill="{ACCENT}">{org['name'].upper()} · ENGINEERING DIVISION OVERVIEW</text>
   {stats_svg}
   {''.join(rows_svg)}
 </svg>"""
@@ -211,57 +206,59 @@ def _fmt_date(iso_str):
 
 def render_badges(data, org_name):
     org = data["org"]
-    avg_consistency = org["totals"].get("avg_consistency_pct", 0)
-    peak_streak = org["totals"].get("peak_streak", 0)
-    total_reviews = org["totals"].get("total_reviews", 0)
+    s = org["summary"]
     return "\n".join([
-        f'[![Cadence](https://img.shields.io/badge/Team_Cadence-{avg_consistency}%25_Active-c9a961?style=for-the-badge&logo=clock&logoColor=white)](https://github.com/{org_name})',
-        f'[![Record Streak](https://img.shields.io/badge/Record_Streak-{peak_streak}_Days-34d399?style=for-the-badge&logo=streak&logoColor=white)](https://github.com/{org_name})',
-        f'[![Code Reviews](https://img.shields.io/badge/Peer_Reviews-{total_reviews}_Completed-8a7130?style=for-the-badge&logo=github&logoColor=white)](https://github.com/{org_name})',
-        f'[![Active Engineers](https://img.shields.io/badge/Engineers-{org["member_count"]}-64748b?style=for-the-badge&logo=codeforces&logoColor=white)](https://github.com/orgs/{org_name}/people)',
+        f'[![Team Reliability](https://img.shields.io/badge/Team_Reliability-{s["avg_reliability_pct"]:.0f}%25-c9a961?style=for-the-badge&logo=clockify&logoColor=white)](https://github.com/{org_name})',
+        f'[![Active This Week](https://img.shields.io/badge/Active_This_Week-{s["engineers_active_this_week"]}_of_{org["member_count"]}-34d399?style=for-the-badge&logo=githubactions&logoColor=white)](https://github.com/orgs/{org_name}/people)',
+        f'[![Projects](https://img.shields.io/badge/Live_Projects-{s["projects_active"]}_of_{org["repo_count"]}-8a7130?style=for-the-badge&logo=git&logoColor=white)](https://github.com/{org_name})',
+        f'[![Key Person Risk](https://img.shields.io/badge/Key_Person_Risk-{s["projects_at_key_person_risk"]}_projects-64748b?style=for-the-badge&logo=shield&logoColor=white)](https://github.com/{org_name})',
         '[![Compliance](https://img.shields.io/badge/Security-POPIA_Compliant-1e2430?style=for-the-badge&logo=shield&logoColor=white)](https://mb.co.za/)',
     ])
 
 
 def render_solutions(data, display_names, descriptions):
-    rows = ["| Platform | Visibility | Primary Language | Description |",
-            "| :--- | :---: | :---: | :--- |"]
-    for r in data["repos"]:
-        name = display_names.get(r["name"], r["name"])
-        desc = r["description"] or descriptions.get(r["name"]) or "_No description set yet._"
-        lang = r["primary_language"] or "—"
-        vis = "Public" if r["visibility"] == "PUBLIC" else "Private"
-        rows.append(f"| **{name}** | {vis} | {lang} | {desc} |")
+    """Every real project, with its live staffing and health — the portfolio view an
+    executive reads first. Driven by live discovery, so a new project cannot be forgotten."""
+    rows = ["| Platform | Status | Engineers | Last Activity | Description |",
+            "| :--- | :---: | :---: | :---: | :--- |"]
+    for p in data["projects"]:
+        desc = p["description"] or "_No description set yet._"
+        staffing = f'{p["active_engineer_count"]} active / {p["engineer_count"]} total'
+        if p["key_person_risk"]:
+            staffing += " ⚠️"
+        last = f'{p["days_since_activity"]}d ago' if p["days_since_activity"] is not None else "—"
+        lang = f' · `{p["primary_language"]}`' if p["primary_language"] else ""
+        rows.append(f'| **{p["display_name"]}**{lang} | {p["status"]} | {staffing} | {last} | {desc} |')
+    rows.append("")
+    rows.append("> ⚠️ marks a project currently carried by a single engineer — a continuity risk worth staffing against.")
     return "\n".join(rows)
 
 
 def render_leaderboard(data, org_name, repo_name, dashboard_url):
+    """No column here is a count of anything. Reliability, streaks and project counts are
+    all day-based, so the table cannot be climbed by pushing harder on a single day."""
+    window = data["org"]["summary"]["reliability_window_days"]
     rows = [
-        "| Rank | Engineer | Cadence Status | Active Days & Consistency | Streak Continuity | Code Reviews | Pull Requests | 14-Week Activity Heatmap |",
+        f"| # | Engineer | Cadence | Reliability (last {window}d) | Current Streak | Projects | Status | Activity |",
         "| :---: | :--- | :---: | :---: | :---: | :---: | :---: | :---: |",
     ]
     for m in data["members"]:
         avatar = f'<img src="{m["avatar_url"]}" width="30" height="30" style="border-radius:50%; vertical-align:middle;" />'
         activity_img = (
-            f'<img src="https://cdn.jsdelivr.net/gh/{org_name}/{repo_name}@main/assets/graphs/{m["login"]}.svg?v=2" '
-            f'width="220" height="64" alt="{m["login"]} activity graph" />'
+            f'<img src="https://cdn.jsdelivr.net/gh/{org_name}/{repo_name}@main/assets/graphs/{m["login"]}.svg?v=3" '
+            f'width="220" height="64" alt="{m["login"]} activity calendar" />'
         )
         profile_link = f'[↗ profile]({dashboard_url}#/member/{m["login"]})'
-
         c = m["consistency"]
-        status_chip = f'**{m.get("tier_badge", "")} {m.get("cadence_status", "")}**'
-        consistency_display = f'**{c["pct"]:.0f}%** <br/>`{c["active_days"]}/{c["total_days"]} days`'
-        streak_display = f'**{c["longest_streak"]}d** record <br/>`{c["current_streak"]}d current`'
-        reviews_display = f'**{m["contributions"]["reviews"]}** reviews'
-        prs_display = f'**{m["contributions"]["pull_requests"]}** PRs'
-
+        rel = m["reliability"]
+        projects = f'**{m["current_project_count"]}** active <br/>`{m["project_count"]} total`'
         rows.append(
             f'| **{m["rank"]:02d}** | [{avatar} **@{m["login"]}**]({m["html_url"]}) <br/>{profile_link} '
-            f'| {status_chip} '
-            f'| {consistency_display} '
-            f'| {streak_display} '
-            f'| {reviews_display} '
-            f'| {prs_display} '
+            f'| **{m["cadence_band"]}** '
+            f'| **{rel["pct"]:.0f}%** <br/>`{rel["active_days"]}/{rel["window_days"]} days` '
+            f'| **{c["current_streak"]}d** <br/>`{c["longest_streak"]}d record` '
+            f'| {projects} '
+            f'| {m["engagement_status"]} '
             f'| {activity_img} |'
         )
     return "\n".join(rows)
@@ -271,43 +268,63 @@ def render_roster(data, org_name, repo_name, cap):
     members = data["members"][:cap]
     cards = []
     for m in members:
-        top_repos = ", ".join(f"`{r}`" for r in m["firm_commits"]["top_repos"][:3]) or "_No firm repository commits yet._"
         display_name = m["name"] or m["login"]
         c = m["consistency"]
-        commits_per_active = m.get("commits_per_active_day", 0.0)
+        rel = m["reliability"]
+        trend = m["trend"]
 
-        # Build cadence callout:
-        if m.get("cadence_status") == "Sporadic Pusher":
-            callout = f"""> ⚠️ **Cadence Alert**: This member shows bursty bulk-push activity averaging **{commits_per_active:.1f} commits per active day**, but was present on only **{c['pct']:.0f}%** of days. The engineering division prioritizes consistent daily presence and code reviews over commit volume.\n"""
-        elif m.get("cadence_status") == "Daily Driver":
-            callout = f"""> ⚡ **Cadence Benchmark**: Daily engineering driver showing consistent presence (**{c['pct']:.0f}% of tenure days**) with an active **{c['longest_streak']}-day** streak and thorough code reviews.\n"""
+        if m["projects"]:
+            project_lines = []
+            for p in m["projects"]:
+                marker = "▸" if p["is_current"] else "·"
+                position = "Active now" if p["is_current"] else f'Last active {p["days_since_last"]}d ago'
+                if p["is_only_active_engineer"]:
+                    position += " · **sole active engineer**"
+                span = f'{_fmt_date(p["first_active"])} → {_fmt_date(p["last_active"])}'
+                project_lines.append(
+                    f'| {marker} | **{p["display_name"]}** | {p["active_days"]} | `{span}` | {position} |'
+                )
+            projects_block = "\n".join([
+                "| | Project | Days engaged | Span | Position |",
+                "| :---: | :--- | :---: | :---: | :--- |",
+                *project_lines,
+            ])
         else:
-            callout = ""
+            projects_block = "_No merged work on firm projects yet._"
+
+        languages = ", ".join(f"`{lang}`" for lang in m["languages"]) or "—"
+        risk_note = ""
+        if m["carries_key_person_risk_for"]:
+            carried = ", ".join(f"**{name}**" for name in m["carries_key_person_risk_for"])
+            risk_note = f"\n> **Continuity risk:** currently the only active engineer on {carried}. Worth a second pair of hands.\n"
 
         cards.append(f"""
-### #{m['rank']:02d} · {display_name} ([@{m['login']}]({m['html_url']})) · {m.get('tier_badge', '')} {m.get('cadence_status', '')}
+### #{m['rank']:02d} · {display_name} — {m['cadence_band']}
 
-<img src="{m['avatar_url']}" width="40" height="40" style="border-radius:50%; vertical-align:middle;" /> **{display_name}** (`@{m['login']}`) — *{m.get('cadence_desc', '')}*
-
-{callout}
-| Engineering Signal | Verified Output |
+<img src="{m['avatar_url']}" width="40" height="40" style="border-radius:50%; vertical-align:middle;" /> [`@{m['login']}`]({m['html_url']}) · joined {_fmt_date(m["created_at"])} · {m['engagement_status']}
+{risk_note}
+| | |
 | :--- | :--- |
-| 📅 **Daily Cadence** | **{c['pct']:.0f}%** active ({c['active_days']} of {c['total_days']} days since `{_fmt_date(m["created_at"])}`) |
-| 🔥 **Streak Continuity** | **{c['longest_streak']} days** record unbroken streak · **{c['current_streak']} days** current active |
-| 🔍 **Peer Code Reviews** | **{m['contributions']['reviews']}** reviews completed (enforcing code guidelines & peer quality) |
-| 🚀 **Pull Requests** | **{m['contributions']['pull_requests']}** delivered across **{c['repos_breadth']}** org repositories |
-| 📦 **Active Codebases** | {top_repos} |
+| **Reliability** | **{rel['pct']:.0f}%** of the last {rel['window_days']} days ({rel['active_days']} of {rel['window_days']}) |
+| **Streak** | **{c['current_streak']} days** current · {c['longest_streak']} days best |
+| **Trend** | {trend['direction']} — {trend['recent_avg_active_days']} active days/week recently vs {trend['earlier_avg_active_days']} before |
+| **Projects** | **{m['current_project_count']}** active of {m['project_count']} worked on |
+| **Technologies** | {languages} |
+
+{projects_block}
 
 <div align="center">
-  <img src="https://cdn.jsdelivr.net/gh/{org_name}/{repo_name}@main/assets/graphs/{m['login']}.svg?v=2" width="100%" alt="{m['login']} activity calendar" />
+  <img src="https://cdn.jsdelivr.net/gh/{org_name}/{repo_name}@main/assets/graphs/{m['login']}.svg?v=3" width="100%" alt="{m['login']} activity calendar" />
 </div>
+
+[View full profile →]({{dashboard_url}}#/member/{m['login']})
 
 ---
 """)
     roster_md = "\n".join(cards)
     remaining = data["org"]["member_count"] - len(members)
     if remaining > 0:
-        roster_md += f"\n\n> View all {data['org']['member_count']} engineers on the [live interactive dashboard]({{dashboard_url}}).\n"
+        roster_md += f"\n\n> View all {data['org']['member_count']} engineers on the [live executive dashboard]({{dashboard_url}}).\n"
     return roster_md
 
 
@@ -324,7 +341,7 @@ def update_readme(content, data, *, org_name, repo_name, dashboard_url, roster_c
 
 {render_leaderboard(data, org_name, repo_name, dashboard_url)}
 
-> **Discipline & Cadence Policy**: Standings are determined strictly by **daily consistency** (showing up on working days), **streak continuity**, **peer code reviews**, and **structured PR delivery**. Raw commit counts carry **zero ranking weight** to prevent bulk-commit gaming.
+> **How this is measured.** Standing is based on how regularly an engineer shows up — the share of recent days with recorded work, streak continuity, and how many projects they are currently carrying. A day counts once whether it held one commit or a thousand, so nothing here can be inflated by pushing harder on a single day. Commit, pull request and review counts are deliberately not published and carry no weight: counting output rewards volume, and volume is easy to manufacture.
 """
     content = _replace_marker(content, "LEADERBOARD", leaderboard_block)
 

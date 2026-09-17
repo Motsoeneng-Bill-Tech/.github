@@ -1,67 +1,60 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="860" height="372" viewBox="0 0 860 372">
   <rect width="860" height="372" rx="14" fill="#0a0e17" stroke="#232b38" stroke-width="1" />
-  <text x="32" y="32" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" font-weight="700" letter-spacing="1.5" fill="#c9a961">MOTSOENENG BILL TECH · ENGINEERING DISCIPLINE &amp; CADENCE</text>
+  <text x="32" y="32" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" font-weight="700" letter-spacing="1.5" fill="#c9a961">MOTSOENENG BILL TECH · ENGINEERING DIVISION OVERVIEW</text>
   <g transform="translate(32, 56)">
-    <text x="0" y="0" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" letter-spacing="0.6" fill="#64748b">CADENCE MODEL</text>
-    <text x="0" y="24" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="20" font-weight="800" fill="#f1f5f9">Daily Active</text>
-  </g><g transform="translate(224, 56)">
     <text x="0" y="0" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" letter-spacing="0.6" fill="#64748b">ENGINEERS</text>
     <text x="0" y="24" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="20" font-weight="800" fill="#f1f5f9">7</text>
+  </g><g transform="translate(224, 56)">
+    <text x="0" y="0" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" letter-spacing="0.6" fill="#64748b">ACTIVE THIS WEEK</text>
+    <text x="0" y="24" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="20" font-weight="800" fill="#f1f5f9">7</text>
   </g><g transform="translate(416, 56)">
-    <text x="0" y="0" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" letter-spacing="0.6" fill="#64748b">AVG CONSISTENCY</text>
-    <text x="0" y="24" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="20" font-weight="800" fill="#f1f5f9">46%</text>
+    <text x="0" y="0" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" letter-spacing="0.6" fill="#64748b">TEAM RELIABILITY</text>
+    <text x="0" y="24" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="20" font-weight="800" fill="#f1f5f9">58%</text>
   </g><g transform="translate(608, 56)">
-    <text x="0" y="0" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" letter-spacing="0.6" fill="#64748b">RECORD STREAK</text>
-    <text x="0" y="24" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="20" font-weight="800" fill="#f1f5f9">75 DAYS</text>
+    <text x="0" y="0" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="10" font-weight="600" letter-spacing="0.6" fill="#64748b">PROJECTS AT RISK</text>
+    <text x="0" y="24" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="20" font-weight="800" fill="#f1f5f9">5</text>
   </g>
   
-  <text x="32" y="118" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#64748b">⚡</text>
-  <text x="56" y="118" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#64748b">01</text>
-  <text x="82" y="118" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="600" fill="#f1f5f9">@konethegreatest</text>
-  <rect x="220" y="105" width="470" height="8" rx="4" fill="#232b38" />
-  <rect x="220" y="105" width="411.2" height="8" rx="4" fill="#c9a961" />
-  <text x="700" y="113" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" font-weight="700" fill="#c9a961">Daily Driver</text>
-  <text x="700" y="125" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="9" fill="#64748b">88% (77d) · 75d streak</text>
-  <text x="32" y="154" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#64748b">⚡</text>
-  <text x="56" y="154" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#64748b">02</text>
-  <text x="82" y="154" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="600" fill="#f1f5f9">@Akonisaho-MB</text>
-  <rect x="220" y="141" width="470" height="8" rx="4" fill="#232b38" />
-  <rect x="220" y="141" width="328.1" height="8" rx="4" fill="#c9a961" />
-  <text x="700" y="149" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" font-weight="700" fill="#c9a961">Daily Driver</text>
-  <text x="700" y="161" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="9" fill="#64748b">70% (60d) · 17d streak</text>
-  <text x="32" y="190" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#64748b">⚡</text>
-  <text x="56" y="190" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#64748b">03</text>
-  <text x="82" y="190" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="600" fill="#f1f5f9">@Amukelani-MB</text>
-  <rect x="220" y="177" width="470" height="8" rx="4" fill="#232b38" />
-  <rect x="220" y="177" width="345.4" height="8" rx="4" fill="#c9a961" />
-  <text x="700" y="185" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" font-weight="700" fill="#c9a961">Daily Driver</text>
-  <text x="700" y="197" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="9" fill="#64748b">74% (61d) · 14d streak</text>
-  <text x="32" y="226" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#64748b">⏳</text>
-  <text x="56" y="226" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#64748b">04</text>
-  <text x="82" y="226" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="600" fill="#f1f5f9">@pakisomb</text>
-  <rect x="220" y="213" width="470" height="8" rx="4" fill="#232b38" />
-  <rect x="220" y="213" width="135.8" height="8" rx="4" fill="#c9a961" />
-  <text x="700" y="221" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" font-weight="700" fill="#c9a961">Sporadic Pusher</text>
-  <text x="700" y="233" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="9" fill="#64748b">29% (24d) · 4d streak</text>
-  <text x="32" y="262" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#64748b">🟡</text>
-  <text x="56" y="262" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#64748b">05</text>
-  <text x="82" y="262" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="600" fill="#f1f5f9">@VhutshiloMB</text>
-  <rect x="220" y="249" width="470" height="8" rx="4" fill="#232b38" />
-  <rect x="220" y="249" width="160.3" height="8" rx="4" fill="#c9a961" />
-  <text x="700" y="257" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" font-weight="700" fill="#c9a961">Steady Contributor</text>
-  <text x="700" y="269" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="9" fill="#64748b">34% (30d) · 7d streak</text>
-  <text x="32" y="298" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#64748b">⚪</text>
-  <text x="56" y="298" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#64748b">06</text>
-  <text x="82" y="298" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="600" fill="#f1f5f9">@Kea1m</text>
-  <rect x="220" y="285" width="470" height="8" rx="4" fill="#232b38" />
-  <rect x="220" y="285" width="55.5" height="8" rx="4" fill="#c9a961" />
-  <text x="700" y="293" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" font-weight="700" fill="#c9a961">Intermittent</text>
-  <text x="700" y="305" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="9" fill="#64748b">12% (10d) · 2d streak</text>
-  <text x="32" y="334" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#64748b">⚪</text>
-  <text x="56" y="334" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#64748b">07</text>
-  <text x="82" y="334" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="600" fill="#f1f5f9">@TheoSingo</text>
-  <rect x="220" y="321" width="470" height="8" rx="4" fill="#232b38" />
-  <rect x="220" y="321" width="72.4" height="8" rx="4" fill="#c9a961" />
-  <text x="700" y="329" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" font-weight="700" fill="#c9a961">Intermittent</text>
-  <text x="700" y="341" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="9" fill="#64748b">15% (4d) · 2d streak</text>
+  <text x="32" y="118" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#64748b">01</text>
+  <text x="60" y="118" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="600" fill="#f1f5f9">@konethegreatest</text>
+  <rect x="220" y="105" width="460" height="8" rx="4" fill="#232b38" />
+  <rect x="220" y="105" width="460.0" height="8" rx="4" fill="#c9a961" />
+  <text x="690" y="113" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" font-weight="700" fill="#c9a961">100% · Daily</text>
+  <text x="690" y="125" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="9" fill="#64748b">6 active projects · 78d streak</text>
+  <text x="32" y="154" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#64748b">02</text>
+  <text x="60" y="154" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="600" fill="#f1f5f9">@Amukelani-MB</text>
+  <rect x="220" y="141" width="460" height="8" rx="4" fill="#232b38" />
+  <rect x="220" y="141" width="429.2" height="8" rx="4" fill="#c9a961" />
+  <text x="690" y="149" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" font-weight="700" fill="#c9a961">93% · Daily</text>
+  <text x="690" y="161" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="9" fill="#64748b">3 active projects · 19d streak</text>
+  <text x="32" y="190" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#64748b">03</text>
+  <text x="60" y="190" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="600" fill="#f1f5f9">@Akonisaho-MB</text>
+  <rect x="220" y="177" width="460" height="8" rx="4" fill="#232b38" />
+  <rect x="220" y="177" width="383.2" height="8" rx="4" fill="#c9a961" />
+  <text x="690" y="185" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" font-weight="700" fill="#c9a961">83% · Near-daily</text>
+  <text x="690" y="197" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="9" fill="#64748b">3 active projects · 18d streak</text>
+  <text x="32" y="226" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#64748b">04</text>
+  <text x="60" y="226" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="600" fill="#f1f5f9">@VhutshiloMB</text>
+  <rect x="220" y="213" width="460" height="8" rx="4" fill="#232b38" />
+  <rect x="220" y="213" width="260.8" height="8" rx="4" fill="#c9a961" />
+  <text x="690" y="221" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" font-weight="700" fill="#c9a961">57% · Regular</text>
+  <text x="690" y="233" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="9" fill="#64748b">2 active projects · 11d streak</text>
+  <text x="32" y="262" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#64748b">05</text>
+  <text x="60" y="262" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="600" fill="#f1f5f9">@pakisomb</text>
+  <rect x="220" y="249" width="460" height="8" rx="4" fill="#232b38" />
+  <rect x="220" y="249" width="153.2" height="8" rx="4" fill="#c9a961" />
+  <text x="690" y="257" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" font-weight="700" fill="#c9a961">33% · Intermittent</text>
+  <text x="690" y="269" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="9" fill="#64748b">2 active projects · 0d streak</text>
+  <text x="32" y="298" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#64748b">06</text>
+  <text x="60" y="298" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="600" fill="#f1f5f9">@Kea1m</text>
+  <rect x="220" y="285" width="460" height="8" rx="4" fill="#232b38" />
+  <rect x="220" y="285" width="122.8" height="8" rx="4" fill="#c9a961" />
+  <text x="690" y="293" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" font-weight="700" fill="#c9a961">27% · Intermittent</text>
+  <text x="690" y="305" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="9" fill="#64748b">1 active project · 3d streak</text>
+  <text x="32" y="334" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#64748b">07</text>
+  <text x="60" y="334" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" font-weight="600" fill="#f1f5f9">@TheoSingo</text>
+  <rect x="220" y="321" width="460" height="8" rx="4" fill="#232b38" />
+  <rect x="220" y="321" width="63.5" height="8" rx="4" fill="#c9a961" />
+  <text x="690" y="329" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" font-weight="700" fill="#c9a961">14% · Occasional</text>
+  <text x="690" y="341" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="9" fill="#64748b">2 active projects · 0d streak</text>
 </svg>

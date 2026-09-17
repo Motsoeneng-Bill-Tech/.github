@@ -2,16 +2,22 @@
 """
 Motsoeneng Bill Tech - Engineering Telemetry Engine
 
-Discovers the organization's real membership and repositories, computes every
-metric live from the GitHub API, and writes:
-  - docs/data/metrics.json   (canonical dataset — the interactive dashboard reads this)
+Builds the executive view of the engineering division from live GitHub data:
+  - docs/data/metrics.json   (canonical dataset — the dashboard reads this)
   - assets/graphs/<login>.svg, assets/leaderboard_card.svg
   - profile/README.md        (regenerated marker sections)
 
-There is no hardcoded roster and no fallback/cached data anywhere in this
-pipeline. If any step can't be completed with real data, the script exits
-non-zero and writes nothing — the previously published (real) data stays
-live rather than being replaced with a guess.
+Design rule, enforced throughout: NO CONTRIBUTION COUNTS. Not in ranking, not in
+display, not as a footnote. Counting commits, pull requests or reviews rewards
+volume, and volume is trivially manufactured — this org has a real example of a
+single day carrying over a thousand commits. Every metric here is instead built on
+the DISTINCT ACTIVE DAY: a day counts once, however much was pushed on it. Showing
+up is the only thing that moves a number.
+
+There is no hardcoded roster and no fallback/cached data anywhere in this pipeline.
+If any step can't be completed with real data the script exits non-zero and writes
+nothing, so the previously published (real) data stays live rather than being
+replaced with a guess.
 """
 
 import json
@@ -22,6 +28,7 @@ from datetime import datetime, timezone
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, SCRIPT_DIR)  # allow `import gh_api, render` when run as a plain script
 
+import analytics
 import gh_api
 import render
 
@@ -43,80 +50,46 @@ GRAPHS_DIR = os.path.join(ROOT_DIR, "assets", "graphs")
 ASSETS_DIR = os.path.join(ROOT_DIR, "assets")
 DOCS_DATA_PATH = os.path.join(ROOT_DIR, "docs", "data", "metrics.json")
 
-SCHEMA_VERSION = 1
+SCHEMA_VERSION = 2
 ROSTER_DETAIL_CAP = 12
-REPO_CHUNK_SIZE = 6
-INACTIVE_THRESHOLD_DAYS = 14
+RELIABILITY_WINDOW_DAYS = 30
+DORMANT_AFTER_DAYS = 14
+NEW_MEMBER_DAYS = 7
+RECENTLY_ACTIVE_DAYS = 7
 
-# Cadence & Consistency Model
-# Raw commit volume has ZERO ranking weight by design.
-# We rank exclusively by active days consistency, streak continuity, peer code reviews,
-# and structured PR delivery.
-CADENCE_WEIGHTS = {
-    "active_days_pct": 0.40,  # active days as a percentage of tenure days
-    "streak":          0.25,  # longest streak + current momentum
-    "reviews":         0.20,  # peer code reviews (guideline enforcement)
-    "prs":             0.15,  # structured PR deliveries
-}
-
-
-def get_cadence_tier(consistency_pct, longest_streak, commits, active_days, is_inactive):
-    """Replaces corporate titles ('Principal', 'Senior') with authentic engineering cadence statuses.
-    Directly flags sporadic bulk-pushing where an engineer commits heavily on rare sporadic days."""
-    if is_inactive:
-        return ("Dormant", "💤", "No contributions in 14+ days")
-
-    commits_per_active = (commits / active_days) if active_days else 0.0
-
-    # If someone has low consistency (< 30%) but very high commit volume (> 12 commits/day),
-    # that is the textbook sporadic bulk-committer pattern:
-    if consistency_pct < 30 and commits_per_active > 12:
-        return (
-            "Sporadic Pusher",
-            "⏳",
-            f"Bursty commit activity (avg {commits_per_active:.1f} commits/active day) across only {consistency_pct:.0f}% of tenure days",
-        )
-
-    if consistency_pct >= 65 and longest_streak >= 10:
-        return ("Daily Driver", "⚡", "Consistent daily contributor with sustained streak and high peer review activity")
-    elif consistency_pct >= 40:
-        return ("Consistent Builder", "🟢", "Regular weekly presence and steady PR delivery")
-    elif consistency_pct >= 20:
-        return ("Steady Contributor", "🟡", "Weekly task contributor")
-    else:
-        return ("Intermittent", "⚪", "Infrequent contributions across tenure")
+# Cadence bands describe how regularly someone shows up. They are not job titles and
+# not achievements — they're read off the reliability window and nothing else, so no
+# amount of activity on any single day can promote anyone.
+CADENCE_BANDS = [
+    (90, "Daily"),
+    (70, "Near-daily"),
+    (40, "Regular"),
+    (15, "Intermittent"),
+    (0, "Occasional"),
+]
 
 
-def _normalize(value, values):
-    """Min-max normalize a value against all members' values (0-100 scale)."""
-    max_val = max(values) if values else 1
-    if max_val == 0:
-        return 0.0
-    return min(100.0, (value / max_val) * 100.0)
+def cadence_band(reliability_pct, days_since_last, tenure_days):
+    if tenure_days < NEW_MEMBER_DAYS:
+        return "Newly onboarded"
+    if days_since_last is None or days_since_last >= DORMANT_AFTER_DAYS:
+        return "Dormant"
+    for threshold, label in CADENCE_BANDS:
+        if reliability_pct >= threshold:
+            return label
+    return CADENCE_BANDS[-1][1]
 
 
-def compute_cadence_scores(members):
-    """Compute Consistency / Cadence Scores for all members.
-    Zero weight given to raw commit count."""
-    all_consistency = [m["_raw_consistency_pct"] for m in members]
-    all_streaks = [m["_raw_longest_streak"] for m in members]
-    all_reviews = [m["contributions"]["reviews"] for m in members]
-    all_prs = [m["contributions"]["pull_requests"] for m in members]
-
-    for m in members:
-        consistency_norm = _normalize(m["_raw_consistency_pct"], all_consistency)
-        streak_norm = _normalize(m["_raw_longest_streak"], all_streaks)
-        review_norm = _normalize(m["contributions"]["reviews"], all_reviews)
-        pr_norm = _normalize(m["contributions"]["pull_requests"], all_prs)
-
-        score = (
-            CADENCE_WEIGHTS["active_days_pct"] * consistency_norm +
-            CADENCE_WEIGHTS["streak"]          * streak_norm +
-            CADENCE_WEIGHTS["reviews"]         * review_norm +
-            CADENCE_WEIGHTS["prs"]             * pr_norm
-        )
-        m["impact_score"] = round(score, 1)
-        m["cadence_score"] = round(score, 1)
+def engagement_status(days_since_last):
+    if days_since_last is None:
+        return "No recorded activity"
+    if days_since_last <= 1:
+        return "Active today"
+    if days_since_last <= RECENTLY_ACTIVE_DAYS:
+        return "Active this week"
+    if days_since_last < DORMANT_AFTER_DAYS:
+        return "Slowing"
+    return "Dormant"
 
 
 def gather_all_data():
@@ -136,27 +109,36 @@ def gather_all_data():
 
     print(f"Discovering repositories of {ORG_NAME}...")
     repos_raw = gh_api.discover_org_repos(ORG_NAME, token)
-    print(f"  found {len(repos_raw)} repositories: {', '.join(r['name'] for r in repos_raw)}")
+    print(f"  found {len(repos_raw)} repositories")
 
     now = datetime.now(timezone.utc)
     now_iso = now.strftime("%Y-%m-%dT%H:%M:%SZ")
 
-    print("Fetching each member's real contribution calendar...")
+    print("Fetching each engineer's day-level activity calendar...")
     member_contribs = {}
     for m in members_raw:
         cc = gh_api.fetch_member_contributions(m["login"], m["created_at"], now_iso, token)
         member_contribs[m["login"]] = cc
-        print(f"  {m['login']}: {cc['contributionCalendar']['totalContributions']:,} total contributions since {m['created_at'][:10]}")
+        active = sum(
+            1 for w in cc["contributionCalendar"]["weeks"]
+            for d in w["contributionDays"] if d["contributionCount"] > 0
+        )
+        print(f"  {m['login']}: {active} active days since {m['created_at'][:10]}")
 
-    print("Computing real per-repo commit attribution (replaces any cached/fake numbers)...")
-    commit_matrix = gh_api.fetch_firm_commit_matrix(ORG_NAME, repos_raw, members_raw, token, chunk_size=REPO_CHUNK_SIZE)
+    print("Walking each project's commit history for dates (never counts)...")
+    repo_histories = {}
+    for r in repos_raw:
+        hist = gh_api.fetch_repo_commit_history(ORG_NAME, r, token)
+        repo_histories[r["name"]] = hist
+        note = " (truncated)" if hist["truncated"] else ""
+        print(f"  {r['name']}: {len(hist['commits'])} commits scanned{note}")
 
     end_rate = gh_api.get_rate_limit(token)
     cost_used = max(0, (start_rate.get("remaining") or 0) - (end_rate.get("remaining") or 0))
     print(f"Rate limit remaining after run: {end_rate.get('remaining', '?')} (used ~{cost_used} points)")
 
     data = build_dataset(
-        members_raw, repos_raw, member_contribs, commit_matrix, now,
+        members_raw, repos_raw, member_contribs, repo_histories, now,
         rate_meta={
             "cost_used_total": cost_used,
             "remaining": end_rate.get("remaining"),
@@ -167,50 +149,64 @@ def gather_all_data():
     return data
 
 
-def build_dataset(members_raw, repos_raw, member_contribs, commit_matrix, now, rate_meta):
+def build_dataset(members_raw, repos_raw, member_contribs, repo_histories, now, rate_meta):
     warnings = []
+    today = now.date()
+    logins = [m["login"] for m in members_raw]
 
-    # --- per-repo rollups ---
-    repos_out = []
+    by_member_projects, by_project = analytics.build_project_involvement(repo_histories, logins, today)
+    by_member_projects, by_project = analytics.attach_logins(by_member_projects, by_project)
+
+    repo_meta = {r["name"]: r for r in repos_raw}
+
+    # --- projects ---
+    projects_out = []
     for r in repos_raw:
-        mat = commit_matrix.get(r["name"], {"total_commits": 0, "by_login": {}})
-        attributed = sum(mat["by_login"].values())
+        p = by_project.get(r["name"], {})
         if r["is_empty"]:
             warnings.append(f"Repository '{r['name']}' has no commits yet.")
-        repos_out.append({
+        if p.get("history_truncated"):
+            warnings.append(f"Repository '{r['name']}' history was truncated — earliest activity may be under-reported.")
+        projects_out.append({
             "name": r["name"],
-            "description": r["description"],
+            "display_name": render.REPO_DISPLAY_NAMES.get(r["name"], r["name"]),
+            "description": r["description"] or render.REPO_DESCRIPTIONS.get(r["name"]),
             "html_url": r["html_url"],
             "visibility": r["visibility"],
             "primary_language": r["primary_language"],
             "default_branch": r["default_branch"],
-            "is_empty": r["is_empty"],
             "is_archived": r["is_archived"],
-            "total_commits_default_branch": mat["total_commits"],
-            "attributed_member_commits": attributed,
-            "unattributed_commits": max(0, mat["total_commits"] - attributed),
+            "status": p.get("status", "No activity"),
+            "last_activity": p.get("last_activity"),
+            "days_since_activity": p.get("days_since_activity"),
+            "active_days_total": p.get("active_days_total", 0),
+            "engineer_count": p.get("engineer_count", 0),
+            "active_engineer_count": p.get("active_engineer_count", 0),
+            "key_person_risk": p.get("key_person_risk", False),
+            "sole_engineer": p.get("sole_engineer"),
+            "current_engineers": p.get("current_engineers", []),
+            "engineers": [
+                {
+                    "login": e["login"],
+                    "active_days": e["active_days"],
+                    "first_active": e["first_active"],
+                    "last_active": e["last_active"],
+                    "days_since_last": e["days_since_last"],
+                    "is_current": e["is_current"],
+                }
+                for e in p.get("engineers", [])
+            ],
+            "outside_contributors": p.get("outside_contributors", []),
         })
 
-    total_firm_commits_org = sum(sum(mat["by_login"].values()) for mat in commit_matrix.values())
-    total_org_repos = len(repos_out)
-
-    # --- per-member derivation ---
+    # --- engineers ---
     members_out = []
     day_counts_union = {}
     earliest_created = None
 
     for m in members_raw:
         login = m["login"]
-        cc = member_contribs[login]
-        cal = cc["contributionCalendar"]
-
-        firm_by_repo = {}
-        for repo_name, mat in commit_matrix.items():
-            c = mat["by_login"].get(login, 0)
-            if c:
-                firm_by_repo[repo_name] = c
-        firm_by_repo = dict(sorted(firm_by_repo.items(), key=lambda kv: -kv[1]))
-        firm_total = sum(firm_by_repo.values())
+        cal = member_contribs[login]["contributionCalendar"]
 
         created_dt = datetime.fromisoformat(m["created_at"].replace("Z", "+00:00"))
         if earliest_created is None or created_dt < earliest_created:
@@ -224,26 +220,44 @@ def build_dataset(members_raw, repos_raw, member_contribs, commit_matrix, now, r
 
         active_days = sum(1 for c in day_counts.values() if c > 0)
         total_days = len(day_counts)
-        consistency_pct = round((active_days / total_days * 100), 1) if total_days else 0.0
-
-        # Streak computation
         streaks = render.calendar_streaks(day_counts)
+        reliability = analytics.recent_active_ratio(day_counts, today, RELIABILITY_WINDOW_DAYS)
+        trend = analytics.cadence_trend(day_counts, today)
+        weekdays = analytics.weekday_pattern(day_counts, today)
 
-        # Last active date and inactive detection
-        sorted_dates = sorted(day_counts.keys())
         last_active_date = None
-        for d in reversed(sorted_dates):
+        for d in sorted(day_counts.keys(), reverse=True):
             if day_counts[d] > 0:
                 last_active_date = d
                 break
-        if last_active_date:
-            days_since_last = (now.date() - datetime.fromisoformat(last_active_date).date()).days
-        else:
-            days_since_last = total_days or 999
-        is_inactive = days_since_last >= INACTIVE_THRESHOLD_DAYS
+        days_since_last = (today - datetime.fromisoformat(last_active_date).date()).days if last_active_date else None
+        tenure_days = (today - created_dt.date()).days + 1
 
-        # Repo breadth — how many distinct org repos this member has commits in
-        repos_breadth = len(firm_by_repo)
+        # Project portfolio, enriched with each project's own metadata
+        projects = []
+        for record in by_member_projects.get(login, []):
+            meta = repo_meta.get(record["repo"], {})
+            project_state = by_project.get(record["repo"], {})
+            projects.append({
+                "repo": record["repo"],
+                "display_name": render.REPO_DISPLAY_NAMES.get(record["repo"], record["repo"]),
+                "primary_language": meta.get("primary_language"),
+                "visibility": meta.get("visibility"),
+                "active_days": record["active_days"],
+                "first_active": record["first_active"],
+                "last_active": record["last_active"],
+                "days_since_last": record["days_since_last"],
+                "is_current": record["is_current"],
+                "project_status": project_state.get("status"),
+                "is_sole_engineer": project_state.get("sole_engineer") == login,
+                "is_only_active_engineer": (
+                    project_state.get("active_engineer_count") == 1 and record["is_current"]
+                ),
+            })
+
+        current_projects = [p for p in projects if p["is_current"]]
+        languages = sorted({p["primary_language"] for p in projects if p["primary_language"]})
+        carries_risk = [p["display_name"] for p in projects if p["is_only_active_engineer"]]
 
         members_out.append({
             "login": login,
@@ -252,87 +266,60 @@ def build_dataset(members_raw, repos_raw, member_contribs, commit_matrix, now, r
             "html_url": f"https://github.com/{login}",
             "org_role": m["org_role"],
             "created_at": m["created_at"],
+            "tenure_days": tenure_days,
             "profile": {
                 "bio": m.get("bio"),
                 "company": m.get("company"),
                 "location": m.get("location"),
                 "website_url": m.get("website_url"),
             },
-            "contributions": {
-                "total": cal["totalContributions"],
-                "commits": cc["totalCommitContributions"],
-                "pull_requests": cc["totalPullRequestContributions"],
-                "reviews": cc["totalPullRequestReviewContributions"],
-                "issues": cc["totalIssueContributions"],
-                "restricted": cc["restrictedContributionsCount"],
-            },
-            "firm_commits": {
-                "total": firm_total,
-                "by_repo": firm_by_repo,
-                "top_repos": list(firm_by_repo.keys()),
-            },
-            "share_pct": round((firm_total / total_firm_commits_org * 100), 1) if total_firm_commits_org else 0.0,
-            # New consistency-first fields
+            "reliability": reliability,
             "consistency": {
                 "active_days": active_days,
                 "total_days": total_days,
-                "pct": consistency_pct,
+                "pct": round((active_days / total_days * 100), 1) if total_days else 0.0,
                 "longest_streak": streaks["longest_streak"],
                 "current_streak": streaks["current_streak"],
                 "last_active_date": last_active_date,
                 "days_since_last_active": days_since_last,
-                "is_inactive": is_inactive,
-                "repos_breadth": repos_breadth,
             },
-            # Temporary raw fields for impact score normalization (cleaned up below)
-            "_raw_consistency_pct": consistency_pct,
-            "_raw_longest_streak": streaks["longest_streak"],
-            "_raw_repos_breadth": repos_breadth,
+            "trend": trend,
+            "weekday_pattern": weekdays,
+            "projects": projects,
+            "project_count": len(projects),
+            "current_project_count": len(current_projects),
+            "languages": languages,
+            "carries_key_person_risk_for": carries_risk,
+            "engagement_status": engagement_status(days_since_last),
+            "cadence_band": cadence_band(reliability["pct"], days_since_last, tenure_days),
             "calendar": {
                 "from": created_dt.date().isoformat(),
-                "to": now.date().isoformat(),
-                "total": cal["totalContributions"],
+                "to": today.isoformat(),
                 "active_days": active_days,
                 "total_days": total_days,
-                "active_pct": consistency_pct,
+                "active_pct": round((active_days / total_days * 100), 1) if total_days else 0.0,
                 **streaks,
-                "weeks": render.build_calendar_grid(day_counts, created_dt.date(), now.date()),
+                "weeks": render.build_calendar_grid(day_counts, created_dt.date(), today),
             },
         })
 
-    # Compute cadence scores across all members (zero weight to raw commits)
-    compute_cadence_scores(members_out)
-
-    # Assign cadence tiers and clean up temp fields
-    for m in members_out:
-        tier_label, tier_badge, tier_desc = get_cadence_tier(
-            m["consistency"]["pct"],
-            m["consistency"]["longest_streak"],
-            m["firm_commits"]["total"],
-            m["consistency"]["active_days"],
-            m["consistency"]["is_inactive"],
-        )
-        m["tier"] = tier_label
-        m["tier_badge"] = tier_badge
-        m["cadence_status"] = tier_label
-        m["cadence_desc"] = tier_desc
-        m["commits_per_active_day"] = (
-            round((m["firm_commits"]["total"] / m["consistency"]["active_days"]), 1)
-            if m["consistency"]["active_days"]
-            else 0.0
-        )
-        # Clean up temporary normalization fields
-        del m["_raw_consistency_pct"]
-        del m["_raw_longest_streak"]
-        del m["_raw_repos_breadth"]
-
-    # RANK BY CADENCE & CONSISTENCY (Active days % + Streaks + Guidelines adherence)
-    members_out.sort(key=lambda x: (-x["cadence_score"], -x["consistency"]["pct"], -x["consistency"]["longest_streak"]))
+    # Ranked on reliability first, then streak continuity, then tenure. Every key in this
+    # chain is day-based, so no single day of activity — however large — can move anyone up.
+    members_out.sort(key=lambda x: (
+        -x["reliability"]["pct"],
+        -x["consistency"]["current_streak"],
+        -x["consistency"]["longest_streak"],
+        x["created_at"],
+    ))
     for idx, m in enumerate(members_out, start=1):
         m["rank"] = idx
 
-    org_calendar_start = earliest_created.date() if earliest_created else now.date()
-    org_calendar_weeks = render.build_calendar_grid(day_counts_union, org_calendar_start, now.date())
+    org_calendar_start = earliest_created.date() if earliest_created else today
+    org_calendar_weeks = render.build_calendar_grid(day_counts_union, org_calendar_start, today)
+
+    at_risk = [p for p in projects_out if p["key_person_risk"]]
+    active_projects = [p for p in projects_out if p["status"] == "Active"]
+    dormant_projects = [p for p in projects_out if p["status"] in ("Dormant", "No activity")]
 
     return {
         "schema_version": SCHEMA_VERSION,
@@ -344,41 +331,58 @@ def build_dataset(members_raw, repos_raw, member_contribs, commit_matrix, now, r
             "avatar_url": f"https://github.com/{ORG_NAME}.png",
             "html_url": f"https://github.com/{ORG_NAME}",
             "member_count": len(members_out),
-            "repo_count": len(repos_out),
-            "totals": {
-                "avg_consistency_pct": round(sum(m["consistency"]["pct"] for m in members_out) / len(members_out), 1) if members_out else 0.0,
+            "repo_count": len(projects_out),
+            "summary": {
+                "avg_reliability_pct": round(
+                    sum(m["reliability"]["pct"] for m in members_out) / len(members_out), 1
+                ) if members_out else 0.0,
+                "engineers_active_this_week": sum(
+                    1 for m in members_out
+                    if m["consistency"]["days_since_last_active"] is not None
+                    and m["consistency"]["days_since_last_active"] <= RECENTLY_ACTIVE_DAYS
+                ),
+                "engineers_dormant": sum(1 for m in members_out if m["cadence_band"] == "Dormant"),
                 "peak_streak": max((m["consistency"]["longest_streak"] for m in members_out), default=0),
-                "total_active_days": sum(m["consistency"]["active_days"] for m in members_out),
-                "total_reviews": sum(m["contributions"]["reviews"] for m in members_out),
-                "total_prs": sum(m["contributions"]["pull_requests"] for m in members_out),
-                "total_contributions": sum(m["contributions"]["total"] for m in members_out),
-                "total_firm_commits": total_firm_commits_org,
+                "projects_active": len(active_projects),
+                "projects_dormant": len(dormant_projects),
+                "projects_at_key_person_risk": len(at_risk),
+                "key_person_risk_projects": [p["display_name"] for p in at_risk],
+                "reliability_window_days": RELIABILITY_WINDOW_DAYS,
             },
             "calendar": {
                 "from": org_calendar_start.isoformat(),
-                "to": now.date().isoformat(),
+                "to": today.isoformat(),
                 "weeks": org_calendar_weeks,
             },
         },
-        "repos": sorted(repos_out, key=lambda r: -r["total_commits_default_branch"]),
+        "projects": sorted(
+            projects_out,
+            key=lambda p: (p["days_since_activity"] if p["days_since_activity"] is not None else 9999, p["name"]),
+        ),
         "members": members_out,
         "meta": {
             "generation_ok": True,
             "rate_limit": rate_meta,
             "warnings": warnings,
+            "disclosures": [
+                "Every figure is derived from days on which work was recorded in GitHub — never from how much was pushed on any given day.",
+                "Commit attribution follows GitHub's own account linking. Work committed from an unlinked email address is listed separately against the project, never merged into an engineer's record.",
+                "Project involvement reflects work merged into each project's default branch. Work still in progress on a side branch is not yet visible here.",
+                "This page measures engagement and delivery cadence. It cannot measure the difficulty, quality or business value of the work, and should not be read as a performance rating.",
+            ],
         },
     }
 
 
 def validate_dataset(data, expected_logins, expected_repo_names):
-    """Structural completeness check on top of API success — a member or repo that
-    legitimately has zero commits is valid data; one that's silently absent is not."""
+    """Structural completeness check on top of API success — a member or project that
+    legitimately has no activity is valid data; one that's silently absent is not."""
     got_logins = {m["login"] for m in data["members"]}
     if got_logins != expected_logins:
         raise gh_api.DataIntegrityError(f"Member set mismatch: expected {expected_logins}, got {got_logins}")
-    got_repos = {r["name"] for r in data["repos"]}
+    got_repos = {p["name"] for p in data["projects"]}
     if got_repos != expected_repo_names:
-        raise gh_api.DataIntegrityError(f"Repo set mismatch: expected {expected_repo_names}, got {got_repos}")
+        raise gh_api.DataIntegrityError(f"Project set mismatch: expected {expected_repo_names}, got {got_repos}")
     if data["org"]["member_count"] == 0 or data["org"]["repo_count"] == 0:
         raise gh_api.DataIntegrityError("Org member_count or repo_count is zero.")
     if not data.get("generated_at"):
@@ -399,7 +403,7 @@ def write_outputs(data):
         svg = render.render_member_calendar_svg(member)
         with open(os.path.join(GRAPHS_DIR, f"{member['login']}.svg"), "w", encoding="utf-8") as f:
             f.write(svg)
-    print(f"Wrote {len(data['members'])} member activity graphs to {GRAPHS_DIR}")
+    print(f"Wrote {len(data['members'])} engineer activity graphs to {GRAPHS_DIR}")
 
     with open(os.path.join(ASSETS_DIR, "leaderboard_card.svg"), "w", encoding="utf-8") as f:
         f.write(render.render_overview_card_svg(data))
@@ -431,10 +435,11 @@ def main():
     write_outputs(data)
     for w in data["meta"]["warnings"]:
         print(f"! {w}")
+    s = data["org"]["summary"]
     print(
-        f"Done. {data['org']['member_count']} members, {data['org']['repo_count']} repos, "
-        f"{data['org']['totals']['total_firm_commits']:,} real firm commits, "
-        f"{data['org']['totals']['total_contributions']:,} total contributions."
+        f"Done. {data['org']['member_count']} engineers, {data['org']['repo_count']} projects, "
+        f"team reliability {s['avg_reliability_pct']}%, {s['engineers_active_this_week']} active this week, "
+        f"{s['projects_at_key_person_risk']} project(s) at key-person risk."
     )
 
 

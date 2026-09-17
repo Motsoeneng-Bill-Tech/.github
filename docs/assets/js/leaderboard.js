@@ -1,13 +1,19 @@
+/**
+ * Engineering roster. Every sortable column here is day-based — reliability, streak
+ * length, project counts. There is deliberately no column counting commits, pull
+ * requests or reviews, because a count is the one thing an engineer can inflate in an
+ * afternoon, and ranking on it is what this dashboard exists to stop doing.
+ */
 const Leaderboard = (() => {
   const COLUMNS = [
-    { key: 'rank', label: 'Rank', sortable: true, get: (m) => m.rank, dir: 'asc' },
+    { key: 'rank', label: '#', sortable: true, get: (m) => m.rank, dir: 'asc' },
     { key: 'engineer', label: 'Engineer', sortable: false },
-    { key: 'status', label: 'Cadence Status', sortable: false },
-    { key: 'consistency', label: 'Active Days', sortable: true, get: (m) => m.consistency.pct, dir: 'desc' },
-    { key: 'streak', label: 'Record Streak', sortable: true, get: (m) => m.consistency.longest_streak, dir: 'desc' },
-    { key: 'reviews', label: 'Code Reviews', sortable: true, get: (m) => m.contributions.reviews, dir: 'desc' },
-    { key: 'prs', label: 'PRs Delivered', sortable: true, get: (m) => m.contributions.pull_requests, dir: 'desc' },
-    { key: 'activity', label: '14-Week Activity Heatmap', sortable: false },
+    { key: 'reliability', label: 'Reliability', sortable: true, get: (m) => m.reliability.pct, dir: 'desc' },
+    { key: 'streak', label: 'Streak', sortable: true, get: (m) => m.consistency.current_streak, dir: 'desc' },
+    { key: 'projects', label: 'Projects', sortable: true, get: (m) => m.current_project_count, dir: 'desc' },
+    { key: 'trend', label: 'Trend', sortable: false },
+    { key: 'status', label: 'Status', sortable: false },
+    { key: 'activity', label: 'Activity', sortable: false },
   ];
 
   const state = { sortKey: 'rank', sortDir: 'asc', query: '' };
@@ -16,7 +22,9 @@ const Leaderboard = (() => {
   function filterAndSort(members) {
     const q = state.query.trim().toLowerCase();
     let list = q
-      ? members.filter((m) => m.login.toLowerCase().includes(q) || (m.name || '').toLowerCase().includes(q))
+      ? members.filter((m) => m.login.toLowerCase().includes(q)
+          || (m.name || '').toLowerCase().includes(q)
+          || m.projects.some((p) => p.display_name.toLowerCase().includes(q)))
       : members;
     const col = COLUMNS.find((c) => c.key === state.sortKey);
     if (col && col.get) {
@@ -29,13 +37,42 @@ const Leaderboard = (() => {
   }
 
   function engineerCell(m) {
+    const risk = m.carries_key_person_risk_for.length
+      ? `<span class="risk-dot" title="Sole active engineer on ${m.carries_key_person_risk_for.length} project(s)"></span>`
+      : '';
     return `<div class="engineer-cell">
       <img src="${m.avatar_url}" alt="" width="34" height="34" loading="lazy" />
       <div>
-        <div class="engineer-cell__name">${Format.escapeHtml(m.name || m.login)}</div>
-        <div class="engineer-cell__login">@${Format.escapeHtml(m.login)}</div>
+        <div class="engineer-cell__name">${Format.escapeHtml(m.name || m.login)}${risk}</div>
+        <div class="engineer-cell__login">@${Format.escapeHtml(m.login)} &middot; ${m.cadence_band}</div>
       </div>
     </div>`;
+  }
+
+  function reliabilityCell(m) {
+    const rel = m.reliability;
+    return `<div class="meter">
+        <div class="meter__bar"><div class="meter__fill" style="width:${rel.pct.toFixed(0)}%"></div></div>
+        <div class="meter__label"><strong>${rel.pct.toFixed(0)}%</strong> <span>${rel.active_days}/${rel.window_days}d</span></div>
+      </div>`;
+  }
+
+  function trendCell(m) {
+    const dir = m.trend.direction;
+    const cls = dir === 'Improving' ? 'trend--up' : dir === 'Declining' ? 'trend--down' : 'trend--flat';
+    const glyph = dir === 'Improving' ? '▲' : dir === 'Declining' ? '▼' : '—';
+    return `<span class="trend ${cls}">${glyph} ${dir}</span>`;
+  }
+
+  function statusCell(m) {
+    const s = m.engagement_status;
+    const cls = s === 'Dormant' ? 'status--dormant' : s === 'Slowing' ? 'status--slowing' : 'status--active';
+    return `<span class="status-chip ${cls}">${Format.escapeHtml(s)}</span>`;
+  }
+
+  function projectsCell(m) {
+    return `<div class="num-cell"><strong>${m.current_project_count}</strong>
+      <div class="cell-sub">of ${m.project_count} worked on</div></div>`;
   }
 
   function renderTable(container, list) {
@@ -46,30 +83,16 @@ const Leaderboard = (() => {
       return `<th class="is-sortable ${active ? 'is-active' : ''}" data-sort-key="${c.key}" tabindex="0" role="button" aria-label="Sort by ${c.label}">${c.label} <span class="sort-arrow">${arrow}</span></th>`;
     }).join('')}</tr></thead>`;
 
-    const rows = list.map((m) => {
-      const c = m.consistency;
-      const badge = m.tier_badge || '';
-      const status = m.cadence_status || m.tier || 'Active';
-      const isSporadic = status === 'Sporadic Pusher';
-      const chipClass = isSporadic ? 'tier-chip tier-chip--warn' : 'tier-chip';
-
-      return `<tr data-login="${m.login}" tabindex="0" role="button" aria-label="View ${m.login}'s profile">
-        <td class="rank-num">#${String(m.rank).padStart(2, '0')}</td>
+    const rows = list.map((m) => `<tr data-login="${m.login}" tabindex="0" role="button" aria-label="Open ${m.login}'s profile">
+        <td class="rank-num">${String(m.rank).padStart(2, '0')}</td>
         <td>${engineerCell(m)}</td>
-        <td><span class="${chipClass}">${badge} ${Format.escapeHtml(status)}</span></td>
-        <td class="num-cell">
-          <strong>${c.pct.toFixed(0)}%</strong>
-          <div class="cell-sub">${c.active_days} / ${c.total_days} days</div>
-        </td>
-        <td class="num-cell">
-          <strong>${c.longest_streak}d</strong>
-          <div class="cell-sub">${c.current_streak}d current</div>
-        </td>
-        <td class="num-cell">${Format.number(m.contributions.reviews)}</td>
-        <td class="num-cell">${Format.number(m.contributions.pull_requests)}</td>
+        <td>${reliabilityCell(m)}</td>
+        <td class="num-cell"><strong>${m.consistency.current_streak}d</strong><div class="cell-sub">${m.consistency.longest_streak}d best</div></td>
+        <td>${projectsCell(m)}</td>
+        <td>${trendCell(m)}</td>
+        <td>${statusCell(m)}</td>
         <td><div data-login-cal="${m.login}"></div></td>
-      </tr>`;
-    }).join('');
+      </tr>`).join('');
 
     container.innerHTML = `<table class="leaderboard">${thead}<tbody>${rows}</tbody></table>`;
     list.forEach((m) => {
@@ -79,25 +102,21 @@ const Leaderboard = (() => {
   }
 
   function renderCards(container, list) {
-    container.innerHTML = list.map((m) => {
-      const c = m.consistency;
-      const status = m.cadence_status || m.tier;
-      return `<div class="leaderboard-card" data-login="${m.login}" tabindex="0" role="button" aria-label="View ${m.login}'s profile">
+    container.innerHTML = list.map((m) => `<div class="leaderboard-card" data-login="${m.login}" tabindex="0" role="button" aria-label="Open ${m.login}'s profile">
         <div class="leaderboard-card__top">
           <img src="${m.avatar_url}" alt="" width="40" height="40" loading="lazy" />
           <div>
             <div class="engineer-cell__name">${Format.escapeHtml(m.name || m.login)}</div>
-            <div class="engineer-cell__login">@${Format.escapeHtml(m.login)} &middot; <span class="tier-chip">${m.tier_badge || ''} ${Format.escapeHtml(status)}</span></div>
+            <div class="engineer-cell__login">@${Format.escapeHtml(m.login)} &middot; <span class="tier-chip">${Format.escapeHtml(m.cadence_band)}</span></div>
           </div>
         </div>
         <div class="leaderboard-card__meta">
-          <div class="leaderboard-card__stat">Rank<strong>#${m.rank}</strong></div>
-          <div class="leaderboard-card__stat">Active Days<strong>${c.pct.toFixed(0)}% (${c.active_days}d)</strong></div>
-          <div class="leaderboard-card__stat">Streak<strong>${c.longest_streak} days</strong></div>
-          <div class="leaderboard-card__stat">Reviews<strong>${m.contributions.reviews}</strong></div>
+          <div class="leaderboard-card__stat">Reliability<strong>${m.reliability.pct.toFixed(0)}%</strong></div>
+          <div class="leaderboard-card__stat">Streak<strong>${m.consistency.current_streak}d</strong></div>
+          <div class="leaderboard-card__stat">Projects<strong>${m.current_project_count}</strong></div>
+          <div class="leaderboard-card__stat">Status<strong>${Format.escapeHtml(m.engagement_status)}</strong></div>
         </div>
-      </div>`;
-    }).join('');
+      </div>`).join('');
   }
 
   function wireActivation(container, onSelect) {

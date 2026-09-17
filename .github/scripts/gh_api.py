@@ -7,7 +7,6 @@ fallback anywhere in this module. A call either returns real data or raises.
 
 import json
 import os
-import re
 import subprocess
 import time
 import urllib.error
@@ -15,8 +14,6 @@ import urllib.request
 
 GRAPHQL_URL = "https://api.github.com/graphql"
 USER_AGENT = "Motsoeneng-Bill-Tech-Leaderboard-Bot"
-
-_ALIAS_RE = re.compile(r"[^A-Za-z0-9_]")
 
 
 class GraphQLError(RuntimeError):
@@ -241,79 +238,67 @@ def fetch_member_contributions(login, from_iso, to_iso, token):
     return user["contributionsCollection"]
 
 
-def _member_alias(login):
-    """GraphQL field aliases must match [_A-Za-z][_0-9A-Za-z]* — logins like 'Akonisaho-MB'
-    contain hyphens and aren't valid identifiers as-is."""
-    return "m_" + _ALIAS_RE.sub("_", login)
+def fetch_repo_commit_history(org, repo, token, max_pages=40):
+    """Walk one repo's default-branch history once, returning (date, login) pairs.
 
+    This is deliberately date-based, not count-based: everything downstream is derived
+    from DISTINCT ACTIVE DAYS, which a burst of commits on a single day cannot inflate.
+    One paginated pass per repo is also far cheaper than a per-member-per-repo query
+    (the whole org is ~27 pages, ~27 rate-limit points of a 5,000/hour budget).
 
-def fetch_firm_commit_matrix(org, repos, members, token, chunk_size=6):
-    """The core fix for this whole pipeline: real, live commit counts per member per repo,
-    computed fresh every run — never a hardcoded/cached number.
-
-    For each chunk of repos, builds ONE GraphQL query that aliases every repo and, inside
-    each, aliases `history(author:{id})` for every member — the exact batched shape proven
-    live against this org before writing this function. Uses each repo's actual discovered
-    default branch (never hardcodes "main" — this org already has one repo on "dev").
-
-    Returns {repo_name: {"total_commits": int, "by_login": {login: count}}}.
-    Repos with no commits yet (isEmpty / no default branch) are recorded as zero without
-    spending a query on them.
+    History comes back newest-first, so if a repo ever exceeds max_pages the oldest
+    commits are the ones dropped — `truncated` is surfaced so the caller can disclose it
+    rather than silently under-reporting someone's start date.
     """
-    alias_to_login = {}
-    for m in members:
-        alias = _member_alias(m["login"])
-        if alias in alias_to_login and alias_to_login[alias] != m["login"]:
-            raise DataIntegrityError(
-                f"GraphQL alias collision between logins {alias_to_login[alias]!r} and {m['login']!r}"
-            )
-        alias_to_login[alias] = m["login"]
+    if repo.get("is_empty") or not repo.get("default_branch"):
+        return {"commits": [], "total_count": 0, "truncated": False}
 
-    matrix = {}
-    queryable = [r for r in repos if not r["is_empty"] and r["default_branch"]]
-    queryable_names = {r["name"] for r in queryable}
-    for r in repos:
-        if r["name"] not in queryable_names:
-            matrix[r["name"]] = {"total_commits": 0, "by_login": {}}
+    commits = []
+    total_count = 0
+    after = "null"
+    pages = 0
+    truncated = False
 
-    for i in range(0, len(queryable), chunk_size):
-        chunk = queryable[i:i + chunk_size]
-        member_fields = "\n".join(
-            f'{_member_alias(m["login"])}: history(author: {{ id: "{m["id"]}" }}) {{ totalCount }}'
-            for m in members
-        )
-        parts = []
-        for ridx, repo in enumerate(chunk):
-            parts.append(f"""
-  r{ridx}: repository(owner: "{_esc(org)}", name: "{_esc(repo['name'])}") {{
-    defaultBranchRef {{
-      target {{
-        ... on Commit {{
-          totalHistory: history {{ totalCount }}
-          {member_fields}
-        }}
-      }}
-    }}
-  }}""")
-        query = "query {" + "".join(parts) + "\n}"
+    while True:
+        query = f"""
+        query {{
+          repository(owner: "{_esc(org)}", name: "{_esc(repo['name'])}") {{
+            defaultBranchRef {{
+              target {{
+                ... on Commit {{
+                  history(first: 100, after: {after}) {{
+                    totalCount
+                    pageInfo {{ hasNextPage endCursor }}
+                    nodes {{ committedDate author {{ user {{ login }} }} }}
+                  }}
+                }}
+              }}
+            }}
+          }}
+        }}"""
         data = gh_graphql(query, token)
-        for ridx, repo in enumerate(chunk):
-            node = data.get(f"r{ridx}")
-            target = ((node or {}).get("defaultBranchRef") or {}).get("target")
-            if not target:
-                matrix[repo["name"]] = {"total_commits": 0, "by_login": {}}
-                continue
-            by_login = {}
-            for m in members:
-                count = target.get(_member_alias(m["login"]), {}).get("totalCount", 0)
-                if count:
-                    by_login[m["login"]] = count
-            matrix[repo["name"]] = {
-                "total_commits": target["totalHistory"]["totalCount"],
-                "by_login": by_login,
-            }
+        target = ((data.get("repository") or {}).get("defaultBranchRef") or {}).get("target") or {}
+        hist = target.get("history")
+        if not hist:
+            break
 
-    return matrix
+        total_count = hist["totalCount"]
+        for node in hist["nodes"]:
+            user = (node.get("author") or {}).get("user") or {}
+            commits.append({
+                "date": node["committedDate"][:10],
+                "login": user.get("login"),  # None when the commit email isn't linked to a GitHub account
+            })
+
+        pages += 1
+        if not hist["pageInfo"]["hasNextPage"]:
+            break
+        if pages >= max_pages:
+            truncated = True
+            break
+        after = json.dumps(hist["pageInfo"]["endCursor"])
+
+    return {"commits": commits, "total_count": total_count, "truncated": truncated}
 
 
 def _esc(value):

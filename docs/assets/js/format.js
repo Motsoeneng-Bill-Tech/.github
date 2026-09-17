@@ -24,11 +24,17 @@ const Format = (() => {
     return `${months} month${months === 1 ? '' : 's'} ago`;
   }
 
+  function dayAgo(days) {
+    if (days === 0) return 'today';
+    if (days === 1) return 'yesterday';
+    return `${days} days ago`;
+  }
+
   function escapeHtml(str) {
     return String(str ?? '').replace(/[&<>"']/g, (c) => ({
       '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;',
     }[c]));
   }
 
-  return { number, pct, date, relativeTime, escapeHtml };
+  return { number, pct, date, relativeTime, dayAgo, escapeHtml };
 })();
