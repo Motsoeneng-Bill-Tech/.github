@@ -238,6 +238,66 @@ def fetch_member_contributions(login, from_iso, to_iso, token):
     return user["contributionsCollection"]
 
 
+# Actions GitHub timestamps on its own servers when the request arrives. A client can
+# set any commit date it likes (git honours GIT_AUTHOR_DATE), so a calendar built only
+# from commits can be fabricated wholesale — these cannot.
+_VERIFIED_SOURCES = (
+    "pullRequestContributions",
+    "pullRequestReviewContributions",
+    "issueContributions",
+)
+
+
+def fetch_member_verified_days(login, from_iso, to_iso, token, max_pages=12):
+    """Distinct dates on which GitHub's own servers recorded this person doing something.
+
+    Opening a pull request, submitting a review and opening an issue are all stamped by
+    GitHub at the moment the request lands; none of those timestamps is settable by the
+    contributor's machine. Reduced to a set of DATES (never a count of events), this is
+    presence evidence that is both burst-proof — a date enters the set once, whether the
+    day held one action or a thousand — and forge-proof: forty verified days costs forty
+    real days of showing up.
+
+    Returns {"days": [sorted ISO dates], "sources": [fields that produced at least one day]}.
+    """
+    days = set()
+    sources = []
+
+    for field in _VERIFIED_SOURCES:
+        after = "null"
+        pages = 0
+        source_days = set()
+        while True:
+            query = f"""
+            query {{
+              user(login: "{_esc(login)}") {{
+                contributionsCollection(from: "{from_iso}", to: "{to_iso}") {{
+                  {field}(first: 100, after: {after}) {{
+                    pageInfo {{ hasNextPage endCursor }}
+                    nodes {{ occurredAt }}
+                  }}
+                }}
+              }}
+            }}"""
+            data = gh_graphql(query, token)
+            user = data.get("user")
+            if user is None:
+                raise DataIntegrityError(f"User '{login}' not found while fetching verified presence.")
+            conn = user["contributionsCollection"][field]
+            for node in conn["nodes"]:
+                source_days.add(node["occurredAt"][:10])
+            pages += 1
+            if not conn["pageInfo"]["hasNextPage"] or pages >= max_pages:
+                break
+            after = json.dumps(conn["pageInfo"]["endCursor"])
+
+        if source_days:
+            sources.append(field)
+        days |= source_days
+
+    return {"days": sorted(days), "sources": sources}
+
+
 def fetch_repo_commit_history(org, repo, token, max_pages=40):
     """Walk one repo's default-branch history once, returning (date, login) pairs.
 

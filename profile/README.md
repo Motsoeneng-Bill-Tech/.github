@@ -13,7 +13,7 @@
 </p>
 
 <!-- STATS_BADGES:START -->
-[![Team Reliability](https://img.shields.io/badge/Team_Reliability-58%25-c9a961?style=for-the-badge&logo=clockify&logoColor=white)](https://github.com/Motsoeneng-Bill-Tech)
+[![Team Reliability](https://img.shields.io/badge/Team_Reliability-50%25-c9a961?style=for-the-badge&logo=clockify&logoColor=white)](https://github.com/Motsoeneng-Bill-Tech)
 [![Active This Week](https://img.shields.io/badge/Active_This_Week-7_of_7-34d399?style=for-the-badge&logo=githubactions&logoColor=white)](https://github.com/orgs/Motsoeneng-Bill-Tech/people)
 [![Projects](https://img.shields.io/badge/Live_Projects-11_of_12-8a7130?style=for-the-badge&logo=git&logoColor=white)](https://github.com/Motsoeneng-Bill-Tech)
 [![Key Person Risk](https://img.shields.io/badge/Key_Person_Risk-5_projects-64748b?style=for-the-badge&logo=shield&logoColor=white)](https://github.com/Motsoeneng-Bill-Tech)
@@ -91,17 +91,17 @@ A day counts once whether it carried one commit or a thousand, so no amount of a
 
 </div>
 
-| # | Engineer | Cadence | Reliability (last 30d) | Current Streak | Projects | Status | Activity |
+| # | Engineer | Cadence | Verified presence (30d) | Verified streak | Recorded activity | Projects | Activity |
 | :---: | :--- | :---: | :---: | :---: | :---: | :---: | :---: |
-| **01** | [<img src="https://avatars.githubusercontent.com/u/295184973?u=26439f7693fc00f3d9afe692cfecacb80b7e07b6&v=4" width="30" height="30" style="border-radius:50%; vertical-align:middle;" /> **@konethegreatest**](https://github.com/konethegreatest) <br/>[↗ profile](https://motsoeneng-bill-tech.github.io/.github/#/member/konethegreatest) | **Daily** | **100%** <br/>`30/30 days` | **78d** <br/>`78d record` | **6** active <br/>`6 total` | Active today | <img src="https://cdn.jsdelivr.net/gh/Motsoeneng-Bill-Tech/.github@main/assets/graphs/konethegreatest.svg?v=3" width="220" height="64" alt="konethegreatest activity calendar" /> |
-| **02** | [<img src="https://avatars.githubusercontent.com/u/296428132?v=4" width="30" height="30" style="border-radius:50%; vertical-align:middle;" /> **@Amukelani-MB**](https://github.com/Amukelani-MB) <br/>[↗ profile](https://motsoeneng-bill-tech.github.io/.github/#/member/Amukelani-MB) | **Daily** | **93%** <br/>`28/30 days` | **19d** <br/>`19d record` | **3** active <br/>`3 total` | Active today | <img src="https://cdn.jsdelivr.net/gh/Motsoeneng-Bill-Tech/.github@main/assets/graphs/Amukelani-MB.svg?v=3" width="220" height="64" alt="Amukelani-MB activity calendar" /> |
-| **03** | [<img src="https://avatars.githubusercontent.com/u/295596016?v=4" width="30" height="30" style="border-radius:50%; vertical-align:middle;" /> **@Akonisaho-MB**](https://github.com/Akonisaho-MB) <br/>[↗ profile](https://motsoeneng-bill-tech.github.io/.github/#/member/Akonisaho-MB) | **Near-daily** | **83%** <br/>`25/30 days` | **18d** <br/>`18d record` | **3** active <br/>`5 total` | Active today | <img src="https://cdn.jsdelivr.net/gh/Motsoeneng-Bill-Tech/.github@main/assets/graphs/Akonisaho-MB.svg?v=3" width="220" height="64" alt="Akonisaho-MB activity calendar" /> |
-| **04** | [<img src="https://avatars.githubusercontent.com/u/295126059?v=4" width="30" height="30" style="border-radius:50%; vertical-align:middle;" /> **@VhutshiloMB**](https://github.com/VhutshiloMB) <br/>[↗ profile](https://motsoeneng-bill-tech.github.io/.github/#/member/VhutshiloMB) | **Regular** | **57%** <br/>`17/30 days` | **11d** <br/>`11d record` | **2** active <br/>`2 total` | Active today | <img src="https://cdn.jsdelivr.net/gh/Motsoeneng-Bill-Tech/.github@main/assets/graphs/VhutshiloMB.svg?v=3" width="220" height="64" alt="VhutshiloMB activity calendar" /> |
-| **05** | [<img src="https://avatars.githubusercontent.com/u/296434638?v=4" width="30" height="30" style="border-radius:50%; vertical-align:middle;" /> **@pakisomb**](https://github.com/pakisomb) <br/>[↗ profile](https://motsoeneng-bill-tech.github.io/.github/#/member/pakisomb) | **Intermittent** | **33%** <br/>`10/30 days` | **0d** <br/>`5d record` | **2** active <br/>`4 total` | Active today | <img src="https://cdn.jsdelivr.net/gh/Motsoeneng-Bill-Tech/.github@main/assets/graphs/pakisomb.svg?v=3" width="220" height="64" alt="pakisomb activity calendar" /> |
-| **06** | [<img src="https://avatars.githubusercontent.com/u/295851105?v=4" width="30" height="30" style="border-radius:50%; vertical-align:middle;" /> **@Kea1m**](https://github.com/Kea1m) <br/>[↗ profile](https://motsoeneng-bill-tech.github.io/.github/#/member/Kea1m) | **Intermittent** | **27%** <br/>`8/30 days` | **3d** <br/>`3d record` | **1** active <br/>`1 total` | Active today | <img src="https://cdn.jsdelivr.net/gh/Motsoeneng-Bill-Tech/.github@main/assets/graphs/Kea1m.svg?v=3" width="220" height="64" alt="Kea1m activity calendar" /> |
-| **07** | [<img src="https://avatars.githubusercontent.com/u/318985580?v=4" width="30" height="30" style="border-radius:50%; vertical-align:middle;" /> **@TheoSingo**](https://github.com/TheoSingo) <br/>[↗ profile](https://motsoeneng-bill-tech.github.io/.github/#/member/TheoSingo) | **Occasional** | **14%** <br/>`4/29 days` | **0d** <br/>`2d record` | **2** active <br/>`2 total` | Active this week | <img src="https://cdn.jsdelivr.net/gh/Motsoeneng-Bill-Tech/.github@main/assets/graphs/TheoSingo.svg?v=3" width="220" height="64" alt="TheoSingo activity calendar" /> |
+| **01** | [<img src="https://avatars.githubusercontent.com/u/295184973?u=26439f7693fc00f3d9afe692cfecacb80b7e07b6&v=4" width="30" height="30" style="border-radius:50%; vertical-align:middle;" /> **@konethegreatest**](https://github.com/konethegreatest) <br/>[↗ profile](https://motsoeneng-bill-tech.github.io/.github/#/member/konethegreatest) | **Daily** | **97%** <br/>`29/30 days` | **22d** <br/>`51d best` | 100% <br/>`91% corroborated` | **6** active <br/>`6 total` | <img src="https://cdn.jsdelivr.net/gh/Motsoeneng-Bill-Tech/.github@main/assets/graphs/konethegreatest.svg?v=4" width="220" height="64" alt="konethegreatest activity calendar" /> |
+| **02** | [<img src="https://avatars.githubusercontent.com/u/295596016?v=4" width="30" height="30" style="border-radius:50%; vertical-align:middle;" /> **@Akonisaho-MB**](https://github.com/Akonisaho-MB) <br/>[↗ profile](https://motsoeneng-bill-tech.github.io/.github/#/member/Akonisaho-MB) | **Near-daily** | **80%** <br/>`24/30 days` | **18d** <br/>`18d best` | 83% <br/>`69% corroborated` | **3** active <br/>`5 total` | <img src="https://cdn.jsdelivr.net/gh/Motsoeneng-Bill-Tech/.github@main/assets/graphs/Akonisaho-MB.svg?v=4" width="220" height="64" alt="Akonisaho-MB activity calendar" /> |
+| **03** | [<img src="https://avatars.githubusercontent.com/u/296428132?v=4" width="30" height="30" style="border-radius:50%; vertical-align:middle;" /> **@Amukelani-MB**](https://github.com/Amukelani-MB) <br/>[↗ profile](https://motsoeneng-bill-tech.github.io/.github/#/member/Amukelani-MB) | **Near-daily** | **80%** <br/>`24/30 days` | **4d** <br/>`12d best` | 93% <br/>`83% corroborated` | **3** active <br/>`3 total` | <img src="https://cdn.jsdelivr.net/gh/Motsoeneng-Bill-Tech/.github@main/assets/graphs/Amukelani-MB.svg?v=4" width="220" height="64" alt="Amukelani-MB activity calendar" /> |
+| **04** | [<img src="https://avatars.githubusercontent.com/u/295126059?v=4" width="30" height="30" style="border-radius:50%; vertical-align:middle;" /> **@VhutshiloMB**](https://github.com/VhutshiloMB) <br/>[↗ profile](https://motsoeneng-bill-tech.github.io/.github/#/member/VhutshiloMB) | **Regular** | **43%** <br/>`13/30 days` | **11d** <br/>`11d best` | 57% <br/>`76% corroborated` | **2** active <br/>`2 total` | <img src="https://cdn.jsdelivr.net/gh/Motsoeneng-Bill-Tech/.github@main/assets/graphs/VhutshiloMB.svg?v=4" width="220" height="64" alt="VhutshiloMB activity calendar" /> |
+| **05** | [<img src="https://avatars.githubusercontent.com/u/296434638?v=4" width="30" height="30" style="border-radius:50%; vertical-align:middle;" /> **@pakisomb**](https://github.com/pakisomb) <br/>[↗ profile](https://motsoeneng-bill-tech.github.io/.github/#/member/pakisomb) | **Intermittent** | **27%** <br/>`8/30 days` | **0d** <br/>`4d best` | 33% <br/>`73% corroborated` | **2** active <br/>`4 total` | <img src="https://cdn.jsdelivr.net/gh/Motsoeneng-Bill-Tech/.github@main/assets/graphs/pakisomb.svg?v=4" width="220" height="64" alt="pakisomb activity calendar" /> |
+| **06** | [<img src="https://avatars.githubusercontent.com/u/295851105?v=4" width="30" height="30" style="border-radius:50%; vertical-align:middle;" /> **@Kea1m**](https://github.com/Kea1m) <br/>[↗ profile](https://motsoeneng-bill-tech.github.io/.github/#/member/Kea1m) | **Intermittent** | **23%** <br/>`7/30 days` | **3d** <br/>`3d best` | 27% <br/>`79% corroborated` | **1** active <br/>`1 total` | <img src="https://cdn.jsdelivr.net/gh/Motsoeneng-Bill-Tech/.github@main/assets/graphs/Kea1m.svg?v=4" width="220" height="64" alt="Kea1m activity calendar" /> |
+| **07** | [<img src="https://avatars.githubusercontent.com/u/318985580?v=4" width="30" height="30" style="border-radius:50%; vertical-align:middle;" /> **@TheoSingo**](https://github.com/TheoSingo) <br/>[↗ profile](https://motsoeneng-bill-tech.github.io/.github/#/member/TheoSingo) | **Dormant** | **3%** <br/>`1/29 days` | **0d** <br/>`1d best` | 14% <br/>`25% corroborated` | **2** active <br/>`2 total` | <img src="https://cdn.jsdelivr.net/gh/Motsoeneng-Bill-Tech/.github@main/assets/graphs/TheoSingo.svg?v=4" width="220" height="64" alt="TheoSingo activity calendar" /> |
 
-> **How this is measured.** Standing is based on how regularly an engineer shows up — the share of recent days with recorded work, streak continuity, and how many projects they are currently carrying. A day counts once whether it held one commit or a thousand, so nothing here can be inflated by pushing harder on a single day. Commit, pull request and review counts are deliberately not published and carry no weight: counting output rewards volume, and volume is easy to manufacture.
+> **How this is measured.** Standing uses **verified presence** only: days GitHub's own servers timestamped when a pull request, review or issue arrived. Those timestamps cannot be set by a contributor's machine, and a day counts once whether it held one action or a thousand — so the figure can be moved neither by doing more in a day nor by rewriting dates afterwards. **Recorded activity** is GitHub's commit calendar shown alongside for context; commit dates are supplied by the contributor's own computer, so they are reported, never ranked. No count of commits, pull requests or reviews is published anywhere on this page.
 
 <!-- LEADERBOARD:END -->
 
@@ -115,14 +115,15 @@ A day counts once whether it carried one commit or a thousand, so no amount of a
 
 ### #01 · konethegreatest — Daily
 
-<img src="https://avatars.githubusercontent.com/u/295184973?u=26439f7693fc00f3d9afe692cfecacb80b7e07b6&v=4" width="40" height="40" style="border-radius:50%; vertical-align:middle;" /> [`@konethegreatest`](https://github.com/konethegreatest) · joined Jun 19, 2026 · Active today
+<img src="https://avatars.githubusercontent.com/u/295184973?u=26439f7693fc00f3d9afe692cfecacb80b7e07b6&v=4" width="40" height="40" style="border-radius:50%; vertical-align:middle;" /> [`@konethegreatest`](https://github.com/konethegreatest) · joined Jun 19, 2026 · Committed today
 
 > **Continuity risk:** currently the only active engineer on **MB-IQ-Revamped**, **Job Portal**. Worth a second pair of hands.
 
 | | |
 | :--- | :--- |
-| **Reliability** | **100%** of the last 30 days (30 of 30) |
-| **Streak** | **78 days** current · 78 days best |
+| **Verified presence** | **97%** of the last 30 days (29 of 30) · 73 verified days in total |
+| **Verified streak** | **22 days** current · 51 days best |
+| **Recorded activity** | 100% of the last 30 days per GitHub's calendar · **91%** of it independently corroborated |
 | **Trend** | Improving — 7.0 active days/week recently vs 6.0 before |
 | **Projects** | **6** active of 6 worked on |
 | **Technologies** | `Java`, `Python`, `TypeScript` |
@@ -145,43 +146,17 @@ A day counts once whether it carried one commit or a thousand, so no amount of a
 ---
 
 
-### #02 · Amukelani-MB — Daily
+### #02 · Akonisaho-MB — Near-daily
 
-<img src="https://avatars.githubusercontent.com/u/296428132?v=4" width="40" height="40" style="border-radius:50%; vertical-align:middle;" /> [`@Amukelani-MB`](https://github.com/Amukelani-MB) · joined Jun 24, 2026 · Active today
-
-| | |
-| :--- | :--- |
-| **Reliability** | **93%** of the last 30 days (28 of 30) |
-| **Streak** | **19 days** current · 19 days best |
-| **Trend** | Improving — 6.5 active days/week recently vs 4.3 before |
-| **Projects** | **3** active of 3 worked on |
-| **Technologies** | `JavaScript`, `Python` |
-
-| | Project | Days engaged | Span | Position |
-| :---: | :--- | :---: | :---: | :--- |
-| ▸ | **Tender Intelligence Platform** | 35 | `Jul 03, 2026 → Sep 17, 2026` | Active now |
-| ▸ | **Forensics Due Diligence System** | 24 | `Aug 07, 2026 → Sep 06, 2026` | Active now |
-| ▸ | **mb-anchor-games** | 3 | `Sep 15, 2026 → Sep 17, 2026` | Active now |
-
-<div align="center">
-  <img src="https://cdn.jsdelivr.net/gh/Motsoeneng-Bill-Tech/.github@main/assets/graphs/Amukelani-MB.svg?v=3" width="100%" alt="Amukelani-MB activity calendar" />
-</div>
-
-[View full profile →](https://motsoeneng-bill-tech.github.io/.github/#/member/Amukelani-MB)
-
----
-
-
-### #03 · Akonisaho-MB — Near-daily
-
-<img src="https://avatars.githubusercontent.com/u/295596016?v=4" width="40" height="40" style="border-radius:50%; vertical-align:middle;" /> [`@Akonisaho-MB`](https://github.com/Akonisaho-MB) · joined Jun 21, 2026 · Active today
+<img src="https://avatars.githubusercontent.com/u/295596016?v=4" width="40" height="40" style="border-radius:50%; vertical-align:middle;" /> [`@Akonisaho-MB`](https://github.com/Akonisaho-MB) · joined Jun 21, 2026 · Committed today
 
 > **Continuity risk:** currently the only active engineer on **MB Knowledge Vault Enterprise**, **mb-wills-week**. Worth a second pair of hands.
 
 | | |
 | :--- | :--- |
-| **Reliability** | **83%** of the last 30 days (25 of 30) |
-| **Streak** | **18 days** current · 18 days best |
+| **Verified presence** | **80%** of the last 30 days (24 of 30) · 44 verified days in total |
+| **Verified streak** | **18 days** current · 18 days best |
+| **Recorded activity** | 83% of the last 30 days per GitHub's calendar · **69%** of it independently corroborated |
 | **Trend** | Improving — 6.2 active days/week recently vs 4.2 before |
 | **Projects** | **3** active of 5 worked on |
 | **Technologies** | `Java`, `JavaScript`, `Python` |
@@ -203,14 +178,43 @@ A day counts once whether it carried one commit or a thousand, so no amount of a
 ---
 
 
-### #04 · VhutshiloMB — Regular
+### #03 · Amukelani-MB — Near-daily
 
-<img src="https://avatars.githubusercontent.com/u/295126059?v=4" width="40" height="40" style="border-radius:50%; vertical-align:middle;" /> [`@VhutshiloMB`](https://github.com/VhutshiloMB) · joined Jun 19, 2026 · Active today
+<img src="https://avatars.githubusercontent.com/u/296428132?v=4" width="40" height="40" style="border-radius:50%; vertical-align:middle;" /> [`@Amukelani-MB`](https://github.com/Amukelani-MB) · joined Jun 24, 2026 · Committed today
 
 | | |
 | :--- | :--- |
-| **Reliability** | **57%** of the last 30 days (17 of 30) |
-| **Streak** | **11 days** current · 11 days best |
+| **Verified presence** | **80%** of the last 30 days (24 of 30) · 55 verified days in total |
+| **Verified streak** | **4 days** current · 12 days best |
+| **Recorded activity** | 93% of the last 30 days per GitHub's calendar · **83%** of it independently corroborated |
+| **Trend** | Improving — 6.5 active days/week recently vs 4.3 before |
+| **Projects** | **3** active of 3 worked on |
+| **Technologies** | `JavaScript`, `Python` |
+
+| | Project | Days engaged | Span | Position |
+| :---: | :--- | :---: | :---: | :--- |
+| ▸ | **Tender Intelligence Platform** | 35 | `Jul 03, 2026 → Sep 17, 2026` | Active now |
+| ▸ | **Forensics Due Diligence System** | 24 | `Aug 07, 2026 → Sep 06, 2026` | Active now |
+| ▸ | **mb-anchor-games** | 3 | `Sep 15, 2026 → Sep 17, 2026` | Active now |
+
+<div align="center">
+  <img src="https://cdn.jsdelivr.net/gh/Motsoeneng-Bill-Tech/.github@main/assets/graphs/Amukelani-MB.svg?v=3" width="100%" alt="Amukelani-MB activity calendar" />
+</div>
+
+[View full profile →](https://motsoeneng-bill-tech.github.io/.github/#/member/Amukelani-MB)
+
+---
+
+
+### #04 · VhutshiloMB — Regular
+
+<img src="https://avatars.githubusercontent.com/u/295126059?v=4" width="40" height="40" style="border-radius:50%; vertical-align:middle;" /> [`@VhutshiloMB`](https://github.com/VhutshiloMB) · joined Jun 19, 2026 · Committed today
+
+| | |
+| :--- | :--- |
+| **Verified presence** | **43%** of the last 30 days (13 of 30) · 26 verified days in total |
+| **Verified streak** | **11 days** current · 11 days best |
+| **Recorded activity** | 57% of the last 30 days per GitHub's calendar · **76%** of it independently corroborated |
 | **Trend** | Improving — 3.7 active days/week recently vs 1.7 before |
 | **Projects** | **2** active of 2 worked on |
 | **Technologies** | `Java` |
@@ -231,12 +235,13 @@ A day counts once whether it carried one commit or a thousand, so no amount of a
 
 ### #05 · pakisomb — Intermittent
 
-<img src="https://avatars.githubusercontent.com/u/296434638?v=4" width="40" height="40" style="border-radius:50%; vertical-align:middle;" /> [`@pakisomb`](https://github.com/pakisomb) · joined Jun 24, 2026 · Active today
+<img src="https://avatars.githubusercontent.com/u/296434638?v=4" width="40" height="40" style="border-radius:50%; vertical-align:middle;" /> [`@pakisomb`](https://github.com/pakisomb) · joined Jun 24, 2026 · Committed yesterday
 
 | | |
 | :--- | :--- |
-| **Reliability** | **33%** of the last 30 days (10 of 30) |
-| **Streak** | **0 days** current · 5 days best |
+| **Verified presence** | **27%** of the last 30 days (8 of 30) · 19 verified days in total |
+| **Verified streak** | **0 days** current · 4 days best |
+| **Recorded activity** | 33% of the last 30 days per GitHub's calendar · **73%** of it independently corroborated |
 | **Trend** | Steady — 2.2 active days/week recently vs 2.0 before |
 | **Projects** | **2** active of 4 worked on |
 | **Technologies** | `Java`, `JavaScript`, `Python` |
@@ -259,12 +264,13 @@ A day counts once whether it carried one commit or a thousand, so no amount of a
 
 ### #06 · Keabetswe Matloha — Intermittent
 
-<img src="https://avatars.githubusercontent.com/u/295851105?v=4" width="40" height="40" style="border-radius:50%; vertical-align:middle;" /> [`@Kea1m`](https://github.com/Kea1m) · joined Jun 22, 2026 · Active today
+<img src="https://avatars.githubusercontent.com/u/295851105?v=4" width="40" height="40" style="border-radius:50%; vertical-align:middle;" /> [`@Kea1m`](https://github.com/Kea1m) · joined Jun 22, 2026 · Committed today
 
 | | |
 | :--- | :--- |
-| **Reliability** | **27%** of the last 30 days (8 of 30) |
-| **Streak** | **3 days** current · 3 days best |
+| **Verified presence** | **23%** of the last 30 days (7 of 30) · 11 verified days in total |
+| **Verified streak** | **3 days** current · 3 days best |
+| **Recorded activity** | 27% of the last 30 days per GitHub's calendar · **79%** of it independently corroborated |
 | **Trend** | Improving — 1.8 active days/week recently vs 0.2 before |
 | **Projects** | **1** active of 1 worked on |
 | **Technologies** | `Java` |
@@ -282,16 +288,17 @@ A day counts once whether it carried one commit or a thousand, so no amount of a
 ---
 
 
-### #07 · TheoSingo — Occasional
+### #07 · TheoSingo — Dormant
 
-<img src="https://avatars.githubusercontent.com/u/318985580?v=4" width="40" height="40" style="border-radius:50%; vertical-align:middle;" /> [`@TheoSingo`](https://github.com/TheoSingo) · joined Aug 20, 2026 · Active this week
+<img src="https://avatars.githubusercontent.com/u/318985580?v=4" width="40" height="40" style="border-radius:50%; vertical-align:middle;" /> [`@TheoSingo`](https://github.com/TheoSingo) · joined Aug 20, 2026 · Committed this week
 
 > **Continuity risk:** currently the only active engineer on **anchor-games**. Worth a second pair of hands.
 
 | | |
 | :--- | :--- |
-| **Reliability** | **14%** of the last 29 days (4 of 29) |
-| **Streak** | **0 days** current · 2 days best |
+| **Verified presence** | **3%** of the last 29 days (1 of 29) · 1 verified days in total |
+| **Verified streak** | **0 days** current · 1 days best |
+| **Recorded activity** | 14% of the last 29 days per GitHub's calendar · **25%** of it independently corroborated |
 | **Trend** | Steady — 0.7 active days/week recently vs 0.0 before |
 | **Projects** | **2** active of 2 worked on |
 | **Technologies** | `TypeScript` |
@@ -336,7 +343,7 @@ We welcome technical collaboration, industry inquiries, and strategic engagement
 
 **Motsoeneng Bill Tech** · Houghton, Johannesburg · South Africa
 <!-- TIMESTAMP:START -->
- *Last synced: 2026-09-17 14:02 UTC* 
+ *Last synced: 2026-09-17 14:13 UTC* 
 <!-- TIMESTAMP:END -->
 
 </div>

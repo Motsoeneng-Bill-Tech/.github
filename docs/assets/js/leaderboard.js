@@ -8,8 +8,9 @@ const Leaderboard = (() => {
   const COLUMNS = [
     { key: 'rank', label: '#', sortable: true, get: (m) => m.rank, dir: 'asc' },
     { key: 'engineer', label: 'Engineer', sortable: false },
-    { key: 'reliability', label: 'Reliability', sortable: true, get: (m) => m.reliability.pct, dir: 'desc' },
-    { key: 'streak', label: 'Streak', sortable: true, get: (m) => m.consistency.current_streak, dir: 'desc' },
+    { key: 'reliability', label: 'Verified presence', sortable: true, get: (m) => m.reliability.pct, dir: 'desc' },
+    { key: 'streak', label: 'Verified streak', sortable: true, get: (m) => m.reliability.current_streak, dir: 'desc' },
+    { key: 'recorded', label: 'Recorded', sortable: true, get: (m) => m.recorded.pct, dir: 'desc' },
     { key: 'projects', label: 'Projects', sortable: true, get: (m) => m.current_project_count, dir: 'desc' },
     { key: 'trend', label: 'Trend', sortable: false },
     { key: 'status', label: 'Status', sortable: false },
@@ -65,9 +66,9 @@ const Leaderboard = (() => {
   }
 
   function statusCell(m) {
-    const s = m.engagement_status;
-    const cls = s === 'Dormant' ? 'status--dormant' : s === 'Slowing' ? 'status--slowing' : 'status--active';
-    return `<span class="status-chip ${cls}">${Format.escapeHtml(s)}</span>`;
+    const cls = m.engagement_level === 'stale' ? 'status--dormant'
+      : m.engagement_level === 'slowing' ? 'status--slowing' : 'status--active';
+    return `<span class="status-chip ${cls}">${Format.escapeHtml(m.engagement_status)}</span>`;
   }
 
   function projectsCell(m) {
@@ -87,7 +88,8 @@ const Leaderboard = (() => {
         <td class="rank-num">${String(m.rank).padStart(2, '0')}</td>
         <td>${engineerCell(m)}</td>
         <td>${reliabilityCell(m)}</td>
-        <td class="num-cell"><strong>${m.consistency.current_streak}d</strong><div class="cell-sub">${m.consistency.longest_streak}d best</div></td>
+        <td class="num-cell"><strong>${m.reliability.current_streak}d</strong><div class="cell-sub">${m.reliability.longest_streak}d best</div></td>
+        <td class="num-cell"><strong>${m.recorded.pct.toFixed(0)}%</strong><div class="cell-sub">${m.reliability.corroboration_pct.toFixed(0)}% corroborated</div></td>
         <td>${projectsCell(m)}</td>
         <td>${trendCell(m)}</td>
         <td>${statusCell(m)}</td>
@@ -111,8 +113,8 @@ const Leaderboard = (() => {
           </div>
         </div>
         <div class="leaderboard-card__meta">
-          <div class="leaderboard-card__stat">Reliability<strong>${m.reliability.pct.toFixed(0)}%</strong></div>
-          <div class="leaderboard-card__stat">Streak<strong>${m.consistency.current_streak}d</strong></div>
+          <div class="leaderboard-card__stat">Verified<strong>${m.reliability.pct.toFixed(0)}%</strong></div>
+          <div class="leaderboard-card__stat">Streak<strong>${m.reliability.current_streak}d</strong></div>
           <div class="leaderboard-card__stat">Projects<strong>${m.current_project_count}</strong></div>
           <div class="leaderboard-card__stat">Status<strong>${Format.escapeHtml(m.engagement_status)}</strong></div>
         </div>

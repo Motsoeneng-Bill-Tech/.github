@@ -54,6 +54,7 @@ const MemberDetail = (() => {
   function render(container, member, data) {
     const c = member.consistency;
     const rel = member.reliability;
+    const rec = member.recorded;
     const current = member.projects.filter((p) => p.is_current);
     const past = member.projects.filter((p) => !p.is_current);
 
@@ -77,7 +78,7 @@ const MemberDetail = (() => {
           </div>
           <div class="detail-header__badges">
             <span class="tier-chip">${Format.escapeHtml(member.cadence_band)}</span>
-            <span class="status-chip ${member.engagement_status === 'Dormant' ? 'status--dormant' : 'status--active'}">${Format.escapeHtml(member.engagement_status)}</span>
+            <span class="status-chip ${member.engagement_level === 'stale' ? 'status--dormant' : member.engagement_level === 'slowing' ? 'status--slowing' : 'status--active'}">${Format.escapeHtml(member.engagement_status)}</span>
             <span class="tier-chip tier-chip--quiet">#${member.rank} of ${data.org.member_count} by reliability</span>
           </div>
         </div>
@@ -87,14 +88,14 @@ const MemberDetail = (() => {
 
       <div class="stat-grid">
         <div class="stat-tile">
-          <div class="stat-tile__label">Reliability</div>
+          <div class="stat-tile__label">Verified presence</div>
           <div class="stat-tile__value stat-tile__value--accent">${rel.pct.toFixed(0)}%</div>
-          <div class="stat-tile__sub">present ${rel.active_days} of the last ${rel.window_days} days</div>
+          <div class="stat-tile__sub">${rel.active_days} of the last ${rel.window_days} days carry server-stamped evidence</div>
         </div>
         <div class="stat-tile">
-          <div class="stat-tile__label">Current streak</div>
-          <div class="stat-tile__value">${c.current_streak}<span class="stat-tile__hint">days</span></div>
-          <div class="stat-tile__sub">best run ${c.longest_streak} days</div>
+          <div class="stat-tile__label">Verified streak</div>
+          <div class="stat-tile__value">${rel.current_streak}<span class="stat-tile__hint">days</span></div>
+          <div class="stat-tile__sub">best run ${rel.longest_streak} days</div>
         </div>
         <div class="stat-tile">
           <div class="stat-tile__label">Active projects</div>
@@ -141,8 +142,31 @@ const MemberDetail = (() => {
       </section>` : ''}
 
       <section class="panel">
+        <h3 class="panel__title">Evidence behind these figures</h3>
+        <div class="evidence-row">
+          <div class="evidence">
+            <div class="evidence__label">Verified presence</div>
+            <div class="evidence__value">${rel.total_days} days</div>
+            <div class="evidence__note">Dates GitHub's servers stamped when a pull request, review or issue arrived. A contributor's computer cannot set these.</div>
+          </div>
+          <div class="evidence">
+            <div class="evidence__label">Recorded activity</div>
+            <div class="evidence__value">${c.active_days} days</div>
+            <div class="evidence__note">GitHub's commit calendar. Commit dates are supplied by the contributor's own machine, so this is reported here but never ranked.</div>
+          </div>
+          <div class="evidence">
+            <div class="evidence__label">Corroborated</div>
+            <div class="evidence__value">${rel.corroboration_pct.toFixed(0)}%</div>
+            <div class="evidence__note">${rel.corroboration_pct >= 60
+              ? 'Most recorded days carry independent evidence.'
+              : 'Much of the recorded activity has no independent evidence. That can simply mean work goes straight to a branch without pull requests — read it as a question, not a verdict.'}</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel">
         <h3 class="panel__title">Daily activity since joining</h3>
-        <p class="panel__hint">Each square is one day. Shade shows relative activity; a day counts once no matter how much was pushed.</p>
+        <p class="panel__hint">GitHub's recorded calendar — ${rec.pct.toFixed(0)}% of the last ${rec.window_days} days. Each square is one day; a day counts once no matter how much was pushed.</p>
         <div id="detail-calendar-slot"></div>
       </section>
     `;

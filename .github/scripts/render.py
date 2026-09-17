@@ -125,14 +125,13 @@ def render_member_calendar_svg(member, weeks_shown=14, min_width=300):
         for name, x in month_labels.items()
     )
 
-    c = member["consistency"]
     rel = member["reliability"]
     band = member["cadence_band"]
     projects = member["current_project_count"]
     return f"""<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}">
   <rect width="{width}" height="{height}" rx="10" fill="{SURFACE}" stroke="{BORDER}" stroke-width="1" />
   <text x="{start_x}" y="18" font-family="{FONT_STACK}" font-size="12" font-weight="700" fill="{TEXT_PRIMARY}">@{member['login']} · <tspan fill="{ACCENT}">{band}</tspan></text>
-  <text x="{start_x}" y="32" font-family="{FONT_STACK}" font-size="10"><tspan font-weight="700" fill="{TEXT_PRIMARY}">{rel['pct']:.0f}% of last {rel['window_days']} days</tspan><tspan fill="{TEXT_TERTIARY}"> · {c['current_streak']}d streak · {projects} active project{'' if projects == 1 else 's'}</tspan></text>
+  <text x="{start_x}" y="32" font-family="{FONT_STACK}" font-size="10"><tspan font-weight="700" fill="{TEXT_PRIMARY}">{rel['pct']:.0f}% verified presence</tspan><tspan fill="{TEXT_TERTIARY}"> · {rel['current_streak']}d streak · {projects} active project{'' if projects == 1 else 's'}</tspan></text>
   {months_svg}
   <g>{''.join(rects)}</g>
 </svg>"""
@@ -152,7 +151,7 @@ def render_overview_card_svg(data, max_rows=8):
     stats = [
         ("ENGINEERS", str(org["member_count"])),
         ("ACTIVE THIS WEEK", str(summary["engineers_active_this_week"])),
-        ("TEAM RELIABILITY", f'{summary["avg_reliability_pct"]:.0f}%'),
+        ("VERIFIED PRESENCE", f'{summary["avg_reliability_pct"]:.0f}%'),
         ("PROJECTS AT RISK", str(summary["projects_at_key_person_risk"])),
     ]
     stat_w = 180
@@ -171,7 +170,7 @@ def render_overview_card_svg(data, max_rows=8):
         y = header_h + i * row_h
         rel = m["reliability"]
         bar_w = max(3, (rel["pct"] / 100) * bar_max_w)
-        label_meta = f'{m["current_project_count"]} active project{"" if m["current_project_count"] == 1 else "s"} · {m["consistency"]["current_streak"]}d streak'
+        label_meta = f'{m["current_project_count"]} active project{"" if m["current_project_count"] == 1 else "s"} · {rel["current_streak"]}d verified streak'
         rows_svg.append(f'''
   <text x="32" y="{y + 22}" font-family="{FONT_STACK}" font-size="12" font-weight="700" fill="{TEXT_TERTIARY}">{i + 1:02d}</text>
   <text x="60" y="{y + 22}" font-family="{FONT_STACK}" font-size="12" font-weight="600" fill="{TEXT_PRIMARY}">@{m['login']}</text>
@@ -239,26 +238,26 @@ def render_leaderboard(data, org_name, repo_name, dashboard_url):
     all day-based, so the table cannot be climbed by pushing harder on a single day."""
     window = data["org"]["summary"]["reliability_window_days"]
     rows = [
-        f"| # | Engineer | Cadence | Reliability (last {window}d) | Current Streak | Projects | Status | Activity |",
+        f"| # | Engineer | Cadence | Verified presence ({window}d) | Verified streak | Recorded activity | Projects | Activity |",
         "| :---: | :--- | :---: | :---: | :---: | :---: | :---: | :---: |",
     ]
     for m in data["members"]:
         avatar = f'<img src="{m["avatar_url"]}" width="30" height="30" style="border-radius:50%; vertical-align:middle;" />'
         activity_img = (
-            f'<img src="https://cdn.jsdelivr.net/gh/{org_name}/{repo_name}@main/assets/graphs/{m["login"]}.svg?v=3" '
+            f'<img src="https://cdn.jsdelivr.net/gh/{org_name}/{repo_name}@main/assets/graphs/{m["login"]}.svg?v=4" '
             f'width="220" height="64" alt="{m["login"]} activity calendar" />'
         )
         profile_link = f'[↗ profile]({dashboard_url}#/member/{m["login"]})'
-        c = m["consistency"]
         rel = m["reliability"]
+        rec = m["recorded"]
         projects = f'**{m["current_project_count"]}** active <br/>`{m["project_count"]} total`'
         rows.append(
             f'| **{m["rank"]:02d}** | [{avatar} **@{m["login"]}**]({m["html_url"]}) <br/>{profile_link} '
             f'| **{m["cadence_band"]}** '
             f'| **{rel["pct"]:.0f}%** <br/>`{rel["active_days"]}/{rel["window_days"]} days` '
-            f'| **{c["current_streak"]}d** <br/>`{c["longest_streak"]}d record` '
+            f'| **{rel["current_streak"]}d** <br/>`{rel["longest_streak"]}d best` '
+            f'| {rec["pct"]:.0f}% <br/>`{rel["corroboration_pct"]:.0f}% corroborated` '
             f'| {projects} '
-            f'| {m["engagement_status"]} '
             f'| {activity_img} |'
         )
     return "\n".join(rows)
@@ -269,8 +268,8 @@ def render_roster(data, org_name, repo_name, cap):
     cards = []
     for m in members:
         display_name = m["name"] or m["login"]
-        c = m["consistency"]
         rel = m["reliability"]
+        rec = m["recorded"]
         trend = m["trend"]
 
         if m["projects"]:
@@ -305,8 +304,9 @@ def render_roster(data, org_name, repo_name, cap):
 {risk_note}
 | | |
 | :--- | :--- |
-| **Reliability** | **{rel['pct']:.0f}%** of the last {rel['window_days']} days ({rel['active_days']} of {rel['window_days']}) |
-| **Streak** | **{c['current_streak']} days** current · {c['longest_streak']} days best |
+| **Verified presence** | **{rel['pct']:.0f}%** of the last {rel['window_days']} days ({rel['active_days']} of {rel['window_days']}) · {rel['total_days']} verified days in total |
+| **Verified streak** | **{rel['current_streak']} days** current · {rel['longest_streak']} days best |
+| **Recorded activity** | {rec['pct']:.0f}% of the last {rec['window_days']} days per GitHub's calendar · **{rel['corroboration_pct']:.0f}%** of it independently corroborated |
 | **Trend** | {trend['direction']} — {trend['recent_avg_active_days']} active days/week recently vs {trend['earlier_avg_active_days']} before |
 | **Projects** | **{m['current_project_count']}** active of {m['project_count']} worked on |
 | **Technologies** | {languages} |
@@ -341,7 +341,7 @@ def update_readme(content, data, *, org_name, repo_name, dashboard_url, roster_c
 
 {render_leaderboard(data, org_name, repo_name, dashboard_url)}
 
-> **How this is measured.** Standing is based on how regularly an engineer shows up — the share of recent days with recorded work, streak continuity, and how many projects they are currently carrying. A day counts once whether it held one commit or a thousand, so nothing here can be inflated by pushing harder on a single day. Commit, pull request and review counts are deliberately not published and carry no weight: counting output rewards volume, and volume is easy to manufacture.
+> **How this is measured.** Standing uses **verified presence** only: days GitHub's own servers timestamped when a pull request, review or issue arrived. Those timestamps cannot be set by a contributor's machine, and a day counts once whether it held one action or a thousand — so the figure can be moved neither by doing more in a day nor by rewriting dates afterwards. **Recorded activity** is GitHub's commit calendar shown alongside for context; commit dates are supplied by the contributor's own computer, so they are reported, never ranked. No count of commits, pull requests or reviews is published anywhere on this page.
 """
     content = _replace_marker(content, "LEADERBOARD", leaderboard_block)
 

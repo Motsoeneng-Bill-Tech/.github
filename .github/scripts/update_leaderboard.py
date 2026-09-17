@@ -81,15 +81,29 @@ def cadence_band(reliability_pct, days_since_last, tenure_days):
 
 
 def engagement_status(days_since_last):
+    """Phrased so its source is unmistakable. This reads the commit calendar, while the
+    cadence band reads verified evidence — two different clocks, so they must never be
+    allowed to look like the same claim."""
     if days_since_last is None:
-        return "No recorded activity"
-    if days_since_last <= 1:
-        return "Active today"
+        return "No commits recorded"
+    if days_since_last == 0:
+        return "Committed today"
+    if days_since_last == 1:
+        return "Committed yesterday"
     if days_since_last <= RECENTLY_ACTIVE_DAYS:
-        return "Active this week"
+        return "Committed this week"
     if days_since_last < DORMANT_AFTER_DAYS:
-        return "Slowing"
-    return "Dormant"
+        return f"Last commit {days_since_last} days ago"
+    return f"No commits for {days_since_last} days"
+
+
+def engagement_level(days_since_last):
+    """Styling hint only — keeps the CSS from having to parse prose."""
+    if days_since_last is None or days_since_last >= DORMANT_AFTER_DAYS:
+        return "stale"
+    if days_since_last > RECENTLY_ACTIVE_DAYS:
+        return "slowing"
+    return "active"
 
 
 def gather_all_data():
@@ -125,6 +139,13 @@ def gather_all_data():
         )
         print(f"  {m['login']}: {active} active days since {m['created_at'][:10]}")
 
+    print("Fetching server-stamped presence (tamper-proof — not settable by a contributor)...")
+    verified = {}
+    for m in members_raw:
+        v = gh_api.fetch_member_verified_days(m["login"], m["created_at"], now_iso, token)
+        verified[m["login"]] = v
+        print(f"  {m['login']}: {len(v['days'])} verified days from {', '.join(v['sources']) or 'no server-stamped actions'}")
+
     print("Walking each project's commit history for dates (never counts)...")
     repo_histories = {}
     for r in repos_raw:
@@ -138,7 +159,7 @@ def gather_all_data():
     print(f"Rate limit remaining after run: {end_rate.get('remaining', '?')} (used ~{cost_used} points)")
 
     data = build_dataset(
-        members_raw, repos_raw, member_contribs, repo_histories, now,
+        members_raw, repos_raw, member_contribs, repo_histories, verified, now,
         rate_meta={
             "cost_used_total": cost_used,
             "remaining": end_rate.get("remaining"),
@@ -149,7 +170,7 @@ def gather_all_data():
     return data
 
 
-def build_dataset(members_raw, repos_raw, member_contribs, repo_histories, now, rate_meta):
+def build_dataset(members_raw, repos_raw, member_contribs, repo_histories, verified, now, rate_meta):
     warnings = []
     today = now.date()
     logins = [m["login"] for m in members_raw]
@@ -221,9 +242,21 @@ def build_dataset(members_raw, repos_raw, member_contribs, repo_histories, now, 
         active_days = sum(1 for c in day_counts.values() if c > 0)
         total_days = len(day_counts)
         streaks = render.calendar_streaks(day_counts)
-        reliability = analytics.recent_active_ratio(day_counts, today, RELIABILITY_WINDOW_DAYS)
+        recorded = analytics.recent_active_ratio(day_counts, today, RELIABILITY_WINDOW_DAYS)
         trend = analytics.cadence_trend(day_counts, today)
         weekdays = analytics.weekday_pattern(day_counts, today)
+
+        # Verified presence — the ranked signal. Commit dates are written by the
+        # contributor's own machine and can be backdated, so a calendar alone proves
+        # nothing; these dates are stamped by GitHub when the action arrived.
+        verified_days = verified.get(login, {}).get("days", [])
+        verified_presence = analytics.presence_from_dates(
+            verified_days, created_dt.date(), today, RELIABILITY_WINDOW_DAYS
+        )
+        verified_presence["sources"] = verified.get(login, {}).get("sources", [])
+        verified_presence["corroboration_pct"] = (
+            round(verified_presence["total_days"] / active_days * 100, 1) if active_days else 0.0
+        )
 
         last_active_date = None
         for d in sorted(day_counts.keys(), reverse=True):
@@ -273,7 +306,8 @@ def build_dataset(members_raw, repos_raw, member_contribs, repo_histories, now, 
                 "location": m.get("location"),
                 "website_url": m.get("website_url"),
             },
-            "reliability": reliability,
+            "reliability": verified_presence,
+            "recorded": recorded,
             "consistency": {
                 "active_days": active_days,
                 "total_days": total_days,
@@ -291,7 +325,8 @@ def build_dataset(members_raw, repos_raw, member_contribs, repo_histories, now, 
             "languages": languages,
             "carries_key_person_risk_for": carries_risk,
             "engagement_status": engagement_status(days_since_last),
-            "cadence_band": cadence_band(reliability["pct"], days_since_last, tenure_days),
+            "engagement_level": engagement_level(days_since_last),
+            "cadence_band": cadence_band(verified_presence["pct"], verified_presence["days_since_last"], tenure_days),
             "calendar": {
                 "from": created_dt.date().isoformat(),
                 "to": today.isoformat(),
@@ -303,12 +338,13 @@ def build_dataset(members_raw, repos_raw, member_contribs, repo_histories, now, 
             },
         })
 
-    # Ranked on reliability first, then streak continuity, then tenure. Every key in this
-    # chain is day-based, so no single day of activity — however large — can move anyone up.
+    # Ranked purely on VERIFIED presence — days GitHub's own servers timestamped.
+    # Day-based, so a burst of activity on one day cannot move it; server-stamped, so
+    # backdating commits cannot either. Every tiebreak in the chain has both properties.
     members_out.sort(key=lambda x: (
         -x["reliability"]["pct"],
-        -x["consistency"]["current_streak"],
-        -x["consistency"]["longest_streak"],
+        -x["reliability"]["current_streak"],
+        -x["reliability"]["total_days"],
         x["created_at"],
     ))
     for idx, m in enumerate(members_out, start=1):
@@ -341,8 +377,11 @@ def build_dataset(members_raw, repos_raw, member_contribs, repo_histories, now, 
                     if m["consistency"]["days_since_last_active"] is not None
                     and m["consistency"]["days_since_last_active"] <= RECENTLY_ACTIVE_DAYS
                 ),
-                "engineers_dormant": sum(1 for m in members_out if m["cadence_band"] == "Dormant"),
-                "peak_streak": max((m["consistency"]["longest_streak"] for m in members_out), default=0),
+                "engineers_without_recent_evidence": sum(1 for m in members_out if m["cadence_band"] == "Dormant"),
+                "peak_streak": max((m["reliability"]["longest_streak"] for m in members_out), default=0),
+                "engineers_without_verified_evidence": sum(
+                    1 for m in members_out if m["reliability"]["total_days"] == 0
+                ),
                 "projects_active": len(active_projects),
                 "projects_dormant": len(dormant_projects),
                 "projects_at_key_person_risk": len(at_risk),
@@ -365,10 +404,13 @@ def build_dataset(members_raw, repos_raw, member_contribs, repo_histories, now, 
             "rate_limit": rate_meta,
             "warnings": warnings,
             "disclosures": [
-                "Every figure is derived from days on which work was recorded in GitHub — never from how much was pushed on any given day.",
-                "Commit attribution follows GitHub's own account linking. Work committed from an unlinked email address is listed separately against the project, never merged into an engineer's record.",
+                "Standing is based on verified days only — dates GitHub's own servers stamped when a pull request, review or issue arrived. Those timestamps cannot be set by a contributor's computer.",
+                "Commit dates are excluded from standing on purpose. Git lets any author date be supplied, so a commit calendar can be written after the fact; it is shown here as recorded activity, clearly separated from verified presence.",
+                "A day counts once whether it held one action or a thousand, so nothing on this page can be improved by doing more in a single day.",
+                "An engineer who works without opening pull requests will show few verified days. That means the evidence is thin, not that the person was absent — read a low verified figure as a question, not a verdict.",
+                "Commit attribution follows GitHub's own account linking. Work committed from an unlinked email address is listed against the project as an unmatched author, never merged into an engineer's record.",
                 "Project involvement reflects work merged into each project's default branch. Work still in progress on a side branch is not yet visible here.",
-                "This page measures engagement and delivery cadence. It cannot measure the difficulty, quality or business value of the work, and should not be read as a performance rating.",
+                "This page measures engagement and delivery cadence. It cannot measure the difficulty, quality or business value of the work, and must not be read as a performance rating.",
             ],
         },
     }

@@ -208,6 +208,54 @@ def cadence_trend(day_counts, today, weeks=12):
     }
 
 
+def presence_from_dates(active_dates, tenure_start, today, window_days=30):
+    """Presence derived from a set of dates rather than a day->count calendar.
+
+    Used for verified presence, where the input is the set of dates GitHub's servers
+    stamped an action. The window is anchored on tenure, not on the first recorded
+    action — otherwise someone whose first verified day was yesterday would score 100%.
+    """
+    dates = {d if isinstance(d, str) else d.isoformat() for d in active_dates}
+    window = min(window_days, (today - tenure_start).days + 1)
+    window = max(window, 0)
+    window_start = today - timedelta(days=window - 1) if window else today
+    in_window = sum(1 for d in dates if window and window_start <= _to_date(d) <= today)
+
+    ordered = sorted(_to_date(d) for d in dates)
+    longest = current = 0
+    run = 0
+    previous = None
+    for d in ordered:
+        run = run + 1 if (previous is not None and (d - previous).days == 1) else 1
+        longest = max(longest, run)
+        previous = d
+    # A current streak only counts if it reaches today or yesterday — otherwise a run
+    # that ended weeks ago would read as if the person were still going.
+    if ordered:
+        last = ordered[-1]
+        if (today - last).days <= 1:
+            current = 1
+            cursor = last
+            for d in reversed(ordered[:-1]):
+                if (cursor - d).days == 1:
+                    current += 1
+                    cursor = d
+                else:
+                    break
+
+    last_date = ordered[-1].isoformat() if ordered else None
+    return {
+        "window_days": window,
+        "active_days": in_window,
+        "pct": round(in_window / window * 100, 1) if window else 0.0,
+        "total_days": len(dates),
+        "longest_streak": longest,
+        "current_streak": current,
+        "last_date": last_date,
+        "days_since_last": (today - ordered[-1]).days if ordered else None,
+    }
+
+
 def recent_active_ratio(day_counts, today, window_days=30):
     """% of the last `window_days` days with activity (or the engineer's whole tenure if
     they're newer than the window). The headline reliability number."""

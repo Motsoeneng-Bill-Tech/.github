@@ -3,6 +3,11 @@
   const searchInput = document.getElementById('global-search');
   const STALE_AFTER_MS = 36 * 60 * 60 * 1000; // refreshes daily at noon — 36h means the pipeline is stuck
 
+  // Bumped whenever metrics.json changes shape. The daily job can publish new data to a
+  // browser still holding a cached copy of this script; without this guard that combination
+  // throws deep inside rendering and the page just dies silently.
+  const EXPECTED_SCHEMA = 2;
+
   let DATA = null;
 
   function isStale(iso) {
@@ -17,7 +22,7 @@
     const s = DATA.org.summary;
     const atRisk = DATA.projects.filter((p) => p.key_person_risk);
     const dormant = DATA.projects.filter((p) => p.status === 'Dormant' || p.status === 'No activity');
-    const slowing = DATA.members.filter((m) => m.engagement_status === 'Slowing' || m.engagement_status === 'Dormant');
+    const slowing = DATA.members.filter((m) => m.engagement_level !== 'active');
 
     if (!atRisk.length && !dormant.length && !slowing.length) {
       return `<section class="panel panel--calm">
@@ -53,7 +58,7 @@
         )}
         ${block(
           'Engineers slowing down',
-          'Present less often than they were.',
+          'No commits recorded from them recently.',
           slowing.map((m) => `<a class="attention__item" href="./#/member/${encodeURIComponent(m.login)}">
               <span class="attention__item-name">${Format.escapeHtml(m.name || m.login)}</span>
               <span class="attention__item-meta">${Format.escapeHtml(m.engagement_status)}</span>
@@ -105,14 +110,14 @@
 
         <div class="stat-grid">
           <div class="stat-tile">
-            <div class="stat-tile__label">Team reliability</div>
+            <div class="stat-tile__label">Verified presence</div>
             <div class="stat-tile__value stat-tile__value--accent">${s.avg_reliability_pct.toFixed(0)}%</div>
-            <div class="stat-tile__sub">average share of the last ${s.reliability_window_days} days worked</div>
+            <div class="stat-tile__sub">average share of the last ${s.reliability_window_days} days with server-stamped evidence</div>
           </div>
           <div class="stat-tile">
             <div class="stat-tile__label">Active this week</div>
             <div class="stat-tile__value">${s.engineers_active_this_week}<span class="stat-tile__hint">of ${org.member_count}</span></div>
-            <div class="stat-tile__sub">${s.engineers_dormant} dormant</div>
+            <div class="stat-tile__sub">by commit activity${s.engineers_without_recent_evidence ? ` · ${s.engineers_without_recent_evidence} without recent verified evidence` : ''}</div>
           </div>
           <div class="stat-tile">
             <div class="stat-tile__label">Live projects</div>
@@ -131,7 +136,7 @@
 
       <div class="section-head">
         <h2>Engineers</h2>
-        <span class="section-head__hint">Ranked by how consistently they show up — click anyone for their full profile</span>
+        <span class="section-head__hint">Ranked on verified presence — evidence GitHub timestamped, which no one can backdate</span>
       </div>
       <div class="table-scroll" id="leaderboard-table"></div>
       <div class="leaderboard-cards" id="leaderboard-cards"></div>
@@ -191,6 +196,15 @@
     viewRoot.innerHTML = `<div class="error-state">
         <h2>Couldn't load the latest data</h2>
         <p>${Format.escapeHtml(err.message)}</p>
+      </div>`;
+    return;
+  }
+
+  if (DATA.schema_version !== EXPECTED_SCHEMA) {
+    viewRoot.innerHTML = `<div class="error-state">
+        <h2>This page is out of date</h2>
+        <p>The data was published in a newer format than this page understands. Reload to pick up the current version.</p>
+        <button class="btn btn--primary" onclick="location.reload(true)">Reload</button>
       </div>`;
     return;
   }
