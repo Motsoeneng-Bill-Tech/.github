@@ -1,7 +1,7 @@
 {
-  "schema_version": 1,
-  "generated_at": "2026-09-17T11:12:46Z",
-  "source_commit": "97734c209d71e66a7f2b1e5c9187ce223639433e",
+  "schema_version": 2,
+  "generated_at": "2026-09-17T14:13:26Z",
+  "source_commit": "local",
   "org": {
     "login": "Motsoeneng-Bill-Tech",
     "name": "Motsoeneng Bill Tech",
@@ -9,14 +9,23 @@
     "html_url": "https://github.com/Motsoeneng-Bill-Tech",
     "member_count": 7,
     "repo_count": 12,
-    "totals": {
-      "avg_consistency_pct": 47.7,
-      "peak_streak": 78,
-      "total_active_days": 288,
-      "total_reviews": 186,
-      "total_prs": 855,
-      "total_contributions": 4608,
-      "total_firm_commits": 2830
+    "summary": {
+      "avg_reliability_pct": 50.5,
+      "engineers_active_this_week": 7,
+      "engineers_without_recent_evidence": 1,
+      "peak_streak": 51,
+      "engineers_without_verified_evidence": 0,
+      "projects_active": 11,
+      "projects_dormant": 1,
+      "projects_at_key_person_risk": 5,
+      "key_person_risk_projects": [
+        "Job Portal",
+        "MB Knowledge Vault Enterprise",
+        "mb-wills-week",
+        "MB-IQ-Revamped",
+        "anchor-games"
+      ],
+      "reliability_window_days": 30
     },
     "calendar": {
       "from": "2026-06-19",
@@ -744,7 +753,7 @@
             {
               "date": "2026-09-17",
               "weekday": 4,
-              "count": 64,
+              "count": 92,
               "level": 4,
               "in_range": true
             },
@@ -767,162 +776,522 @@
       ]
     }
   },
-  "repos": [
+  "projects": [
     {
-      "name": "tender-intelligence-platform",
-      "description": null,
-      "html_url": "https://github.com/Motsoeneng-Bill-Tech/tender-intelligence-platform",
-      "visibility": "PRIVATE",
-      "primary_language": "Python",
+      "name": ".github",
+      "display_name": "Organization Profile & Telemetry",
+      "description": "This repository \u2014 organization profile, health files, and the engineering telemetry pipeline that generates this page.",
+      "html_url": "https://github.com/Motsoeneng-Bill-Tech/.github",
+      "visibility": "PUBLIC",
+      "primary_language": null,
       "default_branch": "main",
-      "is_empty": false,
       "is_archived": false,
-      "total_commits_default_branch": 1021,
-      "attributed_member_commits": 974,
-      "unattributed_commits": 47
-    },
-    {
-      "name": "mb-anchor-games",
-      "description": "MB Leaderboard and Anchor Games counting down to the convention.",
-      "html_url": "https://github.com/Motsoeneng-Bill-Tech/mb-anchor-games",
-      "visibility": "PRIVATE",
-      "primary_language": "JavaScript",
-      "default_branch": "main",
-      "is_empty": false,
-      "is_archived": false,
-      "total_commits_default_branch": 609,
-      "attributed_member_commits": 609,
-      "unattributed_commits": 0
-    },
-    {
-      "name": "forensics-due-diligence-system",
-      "description": null,
-      "html_url": "https://github.com/Motsoeneng-Bill-Tech/forensics-due-diligence-system",
-      "visibility": "PRIVATE",
-      "primary_language": "Python",
-      "default_branch": "main",
-      "is_empty": false,
-      "is_archived": false,
-      "total_commits_default_branch": 494,
-      "attributed_member_commits": 371,
-      "unattributed_commits": 123
+      "status": "Active",
+      "last_activity": "2026-09-17",
+      "days_since_activity": 0,
+      "active_days_total": 8,
+      "engineer_count": 2,
+      "active_engineer_count": 2,
+      "key_person_risk": false,
+      "sole_engineer": null,
+      "current_engineers": [
+        "konethegreatest",
+        "TheoSingo"
+      ],
+      "engineers": [
+        {
+          "login": "konethegreatest",
+          "active_days": 3,
+          "first_active": "2026-06-24",
+          "last_active": "2026-09-14",
+          "days_since_last": 3,
+          "is_current": true
+        },
+        {
+          "login": "TheoSingo",
+          "active_days": 2,
+          "first_active": "2026-09-03",
+          "last_active": "2026-09-04",
+          "days_since_last": 13,
+          "is_current": true
+        }
+      ],
+      "outside_contributors": [
+        {
+          "login": "github-actions[bot]",
+          "active_days": 7
+        },
+        {
+          "login": "konethegreat",
+          "active_days": 4
+        }
+      ]
     },
     {
       "name": "Case-Management",
+      "display_name": "Enterprise Case Management",
       "description": "Multi-tenant enterprise case management platform for corporate and state-owned clients, covering the full matter lifecycle.",
       "html_url": "https://github.com/Motsoeneng-Bill-Tech/Case-Management",
       "visibility": "PRIVATE",
       "primary_language": "Java",
       "default_branch": "main",
-      "is_empty": false,
       "is_archived": false,
-      "total_commits_default_branch": 349,
-      "attributed_member_commits": 349,
-      "unattributed_commits": 0
-    },
-    {
-      "name": "mb-knowledge-vault-enterprise",
-      "description": null,
-      "html_url": "https://github.com/Motsoeneng-Bill-Tech/mb-knowledge-vault-enterprise",
-      "visibility": "PRIVATE",
-      "primary_language": "JavaScript",
-      "default_branch": "main",
-      "is_empty": false,
-      "is_archived": false,
-      "total_commits_default_branch": 223,
-      "attributed_member_commits": 223,
-      "unattributed_commits": 0
-    },
-    {
-      "name": "mb-wills-week",
-      "description": null,
-      "html_url": "https://github.com/Motsoeneng-Bill-Tech/mb-wills-week",
-      "visibility": "PRIVATE",
-      "primary_language": "JavaScript",
-      "default_branch": "main",
-      "is_empty": false,
-      "is_archived": false,
-      "total_commits_default_branch": 88,
-      "attributed_member_commits": 88,
-      "unattributed_commits": 0
+      "status": "Active",
+      "last_activity": "2026-09-17",
+      "days_since_activity": 0,
+      "active_days_total": 40,
+      "engineer_count": 4,
+      "active_engineer_count": 4,
+      "key_person_risk": false,
+      "sole_engineer": null,
+      "current_engineers": [
+        "VhutshiloMB",
+        "Akonisaho-MB",
+        "pakisomb",
+        "Kea1m"
+      ],
+      "engineers": [
+        {
+          "login": "VhutshiloMB",
+          "active_days": 27,
+          "first_active": "2026-07-13",
+          "last_active": "2026-09-17",
+          "days_since_last": 0,
+          "is_current": true
+        },
+        {
+          "login": "Akonisaho-MB",
+          "active_days": 23,
+          "first_active": "2026-07-22",
+          "last_active": "2026-09-17",
+          "days_since_last": 0,
+          "is_current": true
+        },
+        {
+          "login": "pakisomb",
+          "active_days": 14,
+          "first_active": "2026-07-23",
+          "last_active": "2026-09-13",
+          "days_since_last": 4,
+          "is_current": true
+        },
+        {
+          "login": "Kea1m",
+          "active_days": 8,
+          "first_active": "2026-08-31",
+          "last_active": "2026-09-17",
+          "days_since_last": 0,
+          "is_current": true
+        }
+      ],
+      "outside_contributors": []
     },
     {
       "name": "MB-IQ-Revamped",
+      "display_name": "MB-IQ-Revamped",
       "description": "MB IQ Revamped",
       "html_url": "https://github.com/Motsoeneng-Bill-Tech/MB-IQ-Revamped",
       "visibility": "PRIVATE",
       "primary_language": "TypeScript",
       "default_branch": "main",
-      "is_empty": false,
       "is_archived": false,
-      "total_commits_default_branch": 85,
-      "attributed_member_commits": 72,
-      "unattributed_commits": 13
+      "status": "Active",
+      "last_activity": "2026-09-17",
+      "days_since_activity": 0,
+      "active_days_total": 6,
+      "engineer_count": 1,
+      "active_engineer_count": 1,
+      "key_person_risk": true,
+      "sole_engineer": "konethegreatest",
+      "current_engineers": [
+        "konethegreatest"
+      ],
+      "engineers": [
+        {
+          "login": "konethegreatest",
+          "active_days": 5,
+          "first_active": "2026-09-04",
+          "last_active": "2026-09-17",
+          "days_since_last": 0,
+          "is_current": true
+        }
+      ],
+      "outside_contributors": [
+        {
+          "login": "dependabot[bot]",
+          "active_days": 4
+        }
+      ]
     },
     {
-      "name": "mb-67-minutes",
-      "description": null,
-      "html_url": "https://github.com/Motsoeneng-Bill-Tech/mb-67-minutes",
+      "name": "forensics-due-diligence-system",
+      "display_name": "Forensics Due Diligence System",
+      "description": "Multi-source background screening, corporate directorship graph analysis, sanctions & PEP verification, automated risk scoring.",
+      "html_url": "https://github.com/Motsoeneng-Bill-Tech/forensics-due-diligence-system",
+      "visibility": "PRIVATE",
+      "primary_language": "Python",
+      "default_branch": "main",
+      "is_archived": false,
+      "status": "Active",
+      "last_activity": "2026-09-17",
+      "days_since_activity": 0,
+      "active_days_total": 44,
+      "engineer_count": 4,
+      "active_engineer_count": 2,
+      "key_person_risk": false,
+      "sole_engineer": null,
+      "current_engineers": [
+        "konethegreatest",
+        "Amukelani-MB"
+      ],
+      "engineers": [
+        {
+          "login": "konethegreatest",
+          "active_days": 43,
+          "first_active": "2026-08-03",
+          "last_active": "2026-09-17",
+          "days_since_last": 0,
+          "is_current": true
+        },
+        {
+          "login": "Amukelani-MB",
+          "active_days": 24,
+          "first_active": "2026-08-07",
+          "last_active": "2026-09-06",
+          "days_since_last": 11,
+          "is_current": true
+        },
+        {
+          "login": "Akonisaho-MB",
+          "active_days": 5,
+          "first_active": "2026-08-07",
+          "last_active": "2026-08-14",
+          "days_since_last": 34,
+          "is_current": false
+        },
+        {
+          "login": "pakisomb",
+          "active_days": 1,
+          "first_active": "2026-08-06",
+          "last_active": "2026-08-06",
+          "days_since_last": 42,
+          "is_current": false
+        }
+      ],
+      "outside_contributors": [
+        {
+          "login": "konethegreat",
+          "active_days": 14
+        }
+      ]
+    },
+    {
+      "name": "mb-anchor-games",
+      "display_name": "mb-anchor-games",
+      "description": "MB Leaderboard and Anchor Games counting down to the convention.",
+      "html_url": "https://github.com/Motsoeneng-Bill-Tech/mb-anchor-games",
       "visibility": "PRIVATE",
       "primary_language": "JavaScript",
-      "default_branch": "dev",
-      "is_empty": false,
+      "default_branch": "main",
       "is_archived": false,
-      "total_commits_default_branch": 82,
-      "attributed_member_commits": 82,
-      "unattributed_commits": 0
+      "status": "Active",
+      "last_activity": "2026-09-17",
+      "days_since_activity": 0,
+      "active_days_total": 6,
+      "engineer_count": 2,
+      "active_engineer_count": 2,
+      "key_person_risk": false,
+      "sole_engineer": null,
+      "current_engineers": [
+        "pakisomb",
+        "Amukelani-MB"
+      ],
+      "engineers": [
+        {
+          "login": "pakisomb",
+          "active_days": 5,
+          "first_active": "2026-09-12",
+          "last_active": "2026-09-16",
+          "days_since_last": 1,
+          "is_current": true
+        },
+        {
+          "login": "Amukelani-MB",
+          "active_days": 3,
+          "first_active": "2026-09-15",
+          "last_active": "2026-09-17",
+          "days_since_last": 0,
+          "is_current": true
+        }
+      ],
+      "outside_contributors": []
+    },
+    {
+      "name": "tender-intelligence-platform",
+      "display_name": "Tender Intelligence Platform",
+      "description": "Automated tender scraping, eligibility scoring, procurement risk detection, and deadline pipeline tracking.",
+      "html_url": "https://github.com/Motsoeneng-Bill-Tech/tender-intelligence-platform",
+      "visibility": "PRIVATE",
+      "primary_language": "Python",
+      "default_branch": "main",
+      "is_archived": false,
+      "status": "Active",
+      "last_activity": "2026-09-17",
+      "days_since_activity": 0,
+      "active_days_total": 49,
+      "engineer_count": 2,
+      "active_engineer_count": 2,
+      "key_person_risk": false,
+      "sole_engineer": null,
+      "current_engineers": [
+        "konethegreatest",
+        "Amukelani-MB"
+      ],
+      "engineers": [
+        {
+          "login": "konethegreatest",
+          "active_days": 37,
+          "first_active": "2026-07-02",
+          "last_active": "2026-09-09",
+          "days_since_last": 8,
+          "is_current": true
+        },
+        {
+          "login": "Amukelani-MB",
+          "active_days": 35,
+          "first_active": "2026-07-03",
+          "last_active": "2026-09-17",
+          "days_since_last": 0,
+          "is_current": true
+        }
+      ],
+      "outside_contributors": [
+        {
+          "login": "konethegreat",
+          "active_days": 5
+        },
+        {
+          "login": "motsoeneng-bill-technology",
+          "active_days": 1
+        }
+      ]
     },
     {
       "name": "mb-invoicing-tool",
+      "display_name": "mb-invoicing-tool",
       "description": "Decodes glyph-obfuscated legal invoice PDFs, reconciles every fee line to the cent, auto-categorises by learned rules, and exports the team's Excel analysis. Multi-matter.",
       "html_url": "https://github.com/Motsoeneng-Bill-Tech/mb-invoicing-tool",
       "visibility": "PRIVATE",
       "primary_language": "Java",
       "default_branch": "master",
-      "is_empty": false,
       "is_archived": false,
-      "total_commits_default_branch": 44,
-      "attributed_member_commits": 23,
-      "unattributed_commits": 21
-    },
-    {
-      "name": ".github",
-      "description": null,
-      "html_url": "https://github.com/Motsoeneng-Bill-Tech/.github",
-      "visibility": "PUBLIC",
-      "primary_language": null,
-      "default_branch": "main",
-      "is_empty": false,
-      "is_archived": false,
-      "total_commits_default_branch": 37,
-      "attributed_member_commits": 6,
-      "unattributed_commits": 31
-    },
-    {
-      "name": "job-portal",
-      "description": null,
-      "html_url": "https://github.com/Motsoeneng-Bill-Tech/job-portal",
-      "visibility": "PRIVATE",
-      "primary_language": "TypeScript",
-      "default_branch": "main",
-      "is_empty": false,
-      "is_archived": false,
-      "total_commits_default_branch": 29,
-      "attributed_member_commits": 28,
-      "unattributed_commits": 1
+      "status": "Active",
+      "last_activity": "2026-09-16",
+      "days_since_activity": 1,
+      "active_days_total": 7,
+      "engineer_count": 2,
+      "active_engineer_count": 2,
+      "key_person_risk": false,
+      "sole_engineer": null,
+      "current_engineers": [
+        "VhutshiloMB",
+        "konethegreatest"
+      ],
+      "engineers": [
+        {
+          "login": "VhutshiloMB",
+          "active_days": 5,
+          "first_active": "2026-08-31",
+          "last_active": "2026-09-16",
+          "days_since_last": 1,
+          "is_current": true
+        },
+        {
+          "login": "konethegreatest",
+          "active_days": 3,
+          "first_active": "2026-09-11",
+          "last_active": "2026-09-16",
+          "days_since_last": 1,
+          "is_current": true
+        }
+      ],
+      "outside_contributors": [
+        {
+          "login": "konethegreat",
+          "active_days": 4
+        }
+      ]
     },
     {
       "name": "anchor-games",
+      "display_name": "anchor-games",
       "description": "MB Leaderboard and Anchor Games  counting down to the convention.",
       "html_url": "https://github.com/Motsoeneng-Bill-Tech/anchor-games",
       "visibility": "PRIVATE",
       "primary_language": "TypeScript",
       "default_branch": "main",
-      "is_empty": false,
       "is_archived": false,
-      "total_commits_default_branch": 5,
-      "attributed_member_commits": 5,
-      "unattributed_commits": 0
+      "status": "Active",
+      "last_activity": "2026-09-11",
+      "days_since_activity": 6,
+      "active_days_total": 1,
+      "engineer_count": 1,
+      "active_engineer_count": 1,
+      "key_person_risk": true,
+      "sole_engineer": "TheoSingo",
+      "current_engineers": [
+        "TheoSingo"
+      ],
+      "engineers": [
+        {
+          "login": "TheoSingo",
+          "active_days": 1,
+          "first_active": "2026-09-11",
+          "last_active": "2026-09-11",
+          "days_since_last": 6,
+          "is_current": true
+        }
+      ],
+      "outside_contributors": []
+    },
+    {
+      "name": "mb-wills-week",
+      "display_name": "mb-wills-week",
+      "description": null,
+      "html_url": "https://github.com/Motsoeneng-Bill-Tech/mb-wills-week",
+      "visibility": "PRIVATE",
+      "primary_language": "JavaScript",
+      "default_branch": "main",
+      "is_archived": false,
+      "status": "Active",
+      "last_activity": "2026-09-08",
+      "days_since_activity": 9,
+      "active_days_total": 6,
+      "engineer_count": 1,
+      "active_engineer_count": 1,
+      "key_person_risk": true,
+      "sole_engineer": "Akonisaho-MB",
+      "current_engineers": [
+        "Akonisaho-MB"
+      ],
+      "engineers": [
+        {
+          "login": "Akonisaho-MB",
+          "active_days": 6,
+          "first_active": "2026-09-03",
+          "last_active": "2026-09-08",
+          "days_since_last": 9,
+          "is_current": true
+        }
+      ],
+      "outside_contributors": []
+    },
+    {
+      "name": "job-portal",
+      "display_name": "Job Portal",
+      "description": "Recruitment platform supporting firm hiring pipelines and public-good community engagements.",
+      "html_url": "https://github.com/Motsoeneng-Bill-Tech/job-portal",
+      "visibility": "PRIVATE",
+      "primary_language": "TypeScript",
+      "default_branch": "main",
+      "is_archived": false,
+      "status": "Active",
+      "last_activity": "2026-09-07",
+      "days_since_activity": 10,
+      "active_days_total": 4,
+      "engineer_count": 1,
+      "active_engineer_count": 1,
+      "key_person_risk": true,
+      "sole_engineer": "konethegreatest",
+      "current_engineers": [
+        "konethegreatest"
+      ],
+      "engineers": [
+        {
+          "login": "konethegreatest",
+          "active_days": 4,
+          "first_active": "2026-07-25",
+          "last_active": "2026-09-07",
+          "days_since_last": 10,
+          "is_current": true
+        }
+      ],
+      "outside_contributors": [
+        {
+          "login": "konethegreat",
+          "active_days": 1
+        }
+      ]
+    },
+    {
+      "name": "mb-knowledge-vault-enterprise",
+      "display_name": "MB Knowledge Vault Enterprise",
+      "description": "Centralized institutional knowledge repository, precedent search engine, and automated compliance policy cross-referencing.",
+      "html_url": "https://github.com/Motsoeneng-Bill-Tech/mb-knowledge-vault-enterprise",
+      "visibility": "PRIVATE",
+      "primary_language": "JavaScript",
+      "default_branch": "main",
+      "is_archived": false,
+      "status": "Active",
+      "last_activity": "2026-09-03",
+      "days_since_activity": 14,
+      "active_days_total": 19,
+      "engineer_count": 1,
+      "active_engineer_count": 1,
+      "key_person_risk": true,
+      "sole_engineer": "Akonisaho-MB",
+      "current_engineers": [
+        "Akonisaho-MB"
+      ],
+      "engineers": [
+        {
+          "login": "Akonisaho-MB",
+          "active_days": 19,
+          "first_active": "2026-08-07",
+          "last_active": "2026-09-03",
+          "days_since_last": 14,
+          "is_current": true
+        }
+      ],
+      "outside_contributors": []
+    },
+    {
+      "name": "mb-67-minutes",
+      "display_name": "MB 67 Minutes",
+      "description": "Community outreach and pro-bono engagement initiative supporting the firm's public-good programs.",
+      "html_url": "https://github.com/Motsoeneng-Bill-Tech/mb-67-minutes",
+      "visibility": "PRIVATE",
+      "primary_language": "JavaScript",
+      "default_branch": "dev",
+      "is_archived": false,
+      "status": "Dormant",
+      "last_activity": "2026-07-16",
+      "days_since_activity": 63,
+      "active_days_total": 8,
+      "engineer_count": 2,
+      "active_engineer_count": 0,
+      "key_person_risk": false,
+      "sole_engineer": null,
+      "current_engineers": [],
+      "engineers": [
+        {
+          "login": "Akonisaho-MB",
+          "active_days": 6,
+          "first_active": "2026-07-09",
+          "last_active": "2026-07-16",
+          "days_since_last": 63,
+          "is_current": false
+        },
+        {
+          "login": "pakisomb",
+          "active_days": 4,
+          "first_active": "2026-07-10",
+          "last_active": "2026-07-13",
+          "days_since_last": 66,
+          "is_current": false
+        }
+      ],
+      "outside_contributors": []
     }
   ],
   "members": [
@@ -933,40 +1302,33 @@
       "html_url": "https://github.com/konethegreatest",
       "org_role": "MEMBER",
       "created_at": "2026-06-19T17:04:57Z",
+      "tenure_days": 91,
       "profile": {
         "bio": null,
         "company": null,
         "location": null,
         "website_url": null
       },
-      "contributions": {
-        "total": 1441,
-        "commits": 976,
-        "pull_requests": 428,
-        "reviews": 34,
-        "issues": 0,
-        "restricted": 0
+      "reliability": {
+        "window_days": 30,
+        "active_days": 29,
+        "pct": 96.7,
+        "total_days": 73,
+        "longest_streak": 51,
+        "current_streak": 22,
+        "last_date": "2026-09-17",
+        "days_since_last": 0,
+        "sources": [
+          "pullRequestContributions",
+          "pullRequestReviewContributions"
+        ],
+        "corroboration_pct": 91.2
       },
-      "firm_commits": {
-        "total": 978,
-        "by_repo": {
-          "tender-intelligence-platform": 578,
-          "forensics-due-diligence-system": 288,
-          "MB-IQ-Revamped": 72,
-          "job-portal": 28,
-          "mb-invoicing-tool": 8,
-          ".github": 4
-        },
-        "top_repos": [
-          "tender-intelligence-platform",
-          "forensics-due-diligence-system",
-          "MB-IQ-Revamped",
-          "job-portal",
-          "mb-invoicing-tool",
-          ".github"
-        ]
+      "recorded": {
+        "window_days": 30,
+        "active_days": 30,
+        "pct": 100.0
       },
-      "share_pct": 34.6,
       "consistency": {
         "active_days": 80,
         "total_days": 91,
@@ -974,14 +1336,222 @@
         "longest_streak": 78,
         "current_streak": 78,
         "last_active_date": "2026-09-17",
-        "days_since_last_active": 0,
-        "is_inactive": false,
-        "repos_breadth": 6
+        "days_since_last_active": 0
       },
+      "trend": {
+        "weeks": [
+          {
+            "week_start": "2026-06-26",
+            "week_end": "2026-07-02",
+            "active_days": 1
+          },
+          {
+            "week_start": "2026-07-03",
+            "week_end": "2026-07-09",
+            "active_days": 7
+          },
+          {
+            "week_start": "2026-07-10",
+            "week_end": "2026-07-16",
+            "active_days": 7
+          },
+          {
+            "week_start": "2026-07-17",
+            "week_end": "2026-07-23",
+            "active_days": 7
+          },
+          {
+            "week_start": "2026-07-24",
+            "week_end": "2026-07-30",
+            "active_days": 7
+          },
+          {
+            "week_start": "2026-07-31",
+            "week_end": "2026-08-06",
+            "active_days": 7
+          },
+          {
+            "week_start": "2026-08-07",
+            "week_end": "2026-08-13",
+            "active_days": 7
+          },
+          {
+            "week_start": "2026-08-14",
+            "week_end": "2026-08-20",
+            "active_days": 7
+          },
+          {
+            "week_start": "2026-08-21",
+            "week_end": "2026-08-27",
+            "active_days": 7
+          },
+          {
+            "week_start": "2026-08-28",
+            "week_end": "2026-09-03",
+            "active_days": 7
+          },
+          {
+            "week_start": "2026-09-04",
+            "week_end": "2026-09-10",
+            "active_days": 7
+          },
+          {
+            "week_start": "2026-09-11",
+            "week_end": "2026-09-17",
+            "active_days": 7
+          }
+        ],
+        "recent_avg_active_days": 7.0,
+        "earlier_avg_active_days": 6.0,
+        "direction": "Improving"
+      },
+      "weekday_pattern": [
+        {
+          "weekday": 0,
+          "active_days": 11,
+          "total_days": 13,
+          "pct": 84.6
+        },
+        {
+          "weekday": 1,
+          "active_days": 11,
+          "total_days": 13,
+          "pct": 84.6
+        },
+        {
+          "weekday": 2,
+          "active_days": 11,
+          "total_days": 13,
+          "pct": 84.6
+        },
+        {
+          "weekday": 3,
+          "active_days": 12,
+          "total_days": 13,
+          "pct": 92.3
+        },
+        {
+          "weekday": 4,
+          "active_days": 12,
+          "total_days": 13,
+          "pct": 92.3
+        },
+        {
+          "weekday": 5,
+          "active_days": 12,
+          "total_days": 13,
+          "pct": 92.3
+        },
+        {
+          "weekday": 6,
+          "active_days": 11,
+          "total_days": 13,
+          "pct": 84.6
+        }
+      ],
+      "projects": [
+        {
+          "repo": "forensics-due-diligence-system",
+          "display_name": "Forensics Due Diligence System",
+          "primary_language": "Python",
+          "visibility": "PRIVATE",
+          "active_days": 43,
+          "first_active": "2026-08-03",
+          "last_active": "2026-09-17",
+          "days_since_last": 0,
+          "is_current": true,
+          "project_status": "Active",
+          "is_sole_engineer": false,
+          "is_only_active_engineer": false
+        },
+        {
+          "repo": "tender-intelligence-platform",
+          "display_name": "Tender Intelligence Platform",
+          "primary_language": "Python",
+          "visibility": "PRIVATE",
+          "active_days": 37,
+          "first_active": "2026-07-02",
+          "last_active": "2026-09-09",
+          "days_since_last": 8,
+          "is_current": true,
+          "project_status": "Active",
+          "is_sole_engineer": false,
+          "is_only_active_engineer": false
+        },
+        {
+          "repo": "MB-IQ-Revamped",
+          "display_name": "MB-IQ-Revamped",
+          "primary_language": "TypeScript",
+          "visibility": "PRIVATE",
+          "active_days": 5,
+          "first_active": "2026-09-04",
+          "last_active": "2026-09-17",
+          "days_since_last": 0,
+          "is_current": true,
+          "project_status": "Active",
+          "is_sole_engineer": true,
+          "is_only_active_engineer": true
+        },
+        {
+          "repo": "job-portal",
+          "display_name": "Job Portal",
+          "primary_language": "TypeScript",
+          "visibility": "PRIVATE",
+          "active_days": 4,
+          "first_active": "2026-07-25",
+          "last_active": "2026-09-07",
+          "days_since_last": 10,
+          "is_current": true,
+          "project_status": "Active",
+          "is_sole_engineer": true,
+          "is_only_active_engineer": true
+        },
+        {
+          "repo": ".github",
+          "display_name": "Organization Profile & Telemetry",
+          "primary_language": null,
+          "visibility": "PUBLIC",
+          "active_days": 3,
+          "first_active": "2026-06-24",
+          "last_active": "2026-09-14",
+          "days_since_last": 3,
+          "is_current": true,
+          "project_status": "Active",
+          "is_sole_engineer": false,
+          "is_only_active_engineer": false
+        },
+        {
+          "repo": "mb-invoicing-tool",
+          "display_name": "mb-invoicing-tool",
+          "primary_language": "Java",
+          "visibility": "PRIVATE",
+          "active_days": 3,
+          "first_active": "2026-09-11",
+          "last_active": "2026-09-16",
+          "days_since_last": 1,
+          "is_current": true,
+          "project_status": "Active",
+          "is_sole_engineer": false,
+          "is_only_active_engineer": false
+        }
+      ],
+      "project_count": 6,
+      "current_project_count": 6,
+      "languages": [
+        "Java",
+        "Python",
+        "TypeScript"
+      ],
+      "carries_key_person_risk_for": [
+        "MB-IQ-Revamped",
+        "Job Portal"
+      ],
+      "engagement_status": "Committed today",
+      "engagement_level": "active",
+      "cadence_band": "Daily",
       "calendar": {
         "from": "2026-06-19",
         "to": "2026-09-17",
-        "total": 1441,
         "active_days": 80,
         "total_days": 91,
         "active_pct": 87.9,
@@ -1710,7 +2280,7 @@
               {
                 "date": "2026-09-17",
                 "weekday": 4,
-                "count": 25,
+                "count": 32,
                 "level": 4,
                 "in_range": true
               },
@@ -1732,13 +2302,6 @@
           }
         ]
       },
-      "impact_score": 94.5,
-      "cadence_score": 94.5,
-      "tier": "Daily Driver",
-      "tier_badge": "\u26a1",
-      "cadence_status": "Daily Driver",
-      "cadence_desc": "Consistent daily contributor with sustained streak and high peer review activity",
-      "commits_per_active_day": 12.2,
       "rank": 1
     },
     {
@@ -1748,38 +2311,33 @@
       "html_url": "https://github.com/Akonisaho-MB",
       "org_role": "MEMBER",
       "created_at": "2026-06-21T13:22:28Z",
+      "tenure_days": 89,
       "profile": {
         "bio": null,
         "company": null,
         "location": null,
         "website_url": null
       },
-      "contributions": {
-        "total": 970,
-        "commits": 751,
-        "pull_requests": 168,
-        "reviews": 47,
-        "issues": 0,
-        "restricted": 0
+      "reliability": {
+        "window_days": 30,
+        "active_days": 24,
+        "pct": 80.0,
+        "total_days": 44,
+        "longest_streak": 18,
+        "current_streak": 18,
+        "last_date": "2026-09-17",
+        "days_since_last": 0,
+        "sources": [
+          "pullRequestContributions",
+          "pullRequestReviewContributions"
+        ],
+        "corroboration_pct": 68.8
       },
-      "firm_commits": {
-        "total": 522,
-        "by_repo": {
-          "mb-knowledge-vault-enterprise": 223,
-          "Case-Management": 157,
-          "mb-wills-week": 88,
-          "mb-67-minutes": 37,
-          "forensics-due-diligence-system": 17
-        },
-        "top_repos": [
-          "mb-knowledge-vault-enterprise",
-          "Case-Management",
-          "mb-wills-week",
-          "mb-67-minutes",
-          "forensics-due-diligence-system"
-        ]
+      "recorded": {
+        "window_days": 30,
+        "active_days": 25,
+        "pct": 83.3
       },
-      "share_pct": 18.4,
       "consistency": {
         "active_days": 64,
         "total_days": 89,
@@ -1787,14 +2345,208 @@
         "longest_streak": 18,
         "current_streak": 18,
         "last_active_date": "2026-09-17",
-        "days_since_last_active": 0,
-        "is_inactive": false,
-        "repos_breadth": 5
+        "days_since_last_active": 0
       },
+      "trend": {
+        "weeks": [
+          {
+            "week_start": "2026-06-26",
+            "week_end": "2026-07-02",
+            "active_days": 2
+          },
+          {
+            "week_start": "2026-07-03",
+            "week_end": "2026-07-09",
+            "active_days": 5
+          },
+          {
+            "week_start": "2026-07-10",
+            "week_end": "2026-07-16",
+            "active_days": 5
+          },
+          {
+            "week_start": "2026-07-17",
+            "week_end": "2026-07-23",
+            "active_days": 3
+          },
+          {
+            "week_start": "2026-07-24",
+            "week_end": "2026-07-30",
+            "active_days": 7
+          },
+          {
+            "week_start": "2026-07-31",
+            "week_end": "2026-08-06",
+            "active_days": 3
+          },
+          {
+            "week_start": "2026-08-07",
+            "week_end": "2026-08-13",
+            "active_days": 7
+          },
+          {
+            "week_start": "2026-08-14",
+            "week_end": "2026-08-20",
+            "active_days": 7
+          },
+          {
+            "week_start": "2026-08-21",
+            "week_end": "2026-08-27",
+            "active_days": 4
+          },
+          {
+            "week_start": "2026-08-28",
+            "week_end": "2026-09-03",
+            "active_days": 5
+          },
+          {
+            "week_start": "2026-09-04",
+            "week_end": "2026-09-10",
+            "active_days": 7
+          },
+          {
+            "week_start": "2026-09-11",
+            "week_end": "2026-09-17",
+            "active_days": 7
+          }
+        ],
+        "recent_avg_active_days": 6.2,
+        "earlier_avg_active_days": 4.2,
+        "direction": "Improving"
+      },
+      "weekday_pattern": [
+        {
+          "weekday": 0,
+          "active_days": 6,
+          "total_days": 13,
+          "pct": 46.2
+        },
+        {
+          "weekday": 1,
+          "active_days": 9,
+          "total_days": 13,
+          "pct": 69.2
+        },
+        {
+          "weekday": 2,
+          "active_days": 9,
+          "total_days": 13,
+          "pct": 69.2
+        },
+        {
+          "weekday": 3,
+          "active_days": 13,
+          "total_days": 13,
+          "pct": 100.0
+        },
+        {
+          "weekday": 4,
+          "active_days": 12,
+          "total_days": 13,
+          "pct": 92.3
+        },
+        {
+          "weekday": 5,
+          "active_days": 10,
+          "total_days": 12,
+          "pct": 83.3
+        },
+        {
+          "weekday": 6,
+          "active_days": 5,
+          "total_days": 12,
+          "pct": 41.7
+        }
+      ],
+      "projects": [
+        {
+          "repo": "Case-Management",
+          "display_name": "Enterprise Case Management",
+          "primary_language": "Java",
+          "visibility": "PRIVATE",
+          "active_days": 23,
+          "first_active": "2026-07-22",
+          "last_active": "2026-09-17",
+          "days_since_last": 0,
+          "is_current": true,
+          "project_status": "Active",
+          "is_sole_engineer": false,
+          "is_only_active_engineer": false
+        },
+        {
+          "repo": "mb-knowledge-vault-enterprise",
+          "display_name": "MB Knowledge Vault Enterprise",
+          "primary_language": "JavaScript",
+          "visibility": "PRIVATE",
+          "active_days": 19,
+          "first_active": "2026-08-07",
+          "last_active": "2026-09-03",
+          "days_since_last": 14,
+          "is_current": true,
+          "project_status": "Active",
+          "is_sole_engineer": true,
+          "is_only_active_engineer": true
+        },
+        {
+          "repo": "mb-67-minutes",
+          "display_name": "MB 67 Minutes",
+          "primary_language": "JavaScript",
+          "visibility": "PRIVATE",
+          "active_days": 6,
+          "first_active": "2026-07-09",
+          "last_active": "2026-07-16",
+          "days_since_last": 63,
+          "is_current": false,
+          "project_status": "Dormant",
+          "is_sole_engineer": false,
+          "is_only_active_engineer": false
+        },
+        {
+          "repo": "mb-wills-week",
+          "display_name": "mb-wills-week",
+          "primary_language": "JavaScript",
+          "visibility": "PRIVATE",
+          "active_days": 6,
+          "first_active": "2026-09-03",
+          "last_active": "2026-09-08",
+          "days_since_last": 9,
+          "is_current": true,
+          "project_status": "Active",
+          "is_sole_engineer": true,
+          "is_only_active_engineer": true
+        },
+        {
+          "repo": "forensics-due-diligence-system",
+          "display_name": "Forensics Due Diligence System",
+          "primary_language": "Python",
+          "visibility": "PRIVATE",
+          "active_days": 5,
+          "first_active": "2026-08-07",
+          "last_active": "2026-08-14",
+          "days_since_last": 34,
+          "is_current": false,
+          "project_status": "Active",
+          "is_sole_engineer": false,
+          "is_only_active_engineer": false
+        }
+      ],
+      "project_count": 5,
+      "current_project_count": 3,
+      "languages": [
+        "Java",
+        "JavaScript",
+        "Python"
+      ],
+      "carries_key_person_risk_for": [
+        "MB Knowledge Vault Enterprise",
+        "mb-wills-week"
+      ],
+      "engagement_status": "Committed today",
+      "engagement_level": "active",
+      "cadence_band": "Near-daily",
       "calendar": {
         "from": "2026-06-21",
         "to": "2026-09-17",
-        "total": 970,
         "active_days": 64,
         "total_days": 89,
         "active_pct": 71.9,
@@ -2470,7 +3222,7 @@
               {
                 "date": "2026-09-17",
                 "weekday": 4,
-                "count": 15,
+                "count": 21,
                 "level": 4,
                 "in_range": true
               },
@@ -2492,13 +3244,6 @@
           }
         ]
       },
-      "impact_score": 64.4,
-      "cadence_score": 64.4,
-      "tier": "Daily Driver",
-      "tier_badge": "\u26a1",
-      "cadence_status": "Daily Driver",
-      "cadence_desc": "Consistent daily contributor with sustained streak and high peer review activity",
-      "commits_per_active_day": 8.2,
       "rank": 2
     },
     {
@@ -2508,34 +3253,33 @@
       "html_url": "https://github.com/Amukelani-MB",
       "org_role": "MEMBER",
       "created_at": "2026-06-24T08:20:22Z",
+      "tenure_days": 86,
       "profile": {
         "bio": null,
         "company": null,
         "location": null,
         "website_url": null
       },
-      "contributions": {
-        "total": 674,
-        "commits": 475,
-        "pull_requests": 181,
-        "reviews": 16,
-        "issues": 0,
-        "restricted": 0
+      "reliability": {
+        "window_days": 30,
+        "active_days": 24,
+        "pct": 80.0,
+        "total_days": 55,
+        "longest_streak": 12,
+        "current_streak": 4,
+        "last_date": "2026-09-17",
+        "days_since_last": 0,
+        "sources": [
+          "pullRequestContributions",
+          "pullRequestReviewContributions"
+        ],
+        "corroboration_pct": 83.3
       },
-      "firm_commits": {
-        "total": 468,
-        "by_repo": {
-          "tender-intelligence-platform": 396,
-          "forensics-due-diligence-system": 63,
-          "mb-anchor-games": 9
-        },
-        "top_repos": [
-          "tender-intelligence-platform",
-          "forensics-due-diligence-system",
-          "mb-anchor-games"
-        ]
+      "recorded": {
+        "window_days": 30,
+        "active_days": 28,
+        "pct": 93.3
       },
-      "share_pct": 16.5,
       "consistency": {
         "active_days": 66,
         "total_days": 86,
@@ -2543,14 +3287,176 @@
         "longest_streak": 19,
         "current_streak": 19,
         "last_active_date": "2026-09-17",
-        "days_since_last_active": 0,
-        "is_inactive": false,
-        "repos_breadth": 3
+        "days_since_last_active": 0
       },
+      "trend": {
+        "weeks": [
+          {
+            "week_start": "2026-06-26",
+            "week_end": "2026-07-02",
+            "active_days": 0
+          },
+          {
+            "week_start": "2026-07-03",
+            "week_end": "2026-07-09",
+            "active_days": 3
+          },
+          {
+            "week_start": "2026-07-10",
+            "week_end": "2026-07-16",
+            "active_days": 7
+          },
+          {
+            "week_start": "2026-07-17",
+            "week_end": "2026-07-23",
+            "active_days": 6
+          },
+          {
+            "week_start": "2026-07-24",
+            "week_end": "2026-07-30",
+            "active_days": 5
+          },
+          {
+            "week_start": "2026-07-31",
+            "week_end": "2026-08-06",
+            "active_days": 5
+          },
+          {
+            "week_start": "2026-08-07",
+            "week_end": "2026-08-13",
+            "active_days": 7
+          },
+          {
+            "week_start": "2026-08-14",
+            "week_end": "2026-08-20",
+            "active_days": 6
+          },
+          {
+            "week_start": "2026-08-21",
+            "week_end": "2026-08-27",
+            "active_days": 6
+          },
+          {
+            "week_start": "2026-08-28",
+            "week_end": "2026-09-03",
+            "active_days": 6
+          },
+          {
+            "week_start": "2026-09-04",
+            "week_end": "2026-09-10",
+            "active_days": 7
+          },
+          {
+            "week_start": "2026-09-11",
+            "week_end": "2026-09-17",
+            "active_days": 7
+          }
+        ],
+        "recent_avg_active_days": 6.5,
+        "earlier_avg_active_days": 4.3,
+        "direction": "Improving"
+      },
+      "weekday_pattern": [
+        {
+          "weekday": 0,
+          "active_days": 8,
+          "total_days": 12,
+          "pct": 66.7
+        },
+        {
+          "weekday": 1,
+          "active_days": 11,
+          "total_days": 12,
+          "pct": 91.7
+        },
+        {
+          "weekday": 2,
+          "active_days": 9,
+          "total_days": 12,
+          "pct": 75.0
+        },
+        {
+          "weekday": 3,
+          "active_days": 11,
+          "total_days": 13,
+          "pct": 84.6
+        },
+        {
+          "weekday": 4,
+          "active_days": 9,
+          "total_days": 13,
+          "pct": 69.2
+        },
+        {
+          "weekday": 5,
+          "active_days": 11,
+          "total_days": 12,
+          "pct": 91.7
+        },
+        {
+          "weekday": 6,
+          "active_days": 7,
+          "total_days": 12,
+          "pct": 58.3
+        }
+      ],
+      "projects": [
+        {
+          "repo": "tender-intelligence-platform",
+          "display_name": "Tender Intelligence Platform",
+          "primary_language": "Python",
+          "visibility": "PRIVATE",
+          "active_days": 35,
+          "first_active": "2026-07-03",
+          "last_active": "2026-09-17",
+          "days_since_last": 0,
+          "is_current": true,
+          "project_status": "Active",
+          "is_sole_engineer": false,
+          "is_only_active_engineer": false
+        },
+        {
+          "repo": "forensics-due-diligence-system",
+          "display_name": "Forensics Due Diligence System",
+          "primary_language": "Python",
+          "visibility": "PRIVATE",
+          "active_days": 24,
+          "first_active": "2026-08-07",
+          "last_active": "2026-09-06",
+          "days_since_last": 11,
+          "is_current": true,
+          "project_status": "Active",
+          "is_sole_engineer": false,
+          "is_only_active_engineer": false
+        },
+        {
+          "repo": "mb-anchor-games",
+          "display_name": "mb-anchor-games",
+          "primary_language": "JavaScript",
+          "visibility": "PRIVATE",
+          "active_days": 3,
+          "first_active": "2026-09-15",
+          "last_active": "2026-09-17",
+          "days_since_last": 0,
+          "is_current": true,
+          "project_status": "Active",
+          "is_sole_engineer": false,
+          "is_only_active_engineer": false
+        }
+      ],
+      "project_count": 3,
+      "current_project_count": 3,
+      "languages": [
+        "JavaScript",
+        "Python"
+      ],
+      "carries_key_person_risk_for": [],
+      "engagement_status": "Committed today",
+      "engagement_level": "active",
+      "cadence_band": "Near-daily",
       "calendar": {
         "from": "2026-06-24",
         "to": "2026-09-17",
-        "total": 674,
         "active_days": 66,
         "total_days": 86,
         "active_pct": 76.7,
@@ -3226,7 +4132,7 @@
               {
                 "date": "2026-09-17",
                 "weekday": 4,
-                "count": 10,
+                "count": 12,
                 "level": 4,
                 "in_range": true
               },
@@ -3248,13 +4154,6 @@
           }
         ]
       },
-      "impact_score": 54.1,
-      "cadence_score": 54.1,
-      "tier": "Daily Driver",
-      "tier_badge": "\u26a1",
-      "cadence_status": "Daily Driver",
-      "cadence_desc": "Consistent daily contributor with sustained streak and high peer review activity",
-      "commits_per_active_day": 7.1,
       "rank": 3
     },
     {
@@ -3264,32 +4163,33 @@
       "html_url": "https://github.com/VhutshiloMB",
       "org_role": "MEMBER",
       "created_at": "2026-06-19T13:02:32Z",
+      "tenure_days": 91,
       "profile": {
         "bio": null,
         "company": null,
         "location": null,
         "website_url": null
       },
-      "contributions": {
-        "total": 218,
-        "commits": 139,
-        "pull_requests": 50,
-        "reviews": 27,
-        "issues": 0,
-        "restricted": 0
+      "reliability": {
+        "window_days": 30,
+        "active_days": 13,
+        "pct": 43.3,
+        "total_days": 26,
+        "longest_streak": 11,
+        "current_streak": 11,
+        "last_date": "2026-09-17",
+        "days_since_last": 0,
+        "sources": [
+          "pullRequestContributions",
+          "pullRequestReviewContributions"
+        ],
+        "corroboration_pct": 76.5
       },
-      "firm_commits": {
-        "total": 144,
-        "by_repo": {
-          "Case-Management": 129,
-          "mb-invoicing-tool": 15
-        },
-        "top_repos": [
-          "Case-Management",
-          "mb-invoicing-tool"
-        ]
+      "recorded": {
+        "window_days": 30,
+        "active_days": 17,
+        "pct": 56.7
       },
-      "share_pct": 5.1,
       "consistency": {
         "active_days": 34,
         "total_days": 91,
@@ -3297,14 +4197,161 @@
         "longest_streak": 11,
         "current_streak": 11,
         "last_active_date": "2026-09-17",
-        "days_since_last_active": 0,
-        "is_inactive": false,
-        "repos_breadth": 2
+        "days_since_last_active": 0
       },
+      "trend": {
+        "weeks": [
+          {
+            "week_start": "2026-06-26",
+            "week_end": "2026-07-02",
+            "active_days": 0
+          },
+          {
+            "week_start": "2026-07-03",
+            "week_end": "2026-07-09",
+            "active_days": 0
+          },
+          {
+            "week_start": "2026-07-10",
+            "week_end": "2026-07-16",
+            "active_days": 2
+          },
+          {
+            "week_start": "2026-07-17",
+            "week_end": "2026-07-23",
+            "active_days": 2
+          },
+          {
+            "week_start": "2026-07-24",
+            "week_end": "2026-07-30",
+            "active_days": 4
+          },
+          {
+            "week_start": "2026-07-31",
+            "week_end": "2026-08-06",
+            "active_days": 2
+          },
+          {
+            "week_start": "2026-08-07",
+            "week_end": "2026-08-13",
+            "active_days": 4
+          },
+          {
+            "week_start": "2026-08-14",
+            "week_end": "2026-08-20",
+            "active_days": 2
+          },
+          {
+            "week_start": "2026-08-21",
+            "week_end": "2026-08-27",
+            "active_days": 2
+          },
+          {
+            "week_start": "2026-08-28",
+            "week_end": "2026-09-03",
+            "active_days": 2
+          },
+          {
+            "week_start": "2026-09-04",
+            "week_end": "2026-09-10",
+            "active_days": 5
+          },
+          {
+            "week_start": "2026-09-11",
+            "week_end": "2026-09-17",
+            "active_days": 7
+          }
+        ],
+        "recent_avg_active_days": 3.7,
+        "earlier_avg_active_days": 1.7,
+        "direction": "Improving"
+      },
+      "weekday_pattern": [
+        {
+          "weekday": 0,
+          "active_days": 1,
+          "total_days": 13,
+          "pct": 7.7
+        },
+        {
+          "weekday": 1,
+          "active_days": 6,
+          "total_days": 13,
+          "pct": 46.2
+        },
+        {
+          "weekday": 2,
+          "active_days": 7,
+          "total_days": 13,
+          "pct": 53.8
+        },
+        {
+          "weekday": 3,
+          "active_days": 6,
+          "total_days": 13,
+          "pct": 46.2
+        },
+        {
+          "weekday": 4,
+          "active_days": 6,
+          "total_days": 13,
+          "pct": 46.2
+        },
+        {
+          "weekday": 5,
+          "active_days": 6,
+          "total_days": 13,
+          "pct": 46.2
+        },
+        {
+          "weekday": 6,
+          "active_days": 2,
+          "total_days": 13,
+          "pct": 15.4
+        }
+      ],
+      "projects": [
+        {
+          "repo": "Case-Management",
+          "display_name": "Enterprise Case Management",
+          "primary_language": "Java",
+          "visibility": "PRIVATE",
+          "active_days": 27,
+          "first_active": "2026-07-13",
+          "last_active": "2026-09-17",
+          "days_since_last": 0,
+          "is_current": true,
+          "project_status": "Active",
+          "is_sole_engineer": false,
+          "is_only_active_engineer": false
+        },
+        {
+          "repo": "mb-invoicing-tool",
+          "display_name": "mb-invoicing-tool",
+          "primary_language": "Java",
+          "visibility": "PRIVATE",
+          "active_days": 5,
+          "first_active": "2026-08-31",
+          "last_active": "2026-09-16",
+          "days_since_last": 1,
+          "is_current": true,
+          "project_status": "Active",
+          "is_sole_engineer": false,
+          "is_only_active_engineer": false
+        }
+      ],
+      "project_count": 2,
+      "current_project_count": 2,
+      "languages": [
+        "Java"
+      ],
+      "carries_key_person_risk_for": [],
+      "engagement_status": "Committed today",
+      "engagement_level": "active",
+      "cadence_band": "Regular",
       "calendar": {
         "from": "2026-06-19",
         "to": "2026-09-17",
-        "total": 218,
         "active_days": 34,
         "total_days": 91,
         "active_pct": 37.4,
@@ -4033,7 +5080,7 @@
               {
                 "date": "2026-09-17",
                 "weekday": 4,
-                "count": 11,
+                "count": 20,
                 "level": 4,
                 "in_range": true
               },
@@ -4055,13 +5102,6 @@
           }
         ]
       },
-      "impact_score": 33.8,
-      "cadence_score": 33.8,
-      "tier": "Steady Contributor",
-      "tier_badge": "\ud83d\udfe1",
-      "cadence_status": "Steady Contributor",
-      "cadence_desc": "Weekly task contributor",
-      "commits_per_active_day": 4.2,
       "rank": 4
     },
     {
@@ -4071,36 +5111,33 @@
       "html_url": "https://github.com/pakisomb",
       "org_role": "MEMBER",
       "created_at": "2026-06-24T08:45:05Z",
+      "tenure_days": 86,
       "profile": {
         "bio": null,
         "company": null,
         "location": null,
         "website_url": null
       },
-      "contributions": {
-        "total": 1255,
-        "commits": 1190,
-        "pull_requests": 24,
-        "reviews": 39,
-        "issues": 0,
-        "restricted": 0
+      "reliability": {
+        "window_days": 30,
+        "active_days": 8,
+        "pct": 26.7,
+        "total_days": 19,
+        "longest_streak": 4,
+        "current_streak": 0,
+        "last_date": "2026-09-14",
+        "days_since_last": 3,
+        "sources": [
+          "pullRequestContributions",
+          "pullRequestReviewContributions"
+        ],
+        "corroboration_pct": 73.1
       },
-      "firm_commits": {
-        "total": 694,
-        "by_repo": {
-          "mb-anchor-games": 600,
-          "Case-Management": 46,
-          "mb-67-minutes": 45,
-          "forensics-due-diligence-system": 3
-        },
-        "top_repos": [
-          "mb-anchor-games",
-          "Case-Management",
-          "mb-67-minutes",
-          "forensics-due-diligence-system"
-        ]
+      "recorded": {
+        "window_days": 30,
+        "active_days": 10,
+        "pct": 33.3
       },
-      "share_pct": 24.5,
       "consistency": {
         "active_days": 26,
         "total_days": 86,
@@ -4108,14 +5145,191 @@
         "longest_streak": 5,
         "current_streak": 0,
         "last_active_date": "2026-09-16",
-        "days_since_last_active": 1,
-        "is_inactive": false,
-        "repos_breadth": 4
+        "days_since_last_active": 1
       },
+      "trend": {
+        "weeks": [
+          {
+            "week_start": "2026-06-26",
+            "week_end": "2026-07-02",
+            "active_days": 0
+          },
+          {
+            "week_start": "2026-07-03",
+            "week_end": "2026-07-09",
+            "active_days": 0
+          },
+          {
+            "week_start": "2026-07-10",
+            "week_end": "2026-07-16",
+            "active_days": 4
+          },
+          {
+            "week_start": "2026-07-17",
+            "week_end": "2026-07-23",
+            "active_days": 1
+          },
+          {
+            "week_start": "2026-07-24",
+            "week_end": "2026-07-30",
+            "active_days": 3
+          },
+          {
+            "week_start": "2026-07-31",
+            "week_end": "2026-08-06",
+            "active_days": 4
+          },
+          {
+            "week_start": "2026-08-07",
+            "week_end": "2026-08-13",
+            "active_days": 3
+          },
+          {
+            "week_start": "2026-08-14",
+            "week_end": "2026-08-20",
+            "active_days": 1
+          },
+          {
+            "week_start": "2026-08-21",
+            "week_end": "2026-08-27",
+            "active_days": 2
+          },
+          {
+            "week_start": "2026-08-28",
+            "week_end": "2026-09-03",
+            "active_days": 0
+          },
+          {
+            "week_start": "2026-09-04",
+            "week_end": "2026-09-10",
+            "active_days": 2
+          },
+          {
+            "week_start": "2026-09-11",
+            "week_end": "2026-09-17",
+            "active_days": 5
+          }
+        ],
+        "recent_avg_active_days": 2.2,
+        "earlier_avg_active_days": 2.0,
+        "direction": "Steady"
+      },
+      "weekday_pattern": [
+        {
+          "weekday": 0,
+          "active_days": 2,
+          "total_days": 12,
+          "pct": 16.7
+        },
+        {
+          "weekday": 1,
+          "active_days": 4,
+          "total_days": 12,
+          "pct": 33.3
+        },
+        {
+          "weekday": 2,
+          "active_days": 4,
+          "total_days": 12,
+          "pct": 33.3
+        },
+        {
+          "weekday": 3,
+          "active_days": 6,
+          "total_days": 13,
+          "pct": 46.2
+        },
+        {
+          "weekday": 4,
+          "active_days": 4,
+          "total_days": 13,
+          "pct": 30.8
+        },
+        {
+          "weekday": 5,
+          "active_days": 4,
+          "total_days": 12,
+          "pct": 33.3
+        },
+        {
+          "weekday": 6,
+          "active_days": 2,
+          "total_days": 12,
+          "pct": 16.7
+        }
+      ],
+      "projects": [
+        {
+          "repo": "Case-Management",
+          "display_name": "Enterprise Case Management",
+          "primary_language": "Java",
+          "visibility": "PRIVATE",
+          "active_days": 14,
+          "first_active": "2026-07-23",
+          "last_active": "2026-09-13",
+          "days_since_last": 4,
+          "is_current": true,
+          "project_status": "Active",
+          "is_sole_engineer": false,
+          "is_only_active_engineer": false
+        },
+        {
+          "repo": "mb-anchor-games",
+          "display_name": "mb-anchor-games",
+          "primary_language": "JavaScript",
+          "visibility": "PRIVATE",
+          "active_days": 5,
+          "first_active": "2026-09-12",
+          "last_active": "2026-09-16",
+          "days_since_last": 1,
+          "is_current": true,
+          "project_status": "Active",
+          "is_sole_engineer": false,
+          "is_only_active_engineer": false
+        },
+        {
+          "repo": "mb-67-minutes",
+          "display_name": "MB 67 Minutes",
+          "primary_language": "JavaScript",
+          "visibility": "PRIVATE",
+          "active_days": 4,
+          "first_active": "2026-07-10",
+          "last_active": "2026-07-13",
+          "days_since_last": 66,
+          "is_current": false,
+          "project_status": "Dormant",
+          "is_sole_engineer": false,
+          "is_only_active_engineer": false
+        },
+        {
+          "repo": "forensics-due-diligence-system",
+          "display_name": "Forensics Due Diligence System",
+          "primary_language": "Python",
+          "visibility": "PRIVATE",
+          "active_days": 1,
+          "first_active": "2026-08-06",
+          "last_active": "2026-08-06",
+          "days_since_last": 42,
+          "is_current": false,
+          "project_status": "Active",
+          "is_sole_engineer": false,
+          "is_only_active_engineer": false
+        }
+      ],
+      "project_count": 4,
+      "current_project_count": 2,
+      "languages": [
+        "Java",
+        "JavaScript",
+        "Python"
+      ],
+      "carries_key_person_risk_for": [],
+      "engagement_status": "Committed yesterday",
+      "engagement_level": "active",
+      "cadence_band": "Intermittent",
       "calendar": {
         "from": "2026-06-24",
         "to": "2026-09-17",
-        "total": 1255,
         "active_days": 26,
         "total_days": 86,
         "active_pct": 30.2,
@@ -4813,13 +6027,6 @@
           }
         ]
       },
-      "impact_score": 32.8,
-      "cadence_score": 32.8,
-      "tier": "Steady Contributor",
-      "tier_badge": "\ud83d\udfe1",
-      "cadence_status": "Steady Contributor",
-      "cadence_desc": "Weekly task contributor",
-      "commits_per_active_day": 26.7,
       "rank": 5
     },
     {
@@ -4829,30 +6036,33 @@
       "html_url": "https://github.com/Kea1m",
       "org_role": "MEMBER",
       "created_at": "2026-06-22T12:42:55Z",
+      "tenure_days": 88,
       "profile": {
         "bio": "",
         "company": null,
         "location": null,
         "website_url": "https://github.com/Kea1m"
       },
-      "contributions": {
-        "total": 40,
-        "commits": 12,
-        "pull_requests": 4,
-        "reviews": 22,
-        "issues": 0,
-        "restricted": 0
+      "reliability": {
+        "window_days": 30,
+        "active_days": 7,
+        "pct": 23.3,
+        "total_days": 11,
+        "longest_streak": 3,
+        "current_streak": 3,
+        "last_date": "2026-09-17",
+        "days_since_last": 0,
+        "sources": [
+          "pullRequestContributions",
+          "pullRequestReviewContributions"
+        ],
+        "corroboration_pct": 78.6
       },
-      "firm_commits": {
-        "total": 17,
-        "by_repo": {
-          "Case-Management": 17
-        },
-        "top_repos": [
-          "Case-Management"
-        ]
+      "recorded": {
+        "window_days": 30,
+        "active_days": 8,
+        "pct": 26.7
       },
-      "share_pct": 0.6,
       "consistency": {
         "active_days": 14,
         "total_days": 88,
@@ -4860,14 +6070,147 @@
         "longest_streak": 3,
         "current_streak": 3,
         "last_active_date": "2026-09-17",
-        "days_since_last_active": 0,
-        "is_inactive": false,
-        "repos_breadth": 1
+        "days_since_last_active": 0
       },
+      "trend": {
+        "weeks": [
+          {
+            "week_start": "2026-06-26",
+            "week_end": "2026-07-02",
+            "active_days": 0
+          },
+          {
+            "week_start": "2026-07-03",
+            "week_end": "2026-07-09",
+            "active_days": 0
+          },
+          {
+            "week_start": "2026-07-10",
+            "week_end": "2026-07-16",
+            "active_days": 1
+          },
+          {
+            "week_start": "2026-07-17",
+            "week_end": "2026-07-23",
+            "active_days": 0
+          },
+          {
+            "week_start": "2026-07-24",
+            "week_end": "2026-07-30",
+            "active_days": 0
+          },
+          {
+            "week_start": "2026-07-31",
+            "week_end": "2026-08-06",
+            "active_days": 0
+          },
+          {
+            "week_start": "2026-08-07",
+            "week_end": "2026-08-13",
+            "active_days": 3
+          },
+          {
+            "week_start": "2026-08-14",
+            "week_end": "2026-08-20",
+            "active_days": 0
+          },
+          {
+            "week_start": "2026-08-21",
+            "week_end": "2026-08-27",
+            "active_days": 0
+          },
+          {
+            "week_start": "2026-08-28",
+            "week_end": "2026-09-03",
+            "active_days": 2
+          },
+          {
+            "week_start": "2026-09-04",
+            "week_end": "2026-09-10",
+            "active_days": 2
+          },
+          {
+            "week_start": "2026-09-11",
+            "week_end": "2026-09-17",
+            "active_days": 4
+          }
+        ],
+        "recent_avg_active_days": 1.8,
+        "earlier_avg_active_days": 0.2,
+        "direction": "Improving"
+      },
+      "weekday_pattern": [
+        {
+          "weekday": 0,
+          "active_days": 1,
+          "total_days": 12,
+          "pct": 8.3
+        },
+        {
+          "weekday": 1,
+          "active_days": 2,
+          "total_days": 13,
+          "pct": 15.4
+        },
+        {
+          "weekday": 2,
+          "active_days": 4,
+          "total_days": 13,
+          "pct": 30.8
+        },
+        {
+          "weekday": 3,
+          "active_days": 4,
+          "total_days": 13,
+          "pct": 30.8
+        },
+        {
+          "weekday": 4,
+          "active_days": 2,
+          "total_days": 13,
+          "pct": 15.4
+        },
+        {
+          "weekday": 5,
+          "active_days": 1,
+          "total_days": 12,
+          "pct": 8.3
+        },
+        {
+          "weekday": 6,
+          "active_days": 0,
+          "total_days": 12,
+          "pct": 0.0
+        }
+      ],
+      "projects": [
+        {
+          "repo": "Case-Management",
+          "display_name": "Enterprise Case Management",
+          "primary_language": "Java",
+          "visibility": "PRIVATE",
+          "active_days": 8,
+          "first_active": "2026-08-31",
+          "last_active": "2026-09-17",
+          "days_since_last": 0,
+          "is_current": true,
+          "project_status": "Active",
+          "is_sole_engineer": false,
+          "is_only_active_engineer": false
+        }
+      ],
+      "project_count": 1,
+      "current_project_count": 1,
+      "languages": [
+        "Java"
+      ],
+      "carries_key_person_risk_for": [],
+      "engagement_status": "Committed today",
+      "engagement_level": "active",
+      "cadence_band": "Intermittent",
       "calendar": {
         "from": "2026-06-22",
         "to": "2026-09-17",
-        "total": 40,
         "active_days": 14,
         "total_days": 88,
         "active_pct": 15.9,
@@ -5543,8 +6886,8 @@
               {
                 "date": "2026-09-17",
                 "weekday": 4,
-                "count": 3,
-                "level": 2,
+                "count": 7,
+                "level": 3,
                 "in_range": true
               },
               {
@@ -5565,13 +6908,6 @@
           }
         ]
       },
-      "impact_score": 17.7,
-      "cadence_score": 17.7,
-      "tier": "Intermittent",
-      "tier_badge": "\u26aa",
-      "cadence_status": "Intermittent",
-      "cadence_desc": "Infrequent contributions across tenure",
-      "commits_per_active_day": 1.2,
       "rank": 6
     },
     {
@@ -5581,32 +6917,32 @@
       "html_url": "https://github.com/TheoSingo",
       "org_role": "ADMIN",
       "created_at": "2026-08-20T10:18:12Z",
+      "tenure_days": 29,
       "profile": {
         "bio": null,
         "company": null,
         "location": null,
         "website_url": null
       },
-      "contributions": {
-        "total": 10,
-        "commits": 7,
-        "pull_requests": 0,
-        "reviews": 1,
-        "issues": 0,
-        "restricted": 0
+      "reliability": {
+        "window_days": 29,
+        "active_days": 1,
+        "pct": 3.4,
+        "total_days": 1,
+        "longest_streak": 1,
+        "current_streak": 0,
+        "last_date": "2026-09-03",
+        "days_since_last": 14,
+        "sources": [
+          "pullRequestReviewContributions"
+        ],
+        "corroboration_pct": 25.0
       },
-      "firm_commits": {
-        "total": 7,
-        "by_repo": {
-          "anchor-games": 5,
-          ".github": 2
-        },
-        "top_repos": [
-          "anchor-games",
-          ".github"
-        ]
+      "recorded": {
+        "window_days": 29,
+        "active_days": 4,
+        "pct": 13.8
       },
-      "share_pct": 0.2,
       "consistency": {
         "active_days": 4,
         "total_days": 29,
@@ -5614,14 +6950,163 @@
         "longest_streak": 2,
         "current_streak": 0,
         "last_active_date": "2026-09-11",
-        "days_since_last_active": 6,
-        "is_inactive": false,
-        "repos_breadth": 2
+        "days_since_last_active": 6
       },
+      "trend": {
+        "weeks": [
+          {
+            "week_start": "2026-06-26",
+            "week_end": "2026-07-02",
+            "active_days": 0
+          },
+          {
+            "week_start": "2026-07-03",
+            "week_end": "2026-07-09",
+            "active_days": 0
+          },
+          {
+            "week_start": "2026-07-10",
+            "week_end": "2026-07-16",
+            "active_days": 0
+          },
+          {
+            "week_start": "2026-07-17",
+            "week_end": "2026-07-23",
+            "active_days": 0
+          },
+          {
+            "week_start": "2026-07-24",
+            "week_end": "2026-07-30",
+            "active_days": 0
+          },
+          {
+            "week_start": "2026-07-31",
+            "week_end": "2026-08-06",
+            "active_days": 0
+          },
+          {
+            "week_start": "2026-08-07",
+            "week_end": "2026-08-13",
+            "active_days": 0
+          },
+          {
+            "week_start": "2026-08-14",
+            "week_end": "2026-08-20",
+            "active_days": 1
+          },
+          {
+            "week_start": "2026-08-21",
+            "week_end": "2026-08-27",
+            "active_days": 0
+          },
+          {
+            "week_start": "2026-08-28",
+            "week_end": "2026-09-03",
+            "active_days": 1
+          },
+          {
+            "week_start": "2026-09-04",
+            "week_end": "2026-09-10",
+            "active_days": 1
+          },
+          {
+            "week_start": "2026-09-11",
+            "week_end": "2026-09-17",
+            "active_days": 1
+          }
+        ],
+        "recent_avg_active_days": 0.7,
+        "earlier_avg_active_days": 0.0,
+        "direction": "Steady"
+      },
+      "weekday_pattern": [
+        {
+          "weekday": 0,
+          "active_days": 0,
+          "total_days": 4,
+          "pct": 0.0
+        },
+        {
+          "weekday": 1,
+          "active_days": 0,
+          "total_days": 4,
+          "pct": 0.0
+        },
+        {
+          "weekday": 2,
+          "active_days": 0,
+          "total_days": 4,
+          "pct": 0.0
+        },
+        {
+          "weekday": 3,
+          "active_days": 0,
+          "total_days": 4,
+          "pct": 0.0
+        },
+        {
+          "weekday": 4,
+          "active_days": 2,
+          "total_days": 5,
+          "pct": 40.0
+        },
+        {
+          "weekday": 5,
+          "active_days": 2,
+          "total_days": 4,
+          "pct": 50.0
+        },
+        {
+          "weekday": 6,
+          "active_days": 0,
+          "total_days": 4,
+          "pct": 0.0
+        }
+      ],
+      "projects": [
+        {
+          "repo": ".github",
+          "display_name": "Organization Profile & Telemetry",
+          "primary_language": null,
+          "visibility": "PUBLIC",
+          "active_days": 2,
+          "first_active": "2026-09-03",
+          "last_active": "2026-09-04",
+          "days_since_last": 13,
+          "is_current": true,
+          "project_status": "Active",
+          "is_sole_engineer": false,
+          "is_only_active_engineer": false
+        },
+        {
+          "repo": "anchor-games",
+          "display_name": "anchor-games",
+          "primary_language": "TypeScript",
+          "visibility": "PRIVATE",
+          "active_days": 1,
+          "first_active": "2026-09-11",
+          "last_active": "2026-09-11",
+          "days_since_last": 6,
+          "is_current": true,
+          "project_status": "Active",
+          "is_sole_engineer": true,
+          "is_only_active_engineer": true
+        }
+      ],
+      "project_count": 2,
+      "current_project_count": 2,
+      "languages": [
+        "TypeScript"
+      ],
+      "carries_key_person_risk_for": [
+        "anchor-games"
+      ],
+      "engagement_status": "Committed this week",
+      "engagement_level": "active",
+      "cadence_band": "Dormant",
       "calendar": {
         "from": "2026-08-20",
         "to": "2026-09-17",
-        "total": 10,
         "active_days": 4,
         "total_days": 29,
         "active_pct": 13.8,
@@ -5895,23 +7380,25 @@
           }
         ]
       },
-      "impact_score": 7.3,
-      "cadence_score": 7.3,
-      "tier": "Intermittent",
-      "tier_badge": "\u26aa",
-      "cadence_status": "Intermittent",
-      "cadence_desc": "Infrequent contributions across tenure",
-      "commits_per_active_day": 1.8,
       "rank": 7
     }
   ],
   "meta": {
     "generation_ok": true,
     "rate_limit": {
-      "cost_used_total": 13,
-      "remaining": 4880,
-      "reset_at": "2026-09-17T11:59:55Z"
+      "cost_used_total": 80,
+      "remaining": 4447,
+      "reset_at": "2026-09-17T14:38:41Z"
     },
-    "warnings": []
+    "warnings": [],
+    "disclosures": [
+      "Standing is based on verified days only \u2014 dates GitHub's own servers stamped when a pull request, review or issue arrived. Those timestamps cannot be set by a contributor's computer.",
+      "Commit dates are excluded from standing on purpose. Git lets any author date be supplied, so a commit calendar can be written after the fact; it is shown here as recorded activity, clearly separated from verified presence.",
+      "A day counts once whether it held one action or a thousand, so nothing on this page can be improved by doing more in a single day.",
+      "An engineer who works without opening pull requests will show few verified days. That means the evidence is thin, not that the person was absent \u2014 read a low verified figure as a question, not a verdict.",
+      "Commit attribution follows GitHub's own account linking. Work committed from an unlinked email address is listed against the project as an unmatched author, never merged into an engineer's record.",
+      "Project involvement reflects work merged into each project's default branch. Work still in progress on a side branch is not yet visible here.",
+      "This page measures engagement and delivery cadence. It cannot measure the difficulty, quality or business value of the work, and must not be read as a performance rating."
+    ]
   }
 }

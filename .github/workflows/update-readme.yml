@@ -2,8 +2,9 @@ name: Update Engineering Telemetry & Deploy Dashboard
 
 on:
   schedule:
-    # Every 6 hours at 00:00, 06:00, 12:00, 18:00 UTC
-    - cron: '0 */6 * * *'
+    # Daily at 12:00 SAST (Johannesburg, UTC+2) — GitHub cron is always UTC, so 10:00 UTC.
+    # South Africa does not observe daylight saving, so this stays at local midday year-round.
+    - cron: '0 10 * * *'
   workflow_dispatch: # Manual trigger from the Actions tab
   push:
     branches:
