@@ -9,8 +9,7 @@ from datetime import datetime, timedelta
 # --- Shared visual language -------------------------------------------------
 # These hex values are duplicated (deliberately — standalone SVG files can't
 # reference external CSS) in docs/assets/css/tokens.css under the comment
-# "keep in sync with .github/scripts/render.py CAL_RAMP". Only the color skin
-# is duplicated; the level-bucketing logic (bucket_level, below) is not.
+# "keep in sync with .github/scripts/render.py". Only the color skin is duplicated.
 BG = "#0a0e17"
 SURFACE = "#10161f"
 BORDER = "#232b38"
@@ -18,26 +17,16 @@ TEXT_PRIMARY = "#f1f5f9"
 TEXT_SECONDARY = "#94a3b8"
 TEXT_TERTIARY = "#64748b"
 ACCENT = "#c9a961"
-CAL_RAMP = ["#161a22", "#3a2f1a", "#6b5424", "#a3812f", "#c9a961"]
+# Two tones, not a ramp. A heat ramp would encode how MUCH was pushed on a day, which
+# is the volume signal this dashboard exists to stop publishing — a 1,000-commit day
+# would burn brightest on the page. A day is either worked or it isn't.
+CAL_OFF = "#161a22"
+CAL_ON = "#c9a961"
 FONT_STACK = "-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif"
 _MONTH_ABBR = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
 
 
 # --- Calendar math (shared by SVG + JSON, so both surfaces always agree) ---
-
-def bucket_level(count):
-    """The single place commit counts turn into a 0-4 heat level. Both the static SVGs
-    and the live dashboard read the `level` this produces — never recompute it separately."""
-    if count <= 0:
-        return 0
-    if count <= 2:
-        return 1
-    if count <= 5:
-        return 2
-    if count <= 9:
-        return 3
-    return 4
-
 
 def _github_weekday(d):
     """GitHub's own convention: Sunday=0 ... Saturday=6 (Python's date.weekday() is Monday=0)."""
@@ -48,7 +37,12 @@ def build_calendar_grid(day_counts, start_date, end_date):
     """day_counts: {'YYYY-MM-DD': count}. Returns Sunday-aligned weeks of 7 days spanning
     the Sunday on/before start_date through the Saturday on/after end_date, matching
     GitHub's own contribution calendar layout. Days outside [start_date, end_date] are
-    padding (in_range=False) — e.g. before a member's account existed."""
+    padding (in_range=False) — e.g. before a member's account existed.
+
+    The count is consumed here and DELIBERATELY NOT CARRIED OUT. Each day is published
+    as a boolean. Emitting the number would put per-day volume back into the published
+    dataset and into the DOM, and summing it across a calendar reconstructs exactly the
+    total-contributions metric this pipeline refuses to rank on."""
     grid_start = start_date - timedelta(days=_github_weekday(start_date))
     grid_end = end_date + timedelta(days=6 - _github_weekday(end_date))
 
@@ -62,8 +56,7 @@ def build_calendar_grid(day_counts, start_date, end_date):
             days.append({
                 "date": key,
                 "weekday": _github_weekday(d),
-                "count": count,
-                "level": bucket_level(count),
+                "active": count > 0,
                 "in_range": start_date <= d <= end_date,
             })
             d += timedelta(days=1)
@@ -93,8 +86,9 @@ def calendar_streaks(day_counts):
 # --- SVG rendering -----------------------------------------------------------
 
 def render_member_calendar_svg(member, weeks_shown=14, min_width=300):
-    """Compact activity heatmap for one member — used in the README leaderboard row.
-    Header shows cadence status, active days, streak, and reviews."""
+    """Compact activity calendar for one member — used in the README leaderboard row.
+    Header shows cadence band, verified presence over the window, current verified
+    streak, and active project count. Cells are two-tone: worked, or not worked."""
     weeks = member["calendar"]["weeks"][-weeks_shown:]
     cell, gap = 10, 3
     start_x, start_y = 14, 48
@@ -108,7 +102,7 @@ def render_member_calendar_svg(member, weeks_shown=14, min_width=300):
         col_x = start_x + w_idx * (cell + gap)
         for day in week["days"]:
             row_y = start_y + day["weekday"] * (cell + gap)
-            color = CAL_RAMP[day["level"]]
+            color = CAL_ON if day["active"] else CAL_OFF
             opacity = "1" if day["in_range"] else "0.3"
             if day["weekday"] == 0:
                 mon = _MONTH_ABBR[int(day["date"][5:7]) - 1]
@@ -225,11 +219,17 @@ def render_solutions(data, display_names, descriptions):
         staffing = f'{p["active_engineer_count"]} active / {p["engineer_count"]} total'
         if p["key_person_risk"]:
             staffing += " ⚠️"
+        elif p["unstaffed"]:
+            staffing += " ⛔"
         last = f'{p["days_since_activity"]}d ago' if p["days_since_activity"] is not None else "—"
+        if p.get("history_truncated"):
+            last += " *"
         lang = f' · `{p["primary_language"]}`' if p["primary_language"] else ""
         rows.append(f'| **{p["display_name"]}**{lang} | {p["status"]} | {staffing} | {last} | {desc} |')
     rows.append("")
-    rows.append("> ⚠️ marks a project currently carried by a single engineer — a continuity risk worth staffing against.")
+    rows.append("> ⚠️ carried by a single active engineer — a continuity risk worth staffing against.  ")
+    rows.append("> ⛔ live work with nobody currently on it.  ")
+    rows.append("> \* commit history was too long to read in full, so the first-activity date may be later than the truth.")
     return "\n".join(rows)
 
 
@@ -276,7 +276,10 @@ def render_roster(data, org_name, repo_name, cap):
             project_lines = []
             for p in m["projects"]:
                 marker = "▸" if p["is_current"] else "·"
-                position = "Active now" if p["is_current"] else f'Last active {p["days_since_last"]}d ago'
+                position = (
+                    f'Active — last worked {p["days_since_last"]}d ago' if p["is_current"]
+                    else f'Last active {p["days_since_last"]}d ago'
+                )
                 if p["is_only_active_engineer"]:
                     position += " · **sole active engineer**"
                 span = f'{_fmt_date(p["first_active"])} → {_fmt_date(p["last_active"])}'
@@ -291,6 +294,14 @@ def render_roster(data, org_name, repo_name, cap):
         else:
             projects_block = "_No merged work on firm projects yet._"
 
+        if trend["recent_avg_active_days"] is None:
+            trend_line = f'Not enough history yet — {trend.get("weeks_observed", 0)} full week(s) here so far'
+        else:
+            trend_line = (
+                f'{trend["direction"]} — {trend["recent_avg_active_days"]} active days/week '
+                f'recently vs {trend["earlier_avg_active_days"]} before'
+            )
+
         languages = ", ".join(f"`{lang}`" for lang in m["languages"]) or "—"
         risk_note = ""
         if m["carries_key_person_risk_for"]:
@@ -300,14 +311,14 @@ def render_roster(data, org_name, repo_name, cap):
         cards.append(f"""
 ### #{m['rank']:02d} · {display_name} — {m['cadence_band']}
 
-<img src="{m['avatar_url']}" width="40" height="40" style="border-radius:50%; vertical-align:middle;" /> [`@{m['login']}`]({m['html_url']}) · joined {_fmt_date(m["created_at"])} · {m['engagement_status']}
+<img src="{m['avatar_url']}" width="40" height="40" style="border-radius:50%; vertical-align:middle;" /> [`@{m['login']}`]({m['html_url']}) · first seen here {_fmt_date(m["observed_from"])} · {m['engagement_status']}
 {risk_note}
 | | |
 | :--- | :--- |
 | **Verified presence** | **{rel['pct']:.0f}%** of the last {rel['window_days']} days ({rel['active_days']} of {rel['window_days']}) · {rel['total_days']} verified days in total |
 | **Verified streak** | **{rel['current_streak']} days** current · {rel['longest_streak']} days best |
 | **Recorded activity** | {rec['pct']:.0f}% of the last {rec['window_days']} days per GitHub's calendar · **{rel['corroboration_pct']:.0f}%** of it independently corroborated |
-| **Trend** | {trend['direction']} — {trend['recent_avg_active_days']} active days/week recently vs {trend['earlier_avg_active_days']} before |
+| **Trend** | {trend_line} |
 | **Projects** | **{m['current_project_count']}** active of {m['project_count']} worked on |
 | **Technologies** | {languages} |
 

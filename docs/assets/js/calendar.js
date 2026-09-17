@@ -1,14 +1,29 @@
 /**
- * Real interactive contribution calendar — SVG day-cells with genuine hover/focus
- * tooltips (not the dead <title> tags the old README SVGs relied on, which never
- * fired because GitHub strips interactivity from <img>-embedded SVG).
+ * Interactive activity calendar — SVG day-cells with genuine hover/focus tooltips
+ * (not the dead <title> tags the old README SVGs relied on, which never fired because
+ * GitHub strips interactivity from <img>-embedded SVG).
+ *
+ * Two tones only: the day was worked, or it wasn't. There is no count in the data this
+ * reads and no shade that varies with volume, because either one re-publishes the
+ * metric this dashboard exists to stop rewarding — and a ramp does it silently, by
+ * making the heaviest day the brightest square on the page.
  *
  * One rendering path for both the compact leaderboard sparkline and the full
  * member-detail calendar, so the two views can never visually disagree.
  */
 const Calendar = (() => {
-  const RAMP = ['var(--cal-0)', 'var(--cal-1)', 'var(--cal-2)', 'var(--cal-3)', 'var(--cal-4)'];
   const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+  function summarise(calendar) {
+    let active = 0;
+    let total = 0;
+    (calendar.weeks || []).forEach((w) => w.days.forEach((d) => {
+      if (!d.in_range) return;
+      total += 1;
+      if (d.active) active += 1;
+    }));
+    return { active, total };
+  }
 
   function buildSVG(calendar, { mode = 'compact' } = {}) {
     const weeks = calendar.weeks || [];
@@ -36,19 +51,27 @@ const Calendar = (() => {
             monthLabels += `<text x="${colX}" y="${startY - 8}" class="cal-month-label">${m}</text>`;
           }
         }
-        rects += '<rect class="cal-day" tabindex="0" role="img" '
+        // No tabindex here. One calendar carries ~90 cells and the overview renders one
+        // per engineer plus the firm-wide grid; making each cell a tab stop buried the
+        // rest of the page behind hundreds of keypresses. The <svg> below is the single
+        // stop, and it carries the summary a keyboard user actually needs.
+        rects += '<rect class="cal-day" '
           + `x="${colX.toFixed(1)}" y="${rowY.toFixed(1)}" width="${cell}" height="${cell}" rx="2" `
-          + `fill="${RAMP[day.level]}" fill-opacity="${opacity}" `
-          + `data-date="${day.date}" data-count="${day.count}" `
-          + `aria-label="${day.count} contribution${day.count === 1 ? '' : 's'} on ${day.date}"></rect>`;
+          + `fill="${day.active ? 'var(--cal-on)' : 'var(--cal-off)'}" fill-opacity="${opacity}" `
+          + `data-date="${day.date}" data-active="${day.active ? '1' : '0'}"></rect>`;
       });
     });
 
-    return `<svg class="cal-svg" viewBox="0 0 ${width.toFixed(1)} ${height.toFixed(1)}" width="${width.toFixed(0)}" height="${height.toFixed(0)}" xmlns="http://www.w3.org/2000/svg">${monthLabels}<g>${rects}</g></svg>`;
+    const { active, total } = summarise(calendar);
+    const label = `Activity calendar: worked on ${active} of ${total} days`;
+    return `<svg class="cal-svg" tabindex="0" role="img" aria-label="${label}" viewBox="0 0 ${width.toFixed(1)} ${height.toFixed(1)}" width="${width.toFixed(0)}" height="${height.toFixed(0)}" xmlns="http://www.w3.org/2000/svg">${monthLabels}<g>${rects}</g></svg>`;
   }
 
   function legendHTML() {
-    return `<div class="cal-legend"><span>Less</span>${RAMP.map((c) => `<span class="cal-legend__swatch" style="background:${c}"></span>`).join('')}<span>More</span></div>`;
+    return '<div class="cal-legend">'
+      + '<span class="cal-legend__swatch" style="background:var(--cal-off)"></span><span>No activity</span>'
+      + '<span class="cal-legend__swatch" style="background:var(--cal-on)"></span><span>Worked</span>'
+      + '</div>';
   }
 
   let listenersBound = false;
@@ -64,16 +87,12 @@ const Calendar = (() => {
 
     function show(target) {
       const date = target.getAttribute('data-date');
-      const count = target.getAttribute('data-count');
       if (!date) return;
       const d = new Date(`${date}T00:00:00`);
       const label = d.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric', year: 'numeric' });
-      const cNum = parseInt(count, 10);
-      if (cNum > 0) {
-        tooltip.innerHTML = `<strong>Active Day</strong> &middot; ${cNum} action${cNum === 1 ? '' : 's'} on ${label}`;
-      } else {
-        tooltip.innerHTML = `<strong>Inactive Day</strong> &middot; No activity on ${label}`;
-      }
+      tooltip.innerHTML = target.getAttribute('data-active') === '1'
+        ? `<strong>Worked</strong> &middot; ${label}`
+        : `<strong>No activity</strong> &middot; ${label}`;
       tooltip.hidden = false;
       const rect = target.getBoundingClientRect();
       position(rect.left + rect.width / 2, rect.top);
@@ -98,13 +117,6 @@ const Calendar = (() => {
       }
     });
     document.addEventListener('mouseout', (e) => {
-      if (e.target.closest('.cal-day')) hide();
-    });
-    document.addEventListener('focusin', (e) => {
-      const target = e.target.closest('.cal-day');
-      if (target) show(target);
-    });
-    document.addEventListener('focusout', (e) => {
       if (e.target.closest('.cal-day')) hide();
     });
   }

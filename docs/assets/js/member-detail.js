@@ -74,12 +74,13 @@ const MemberDetail = (() => {
           <div class="detail-header__name">${Format.escapeHtml(member.name || member.login)}</div>
           <div class="detail-header__login">
             <a href="${member.html_url}" target="_blank" rel="noopener">@${Format.escapeHtml(member.login)} ↗</a>
-            &middot; Joined ${Format.date(member.created_at)} &middot; ${member.tenure_days} days with the firm
+            &middot; First seen working here ${Format.date(member.observed_from)} &middot; ${member.observed_days} days observed
           </div>
           <div class="detail-header__badges">
             <span class="tier-chip">${Format.escapeHtml(member.cadence_band)}</span>
             <span class="status-chip ${member.engagement_level === 'stale' ? 'status--dormant' : member.engagement_level === 'slowing' ? 'status--slowing' : 'status--active'}">${Format.escapeHtml(member.engagement_status)}</span>
-            <span class="tier-chip tier-chip--quiet">#${member.rank} of ${data.org.member_count} by reliability</span>
+            <span class="tier-chip tier-chip--quiet">#${member.rank} of ${data.org.member_count} by verified presence</span>
+            ${member.is_new_joiner ? '<span class="tier-chip tier-chip--warn">New joiner</span>' : ''}
           </div>
         </div>
       </div>
@@ -91,6 +92,7 @@ const MemberDetail = (() => {
           <div class="stat-tile__label">Verified presence</div>
           <div class="stat-tile__value stat-tile__value--accent">${rel.pct.toFixed(0)}%</div>
           <div class="stat-tile__sub">${rel.active_days} of the last ${rel.window_days} days carry server-stamped evidence</div>
+          <div class="stat-tile__caveat">A measure of engagement and cadence — not a performance rating, and blind to leave.</div>
         </div>
         <div class="stat-tile">
           <div class="stat-tile__label">Verified streak</div>
@@ -105,14 +107,16 @@ const MemberDetail = (() => {
         <div class="stat-tile">
           <div class="stat-tile__label">Direction</div>
           <div class="stat-tile__value stat-tile__value--sm">${Format.escapeHtml(member.trend.direction)}</div>
-          <div class="stat-tile__sub">${member.trend.recent_avg_active_days} active days/week recently vs ${member.trend.earlier_avg_active_days} before</div>
+          <div class="stat-tile__sub">${member.trend.recent_avg_active_days === null
+            ? `only ${member.trend.weeks_observed} full week${member.trend.weeks_observed === 1 ? '' : 's'} here so far`
+            : `${member.trend.recent_avg_active_days} active days/week recently vs ${member.trend.earlier_avg_active_days} before`}</div>
         </div>
       </div>
 
       <div class="panel-row">
         <section class="panel">
-          <h3 class="panel__title">Cadence over the last ${member.trend.weeks.length} weeks</h3>
-          <p class="panel__hint">Active days per week. Each bar tops out at 7.</p>
+          <h3 class="panel__title">Cadence over the last ${member.trend.weeks.length} week${member.trend.weeks.length === 1 ? '' : 's'}</h3>
+          <p class="panel__hint">Active days per week since they were first seen here. Each bar tops out at 7. Weeks before they joined are not charted.</p>
           ${trendSparkline(member.trend)}
         </section>
         <section class="panel">
@@ -123,7 +127,7 @@ const MemberDetail = (() => {
       </div>
 
       <section class="panel">
-        <h3 class="panel__title">Projects — currently working on ${current.length ? `(${current.length})` : ''}</h3>
+        <h3 class="panel__title">Projects — active in the last 14 days ${current.length ? `(${current.length})` : ''}</h3>
         ${current.length
           ? `<div class="pcard-grid">${current.map(projectCard).join('')}</div>`
           : '<p class="panel__hint">Not currently working on any firm project.</p>'}
@@ -166,9 +170,11 @@ const MemberDetail = (() => {
 
       <section class="panel">
         <h3 class="panel__title">Daily activity since joining</h3>
-        <p class="panel__hint">GitHub's recorded calendar — ${rec.pct.toFixed(0)}% of the last ${rec.window_days} days. Each square is one day; a day counts once no matter how much was pushed.</p>
+        <p class="panel__hint">GitHub's recorded calendar — ${rec.pct.toFixed(0)}% of the last ${rec.window_days} days. Each square is one day: worked, or not worked. Nothing here varies with how much was pushed.</p>
         <div id="detail-calendar-slot"></div>
       </section>
+
+      ${window.Disclosures ? window.Disclosures.html() : ''}
     `;
 
     Calendar.render(container.querySelector('#detail-calendar-slot'), member.calendar, { mode: 'full' });

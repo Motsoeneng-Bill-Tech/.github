@@ -152,7 +152,13 @@ const Leaderboard = (() => {
     tableContainer.querySelectorAll('th.is-sortable').forEach((th) => {
       const activate = () => {
         const key = th.dataset.sortKey;
-        state.sortDir = state.sortKey === key ? (state.sortDir === 'asc' ? 'desc' : 'asc') : 'desc';
+        // Each column declares which way it should open. Defaulting every new column to
+        // 'desc' meant the first click on "#" put the least-present engineer at the top
+        // of an executive roster, and the declaration was silently dead.
+        const col = COLUMNS.find((c) => c.key === key);
+        state.sortDir = state.sortKey === key
+          ? (state.sortDir === 'asc' ? 'desc' : 'asc')
+          : (col && col.dir ? col.dir : 'desc');
         state.sortKey = key;
         render(tableContainer, cardsContainer, members, { onSelect });
       };

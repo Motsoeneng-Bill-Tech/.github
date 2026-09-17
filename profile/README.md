@@ -13,7 +13,7 @@
 </p>
 
 <!-- STATS_BADGES:START -->
-[![Team Reliability](https://img.shields.io/badge/Team_Reliability-50%25-c9a961?style=for-the-badge&logo=clockify&logoColor=white)](https://github.com/Motsoeneng-Bill-Tech)
+[![Team Reliability](https://img.shields.io/badge/Team_Reliability-51%25-c9a961?style=for-the-badge&logo=clockify&logoColor=white)](https://github.com/Motsoeneng-Bill-Tech)
 [![Active This Week](https://img.shields.io/badge/Active_This_Week-7_of_7-34d399?style=for-the-badge&logo=githubactions&logoColor=white)](https://github.com/orgs/Motsoeneng-Bill-Tech/people)
 [![Projects](https://img.shields.io/badge/Live_Projects-11_of_12-8a7130?style=for-the-badge&logo=git&logoColor=white)](https://github.com/Motsoeneng-Bill-Tech)
 [![Key Person Risk](https://img.shields.io/badge/Key_Person_Risk-5_projects-64748b?style=for-the-badge&logo=shield&logoColor=white)](https://github.com/Motsoeneng-Bill-Tech)
@@ -60,7 +60,9 @@ We engineer systems for two core audiences:
 | **MB Knowledge Vault Enterprise** · `JavaScript` | Active | 1 active / 1 total ⚠️ | 14d ago | Centralized institutional knowledge repository, precedent search engine, and automated compliance policy cross-referencing. |
 | **MB 67 Minutes** · `JavaScript` | Dormant | 0 active / 2 total | 63d ago | Community outreach and pro-bono engagement initiative supporting the firm's public-good programs. |
 
-> ⚠️ marks a project currently carried by a single engineer — a continuity risk worth staffing against.
+> ⚠️ carried by a single active engineer — a continuity risk worth staffing against.  
+> ⛔ live work with nobody currently on it.  
+> \* commit history was too long to read in full, so the first-activity date may be later than the truth.
 <!-- SOLUTIONS:END -->
 
 ---
@@ -99,7 +101,7 @@ A day counts once whether it carried one commit or a thousand, so no amount of a
 | **04** | [<img src="https://avatars.githubusercontent.com/u/295126059?v=4" width="30" height="30" style="border-radius:50%; vertical-align:middle;" /> **@VhutshiloMB**](https://github.com/VhutshiloMB) <br/>[↗ profile](https://motsoeneng-bill-tech.github.io/.github/#/member/VhutshiloMB) | **Regular** | **43%** <br/>`13/30 days` | **11d** <br/>`11d best` | 57% <br/>`76% corroborated` | **2** active <br/>`2 total` | <img src="https://cdn.jsdelivr.net/gh/Motsoeneng-Bill-Tech/.github@main/assets/graphs/VhutshiloMB.svg?v=4" width="220" height="64" alt="VhutshiloMB activity calendar" /> |
 | **05** | [<img src="https://avatars.githubusercontent.com/u/296434638?v=4" width="30" height="30" style="border-radius:50%; vertical-align:middle;" /> **@pakisomb**](https://github.com/pakisomb) <br/>[↗ profile](https://motsoeneng-bill-tech.github.io/.github/#/member/pakisomb) | **Intermittent** | **27%** <br/>`8/30 days` | **0d** <br/>`4d best` | 33% <br/>`73% corroborated` | **2** active <br/>`4 total` | <img src="https://cdn.jsdelivr.net/gh/Motsoeneng-Bill-Tech/.github@main/assets/graphs/pakisomb.svg?v=4" width="220" height="64" alt="pakisomb activity calendar" /> |
 | **06** | [<img src="https://avatars.githubusercontent.com/u/295851105?v=4" width="30" height="30" style="border-radius:50%; vertical-align:middle;" /> **@Kea1m**](https://github.com/Kea1m) <br/>[↗ profile](https://motsoeneng-bill-tech.github.io/.github/#/member/Kea1m) | **Intermittent** | **23%** <br/>`7/30 days` | **3d** <br/>`3d best` | 27% <br/>`79% corroborated` | **1** active <br/>`1 total` | <img src="https://cdn.jsdelivr.net/gh/Motsoeneng-Bill-Tech/.github@main/assets/graphs/Kea1m.svg?v=4" width="220" height="64" alt="Kea1m activity calendar" /> |
-| **07** | [<img src="https://avatars.githubusercontent.com/u/318985580?v=4" width="30" height="30" style="border-radius:50%; vertical-align:middle;" /> **@TheoSingo**](https://github.com/TheoSingo) <br/>[↗ profile](https://motsoeneng-bill-tech.github.io/.github/#/member/TheoSingo) | **Dormant** | **3%** <br/>`1/29 days` | **0d** <br/>`1d best` | 14% <br/>`25% corroborated` | **2** active <br/>`2 total` | <img src="https://cdn.jsdelivr.net/gh/Motsoeneng-Bill-Tech/.github@main/assets/graphs/TheoSingo.svg?v=4" width="220" height="64" alt="TheoSingo activity calendar" /> |
+| **07** | [<img src="https://avatars.githubusercontent.com/u/318985580?v=4" width="30" height="30" style="border-radius:50%; vertical-align:middle;" /> **@TheoSingo**](https://github.com/TheoSingo) <br/>[↗ profile](https://motsoeneng-bill-tech.github.io/.github/#/member/TheoSingo) | **Dormant** | **7%** <br/>`1/15 days` | **0d** <br/>`1d best` | 14% <br/>`25% corroborated` | **2** active <br/>`2 total` | <img src="https://cdn.jsdelivr.net/gh/Motsoeneng-Bill-Tech/.github@main/assets/graphs/TheoSingo.svg?v=4" width="220" height="64" alt="TheoSingo activity calendar" /> |
 
 > **How this is measured.** Standing uses **verified presence** only: days GitHub's own servers timestamped when a pull request, review or issue arrived. Those timestamps cannot be set by a contributor's machine, and a day counts once whether it held one action or a thousand — so the figure can be moved neither by doing more in a day nor by rewriting dates afterwards. **Recorded activity** is GitHub's commit calendar shown alongside for context; commit dates are supplied by the contributor's own computer, so they are reported, never ranked. No count of commits, pull requests or reviews is published anywhere on this page.
 
@@ -115,7 +117,7 @@ A day counts once whether it carried one commit or a thousand, so no amount of a
 
 ### #01 · konethegreatest — Daily
 
-<img src="https://avatars.githubusercontent.com/u/295184973?u=26439f7693fc00f3d9afe692cfecacb80b7e07b6&v=4" width="40" height="40" style="border-radius:50%; vertical-align:middle;" /> [`@konethegreatest`](https://github.com/konethegreatest) · joined Jun 19, 2026 · Committed today
+<img src="https://avatars.githubusercontent.com/u/295184973?u=26439f7693fc00f3d9afe692cfecacb80b7e07b6&v=4" width="40" height="40" style="border-radius:50%; vertical-align:middle;" /> [`@konethegreatest`](https://github.com/konethegreatest) · first seen here Jun 24, 2026 · Committed today
 
 > **Continuity risk:** currently the only active engineer on **MB-IQ-Revamped**, **Job Portal**. Worth a second pair of hands.
 
@@ -130,12 +132,12 @@ A day counts once whether it carried one commit or a thousand, so no amount of a
 
 | | Project | Days engaged | Span | Position |
 | :---: | :--- | :---: | :---: | :--- |
-| ▸ | **Forensics Due Diligence System** | 43 | `Aug 03, 2026 → Sep 17, 2026` | Active now |
-| ▸ | **Tender Intelligence Platform** | 37 | `Jul 02, 2026 → Sep 09, 2026` | Active now |
-| ▸ | **MB-IQ-Revamped** | 5 | `Sep 04, 2026 → Sep 17, 2026` | Active now · **sole active engineer** |
-| ▸ | **Job Portal** | 4 | `Jul 25, 2026 → Sep 07, 2026` | Active now · **sole active engineer** |
-| ▸ | **Organization Profile & Telemetry** | 3 | `Jun 24, 2026 → Sep 14, 2026` | Active now |
-| ▸ | **mb-invoicing-tool** | 3 | `Sep 11, 2026 → Sep 16, 2026` | Active now |
+| ▸ | **Forensics Due Diligence System** | 43 | `Aug 03, 2026 → Sep 17, 2026` | Active — last worked 0d ago |
+| ▸ | **Tender Intelligence Platform** | 37 | `Jul 02, 2026 → Sep 09, 2026` | Active — last worked 8d ago |
+| ▸ | **MB-IQ-Revamped** | 5 | `Sep 04, 2026 → Sep 17, 2026` | Active — last worked 0d ago · **sole active engineer** |
+| ▸ | **Organization Profile & Telemetry** | 4 | `Jun 24, 2026 → Sep 17, 2026` | Active — last worked 0d ago |
+| ▸ | **Job Portal** | 4 | `Jul 25, 2026 → Sep 07, 2026` | Active — last worked 10d ago · **sole active engineer** |
+| ▸ | **mb-invoicing-tool** | 3 | `Sep 11, 2026 → Sep 16, 2026` | Active — last worked 1d ago |
 
 <div align="center">
   <img src="https://cdn.jsdelivr.net/gh/Motsoeneng-Bill-Tech/.github@main/assets/graphs/konethegreatest.svg?v=3" width="100%" alt="konethegreatest activity calendar" />
@@ -148,7 +150,7 @@ A day counts once whether it carried one commit or a thousand, so no amount of a
 
 ### #02 · Akonisaho-MB — Near-daily
 
-<img src="https://avatars.githubusercontent.com/u/295596016?v=4" width="40" height="40" style="border-radius:50%; vertical-align:middle;" /> [`@Akonisaho-MB`](https://github.com/Akonisaho-MB) · joined Jun 21, 2026 · Committed today
+<img src="https://avatars.githubusercontent.com/u/295596016?v=4" width="40" height="40" style="border-radius:50%; vertical-align:middle;" /> [`@Akonisaho-MB`](https://github.com/Akonisaho-MB) · first seen here Jul 09, 2026 · Committed today
 
 > **Continuity risk:** currently the only active engineer on **MB Knowledge Vault Enterprise**, **mb-wills-week**. Worth a second pair of hands.
 
@@ -157,16 +159,16 @@ A day counts once whether it carried one commit or a thousand, so no amount of a
 | **Verified presence** | **80%** of the last 30 days (24 of 30) · 44 verified days in total |
 | **Verified streak** | **18 days** current · 18 days best |
 | **Recorded activity** | 83% of the last 30 days per GitHub's calendar · **69%** of it independently corroborated |
-| **Trend** | Improving — 6.2 active days/week recently vs 4.2 before |
+| **Trend** | Improving — 6.0 active days/week recently vs 5.0 before |
 | **Projects** | **3** active of 5 worked on |
 | **Technologies** | `Java`, `JavaScript`, `Python` |
 
 | | Project | Days engaged | Span | Position |
 | :---: | :--- | :---: | :---: | :--- |
-| ▸ | **Enterprise Case Management** | 23 | `Jul 22, 2026 → Sep 17, 2026` | Active now |
-| ▸ | **MB Knowledge Vault Enterprise** | 19 | `Aug 07, 2026 → Sep 03, 2026` | Active now · **sole active engineer** |
+| ▸ | **Enterprise Case Management** | 23 | `Jul 22, 2026 → Sep 17, 2026` | Active — last worked 0d ago |
+| ▸ | **MB Knowledge Vault Enterprise** | 19 | `Aug 07, 2026 → Sep 03, 2026` | Active — last worked 14d ago · **sole active engineer** |
 | · | **MB 67 Minutes** | 6 | `Jul 09, 2026 → Jul 16, 2026` | Last active 63d ago |
-| ▸ | **mb-wills-week** | 6 | `Sep 03, 2026 → Sep 08, 2026` | Active now · **sole active engineer** |
+| ▸ | **mb-wills-week** | 6 | `Sep 03, 2026 → Sep 08, 2026` | Active — last worked 9d ago · **sole active engineer** |
 | · | **Forensics Due Diligence System** | 5 | `Aug 07, 2026 → Aug 14, 2026` | Last active 34d ago |
 
 <div align="center">
@@ -180,22 +182,22 @@ A day counts once whether it carried one commit or a thousand, so no amount of a
 
 ### #03 · Amukelani-MB — Near-daily
 
-<img src="https://avatars.githubusercontent.com/u/296428132?v=4" width="40" height="40" style="border-radius:50%; vertical-align:middle;" /> [`@Amukelani-MB`](https://github.com/Amukelani-MB) · joined Jun 24, 2026 · Committed today
+<img src="https://avatars.githubusercontent.com/u/296428132?v=4" width="40" height="40" style="border-radius:50%; vertical-align:middle;" /> [`@Amukelani-MB`](https://github.com/Amukelani-MB) · first seen here Jul 03, 2026 · Committed today
 
 | | |
 | :--- | :--- |
 | **Verified presence** | **80%** of the last 30 days (24 of 30) · 55 verified days in total |
 | **Verified streak** | **4 days** current · 12 days best |
 | **Recorded activity** | 93% of the last 30 days per GitHub's calendar · **83%** of it independently corroborated |
-| **Trend** | Improving — 6.5 active days/week recently vs 4.3 before |
+| **Trend** | Improving — 6.4 active days/week recently vs 5.5 before |
 | **Projects** | **3** active of 3 worked on |
 | **Technologies** | `JavaScript`, `Python` |
 
 | | Project | Days engaged | Span | Position |
 | :---: | :--- | :---: | :---: | :--- |
-| ▸ | **Tender Intelligence Platform** | 35 | `Jul 03, 2026 → Sep 17, 2026` | Active now |
-| ▸ | **Forensics Due Diligence System** | 24 | `Aug 07, 2026 → Sep 06, 2026` | Active now |
-| ▸ | **mb-anchor-games** | 3 | `Sep 15, 2026 → Sep 17, 2026` | Active now |
+| ▸ | **Tender Intelligence Platform** | 35 | `Jul 03, 2026 → Sep 17, 2026` | Active — last worked 0d ago |
+| ▸ | **Forensics Due Diligence System** | 24 | `Aug 07, 2026 → Sep 06, 2026` | Active — last worked 11d ago |
+| ▸ | **mb-anchor-games** | 3 | `Sep 15, 2026 → Sep 17, 2026` | Active — last worked 0d ago |
 
 <div align="center">
   <img src="https://cdn.jsdelivr.net/gh/Motsoeneng-Bill-Tech/.github@main/assets/graphs/Amukelani-MB.svg?v=3" width="100%" alt="Amukelani-MB activity calendar" />
@@ -208,21 +210,21 @@ A day counts once whether it carried one commit or a thousand, so no amount of a
 
 ### #04 · VhutshiloMB — Regular
 
-<img src="https://avatars.githubusercontent.com/u/295126059?v=4" width="40" height="40" style="border-radius:50%; vertical-align:middle;" /> [`@VhutshiloMB`](https://github.com/VhutshiloMB) · joined Jun 19, 2026 · Committed today
+<img src="https://avatars.githubusercontent.com/u/295126059?v=4" width="40" height="40" style="border-radius:50%; vertical-align:middle;" /> [`@VhutshiloMB`](https://github.com/VhutshiloMB) · first seen here Jul 13, 2026 · Committed today
 
 | | |
 | :--- | :--- |
 | **Verified presence** | **43%** of the last 30 days (13 of 30) · 26 verified days in total |
 | **Verified streak** | **11 days** current · 11 days best |
 | **Recorded activity** | 57% of the last 30 days per GitHub's calendar · **76%** of it independently corroborated |
-| **Trend** | Improving — 3.7 active days/week recently vs 1.7 before |
+| **Trend** | Improving — 3.6 active days/week recently vs 2.8 before |
 | **Projects** | **2** active of 2 worked on |
 | **Technologies** | `Java` |
 
 | | Project | Days engaged | Span | Position |
 | :---: | :--- | :---: | :---: | :--- |
-| ▸ | **Enterprise Case Management** | 27 | `Jul 13, 2026 → Sep 17, 2026` | Active now |
-| ▸ | **mb-invoicing-tool** | 5 | `Aug 31, 2026 → Sep 16, 2026` | Active now |
+| ▸ | **Enterprise Case Management** | 27 | `Jul 13, 2026 → Sep 17, 2026` | Active — last worked 0d ago |
+| ▸ | **mb-invoicing-tool** | 5 | `Aug 31, 2026 → Sep 16, 2026` | Active — last worked 1d ago |
 
 <div align="center">
   <img src="https://cdn.jsdelivr.net/gh/Motsoeneng-Bill-Tech/.github@main/assets/graphs/VhutshiloMB.svg?v=3" width="100%" alt="VhutshiloMB activity calendar" />
@@ -235,21 +237,21 @@ A day counts once whether it carried one commit or a thousand, so no amount of a
 
 ### #05 · pakisomb — Intermittent
 
-<img src="https://avatars.githubusercontent.com/u/296434638?v=4" width="40" height="40" style="border-radius:50%; vertical-align:middle;" /> [`@pakisomb`](https://github.com/pakisomb) · joined Jun 24, 2026 · Committed yesterday
+<img src="https://avatars.githubusercontent.com/u/296434638?v=4" width="40" height="40" style="border-radius:50%; vertical-align:middle;" /> [`@pakisomb`](https://github.com/pakisomb) · first seen here Jul 10, 2026 · Committed yesterday
 
 | | |
 | :--- | :--- |
 | **Verified presence** | **27%** of the last 30 days (8 of 30) · 19 verified days in total |
 | **Verified streak** | **0 days** current · 4 days best |
 | **Recorded activity** | 33% of the last 30 days per GitHub's calendar · **73%** of it independently corroborated |
-| **Trend** | Steady — 2.2 active days/week recently vs 2.0 before |
+| **Trend** | Declining — 2.0 active days/week recently vs 3.0 before |
 | **Projects** | **2** active of 4 worked on |
 | **Technologies** | `Java`, `JavaScript`, `Python` |
 
 | | Project | Days engaged | Span | Position |
 | :---: | :--- | :---: | :---: | :--- |
-| ▸ | **Enterprise Case Management** | 14 | `Jul 23, 2026 → Sep 13, 2026` | Active now |
-| ▸ | **mb-anchor-games** | 5 | `Sep 12, 2026 → Sep 16, 2026` | Active now |
+| ▸ | **Enterprise Case Management** | 14 | `Jul 23, 2026 → Sep 13, 2026` | Active — last worked 4d ago |
+| ▸ | **mb-anchor-games** | 5 | `Sep 12, 2026 → Sep 16, 2026` | Active — last worked 1d ago |
 | · | **MB 67 Minutes** | 4 | `Jul 10, 2026 → Jul 13, 2026` | Last active 66d ago |
 | · | **Forensics Due Diligence System** | 1 | `Aug 06, 2026 → Aug 06, 2026` | Last active 42d ago |
 
@@ -264,20 +266,20 @@ A day counts once whether it carried one commit or a thousand, so no amount of a
 
 ### #06 · Keabetswe Matloha — Intermittent
 
-<img src="https://avatars.githubusercontent.com/u/295851105?v=4" width="40" height="40" style="border-radius:50%; vertical-align:middle;" /> [`@Kea1m`](https://github.com/Kea1m) · joined Jun 22, 2026 · Committed today
+<img src="https://avatars.githubusercontent.com/u/295851105?v=4" width="40" height="40" style="border-radius:50%; vertical-align:middle;" /> [`@Kea1m`](https://github.com/Kea1m) · first seen here Jul 14, 2026 · Committed today
 
 | | |
 | :--- | :--- |
 | **Verified presence** | **23%** of the last 30 days (7 of 30) · 11 verified days in total |
 | **Verified streak** | **3 days** current · 3 days best |
 | **Recorded activity** | 27% of the last 30 days per GitHub's calendar · **79%** of it independently corroborated |
-| **Trend** | Improving — 1.8 active days/week recently vs 0.2 before |
+| **Trend** | Improving — 1.6 active days/week recently vs 0.8 before |
 | **Projects** | **1** active of 1 worked on |
 | **Technologies** | `Java` |
 
 | | Project | Days engaged | Span | Position |
 | :---: | :--- | :---: | :---: | :--- |
-| ▸ | **Enterprise Case Management** | 8 | `Aug 31, 2026 → Sep 17, 2026` | Active now |
+| ▸ | **Enterprise Case Management** | 8 | `Aug 31, 2026 → Sep 17, 2026` | Active — last worked 0d ago |
 
 <div align="center">
   <img src="https://cdn.jsdelivr.net/gh/Motsoeneng-Bill-Tech/.github@main/assets/graphs/Kea1m.svg?v=3" width="100%" alt="Kea1m activity calendar" />
@@ -290,23 +292,23 @@ A day counts once whether it carried one commit or a thousand, so no amount of a
 
 ### #07 · TheoSingo — Dormant
 
-<img src="https://avatars.githubusercontent.com/u/318985580?v=4" width="40" height="40" style="border-radius:50%; vertical-align:middle;" /> [`@TheoSingo`](https://github.com/TheoSingo) · joined Aug 20, 2026 · Committed this week
+<img src="https://avatars.githubusercontent.com/u/318985580?v=4" width="40" height="40" style="border-radius:50%; vertical-align:middle;" /> [`@TheoSingo`](https://github.com/TheoSingo) · first seen here Sep 03, 2026 · Committed this week
 
 > **Continuity risk:** currently the only active engineer on **anchor-games**. Worth a second pair of hands.
 
 | | |
 | :--- | :--- |
-| **Verified presence** | **3%** of the last 29 days (1 of 29) · 1 verified days in total |
+| **Verified presence** | **7%** of the last 15 days (1 of 15) · 1 verified days in total |
 | **Verified streak** | **0 days** current · 1 days best |
 | **Recorded activity** | 14% of the last 29 days per GitHub's calendar · **25%** of it independently corroborated |
-| **Trend** | Steady — 0.7 active days/week recently vs 0.0 before |
+| **Trend** | Not enough history yet — 3 full week(s) here so far |
 | **Projects** | **2** active of 2 worked on |
 | **Technologies** | `TypeScript` |
 
 | | Project | Days engaged | Span | Position |
 | :---: | :--- | :---: | :---: | :--- |
-| ▸ | **Organization Profile & Telemetry** | 2 | `Sep 03, 2026 → Sep 04, 2026` | Active now |
-| ▸ | **anchor-games** | 1 | `Sep 11, 2026 → Sep 11, 2026` | Active now · **sole active engineer** |
+| ▸ | **Organization Profile & Telemetry** | 2 | `Sep 03, 2026 → Sep 04, 2026` | Active — last worked 13d ago |
+| ▸ | **anchor-games** | 1 | `Sep 11, 2026 → Sep 11, 2026` | Active — last worked 6d ago · **sole active engineer** |
 
 <div align="center">
   <img src="https://cdn.jsdelivr.net/gh/Motsoeneng-Bill-Tech/.github@main/assets/graphs/TheoSingo.svg?v=3" width="100%" alt="TheoSingo activity calendar" />
@@ -343,7 +345,7 @@ We welcome technical collaboration, industry inquiries, and strategic engagement
 
 **Motsoeneng Bill Tech** · Houghton, Johannesburg · South Africa
 <!-- TIMESTAMP:START -->
- *Last synced: 2026-09-17 14:13 UTC* 
+ *Last synced: 2026-09-17 17:34 UTC* 
 <!-- TIMESTAMP:END -->
 
 </div>
