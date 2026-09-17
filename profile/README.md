@@ -133,8 +133,8 @@ A day counts once whether it carried one commit or a thousand, so no amount of a
 | ▸ | **Forensics Due Diligence System** | 43 | `Aug 03, 2026 → Sep 17, 2026` | Active now |
 | ▸ | **Tender Intelligence Platform** | 37 | `Jul 02, 2026 → Sep 09, 2026` | Active now |
 | ▸ | **MB-IQ-Revamped** | 5 | `Sep 04, 2026 → Sep 17, 2026` | Active now · **sole active engineer** |
+| ▸ | **Organization Profile & Telemetry** | 4 | `Jun 24, 2026 → Sep 17, 2026` | Active now |
 | ▸ | **Job Portal** | 4 | `Jul 25, 2026 → Sep 07, 2026` | Active now · **sole active engineer** |
-| ▸ | **Organization Profile & Telemetry** | 3 | `Jun 24, 2026 → Sep 14, 2026` | Active now |
 | ▸ | **mb-invoicing-tool** | 3 | `Sep 11, 2026 → Sep 16, 2026` | Active now |
 
 <div align="center">
@@ -343,7 +343,7 @@ We welcome technical collaboration, industry inquiries, and strategic engagement
 
 **Motsoeneng Bill Tech** · Houghton, Johannesburg · South Africa
 <!-- TIMESTAMP:START -->
- *Last synced: 2026-09-17 14:13 UTC* 
+ *Last synced: 2026-09-17 14:14 UTC* 
 <!-- TIMESTAMP:END -->
 
 </div>
