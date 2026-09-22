@@ -1,7 +1,7 @@
 {
   "schema_version": 3,
-  "generated_at": "2026-09-21T16:03:14Z",
-  "source_commit": "dff44096dc53510974a9687082b98a3303587b0f",
+  "generated_at": "2026-09-22T14:13:53Z",
+  "source_commit": "e9879eb771bfbccf445d052bab683016191eb8a8",
   "org": {
     "login": "Motsoeneng-Bill-Tech",
     "name": "Motsoeneng Bill Tech",
@@ -11,7 +11,7 @@
     "repo_count": 12,
     "live_repo_count": 12,
     "summary": {
-      "avg_reliability_pct": 51.7,
+      "avg_reliability_pct": 52.6,
       "engineers_active_this_week": 6,
       "engineers_without_recent_evidence": 1,
       "peak_streak": 51,
@@ -33,7 +33,7 @@
     },
     "calendar": {
       "from": "2026-06-19",
-      "to": "2026-09-21",
+      "to": "2026-09-22",
       "weeks": [
         {
           "days": [
@@ -696,8 +696,8 @@
             {
               "date": "2026-09-22",
               "weekday": 2,
-              "active": false,
-              "in_range": false
+              "active": true,
+              "in_range": true
             },
             {
               "date": "2026-09-23",
@@ -739,9 +739,9 @@
       "default_branch": "main",
       "is_archived": false,
       "status": "Active",
-      "last_activity": "2026-09-21",
+      "last_activity": "2026-09-22",
       "days_since_activity": 0,
-      "active_days_total": 44,
+      "active_days_total": 45,
       "engineer_count": 4,
       "active_engineer_count": 4,
       "key_person_risk": false,
@@ -757,18 +757,18 @@
       "engineers": [
         {
           "login": "Akonisaho-MB",
-          "active_days": 27,
+          "active_days": 28,
           "first_active": "2026-07-22",
-          "last_active": "2026-09-21",
+          "last_active": "2026-09-22",
           "days_since_last": 0,
           "is_current": true
         },
         {
           "login": "VhutshiloMB",
-          "active_days": 27,
+          "active_days": 28,
           "first_active": "2026-07-13",
-          "last_active": "2026-09-17",
-          "days_since_last": 4,
+          "last_active": "2026-09-22",
+          "days_since_last": 0,
           "is_current": true
         },
         {
@@ -776,60 +776,20 @@
           "active_days": 14,
           "first_active": "2026-07-23",
           "last_active": "2026-09-13",
-          "days_since_last": 8,
+          "days_since_last": 9,
           "is_current": true
         },
         {
           "login": "Kea1m",
-          "active_days": 9,
+          "active_days": 11,
           "first_active": "2026-08-31",
-          "last_active": "2026-09-21",
+          "last_active": "2026-09-22",
           "days_since_last": 0,
           "is_current": true
         }
       ],
       "outside_contributors": [],
       "automation": []
-    },
-    {
-      "name": "MB-IQ-Revamped",
-      "display_name": "MB-IQ-Revamped",
-      "description": "MB IQ Revamped",
-      "html_url": "https://github.com/Motsoeneng-Bill-Tech/MB-IQ-Revamped",
-      "visibility": "PRIVATE",
-      "primary_language": "TypeScript",
-      "default_branch": "main",
-      "is_archived": false,
-      "status": "Active",
-      "last_activity": "2026-09-21",
-      "days_since_activity": 0,
-      "active_days_total": 7,
-      "engineer_count": 1,
-      "active_engineer_count": 1,
-      "key_person_risk": true,
-      "unstaffed": false,
-      "history_truncated": false,
-      "sole_engineer": "konethegreatest",
-      "current_engineers": [
-        "konethegreatest"
-      ],
-      "engineers": [
-        {
-          "login": "konethegreatest",
-          "active_days": 7,
-          "first_active": "2026-09-04",
-          "last_active": "2026-09-21",
-          "days_since_last": 0,
-          "is_current": true
-        }
-      ],
-      "outside_contributors": [],
-      "automation": [
-        {
-          "login": "dependabot[bot]",
-          "active_days": 5
-        }
-      ]
     },
     {
       "name": "forensics-due-diligence-system",
@@ -841,9 +801,9 @@
       "default_branch": "main",
       "is_archived": false,
       "status": "Active",
-      "last_activity": "2026-09-21",
+      "last_activity": "2026-09-22",
       "days_since_activity": 0,
-      "active_days_total": 48,
+      "active_days_total": 49,
       "engineer_count": 4,
       "active_engineer_count": 1,
       "key_person_risk": true,
@@ -856,9 +816,9 @@
       "engineers": [
         {
           "login": "konethegreatest",
-          "active_days": 47,
+          "active_days": 48,
           "first_active": "2026-08-03",
-          "last_active": "2026-09-21",
+          "last_active": "2026-09-22",
           "days_since_last": 0,
           "is_current": true
         },
@@ -867,7 +827,7 @@
           "active_days": 24,
           "first_active": "2026-08-07",
           "last_active": "2026-09-06",
-          "days_since_last": 15,
+          "days_since_last": 16,
           "is_current": false
         },
         {
@@ -875,7 +835,7 @@
           "active_days": 5,
           "first_active": "2026-08-07",
           "last_active": "2026-08-14",
-          "days_since_last": 38,
+          "days_since_last": 39,
           "is_current": false
         },
         {
@@ -883,14 +843,14 @@
           "active_days": 1,
           "first_active": "2026-08-06",
           "last_active": "2026-08-06",
-          "days_since_last": 46,
+          "days_since_last": 47,
           "is_current": false
         }
       ],
       "outside_contributors": [
         {
           "login": "konethegreat",
-          "active_days": 18
+          "active_days": 20
         }
       ],
       "automation": []
@@ -905,9 +865,9 @@
       "default_branch": "main",
       "is_archived": false,
       "status": "Active",
-      "last_activity": "2026-09-21",
+      "last_activity": "2026-09-22",
       "days_since_activity": 0,
-      "active_days_total": 53,
+      "active_days_total": 54,
       "engineer_count": 2,
       "active_engineer_count": 2,
       "key_person_risk": false,
@@ -921,9 +881,9 @@
       "engineers": [
         {
           "login": "Amukelani-MB",
-          "active_days": 38,
+          "active_days": 39,
           "first_active": "2026-07-03",
-          "last_active": "2026-09-21",
+          "last_active": "2026-09-22",
           "days_since_last": 0,
           "is_current": true
         },
@@ -932,7 +892,7 @@
           "active_days": 38,
           "first_active": "2026-07-02",
           "last_active": "2026-09-19",
-          "days_since_last": 2,
+          "days_since_last": 3,
           "is_current": true
         }
       ],
@@ -949,6 +909,46 @@
       "automation": []
     },
     {
+      "name": "MB-IQ-Revamped",
+      "display_name": "MB-IQ-Revamped",
+      "description": "MB IQ Revamped",
+      "html_url": "https://github.com/Motsoeneng-Bill-Tech/MB-IQ-Revamped",
+      "visibility": "PRIVATE",
+      "primary_language": "TypeScript",
+      "default_branch": "main",
+      "is_archived": false,
+      "status": "Active",
+      "last_activity": "2026-09-21",
+      "days_since_activity": 1,
+      "active_days_total": 7,
+      "engineer_count": 1,
+      "active_engineer_count": 1,
+      "key_person_risk": true,
+      "unstaffed": false,
+      "history_truncated": false,
+      "sole_engineer": "konethegreatest",
+      "current_engineers": [
+        "konethegreatest"
+      ],
+      "engineers": [
+        {
+          "login": "konethegreatest",
+          "active_days": 7,
+          "first_active": "2026-09-04",
+          "last_active": "2026-09-21",
+          "days_since_last": 1,
+          "is_current": true
+        }
+      ],
+      "outside_contributors": [],
+      "automation": [
+        {
+          "login": "dependabot[bot]",
+          "active_days": 5
+        }
+      ]
+    },
+    {
       "name": "job-portal",
       "display_name": "Job Portal",
       "description": "Recruitment platform supporting firm hiring pipelines and public-good community engagements.",
@@ -959,7 +959,7 @@
       "is_archived": false,
       "status": "Active",
       "last_activity": "2026-09-19",
-      "days_since_activity": 2,
+      "days_since_activity": 3,
       "active_days_total": 6,
       "engineer_count": 1,
       "active_engineer_count": 1,
@@ -976,7 +976,7 @@
           "active_days": 5,
           "first_active": "2026-07-25",
           "last_active": "2026-09-19",
-          "days_since_last": 2,
+          "days_since_last": 3,
           "is_current": true
         }
       ],
@@ -999,7 +999,7 @@
       "is_archived": false,
       "status": "Active",
       "last_activity": "2026-09-18",
-      "days_since_activity": 3,
+      "days_since_activity": 4,
       "active_days_total": 7,
       "engineer_count": 2,
       "active_engineer_count": 2,
@@ -1017,7 +1017,7 @@
           "active_days": 5,
           "first_active": "2026-09-12",
           "last_active": "2026-09-16",
-          "days_since_last": 5,
+          "days_since_last": 6,
           "is_current": true
         },
         {
@@ -1025,7 +1025,7 @@
           "active_days": 4,
           "first_active": "2026-09-15",
           "last_active": "2026-09-18",
-          "days_since_last": 3,
+          "days_since_last": 4,
           "is_current": true
         }
       ],
@@ -1043,7 +1043,7 @@
       "is_archived": false,
       "status": "Active",
       "last_activity": "2026-09-17",
-      "days_since_activity": 4,
+      "days_since_activity": 5,
       "active_days_total": 6,
       "engineer_count": 2,
       "active_engineer_count": 1,
@@ -1060,7 +1060,7 @@
           "active_days": 4,
           "first_active": "2026-06-24",
           "last_active": "2026-09-17",
-          "days_since_last": 4,
+          "days_since_last": 5,
           "is_current": true
         },
         {
@@ -1068,7 +1068,7 @@
           "active_days": 2,
           "first_active": "2026-09-03",
           "last_active": "2026-09-04",
-          "days_since_last": 17,
+          "days_since_last": 18,
           "is_current": false
         }
       ],
@@ -1081,7 +1081,7 @@
       "automation": [
         {
           "login": "github-actions[bot]",
-          "active_days": 10
+          "active_days": 11
         }
       ]
     },
@@ -1096,7 +1096,7 @@
       "is_archived": false,
       "status": "Active",
       "last_activity": "2026-09-16",
-      "days_since_activity": 5,
+      "days_since_activity": 6,
       "active_days_total": 7,
       "engineer_count": 2,
       "active_engineer_count": 2,
@@ -1114,7 +1114,7 @@
           "active_days": 5,
           "first_active": "2026-08-31",
           "last_active": "2026-09-16",
-          "days_since_last": 5,
+          "days_since_last": 6,
           "is_current": true
         },
         {
@@ -1122,7 +1122,7 @@
           "active_days": 3,
           "first_active": "2026-09-11",
           "last_active": "2026-09-16",
-          "days_since_last": 5,
+          "days_since_last": 6,
           "is_current": true
         }
       ],
@@ -1145,7 +1145,7 @@
       "is_archived": false,
       "status": "Active",
       "last_activity": "2026-09-11",
-      "days_since_activity": 10,
+      "days_since_activity": 11,
       "active_days_total": 1,
       "engineer_count": 1,
       "active_engineer_count": 1,
@@ -1162,7 +1162,7 @@
           "active_days": 1,
           "first_active": "2026-09-11",
           "last_active": "2026-09-11",
-          "days_since_last": 10,
+          "days_since_last": 11,
           "is_current": true
         }
       ],
@@ -1180,7 +1180,7 @@
       "is_archived": false,
       "status": "Active",
       "last_activity": "2026-09-08",
-      "days_since_activity": 13,
+      "days_since_activity": 14,
       "active_days_total": 6,
       "engineer_count": 1,
       "active_engineer_count": 1,
@@ -1197,7 +1197,7 @@
           "active_days": 6,
           "first_active": "2026-09-03",
           "last_active": "2026-09-08",
-          "days_since_last": 13,
+          "days_since_last": 14,
           "is_current": true
         }
       ],
@@ -1215,7 +1215,7 @@
       "is_archived": false,
       "status": "Maintenance",
       "last_activity": "2026-09-03",
-      "days_since_activity": 18,
+      "days_since_activity": 19,
       "active_days_total": 19,
       "engineer_count": 1,
       "active_engineer_count": 0,
@@ -1230,7 +1230,7 @@
           "active_days": 19,
           "first_active": "2026-08-07",
           "last_active": "2026-09-03",
-          "days_since_last": 18,
+          "days_since_last": 19,
           "is_current": false
         }
       ],
@@ -1248,7 +1248,7 @@
       "is_archived": false,
       "status": "Dormant",
       "last_activity": "2026-07-16",
-      "days_since_activity": 67,
+      "days_since_activity": 68,
       "active_days_total": 8,
       "engineer_count": 2,
       "active_engineer_count": 0,
@@ -1263,7 +1263,7 @@
           "active_days": 6,
           "first_active": "2026-07-09",
           "last_active": "2026-07-16",
-          "days_since_last": 67,
+          "days_since_last": 68,
           "is_current": false
         },
         {
@@ -1271,7 +1271,7 @@
           "active_days": 4,
           "first_active": "2026-07-10",
           "last_active": "2026-07-13",
-          "days_since_last": 70,
+          "days_since_last": 71,
           "is_current": false
         }
       ],
@@ -1288,9 +1288,9 @@
       "org_role": "MEMBER",
       "account_created_at": "2026-06-19T17:04:57Z",
       "created_at": "2026-06-19T17:04:57Z",
-      "account_age_days": 95,
+      "account_age_days": 96,
       "observed_from": "2026-06-24",
-      "observed_days": 90,
+      "observed_days": 91,
       "is_new_joiner": false,
       "profile": {
         "bio": null,
@@ -1302,16 +1302,16 @@
         "window_days": 30,
         "active_days": 29,
         "pct": 96.7,
-        "total_days": 77,
+        "total_days": 78,
         "longest_streak": 51,
-        "current_streak": 26,
-        "last_date": "2026-09-21",
+        "current_streak": 27,
+        "last_date": "2026-09-22",
         "days_since_last": 0,
         "sources": [
           "pullRequestContributions",
           "pullRequestReviewContributions"
         ],
-        "corroboration_pct": 91.7
+        "corroboration_pct": 91.8
       },
       "recorded": {
         "window_days": 30,
@@ -1319,79 +1319,79 @@
         "pct": 100.0
       },
       "consistency": {
-        "active_days": 84,
-        "total_days": 95,
-        "pct": 88.4,
-        "longest_streak": 82,
-        "current_streak": 82,
-        "last_active_date": "2026-09-21",
+        "active_days": 85,
+        "total_days": 96,
+        "pct": 88.5,
+        "longest_streak": 83,
+        "current_streak": 83,
+        "last_active_date": "2026-09-22",
         "days_since_last_active": 0
       },
       "trend": {
         "weeks": [
           {
-            "week_start": "2026-06-30",
-            "week_end": "2026-07-06",
-            "active_days": 5
+            "week_start": "2026-07-01",
+            "week_end": "2026-07-07",
+            "active_days": 6
           },
           {
-            "week_start": "2026-07-07",
-            "week_end": "2026-07-13",
+            "week_start": "2026-07-08",
+            "week_end": "2026-07-14",
             "active_days": 7
           },
           {
-            "week_start": "2026-07-14",
-            "week_end": "2026-07-20",
+            "week_start": "2026-07-15",
+            "week_end": "2026-07-21",
             "active_days": 7
           },
           {
-            "week_start": "2026-07-21",
-            "week_end": "2026-07-27",
+            "week_start": "2026-07-22",
+            "week_end": "2026-07-28",
             "active_days": 7
           },
           {
-            "week_start": "2026-07-28",
-            "week_end": "2026-08-03",
+            "week_start": "2026-07-29",
+            "week_end": "2026-08-04",
             "active_days": 7
           },
           {
-            "week_start": "2026-08-04",
-            "week_end": "2026-08-10",
+            "week_start": "2026-08-05",
+            "week_end": "2026-08-11",
             "active_days": 7
           },
           {
-            "week_start": "2026-08-11",
-            "week_end": "2026-08-17",
+            "week_start": "2026-08-12",
+            "week_end": "2026-08-18",
             "active_days": 7
           },
           {
-            "week_start": "2026-08-18",
-            "week_end": "2026-08-24",
+            "week_start": "2026-08-19",
+            "week_end": "2026-08-25",
             "active_days": 7
           },
           {
-            "week_start": "2026-08-25",
-            "week_end": "2026-08-31",
+            "week_start": "2026-08-26",
+            "week_end": "2026-09-01",
             "active_days": 7
           },
           {
-            "week_start": "2026-09-01",
-            "week_end": "2026-09-07",
+            "week_start": "2026-09-02",
+            "week_end": "2026-09-08",
             "active_days": 7
           },
           {
-            "week_start": "2026-09-08",
-            "week_end": "2026-09-14",
+            "week_start": "2026-09-09",
+            "week_end": "2026-09-15",
             "active_days": 7
           },
           {
-            "week_start": "2026-09-15",
-            "week_end": "2026-09-21",
+            "week_start": "2026-09-16",
+            "week_end": "2026-09-22",
             "active_days": 7
           }
         ],
         "recent_avg_active_days": 7.0,
-        "earlier_avg_active_days": 6.7,
+        "earlier_avg_active_days": 6.8,
         "direction": "Steady",
         "weeks_observed": 12
       },
@@ -1410,9 +1410,9 @@
         },
         {
           "weekday": 2,
-          "active_days": 11,
-          "total_days": 13,
-          "pct": 84.6
+          "active_days": 12,
+          "total_days": 14,
+          "pct": 85.7
         },
         {
           "weekday": 3,
@@ -1445,9 +1445,9 @@
           "display_name": "Forensics Due Diligence System",
           "primary_language": "Python",
           "visibility": "PRIVATE",
-          "active_days": 47,
+          "active_days": 48,
           "first_active": "2026-08-03",
-          "last_active": "2026-09-21",
+          "last_active": "2026-09-22",
           "days_since_last": 0,
           "is_current": true,
           "project_status": "Active",
@@ -1462,7 +1462,7 @@
           "active_days": 38,
           "first_active": "2026-07-02",
           "last_active": "2026-09-19",
-          "days_since_last": 2,
+          "days_since_last": 3,
           "is_current": true,
           "project_status": "Active",
           "is_sole_engineer": false,
@@ -1476,7 +1476,7 @@
           "active_days": 7,
           "first_active": "2026-09-04",
           "last_active": "2026-09-21",
-          "days_since_last": 0,
+          "days_since_last": 1,
           "is_current": true,
           "project_status": "Active",
           "is_sole_engineer": true,
@@ -1490,7 +1490,7 @@
           "active_days": 5,
           "first_active": "2026-07-25",
           "last_active": "2026-09-19",
-          "days_since_last": 2,
+          "days_since_last": 3,
           "is_current": true,
           "project_status": "Active",
           "is_sole_engineer": true,
@@ -1504,7 +1504,7 @@
           "active_days": 4,
           "first_active": "2026-06-24",
           "last_active": "2026-09-17",
-          "days_since_last": 4,
+          "days_since_last": 5,
           "is_current": true,
           "project_status": "Active",
           "is_sole_engineer": false,
@@ -1518,7 +1518,7 @@
           "active_days": 3,
           "first_active": "2026-09-11",
           "last_active": "2026-09-16",
-          "days_since_last": 5,
+          "days_since_last": 6,
           "is_current": true,
           "project_status": "Active",
           "is_sole_engineer": false,
@@ -1543,12 +1543,12 @@
       "cadence_band": "Daily",
       "calendar": {
         "from": "2026-06-19",
-        "to": "2026-09-21",
-        "active_days": 84,
-        "total_days": 95,
-        "active_pct": 88.4,
-        "longest_streak": 82,
-        "current_streak": 82,
+        "to": "2026-09-22",
+        "active_days": 85,
+        "total_days": 96,
+        "active_pct": 88.5,
+        "longest_streak": 83,
+        "current_streak": 83,
         "weeks": [
           {
             "days": [
@@ -2211,8 +2211,8 @@
               {
                 "date": "2026-09-22",
                 "weekday": 2,
-                "active": false,
-                "in_range": false
+                "active": true,
+                "in_range": true
               },
               {
                 "date": "2026-09-23",
@@ -2252,9 +2252,9 @@
       "org_role": "MEMBER",
       "account_created_at": "2026-06-21T13:22:28Z",
       "created_at": "2026-06-21T13:22:28Z",
-      "account_age_days": 93,
+      "account_age_days": 94,
       "observed_from": "2026-07-09",
-      "observed_days": 75,
+      "observed_days": 76,
       "is_new_joiner": false,
       "profile": {
         "bio": null,
@@ -2264,88 +2264,88 @@
       },
       "reliability": {
         "window_days": 30,
-        "active_days": 26,
-        "pct": 86.7,
-        "total_days": 48,
-        "longest_streak": 22,
-        "current_streak": 22,
-        "last_date": "2026-09-21",
+        "active_days": 27,
+        "pct": 90.0,
+        "total_days": 49,
+        "longest_streak": 23,
+        "current_streak": 23,
+        "last_date": "2026-09-22",
         "days_since_last": 0,
         "sources": [
           "pullRequestContributions",
           "pullRequestReviewContributions"
         ],
-        "corroboration_pct": 70.6
+        "corroboration_pct": 71.0
       },
       "recorded": {
         "window_days": 30,
-        "active_days": 26,
-        "pct": 86.7
+        "active_days": 27,
+        "pct": 90.0
       },
       "consistency": {
-        "active_days": 68,
-        "total_days": 93,
-        "pct": 73.1,
-        "longest_streak": 22,
-        "current_streak": 22,
-        "last_active_date": "2026-09-21",
+        "active_days": 69,
+        "total_days": 94,
+        "pct": 73.4,
+        "longest_streak": 23,
+        "current_streak": 23,
+        "last_active_date": "2026-09-22",
         "days_since_last_active": 0
       },
       "trend": {
         "weeks": [
           {
-            "week_start": "2026-07-07",
-            "week_end": "2026-07-13",
+            "week_start": "2026-07-08",
+            "week_end": "2026-07-14",
             "active_days": 5
           },
           {
-            "week_start": "2026-07-14",
-            "week_end": "2026-07-20",
+            "week_start": "2026-07-15",
+            "week_end": "2026-07-21",
             "active_days": 3
           },
           {
-            "week_start": "2026-07-21",
-            "week_end": "2026-07-27",
+            "week_start": "2026-07-22",
+            "week_end": "2026-07-28",
             "active_days": 7
           },
           {
-            "week_start": "2026-07-28",
-            "week_end": "2026-08-03",
+            "week_start": "2026-07-29",
+            "week_end": "2026-08-04",
+            "active_days": 3
+          },
+          {
+            "week_start": "2026-08-05",
+            "week_end": "2026-08-11",
+            "active_days": 7
+          },
+          {
+            "week_start": "2026-08-12",
+            "week_end": "2026-08-18",
+            "active_days": 7
+          },
+          {
+            "week_start": "2026-08-19",
+            "week_end": "2026-08-25",
             "active_days": 4
           },
           {
-            "week_start": "2026-08-04",
-            "week_end": "2026-08-10",
-            "active_days": 6
-          },
-          {
-            "week_start": "2026-08-11",
-            "week_end": "2026-08-17",
-            "active_days": 7
-          },
-          {
-            "week_start": "2026-08-18",
-            "week_end": "2026-08-24",
+            "week_start": "2026-08-26",
+            "week_end": "2026-09-01",
             "active_days": 5
           },
           {
-            "week_start": "2026-08-25",
-            "week_end": "2026-08-31",
-            "active_days": 4
-          },
-          {
-            "week_start": "2026-09-01",
-            "week_end": "2026-09-07",
+            "week_start": "2026-09-02",
+            "week_end": "2026-09-08",
             "active_days": 7
           },
           {
-            "week_start": "2026-09-08",
-            "week_end": "2026-09-14",
+            "week_start": "2026-09-09",
+            "week_end": "2026-09-15",
             "active_days": 7
           },
           {
-            "week_start": "2026-09-15",
-            "week_end": "2026-09-21",
+            "week_start": "2026-09-16",
+            "week_end": "2026-09-22",
             "active_days": 7
           }
         ],
@@ -2369,9 +2369,9 @@
         },
         {
           "weekday": 2,
-          "active_days": 9,
-          "total_days": 13,
-          "pct": 69.2
+          "active_days": 10,
+          "total_days": 14,
+          "pct": 71.4
         },
         {
           "weekday": 3,
@@ -2404,9 +2404,9 @@
           "display_name": "Enterprise Case Management",
           "primary_language": "Java",
           "visibility": "PRIVATE",
-          "active_days": 27,
+          "active_days": 28,
           "first_active": "2026-07-22",
-          "last_active": "2026-09-21",
+          "last_active": "2026-09-22",
           "days_since_last": 0,
           "is_current": true,
           "project_status": "Active",
@@ -2421,7 +2421,7 @@
           "active_days": 19,
           "first_active": "2026-08-07",
           "last_active": "2026-09-03",
-          "days_since_last": 18,
+          "days_since_last": 19,
           "is_current": false,
           "project_status": "Maintenance",
           "is_sole_engineer": true,
@@ -2435,7 +2435,7 @@
           "active_days": 6,
           "first_active": "2026-07-09",
           "last_active": "2026-07-16",
-          "days_since_last": 67,
+          "days_since_last": 68,
           "is_current": false,
           "project_status": "Dormant",
           "is_sole_engineer": false,
@@ -2449,7 +2449,7 @@
           "active_days": 6,
           "first_active": "2026-09-03",
           "last_active": "2026-09-08",
-          "days_since_last": 13,
+          "days_since_last": 14,
           "is_current": true,
           "project_status": "Active",
           "is_sole_engineer": true,
@@ -2463,7 +2463,7 @@
           "active_days": 5,
           "first_active": "2026-08-07",
           "last_active": "2026-08-14",
-          "days_since_last": 38,
+          "days_since_last": 39,
           "is_current": false,
           "project_status": "Active",
           "is_sole_engineer": false,
@@ -2482,15 +2482,15 @@
       ],
       "engagement_status": "Committed today",
       "engagement_level": "active",
-      "cadence_band": "Near-daily",
+      "cadence_band": "Daily",
       "calendar": {
         "from": "2026-06-21",
-        "to": "2026-09-21",
-        "active_days": 68,
-        "total_days": 93,
-        "active_pct": 73.1,
-        "longest_streak": 22,
-        "current_streak": 22,
+        "to": "2026-09-22",
+        "active_days": 69,
+        "total_days": 94,
+        "active_pct": 73.4,
+        "longest_streak": 23,
+        "current_streak": 23,
         "weeks": [
           {
             "days": [
@@ -3107,8 +3107,8 @@
               {
                 "date": "2026-09-22",
                 "weekday": 2,
-                "active": false,
-                "in_range": false
+                "active": true,
+                "in_range": true
               },
               {
                 "date": "2026-09-23",
@@ -3148,9 +3148,9 @@
       "org_role": "MEMBER",
       "account_created_at": "2026-06-24T08:20:22Z",
       "created_at": "2026-06-24T08:20:22Z",
-      "account_age_days": 90,
+      "account_age_days": 91,
       "observed_from": "2026-07-03",
-      "observed_days": 81,
+      "observed_days": 82,
       "is_new_joiner": false,
       "profile": {
         "bio": null,
@@ -3160,18 +3160,18 @@
       },
       "reliability": {
         "window_days": 30,
-        "active_days": 24,
-        "pct": 80.0,
+        "active_days": 23,
+        "pct": 76.7,
         "total_days": 59,
         "longest_streak": 12,
         "current_streak": 8,
         "last_date": "2026-09-21",
-        "days_since_last": 0,
+        "days_since_last": 1,
         "sources": [
           "pullRequestContributions",
           "pullRequestReviewContributions"
         ],
-        "corroboration_pct": 84.3
+        "corroboration_pct": 83.1
       },
       "recorded": {
         "window_days": 30,
@@ -3179,79 +3179,79 @@
         "pct": 93.3
       },
       "consistency": {
-        "active_days": 70,
-        "total_days": 90,
-        "pct": 77.8,
-        "longest_streak": 23,
-        "current_streak": 23,
-        "last_active_date": "2026-09-21",
+        "active_days": 71,
+        "total_days": 91,
+        "pct": 78.0,
+        "longest_streak": 24,
+        "current_streak": 24,
+        "last_active_date": "2026-09-22",
         "days_since_last_active": 0
       },
       "trend": {
         "weeks": [
           {
-            "week_start": "2026-06-30",
-            "week_end": "2026-07-06",
-            "active_days": 2
+            "week_start": "2026-07-01",
+            "week_end": "2026-07-07",
+            "active_days": 3
           },
           {
-            "week_start": "2026-07-07",
-            "week_end": "2026-07-13",
+            "week_start": "2026-07-08",
+            "week_end": "2026-07-14",
             "active_days": 5
           },
           {
-            "week_start": "2026-07-14",
-            "week_end": "2026-07-20",
-            "active_days": 7
-          },
-          {
-            "week_start": "2026-07-21",
-            "week_end": "2026-07-27",
-            "active_days": 5
-          },
-          {
-            "week_start": "2026-07-28",
-            "week_end": "2026-08-03",
-            "active_days": 4
-          },
-          {
-            "week_start": "2026-08-04",
-            "week_end": "2026-08-10",
-            "active_days": 7
-          },
-          {
-            "week_start": "2026-08-11",
-            "week_end": "2026-08-17",
+            "week_start": "2026-07-15",
+            "week_end": "2026-07-21",
             "active_days": 6
           },
           {
-            "week_start": "2026-08-18",
-            "week_end": "2026-08-24",
+            "week_start": "2026-07-22",
+            "week_end": "2026-07-28",
+            "active_days": 6
+          },
+          {
+            "week_start": "2026-07-29",
+            "week_end": "2026-08-04",
+            "active_days": 4
+          },
+          {
+            "week_start": "2026-08-05",
+            "week_end": "2026-08-11",
             "active_days": 7
           },
           {
-            "week_start": "2026-08-25",
-            "week_end": "2026-08-31",
-            "active_days": 5
+            "week_start": "2026-08-12",
+            "week_end": "2026-08-18",
+            "active_days": 6
           },
           {
-            "week_start": "2026-09-01",
-            "week_end": "2026-09-07",
+            "week_start": "2026-08-19",
+            "week_end": "2026-08-25",
+            "active_days": 6
+          },
+          {
+            "week_start": "2026-08-26",
+            "week_end": "2026-09-01",
+            "active_days": 6
+          },
+          {
+            "week_start": "2026-09-02",
+            "week_end": "2026-09-08",
             "active_days": 7
           },
           {
-            "week_start": "2026-09-08",
-            "week_end": "2026-09-14",
+            "week_start": "2026-09-09",
+            "week_end": "2026-09-15",
             "active_days": 7
           },
           {
-            "week_start": "2026-09-15",
-            "week_end": "2026-09-21",
+            "week_start": "2026-09-16",
+            "week_end": "2026-09-22",
             "active_days": 7
           }
         ],
         "recent_avg_active_days": 6.5,
-        "earlier_avg_active_days": 5.0,
+        "earlier_avg_active_days": 5.2,
         "direction": "Improving",
         "weeks_observed": 12
       },
@@ -3270,9 +3270,9 @@
         },
         {
           "weekday": 2,
-          "active_days": 9,
-          "total_days": 12,
-          "pct": 75.0
+          "active_days": 10,
+          "total_days": 13,
+          "pct": 76.9
         },
         {
           "weekday": 3,
@@ -3305,9 +3305,9 @@
           "display_name": "Tender Intelligence Platform",
           "primary_language": "Python",
           "visibility": "PRIVATE",
-          "active_days": 38,
+          "active_days": 39,
           "first_active": "2026-07-03",
-          "last_active": "2026-09-21",
+          "last_active": "2026-09-22",
           "days_since_last": 0,
           "is_current": true,
           "project_status": "Active",
@@ -3322,7 +3322,7 @@
           "active_days": 24,
           "first_active": "2026-08-07",
           "last_active": "2026-09-06",
-          "days_since_last": 15,
+          "days_since_last": 16,
           "is_current": false,
           "project_status": "Active",
           "is_sole_engineer": false,
@@ -3336,7 +3336,7 @@
           "active_days": 4,
           "first_active": "2026-09-15",
           "last_active": "2026-09-18",
-          "days_since_last": 3,
+          "days_since_last": 4,
           "is_current": true,
           "project_status": "Active",
           "is_sole_engineer": false,
@@ -3355,12 +3355,12 @@
       "cadence_band": "Near-daily",
       "calendar": {
         "from": "2026-06-24",
-        "to": "2026-09-21",
-        "active_days": 70,
-        "total_days": 90,
-        "active_pct": 77.8,
-        "longest_streak": 23,
-        "current_streak": 23,
+        "to": "2026-09-22",
+        "active_days": 71,
+        "total_days": 91,
+        "active_pct": 78.0,
+        "longest_streak": 24,
+        "current_streak": 24,
         "weeks": [
           {
             "days": [
@@ -3977,8 +3977,8 @@
               {
                 "date": "2026-09-22",
                 "weekday": 2,
-                "active": false,
-                "in_range": false
+                "active": true,
+                "in_range": true
               },
               {
                 "date": "2026-09-23",
@@ -4018,9 +4018,9 @@
       "org_role": "MEMBER",
       "account_created_at": "2026-06-19T13:02:32Z",
       "created_at": "2026-06-19T13:02:32Z",
-      "account_age_days": 95,
+      "account_age_days": 96,
       "observed_from": "2026-07-13",
-      "observed_days": 71,
+      "observed_days": 72,
       "is_new_joiner": false,
       "profile": {
         "bio": null,
@@ -4030,93 +4030,93 @@
       },
       "reliability": {
         "window_days": 30,
-        "active_days": 13,
-        "pct": 43.3,
-        "total_days": 26,
+        "active_days": 14,
+        "pct": 46.7,
+        "total_days": 27,
         "longest_streak": 11,
-        "current_streak": 0,
-        "last_date": "2026-09-17",
-        "days_since_last": 4,
+        "current_streak": 1,
+        "last_date": "2026-09-22",
+        "days_since_last": 0,
         "sources": [
           "pullRequestContributions",
           "pullRequestReviewContributions"
         ],
-        "corroboration_pct": 74.3
+        "corroboration_pct": 75.0
       },
       "recorded": {
         "window_days": 30,
-        "active_days": 17,
-        "pct": 56.7
+        "active_days": 18,
+        "pct": 60.0
       },
       "consistency": {
-        "active_days": 35,
-        "total_days": 95,
-        "pct": 36.8,
+        "active_days": 36,
+        "total_days": 96,
+        "pct": 37.5,
         "longest_streak": 12,
-        "current_streak": 0,
-        "last_active_date": "2026-09-18",
-        "days_since_last_active": 3
+        "current_streak": 1,
+        "last_active_date": "2026-09-22",
+        "days_since_last_active": 0
       },
       "trend": {
         "weeks": [
           {
-            "week_start": "2026-07-07",
-            "week_end": "2026-07-13",
+            "week_start": "2026-07-08",
+            "week_end": "2026-07-14",
+            "active_days": 2
+          },
+          {
+            "week_start": "2026-07-15",
+            "week_end": "2026-07-21",
             "active_days": 1
           },
           {
-            "week_start": "2026-07-14",
-            "week_end": "2026-07-20",
-            "active_days": 1
+            "week_start": "2026-07-22",
+            "week_end": "2026-07-28",
+            "active_days": 4
           },
           {
-            "week_start": "2026-07-21",
-            "week_end": "2026-07-27",
-            "active_days": 5
-          },
-          {
-            "week_start": "2026-07-28",
-            "week_end": "2026-08-03",
+            "week_start": "2026-07-29",
+            "week_end": "2026-08-04",
             "active_days": 2
           },
           {
-            "week_start": "2026-08-04",
-            "week_end": "2026-08-10",
+            "week_start": "2026-08-05",
+            "week_end": "2026-08-11",
+            "active_days": 3
+          },
+          {
+            "week_start": "2026-08-12",
+            "week_end": "2026-08-18",
+            "active_days": 3
+          },
+          {
+            "week_start": "2026-08-19",
+            "week_end": "2026-08-25",
             "active_days": 2
           },
           {
-            "week_start": "2026-08-11",
-            "week_end": "2026-08-17",
+            "week_start": "2026-08-26",
+            "week_end": "2026-09-01",
             "active_days": 3
           },
           {
-            "week_start": "2026-08-18",
-            "week_end": "2026-08-24",
+            "week_start": "2026-09-02",
+            "week_end": "2026-09-08",
             "active_days": 3
           },
           {
-            "week_start": "2026-08-25",
-            "week_end": "2026-08-31",
-            "active_days": 2
-          },
-          {
-            "week_start": "2026-09-01",
-            "week_end": "2026-09-07",
-            "active_days": 3
-          },
-          {
-            "week_start": "2026-09-08",
-            "week_end": "2026-09-14",
+            "week_start": "2026-09-09",
+            "week_end": "2026-09-15",
             "active_days": 7
           },
           {
-            "week_start": "2026-09-15",
-            "week_end": "2026-09-21",
+            "week_start": "2026-09-16",
+            "week_end": "2026-09-22",
             "active_days": 4
           }
         ],
         "recent_avg_active_days": 3.8,
-        "earlier_avg_active_days": 2.3,
+        "earlier_avg_active_days": 2.5,
         "direction": "Improving",
         "weeks_observed": 11
       },
@@ -4135,9 +4135,9 @@
         },
         {
           "weekday": 2,
-          "active_days": 7,
-          "total_days": 13,
-          "pct": 53.8
+          "active_days": 8,
+          "total_days": 14,
+          "pct": 57.1
         },
         {
           "weekday": 3,
@@ -4170,10 +4170,10 @@
           "display_name": "Enterprise Case Management",
           "primary_language": "Java",
           "visibility": "PRIVATE",
-          "active_days": 27,
+          "active_days": 28,
           "first_active": "2026-07-13",
-          "last_active": "2026-09-17",
-          "days_since_last": 4,
+          "last_active": "2026-09-22",
+          "days_since_last": 0,
           "is_current": true,
           "project_status": "Active",
           "is_sole_engineer": false,
@@ -4187,7 +4187,7 @@
           "active_days": 5,
           "first_active": "2026-08-31",
           "last_active": "2026-09-16",
-          "days_since_last": 5,
+          "days_since_last": 6,
           "is_current": true,
           "project_status": "Active",
           "is_sole_engineer": false,
@@ -4200,17 +4200,17 @@
         "Java"
       ],
       "carries_key_person_risk_for": [],
-      "engagement_status": "Committed this week",
+      "engagement_status": "Committed today",
       "engagement_level": "active",
       "cadence_band": "Regular",
       "calendar": {
         "from": "2026-06-19",
-        "to": "2026-09-21",
-        "active_days": 35,
-        "total_days": 95,
-        "active_pct": 36.8,
+        "to": "2026-09-22",
+        "active_days": 36,
+        "total_days": 96,
+        "active_pct": 37.5,
         "longest_streak": 12,
-        "current_streak": 0,
+        "current_streak": 1,
         "weeks": [
           {
             "days": [
@@ -4873,8 +4873,8 @@
               {
                 "date": "2026-09-22",
                 "weekday": 2,
-                "active": false,
-                "in_range": false
+                "active": true,
+                "in_range": true
               },
               {
                 "date": "2026-09-23",
@@ -4914,9 +4914,9 @@
       "org_role": "MEMBER",
       "account_created_at": "2026-06-22T12:42:55Z",
       "created_at": "2026-06-22T12:42:55Z",
-      "account_age_days": 92,
+      "account_age_days": 93,
       "observed_from": "2026-07-14",
-      "observed_days": 70,
+      "observed_days": 71,
       "is_new_joiner": false,
       "profile": {
         "bio": "",
@@ -4926,90 +4926,95 @@
       },
       "reliability": {
         "window_days": 30,
-        "active_days": 8,
-        "pct": 26.7,
-        "total_days": 12,
+        "active_days": 9,
+        "pct": 30.0,
+        "total_days": 13,
         "longest_streak": 3,
-        "current_streak": 1,
-        "last_date": "2026-09-21",
+        "current_streak": 2,
+        "last_date": "2026-09-22",
         "days_since_last": 0,
         "sources": [
           "pullRequestContributions",
           "pullRequestReviewContributions"
         ],
-        "corroboration_pct": 80.0
+        "corroboration_pct": 76.5
       },
       "recorded": {
         "window_days": 30,
-        "active_days": 9,
-        "pct": 30.0
+        "active_days": 11,
+        "pct": 36.7
       },
       "consistency": {
-        "active_days": 15,
-        "total_days": 92,
-        "pct": 16.3,
-        "longest_streak": 3,
-        "current_streak": 1,
-        "last_active_date": "2026-09-21",
+        "active_days": 17,
+        "total_days": 93,
+        "pct": 18.3,
+        "longest_streak": 4,
+        "current_streak": 2,
+        "last_active_date": "2026-09-22",
         "days_since_last_active": 0
       },
       "trend": {
         "weeks": [
           {
-            "week_start": "2026-07-14",
-            "week_end": "2026-07-20",
+            "week_start": "2026-07-08",
+            "week_end": "2026-07-14",
             "active_days": 1
           },
           {
-            "week_start": "2026-07-21",
-            "week_end": "2026-07-27",
+            "week_start": "2026-07-15",
+            "week_end": "2026-07-21",
             "active_days": 0
           },
           {
-            "week_start": "2026-07-28",
-            "week_end": "2026-08-03",
+            "week_start": "2026-07-22",
+            "week_end": "2026-07-28",
             "active_days": 0
           },
           {
-            "week_start": "2026-08-04",
-            "week_end": "2026-08-10",
-            "active_days": 1
+            "week_start": "2026-07-29",
+            "week_end": "2026-08-04",
+            "active_days": 0
           },
           {
-            "week_start": "2026-08-11",
-            "week_end": "2026-08-17",
+            "week_start": "2026-08-05",
+            "week_end": "2026-08-11",
             "active_days": 2
           },
           {
-            "week_start": "2026-08-18",
-            "week_end": "2026-08-24",
+            "week_start": "2026-08-12",
+            "week_end": "2026-08-18",
+            "active_days": 1
+          },
+          {
+            "week_start": "2026-08-19",
+            "week_end": "2026-08-25",
             "active_days": 0
           },
           {
-            "week_start": "2026-08-25",
-            "week_end": "2026-08-31",
-            "active_days": 0
+            "week_start": "2026-08-26",
+            "week_end": "2026-09-01",
+            "active_days": 1
           },
           {
-            "week_start": "2026-09-01",
-            "week_end": "2026-09-07",
+            "week_start": "2026-09-02",
+            "week_end": "2026-09-08",
+            "active_days": 2
+          },
+          {
+            "week_start": "2026-09-09",
+            "week_end": "2026-09-15",
             "active_days": 3
           },
           {
-            "week_start": "2026-09-08",
-            "week_end": "2026-09-14",
-            "active_days": 2
-          },
-          {
-            "week_start": "2026-09-15",
-            "week_end": "2026-09-21",
-            "active_days": 4
+            "week_start": "2026-09-16",
+            "week_end": "2026-09-22",
+            "active_days": 5
           }
         ],
-        "recent_avg_active_days": 1.8,
-        "earlier_avg_active_days": 0.8,
+        "recent_avg_active_days": 2.2,
+        "earlier_avg_active_days": 0.7,
         "direction": "Improving",
-        "weeks_observed": 10
+        "weeks_observed": 11
       },
       "weekday_pattern": [
         {
@@ -5026,9 +5031,9 @@
         },
         {
           "weekday": 2,
-          "active_days": 4,
-          "total_days": 13,
-          "pct": 30.8
+          "active_days": 5,
+          "total_days": 14,
+          "pct": 35.7
         },
         {
           "weekday": 3,
@@ -5044,9 +5049,9 @@
         },
         {
           "weekday": 5,
-          "active_days": 1,
+          "active_days": 2,
           "total_days": 13,
-          "pct": 7.7
+          "pct": 15.4
         },
         {
           "weekday": 6,
@@ -5061,9 +5066,9 @@
           "display_name": "Enterprise Case Management",
           "primary_language": "Java",
           "visibility": "PRIVATE",
-          "active_days": 9,
+          "active_days": 11,
           "first_active": "2026-08-31",
-          "last_active": "2026-09-21",
+          "last_active": "2026-09-22",
           "days_since_last": 0,
           "is_current": true,
           "project_status": "Active",
@@ -5082,12 +5087,12 @@
       "cadence_band": "Intermittent",
       "calendar": {
         "from": "2026-06-22",
-        "to": "2026-09-21",
-        "active_days": 15,
-        "total_days": 92,
-        "active_pct": 16.3,
-        "longest_streak": 3,
-        "current_streak": 1,
+        "to": "2026-09-22",
+        "active_days": 17,
+        "total_days": 93,
+        "active_pct": 18.3,
+        "longest_streak": 4,
+        "current_streak": 2,
         "weeks": [
           {
             "days": [
@@ -5676,7 +5681,7 @@
               {
                 "date": "2026-09-18",
                 "weekday": 5,
-                "active": false,
+                "active": true,
                 "in_range": true
               },
               {
@@ -5704,8 +5709,8 @@
               {
                 "date": "2026-09-22",
                 "weekday": 2,
-                "active": false,
-                "in_range": false
+                "active": true,
+                "in_range": true
               },
               {
                 "date": "2026-09-23",
@@ -5745,9 +5750,9 @@
       "org_role": "MEMBER",
       "account_created_at": "2026-06-24T08:45:05Z",
       "created_at": "2026-06-24T08:45:05Z",
-      "account_age_days": 90,
+      "account_age_days": 91,
       "observed_from": "2026-07-10",
-      "observed_days": 74,
+      "observed_days": 75,
       "is_new_joiner": false,
       "profile": {
         "bio": null,
@@ -5763,7 +5768,7 @@
         "longest_streak": 4,
         "current_streak": 0,
         "last_date": "2026-09-14",
-        "days_since_last": 7,
+        "days_since_last": 8,
         "sources": [
           "pullRequestContributions",
           "pullRequestReviewContributions"
@@ -5777,69 +5782,69 @@
       },
       "consistency": {
         "active_days": 26,
-        "total_days": 90,
-        "pct": 28.9,
+        "total_days": 91,
+        "pct": 28.6,
         "longest_streak": 5,
         "current_streak": 0,
         "last_active_date": "2026-09-16",
-        "days_since_last_active": 5
+        "days_since_last_active": 6
       },
       "trend": {
         "weeks": [
           {
-            "week_start": "2026-07-07",
-            "week_end": "2026-07-13",
+            "week_start": "2026-07-08",
+            "week_end": "2026-07-14",
             "active_days": 4
           },
           {
-            "week_start": "2026-07-14",
-            "week_end": "2026-07-20",
+            "week_start": "2026-07-15",
+            "week_end": "2026-07-21",
             "active_days": 0
           },
           {
-            "week_start": "2026-07-21",
-            "week_end": "2026-07-27",
+            "week_start": "2026-07-22",
+            "week_end": "2026-07-28",
             "active_days": 3
           },
           {
-            "week_start": "2026-07-28",
-            "week_end": "2026-08-03",
-            "active_days": 2
+            "week_start": "2026-07-29",
+            "week_end": "2026-08-04",
+            "active_days": 3
           },
           {
-            "week_start": "2026-08-04",
-            "week_end": "2026-08-10",
+            "week_start": "2026-08-05",
+            "week_end": "2026-08-11",
             "active_days": 4
           },
           {
-            "week_start": "2026-08-11",
-            "week_end": "2026-08-17",
-            "active_days": 2
-          },
-          {
-            "week_start": "2026-08-18",
-            "week_end": "2026-08-24",
-            "active_days": 2
-          },
-          {
-            "week_start": "2026-08-25",
-            "week_end": "2026-08-31",
+            "week_start": "2026-08-12",
+            "week_end": "2026-08-18",
             "active_days": 1
           },
           {
-            "week_start": "2026-09-01",
-            "week_end": "2026-09-07",
-            "active_days": 0
+            "week_start": "2026-08-19",
+            "week_end": "2026-08-25",
+            "active_days": 2
           },
           {
-            "week_start": "2026-09-08",
-            "week_end": "2026-09-14",
+            "week_start": "2026-08-26",
+            "week_end": "2026-09-01",
+            "active_days": 1
+          },
+          {
+            "week_start": "2026-09-02",
+            "week_end": "2026-09-08",
+            "active_days": 1
+          },
+          {
+            "week_start": "2026-09-09",
+            "week_end": "2026-09-15",
             "active_days": 5
           },
           {
-            "week_start": "2026-09-15",
-            "week_end": "2026-09-21",
-            "active_days": 2
+            "week_start": "2026-09-16",
+            "week_end": "2026-09-22",
+            "active_days": 1
           }
         ],
         "recent_avg_active_days": 2.0,
@@ -5863,8 +5868,8 @@
         {
           "weekday": 2,
           "active_days": 4,
-          "total_days": 12,
-          "pct": 33.3
+          "total_days": 13,
+          "pct": 30.8
         },
         {
           "weekday": 3,
@@ -5900,7 +5905,7 @@
           "active_days": 14,
           "first_active": "2026-07-23",
           "last_active": "2026-09-13",
-          "days_since_last": 8,
+          "days_since_last": 9,
           "is_current": true,
           "project_status": "Active",
           "is_sole_engineer": false,
@@ -5914,7 +5919,7 @@
           "active_days": 5,
           "first_active": "2026-09-12",
           "last_active": "2026-09-16",
-          "days_since_last": 5,
+          "days_since_last": 6,
           "is_current": true,
           "project_status": "Active",
           "is_sole_engineer": false,
@@ -5928,7 +5933,7 @@
           "active_days": 4,
           "first_active": "2026-07-10",
           "last_active": "2026-07-13",
-          "days_since_last": 70,
+          "days_since_last": 71,
           "is_current": false,
           "project_status": "Dormant",
           "is_sole_engineer": false,
@@ -5942,7 +5947,7 @@
           "active_days": 1,
           "first_active": "2026-08-06",
           "last_active": "2026-08-06",
-          "days_since_last": 46,
+          "days_since_last": 47,
           "is_current": false,
           "project_status": "Active",
           "is_sole_engineer": false,
@@ -5962,10 +5967,10 @@
       "cadence_band": "Intermittent",
       "calendar": {
         "from": "2026-06-24",
-        "to": "2026-09-21",
+        "to": "2026-09-22",
         "active_days": 26,
-        "total_days": 90,
-        "active_pct": 28.9,
+        "total_days": 91,
+        "active_pct": 28.6,
         "longest_streak": 5,
         "current_streak": 0,
         "weeks": [
@@ -6585,7 +6590,7 @@
                 "date": "2026-09-22",
                 "weekday": 2,
                 "active": false,
-                "in_range": false
+                "in_range": true
               },
               {
                 "date": "2026-09-23",
@@ -6625,9 +6630,9 @@
       "org_role": "ADMIN",
       "account_created_at": "2026-08-20T10:18:12Z",
       "created_at": "2026-08-20T10:18:12Z",
-      "account_age_days": 33,
+      "account_age_days": 34,
       "observed_from": "2026-09-03",
-      "observed_days": 19,
+      "observed_days": 20,
       "is_new_joiner": false,
       "profile": {
         "bio": null,
@@ -6636,14 +6641,14 @@
         "website_url": null
       },
       "reliability": {
-        "window_days": 19,
+        "window_days": 20,
         "active_days": 1,
-        "pct": 5.3,
+        "pct": 5.0,
         "total_days": 1,
         "longest_streak": 1,
         "current_streak": 0,
         "last_date": "2026-09-03",
-        "days_since_last": 18,
+        "days_since_last": 19,
         "sources": [
           "pullRequestReviewContributions"
         ],
@@ -6656,28 +6661,28 @@
       },
       "consistency": {
         "active_days": 4,
-        "total_days": 33,
-        "pct": 12.1,
+        "total_days": 34,
+        "pct": 11.8,
         "longest_streak": 2,
         "current_streak": 0,
         "last_active_date": "2026-09-11",
-        "days_since_last_active": 10
+        "days_since_last_active": 11
       },
       "trend": {
         "weeks": [
           {
-            "week_start": "2026-09-01",
-            "week_end": "2026-09-07",
+            "week_start": "2026-09-02",
+            "week_end": "2026-09-08",
             "active_days": 2
           },
           {
-            "week_start": "2026-09-08",
-            "week_end": "2026-09-14",
+            "week_start": "2026-09-09",
+            "week_end": "2026-09-15",
             "active_days": 1
           },
           {
-            "week_start": "2026-09-15",
-            "week_end": "2026-09-21",
+            "week_start": "2026-09-16",
+            "week_end": "2026-09-22",
             "active_days": 0
           }
         ],
@@ -6702,7 +6707,7 @@
         {
           "weekday": 2,
           "active_days": 0,
-          "total_days": 4,
+          "total_days": 5,
           "pct": 0.0
         },
         {
@@ -6739,7 +6744,7 @@
           "active_days": 2,
           "first_active": "2026-09-03",
           "last_active": "2026-09-04",
-          "days_since_last": 17,
+          "days_since_last": 18,
           "is_current": false,
           "project_status": "Active",
           "is_sole_engineer": false,
@@ -6753,7 +6758,7 @@
           "active_days": 1,
           "first_active": "2026-09-11",
           "last_active": "2026-09-11",
-          "days_since_last": 10,
+          "days_since_last": 11,
           "is_current": true,
           "project_status": "Active",
           "is_sole_engineer": true,
@@ -6768,15 +6773,15 @@
       "carries_key_person_risk_for": [
         "anchor-games"
       ],
-      "engagement_status": "Last commit 10 days ago",
+      "engagement_status": "Last commit 11 days ago",
       "engagement_level": "slowing",
       "cadence_band": "Dormant",
       "calendar": {
         "from": "2026-08-20",
-        "to": "2026-09-21",
+        "to": "2026-09-22",
         "active_days": 4,
-        "total_days": 33,
-        "active_pct": 12.1,
+        "total_days": 34,
+        "active_pct": 11.8,
         "longest_streak": 2,
         "current_streak": 0,
         "weeks": [
@@ -7028,7 +7033,7 @@
                 "date": "2026-09-22",
                 "weekday": 2,
                 "active": false,
-                "in_range": false
+                "in_range": true
               },
               {
                 "date": "2026-09-23",
@@ -7064,9 +7069,9 @@
   "meta": {
     "generation_ok": true,
     "rate_limit": {
-      "cost_used_total": 75,
-      "remaining": 4925,
-      "reset_at": "2026-09-21T17:03:13Z"
+      "cost_used_total": 77,
+      "remaining": 4923,
+      "reset_at": "2026-09-22T15:13:52Z"
     },
     "warnings": [],
     "disclosures": [
